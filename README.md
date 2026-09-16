@@ -1,3 +1,14 @@
+<p align="center">
+  <sub>Study context and reference organizations</sub><br><br>
+  <a href="https://ase.com/"><img src="docs/brands/ase.png" alt="ASE" height="40"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://www.gm.com/"><img src="docs/brands/gm-blue.jpg" alt="General Motors" height="40"></a>
+  &nbsp;&nbsp;&nbsp;
+  <a href="https://gmasep.org/"><img src="docs/brands/gmasep.svg" alt="GM ASEP" height="32"></a>
+</p>
+
+<p align="center"><sub>Independent student project. Not an official study guide or official course material.<br>Not affiliated with, sponsored by, or endorsed by ASE, GM, GM ASEP, or a college.</sub></p>
+
 <h1 align="center">ASEP Study Workflow</h1>
 
 <p align="center">
@@ -32,17 +43,6 @@ Born from a [GM ASEP](https://gmasep.org/) drivetrain study workflow. The same m
 
 > [!NOTE]
 > This is a working framework and empty course scaffold. It includes no complete A2/A8/L1 curriculum, secure exam questions, or promised pass rate. Independent project; not affiliated with or endorsed by ASE, GM, or a college.
-
-<p align="center">
-  <sub>Study context and reference organizations</sub><br><br>
-  <a href="https://ase.com/"><img src="docs/brands/ase.png" alt="ASE" height="40"></a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://www.gm.com/"><img src="docs/brands/gm-blue.jpg" alt="General Motors" height="40"></a>
-  &nbsp;&nbsp;&nbsp;
-  <a href="https://gmasep.org/"><img src="docs/brands/gmasep.svg" alt="GM ASEP" height="32"></a>
-</p>
-
-<p align="center"><sub>Independent student project. Not an official study guide or official course material.<br>Not affiliated with, sponsored by, or endorsed by ASE, GM, GM ASEP, or a college.</sub></p>
 
 ## What is ready
 
