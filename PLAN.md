@@ -2,6 +2,7 @@
 
 Status: Initial reusable framework implemented; real course-cycle evaluation remains open.
 Last updated: 2026-09-16.
+Public repository: https://github.com/flyboy-byte/asep-study-workflow
 
 ## Delivered
 
@@ -10,6 +11,10 @@ Last updated: 2026-09-16.
 - ~~Package one portable Claude Code/Codex skill~~ — files and references validated, 2026-09-16. Discovery locations follow linked official documentation; a full study session in each runtime has not been evaluated.
 - ~~Provide a generator for local course folders~~ — exercised for A2, A8 and L1 in temporary directories, 2026-09-16. Verified expected files, no changes on repeated destination, invalid-exam rejection and parent-repository ignore behavior.
 - ~~Document future A2, A8 and L1 adaptations~~ — guidance complete, 2026-09-16. These are process adaptations, not completed course content.
+
+## Publication verification
+
+Published the initial framework on 2026-09-16. A fresh public clone completed the documented course-generator quickstart in a temporary directory. The rendered GitHub README was inspected in a real browser: four tables, two alerts, one collapsible, one H1; no broken images, overflowing code blocks, or pending diagrams. The source notes, workflow graphic, small organization logos and blue GM mark were visually checked. Local Markdown links and SVG files passed structural checks. These checks verify packaging, not educational outcomes.
 
 ## Design choices
 
