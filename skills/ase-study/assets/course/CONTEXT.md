@@ -13,11 +13,13 @@ Build understanding from course notes, public teaching material, shop examples a
 - Start date, class-final date, and ASE appointment: unknown; do not infer them.
 - Learner experience and strengths: not yet recorded.
 - Textbook/edition, prep books, named lab assemblies and supplied notes: not yet recorded.
+- Existing official, commercial, instructor, or manufacturer-training question sources: not yet recorded. Keep them separate from generated guides unless the learner requests integration and the content can be used.
+- Current output versions and print/PDF preferences: not yet recorded.
 - Current mode: framework only. Change this to intake, research, study, or synthesis when the learner requests it. Authorized web-first research can begin without personal notes.
 
 ## Decisions to preserve
 
-Preserve raw notes and the learner's file arrangement. Class scope comes from the instructor; ASE scope comes from its verified official guide. Label outside qualifications and actual source access. Keep readiness separate from document coverage. Either assistant can draft or review, and should leave usable state here.
+Preserve raw notes and the learner's file arrangement. Class scope comes from the instructor; ASE scope comes from its verified official guide. Label outside qualifications and actual source access. Lead guides with broad exam-ready explanations and retain service-level detail in research unless a named design matters. Keep readiness separate from document coverage. Either assistant can draft or review, and should leave usable state here.
 
 ## Last work / next action
 

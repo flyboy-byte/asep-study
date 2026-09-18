@@ -21,6 +21,20 @@ The workflow supports three starting conditions: personal notes with targeted ou
 
 The final guide is a synthesis, not a concatenation. Remove repetition, reconcile terminology, retain useful shop examples, identify conflicts, and connect causes to confirming evidence. A cram sheet should compress an explanation already developed elsewhere rather than introduce an unsupported mnemonic.
 
+## Layer depth for the reader
+
+A research record and a study guide have different jobs. Research should retain exact source language, design differences, application limits and unresolved questions. The study guide should lead with the broad distinction the learner needs to recognize quickly, then add exact sequences only when the class or exam stem identifies that mechanism.
+
+Use this order:
+
+1. broad family or operating principle;
+2. condition that changes the answer;
+3. named design example when relevant;
+4. confirming measurement or observation;
+5. source boundary in the research record.
+
+This keeps exam preparation accessible without laundering a simplification into a universal service rule.
+
 ## State matters
 
 “Not ready” can mean different things. Distinguish them using the conversation and course context:
@@ -54,8 +68,10 @@ Existing competence should reduce repetitive fundamentals. It should not erase s
 
 For existing folders, map these roles onto existing files. Keep a combined research file rather than creating an overlapping report for each session. Dated handoffs preserve the work across assistants and interruptions.
 
+When a learner will keep several printed or downloaded copies, mark the cover with a simple version and absolute date. Keep the same filename for the current copy unless archival filenames are requested. Put a version on detachable sheets as well.
+
 ## Evidence of quality
 
-More documents or citations do not prove readiness. Look for explanations the learner can reconstruct, an unfamiliar diagram they can interpret, and a justified next test that separates plausible faults. Preserve meaningful misses and their corrected reasoning. A repeated question can help learning but is not an independent measure of improvement.
+More documents, questions or citations do not prove readiness. Look for explanations the learner can reconstruct, an unfamiliar diagram they can interpret, and a justified next test that separates plausible faults. Preserve meaningful misses and their corrected reasoning. A repeated question can help learning but is not an independent measure of improvement. If suitable owned question banks already exist, another assistant-written bank usually adds less value than a clearer guide.
 
 This initial repository supplies workflow instructions and templates. Selected learner-authored notes and original guides may be added with authorization and a review of their source material and identifying details. It currently contains no complete curriculum, official practice question bank, individual student's records, or validated pass-rate claims. Official ASE materials and publishers retain their own rights; the framework links to them rather than redistributing commercial books or secure questions.

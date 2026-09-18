@@ -49,8 +49,9 @@ Born from a [GM ASEP](https://gmasep.org/) drivetrain study workflow. The same m
 | Status | Component | Evidence or boundary |
 |---|---|---|
 | Ready | Workflow, design, source strategy | Documents included; supports personal notes, public sources, and hybrid work. |
-| Ready | Shared `ase-study` skill | Format and references checked. Full assistant study sessions remain to be evaluated. |
+| Ready | Shared `ase-study` skill | Format and references checked; incremental revision exercised. Full end-to-end course and outcome evaluation remains open. |
 | Verified | Local course generator | A2, A8 and L1 scaffolds exercised; existing folders preserved; invalid input rejected. |
+| Exercised | Incremental guide refresh | One real A3 note update was propagated into unit, class-final and ASE outputs with targeted research, visible versioning and PDF review. Exam outcome remains unmeasured. |
 | Planned use | Automatic transmission, engine performance, advanced engine performance | Adaptation guidance included; technical course content comes later. |
 | Unmeasured | Exam outcomes | No controlled effectiveness study or validated readiness scoring. |
 
@@ -94,7 +95,7 @@ Open your **course folder** in the assistant. Invoke `$ase-study` in Codex or `/
 | You say | The workflow does |
 |---|---|
 | “Document the framework; this class starts later.” | Preserves the design and future intent without starting course prep. |
-| “I added notes. Update the unit material.” | Reads changes, updates the guide, records coverage and open questions. |
+| “I added notes. Update the unit material.” | Reads the changes, researches only new uncertainty, updates affected outputs, and versions print copies. |
 | “I have no notes. Find useful public material for this ASE.” | Builds a source map, verifies claims, and identifies remaining gaps. |
 | “Quiz me on what we've covered.” | Uses explanations and unfamiliar examples; records meaningful misses. |
 | “Use the whole folder to build my final/ASE guide.” | Synthesizes the relevant corpus around the requested exam scope. |
@@ -108,6 +109,11 @@ Collect → explain → map coverage → research → practice → synthesize.
 Public student notes can reveal a helpful explanation or common misunderstanding. Manufacturer information can establish a specification. Official ASE documents establish exam coverage. Each source has a job; several copies of the same notes do not count as independent confirmation.
 
 Keep raw material intact, research in one place, and handoffs in the course context. The assistant should remember through files which material was actually read, what remains uncertain, and what the learner can explain—not merely how many documents exist.
+
+Study guides lead with broad exam-ready distinctions. The research record keeps exact mechanisms, design exceptions and source boundaries. When new notes arrive, revise the affected sections instead of rebuilding every document. If the learner already owns suitable commercial or manufacturer-training questions, keep those banks separate and spend the generated document budget on a clearer guide.
+
+> [!TIP]
+> Put a visible version and absolute date on PDFs or printed guides when several copies may coexist. A detachable cram sheet should carry the same version. Stable filenames keep links and the working folder tidy.
 
 <details>
 <summary><b>Explore the framework</b></summary>

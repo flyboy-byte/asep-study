@@ -1,7 +1,7 @@
 # Project state
 
-Status: Initial reusable framework implemented; real course-cycle evaluation remains open.
-Last updated: 2026-09-16.
+Status: Reusable framework implemented; one real A3 incremental revision exercised; full course and exam-outcome evaluation remain open.
+Last updated: 2026-09-18.
 Public repository: https://github.com/flyboy-byte/asep-study-workflow
 
 ## Delivered
@@ -11,6 +11,7 @@ Public repository: https://github.com/flyboy-byte/asep-study-workflow
 - ~~Package one portable Claude Code/Codex skill~~ — files and references validated, 2026-09-16. Discovery locations follow linked official documentation; a full study session in each runtime has not been evaluated.
 - ~~Provide a generator for local course folders~~ — exercised for A2, A8 and L1 in temporary directories, 2026-09-16. Verified expected files, no changes on repeated destination, invalid-exam rejection and parent-repository ignore behavior.
 - ~~Document future A2, A8 and L1 adaptations~~ — guidance complete, 2026-09-16. These are process adaptations, not completed course content.
+- ~~Exercise an incremental note-to-guide revision~~ — completed in a live A3 study folder, 2026-09-18. New differential and noise notes were mapped into separate Unit 3, class-final and professional ASE outputs; a targeted source pass updated the existing research foundation; Version 2 PDFs were rendered and visually checked.
 
 ## Publication verification
 
@@ -22,8 +23,10 @@ Use ordinary files with one combined research record. Preserve raw notes. Let in
 
 The course generator is optional. Existing course folders can adopt the roles without moving material. No background scheduling, hosted service, API calls, or automated exam enrollment is part of the framework.
 
+The live A3 revision exposed two correctable workflow failures. First, technically accurate product detail can make exam prep read too much like a service manual; the skill now requires broad recognition first and stores deeper application boundaries in research. Second, generating an ASE question bank or a method for using one adds little when the learner already owns suitable Motor Age and manufacturer-training questions; the workflow now checks available practice sources and creates original items only for a requested class format or uncovered weakness. These are dated observations from one course revision, not universal outcome evidence.
+
 ## Still to evaluate
 
-Try the workflow through actual course intake, web-first source gathering, unit study, cross-assistant review and final synthesis. Record observed failures and improve the relevant instruction rather than accumulating speculative rules. Check whether another learner can use the README and templates without the original conversation.
+Continue the workflow through exam use and outcome review, a web-first course with no personal notes, cross-assistant review, and another learner's independent use. Record observed failures and improve the relevant instruction rather than accumulating speculative rules.
 
 There is no published exam outcome study, validated practice bank, or complete A2/A8/L1 study guide. Do not promote structural checks into claims of educational effectiveness.

@@ -11,7 +11,7 @@ Reference routes checked: 2026-09-16. Recheck the exam's current documents when 
 | How a mechanism works | Manufacturer teaching documents, diagrams, public educational resources | Develop an explanation; identify the design shown. |
 | Exact procedure or specification | Applicable OEM/component-maker service information | Match vehicle/assembly, conditions, units and revision. |
 | An unfamiliar symptom | Verified service information and diagnostic reasoning | Develop competing causes and the next confirming check. |
-| Exam-style practice | Official public examples/practice, or inspected commercial prep | Separate those sources from original assistant-written exercises. |
+| Exam-style practice | Official public examples/practice, inspected commercial prep, or manufacturer training the learner can access | Keep the bank separate from the guide; do not reproduce protected questions. Add original exercises only for a requested format or uncovered gap. |
 
 Broad web research and individual-topic investigation complement each other. A primer can explain an entire layout; a service example can supply the measurement that makes the explanation testable. Search by the question to resolve, not by a desire to accumulate citations.
 
@@ -44,6 +44,8 @@ An external deep-research tool can take the same brief when actually available: 
 | Owned textbooks and Motor Age or other prep books | A learner's supplied edition and relevant passages | Record edition/page and actual access; do not infer ownership of every subject volume. |
 
 Use the manufacturer most relevant to the actual topic; this list is a starting map from a drivetrain project. It is not a ranking or a complete engine-performance bibliography. For L1, use the dedicated guide and composite reference described in `pathways.md`.
+
+Owned question banks can inform what the learner practices without becoming repository content. Record the title/edition and only the explanation or weakness needed for study. Do not copy whole questions, answer sets, or publisher explanations into a public or local synthesis unless the user supplied the material and the requested use permits it.
 
 ## Record evidence without laundering it
 
