@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="292" viewBox="0 0 960 292" role="img" aria-labelledby="title desc">
+  <title id="title">From learning material to two useful guides</title>
+  <desc id="desc">Personal notes, public teaching material, and shop examples feed explanation, verification, and practice. The same body of material supports instructor-focused class preparation and broader ASE preparation.</desc>
+  <rect width="960" height="292" rx="18" fill="#142b35"/>
+  <g font-family="Arial, sans-serif">
+    <text x="34" y="36" fill="#94b7bf" font-size="13" letter-spacing="2">COLLECT WHAT HELPS. UNDERSTAND WHY IT WORKS.</text>
+    <g fill="#203e49" stroke="#46636b">
+      <rect x="34" y="64" width="254" height="45" rx="8"/>
+      <rect x="34" y="124" width="254" height="45" rx="8"/>
+      <rect x="34" y="184" width="254" height="45" rx="8"/>
+    </g>
+    <g fill="#edf4ef" font-size="18">
+      <text x="53" y="93">Your notes</text>
+      <text x="53" y="153">Public teaching material</text>
+      <text x="53" y="213">Shop examples</text>
+    </g>
+    <path d="M300 88H318V147H340M300 147H340M300 207H318V147" fill="none" stroke="#89aeb4" stroke-width="2"/>
+    <path d="m333 141 8 6-8 6" fill="none" stroke="#89aeb4" stroke-width="2"/>
+    <rect x="352" y="84" width="248" height="126" rx="10" fill="#edba76"/>
+    <text x="375" y="119" fill="#182d36" font-size="22" font-weight="700">Make it make sense.</text>
+    <text x="375" y="152" fill="#31474e" font-size="17">Explain · verify · practice</text>
+    <text x="375" y="181" fill="#31474e" font-size="15">Keep sources and gaps visible.</text>
+    <path d="M612 147H636M636 111V188M636 111H654M636 188H654" fill="none" stroke="#89aeb4" stroke-width="2"/>
+    <path d="m647 105 8 6-8 6m0 65 8 6-8 6" fill="none" stroke="#89aeb4" stroke-width="2"/>
+    <g fill="#203e49" stroke="#46636b">
+      <rect x="668" y="73" width="257" height="72" rx="8"/>
+      <rect x="668" y="161" width="257" height="72" rx="8"/>
+    </g>
+    <g fill="#edf4ef" font-size="20" font-weight="700">
+      <text x="688" y="102">Class-final guide</text>
+      <text x="688" y="190">ASE preparation</text>
+    </g>
+    <g fill="#a9c5c9" font-size="14">
+      <text x="688" y="126">Instructor coverage + lab context</text>
+      <text x="688" y="214">Official scope + demonstrated needs</text>
+    </g>
+    <text x="34" y="267" fill="#94b7bf" font-size="14">One body of material. Different preparation priorities.</text>
+  </g>
+</svg>
