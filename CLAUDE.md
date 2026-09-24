@@ -7,13 +7,14 @@ There are no build, lint, or test commands. Only `workflow/.gitignore` exists (P
 
 ## Layout
 
-| Folder | Exam | State (2026-09-22) |
+| Folder | Exam | State (2026-09-24) |
 | --- | --- | --- |
-| `mantrans/` | A3 Manual Drive Train & Axles | Active/most complete. Version 2 class-final + ASE packages built 2026-09-18. |
-| `autotrans/` | A2 Automatic Transmissions | Framework scaffold. `notes/` has class screenshots from 2026-09-20; `CONTEXT.md` still says course work has not started. |
+| `mantrans/` | A3 Manual Drive Train & Axles | Most complete. Class final taken 2026-09-21. ASE prep (Version 3 guide, simple sheet, cram sheet, PDFs) lives in `study/ase/`, separate from class-unit guides in `study/`. |
+| `autotrans/` | A2 Automatic Transmissions | Note intake active. Screenshots organized into `note/notes.md` on 2026-09-22 (`notes/` holds raw text notes); no study package or outside research yet. Check its `CONTEXT.md` `Status:` line. |
 | `engine-performance/` | A8 | Framework scaffold only (spring semester). |
 | `l1/` | L1 | Framework scaffold only. |
 | `l2/`, `l3/` | — | Empty placeholders. |
+| `workflow/` | — | Reusable process and `ase-study` skill source (not a course). |
 
 Each course folder is self-contained and has its own `CLAUDE.md`/`AGENTS.md`, `CONTEXT.md`, and
 standard subfolders: `notes/` (raw notes and images), `study/` (generated guides, cram sheets,
@@ -28,7 +29,7 @@ source boundaries, and the file inventory. If it conflicts with this file, `CONT
 ## Reusable framework
 
 The process is defined in `workflow/` (merged into this repo 2026-09-24 from the former public repo
-github.com/flyboy-byte/asep-study-workflow) and the `ase-study` skill. `WORKFLOW.md` in each
+github.com/flyboy-byte/asep-study-workflow) and the `ase-study` skill, which loads from `.claude/skills/ase-study` (a symlink into `workflow/skills/ase-study`). `WORKFLOW.md` in each
 scaffolded folder is a copy of that process. Use it, but don't reorganize existing notes to fit it.
 
 ## Rules that apply across every course
@@ -49,3 +50,10 @@ scaffolded folder is a copy of that process. Use it, but don't reorganize existi
   absolute date. Render and visually check each changed PDF.
 - After meaningful work, update the course's `CONTEXT.md` with the date, files processed, outputs
   changed, and next action.
+
+## Repo and new machines
+
+Private repo: it includes instructor exams and a third-party PDF, so never make it public. Session history
+and memory live in `~/.claude/`, not here; the state docs (`CONTEXT.md`) are how a fresh session resumes.
+PDF rendering: `google-chrome-stable --headless --no-sandbox --print-to-pdf=<out>.pdf --no-pdf-header-footer file://<abs path>.html`
+(each guide's `.html` is hand-mirrored from its `.md`; re-render after editing either). `README.md` has clone/setup steps.
