@@ -1,0 +1,151 @@
+gears and mantrans, how the transmission works. transaxles, divided on everything since the unit 1 quiz on clutches and stuff.
+target is the transmission internals and gearset, etc etc, ig everything until instructor gives us unit 2 quiz.
+
+gear reduction
+direct drive
+overdrive
+the 3 gear ratio gearset names
+
+remember which gear ratios increase torque
+and which increase speed
+
+labling of the 1 in a gear ratio. kina confusing.
+idler reverses direction
+a idler of a different size than drive and driven dont change the ratio.
+if we have a 10:7:20 teeth gearset. the end ratio is still 2:1
+
+chapter 5:
+thinking of transmission as selective torque multiplier based on do we need more torque to get the car to move or less torque to keep it moving.
+
+shift mechanism's purpose is to transfer the action of the driver to the shifting forks of the transmission.
+
+as the gearshift lever moves, the shift mechanism moves one or two synchronizer sleeves or gears to engage the appropriate gear.
+
+clearance between the shift fork fingers and the grooze of the syncronizer sleeve is important.
+if the groove or the fork wears on the leading edge, the fork cant push the sleeve far enough to engage the gear properly. as soon as you would engage the gear then, and the dog teeth are not engaged, the partially engaged gear will pop out, bc of the way the dog teeth of the syncronizer sleeve and ring or whatever are shaped, in the arrow shape..
+if that makes sense.
+
+the ranges names of the shift shafts, 1-2 shift shaft, 3-4 shift shaft, 5-R shift shaft.
+older types of transmissions might have external shift linkages..
+not sure how this all applies to study, but ya..
+
+detents and interlocks. how detents hold the gear in place. detents can be overcome.
+how interlocks prevent 2 gears from engaging at the same time.
+our 5 speeds have ball detents and have pin and ball interlocks. pretty interesting.
+reverse lockouts.
+
+corvette dual clutch. 2 mainshafts, 1 countershaft. 2 input shafts, 1 is large and sticks out,
+no clutch, but it is manual.
+
+helical gears. commonly quiet. downside is that it has endthrust, and needs thrust sides on the gear.
+
+most transmissions are splash lubricated... ig.
+oil level submerges the countershaft, spins and throws oil onto mainshaft..
+
+question, can i tow a mantrans vehicle behind a motorhome:
+depends. if its splash lubricated, then the output shaft rotates, and the input dont, so the speed gear's syncronizer sleeve will spin metal on metal. if the vehicle is 4x4, then u could put the transfer case in neutral, and tow it behind the motorhome. but ya. this dont feel like a ase study item. just a interesting class discussion.
+
+the syncronizer sleeve is mounted on the hub. as the sleeve comes over it would grind, but instead it pushed the brass syncronizer ring onto the speed gear cone which would slow or speed the speed gear up or down and allow the syncronizer to engage smoothly without grinding.
+syncronizer ring, ie blocker ring, whatever u wana cause it...
+blocks a bad shift, or syncronizes the sleeve to speed gear mesh.
+sleeve and ring is a whole syncronizer assembly.
+fork pushes the sleeve, sleeve pushes the ring, ring pushes onto the speed gear cone. when speeds match enough, dog ears on the ring, start the cleeve onto the speed gear cone, and fully mesh the sleeve onto the speed gear gears.
+the ring or blocker ring can move a little on the speed gear, letting the sleeve mesh with the speed gear more smoothly. idk how well written this all was.
+syncronizer keys are spring loaded.. i think they are keyed into the clutch hub that the syncronizer sleeve slides on. the key waves try to push the ring ahead of the sleeve.
+
+"chatgpt audit of the above paragraph,
+Mostly correct. Your mental model is good; a few terms/mechanics need tightening.
+Fact: The synchronizer hub is splined solidly to the transmission shaft. The sleeve slides axially on external splines of that hub. The speed gear itself normally freewheels on the shaft until the sleeve locks it to the hub/shaft.
+The sequence is basically:
+Fork moves sleeve → sleeve/keys push the blocker ring toward the gear → blocker ring's friction surface contacts the gear's cone → friction speeds up or slows down the gear relative to the shaft/hub → while there is a speed difference, the blocker ring rotates slightly relative to the hub and deliberately misaligns its teeth → that misalignment physically prevents the sleeve from engaging the gear's clutch/dog teeth → once speeds are close enough, the ring recenters/alignment becomes possible → sleeve passes over the blocker-ring teeth and engages the gear's dog/clutch teeth → gear is now mechanically locked to the shaft.
+The biggest correction is this part:
+> "dog ears on the ring, start the sleeve onto the speed gear cone"
+The sleeve does not engage the cone. The cone is only the friction/braking surface. The sleeve eventually engages the small clutch/dog teeth on the side of the speed gear.
+Your description that the blocker ring "blocks a bad shift" is especially accurate. That's essentially why it is called a blocker ring. It doesn't just synchronize speeds; its slight rotational movement prevents the sleeve teeth from going through until the speed difference has been reduced enough.
+Also:
+> "the ring ... can move a little on the speed gear"
+Close, but think of it as the blocker ring having limited rotational freedom relative to the hub. When the ring contacts the spinning gear cone, friction twists the ring slightly. That twist puts the ring's teeth out of alignment with the sleeve. Once the relative-speed difference disappears, the frictional twisting force disappears and the sleeve can move through.
+And your keys idea is basically right. The synchronizer keys/struts fit into slots in the hub underneath the sleeve. Springs preload the keys. As the sleeve begins moving, the keys transfer that movement to the blocker ring so the blocker ring contacts the gear cone before the sleeve can reach the gear's engagement teeth.
+One terminology correction: I wouldn't say "sleeve and ring is a whole synchronizer assembly." The complete synchronizer assembly generally means the hub, sliding sleeve, blocker/synchronizer rings, keys/struts/inserts, and springs. The speed gear and shift fork are associated with it but aren't normally considered part of the synchronizer assembly itself.
+For ASE A3, the important mental picture is:
+**Hub = permanently tied to shaft.
+Gear = freely spinning until selected.
+Sleeve = locks gear to hub.
+Blocker ring = uses friction to match speed and physically prevents premature engagement.
+Keys/struts = make the blocker ring hit the cone before the sleeve reaches the gear teeth.**
+And one subtle point worth remembering: the synchronizer isn't really "synchronizing the sleeve to the gear." The sleeve/hub are already rotating at shaft speed. It is using friction to bring the freewheeling speed gear to approximately the same speed as the hub/sleeve/shaft. That's the distinction ASE may exploit in a question."
+
+paper coated steel blocker rings wear very fast, if the wrong fluid is used.
+
+shift fork dictates where the syncronizer is.
+shaft can have endplay if bearings are bad, so if the gears pop out, too much endplay could cause the gear to pop out bc the ball bearing control then endplay, and the sleeve and fork are fixed.
+
+visual inspection, need to look at the dogteeth if thats the right word. looking for tips on the blocker ring's and sleeve's dog teeth are in good shape, allowing meshing etc.
+
+if we grind the gears, the damage isnt on the teeth, its the dog teeth ig....
+
+interesting question on gears and trans, why is my fork/sleeve worn.
+one thing is if im resting my hand on the shifter, would wear the fork/sleeve.
+
+symptom discussion
+
+shifting class or gear class:
+grinding gears. sleeve grinding on dog teeth bc they cant engage
+what can cause gear clash, worn syncronizer blocker ring, sounds like a zipper lol he said
+
+shifting block out:
+"dont go into gear", shifter wont move for some reason, if its truly block out, it shifts perfect, engine not running it shifts fine..what causes this then..??
+clutch drag, mismatch of speed, transmission should be not moving when trying to make a shift, or its moving too much or whatever,
+technically if u pushed the blocker ring into it far enough, the blocker ring could probably slow it down enuf to maybe shift, but only if its clutch drag idk. kinda dumb writeup here.
+dragging clutch, if im sitting still, question> is my schronizer assembly rotating or is it still.
+
+pops out of gear:
+detent, worn dogs so theres enough length to stay connected, shift linkage?,
+shaft endplay is what my teacher was wanting us to say.
+ahh fork to sleeve groove clearance, then when u shift it, the sleeve wont move far enuf onto the gear/dogteeth, but since the fork is worn, its not far enuf, this was the actual one the teacher wanted. lol
+
+gear noise ranges:
+just remember the stuff about infering gear issues based on what gears are making noise and stuff like that.
+same with bearing noise.
+bearing noise ranges:
+bearing noise, front bearing, could be a clutch symptom question, and output bearing, different types of things, mostly just relying on general knowledge of transmission internals.
+
+Engine speed noise/ vehicle speed noise:
+Noise specific to vehicle data, vehivcle speed and stuff.
+Can i drive 50mph in 3rd gear, sometimes,,, depeinding on the transmission, if i stay driving 50mph and shift from 3rd to 4th to 5th, if the pitch or perceived sound of the noise, then im looking at somehting in the transmission that is turning at road/output speed, that points to a issue with the output bearing.
+flipped. at 50, the noise is high tone in 3rd, lower in 4th, and lower still in 5th. this poionts to a issue with a certain gearset etc
+this is all mumbo, hopefully theres useful info here...
+
+
+stuff on transaxles. ig ill put it in the same transmission notes section
+
+torque steer:
+unequal CV joint angles
+unequal length of the shafts
+the tendency for the longer drive shaft to twist
+
+torque steer is probably going to be on the ase. it just seems like that type of topic.
+
+torque steer most common cause, is unequal cv joint angles.
+wobble socket, on extension, if its perfectly straight, it still works, but its not as much torque, u eventually get to a angle where u lose torque, and the wobby whips around and dont work.
+imagine we had bad engine or transmission mounts, causeing cv angles to be unequal, as long as they are equal, torque steer is not a issue.
+
+similarity: torque steer in transmissions and drivtrain, and bump steer in suspension and steering... interesting crossover.
+
+in transaxle transmissions, the input shaft is also called the clutch shaft, and the main shaft is sometimes called the countershaft,
+this is because the input shaft is not seperate from the mainshaft, input shaft turns the mainshaft, the what would otherwise be a countershaft, becomes the output shaft.
+
+we dont need a pilot bearing on a transaxle because the input shaft is part of the mainshaft, and its one assembly. it dont need a pilot bearing, because the mainshaft assembly is fully supported by the bearings.
+
+on a longitudinal transmission/ ie non transaxle, the input shaft is seperate from the mainshaft, and therefore needs a 3rd bearing to support it.
+
+seems exceptionally crucial to be able to understand a diagram, and visualize and comrehend power flow.
+
+when looking at a transmission diagram, its a speed gear if it has a syncronizer sleeve. just writing based on textbook here.
+it looks to me like in a constant mesh transmission, there is never a fixed gear to fixed gear used. its always a fixed gear to speed gear or speed gear to fixed gear. never a fixed gear to fixed gear. reiterating lol.
+
+important to note: since the manual transmission ase is on the whole drivetrain, including, transmission, transaxle, and rear end, therefore, when approaching understanding a transaxle, we treat the output flow the same as a rear end differential.
+
+i know i mentioned/noted earlier, but only one gearset is ever engaged at a time.
+
+longitudinal engine and transmission, that are front wheel drive is interesting. and has a interesting and unique power flow..

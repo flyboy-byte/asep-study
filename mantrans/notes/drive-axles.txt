@@ -1,0 +1,274 @@
+more gear stuff and rear drive axles etc
+gear noise:
+    whine
+bearing noise:
+    growl or rumble
+
+a rear wheel drive vehicle does what different than a front wheel drive transaxle
+mechanically"
+theres a rotation change of direction.
+a transaxle never needs to change the direction of rotation
+but a rear wheel drive vehicle does,,,
+    engine, transmission, propshaft, all turn the same direction
+    then i need to make a turn to the wheels.
+    this is why u see some interesting gearsets in the rear wheel drive axles
+
+gear clash is the same as grinding.
+more of a gears.txt note. but anyway
+
+gear noise or whine is audible from 20-55 under these driving conditions:
+drive acceleration or heavy pull
+road load or constant speed, constant throttle speed
+float just enuf throttle to keep the vehicle from friving the engine and vehicel slows down slowly but the engine still pulls slightly. taking all the pressure off the gear teeth when u float the trottle.
+and coasting when the trottle is closed.
+
+bearing noise: growling in your face noise
+Faulty bearing produce a rough growl or grating sound rather than the whine typical of gear noise.
+Bearing noise will pulsate at a constate vehicle speed. This indicates a bad pinion or something like that
+
+knocks can be caused by side gear has been worn oversized.
+backlash clunk. for whatever thats worth.
+
+transfer cases are particular to ase and stuff. we didnt go over them too much. and they contain concepts like planetary gears and other things that i didnt cram into my head lol
+
+for passing ase
+u need manual transmission and transaxle knowledge and theory.
+rear drive axles is more common in the shop, ase can only test your knowledge and theory.
+in this 4 weeks there are things we hit real quick like the clutches
+manual transmissions we took longer on it
+manual transaxles we took longer on it but still quicker
+we need to spend some time on read drive axles.
+many times the people working on rear drive axles dont understand the theory, even more so than the manual transmission.
+its a surgical operation with big heavy clunky peices.
+just writing here as instructor is talking.
+i thot he was gona really lay some stuff out on what we needed to know to pass. but ig what hes saying is that rear drive axle and manual transmissiona assemblies are the harder parts to understand.
+
+remember what noises a rear end makes.
+preload on the pinion, and consequences.
+check and apply preload with rotating torque wrench.
+
+remember convex and concave gears.
+which tooth side is drive and coast
+drive and coast differences.
+the whine it makes etc...
+if drive is convex or concave.
+but convex or concave is based on actual tooth shape.
+
+there is two types of axle theory:
+
+semi floating
+most common on light duty vehicles and half ton pickups.
+muscle cars. etc.
+cheaper quicker easier way to manufacture a rear drive assembly.
+semi floating, the axle shaft at the wheel assembly is supporting the weight of the vehicle.
+the axle shaft supports vehicle load and also transfers torque.
+the outer axle bearing supports the axle shaft in the housing.
+if the axle would break the wheel could fall off.
+the only thing holding the wheel on is the axle itself, depending on the axle retention design.
+
+full floating
+the inside of the axle shaft basically floats.
+the axle shaft does not support the weight of the vehicle.
+it mainly transfers torque.
+the outer end uses a wheel hub with tapered roller bearings on the axle housing/spindle.
+the hub bearings transfer the vehicle load from the wheel/hub into the axle housing.
+the bearing is what transfers the vehicle weight/load to the axle housing, instead of the axle shaft carrying that load.
+
+semi floating vs full floating
+
+semi floating:
+supports vehicle weight/load through the axle shaft.
+the axle shaft also transfers torque.
+
+full floating:
+the hub has tapered roller bearings that transfer the vehicle loads into the axle housing.
+the axle shaft does not carry the vehicle weight.
+the axle shaft mainly carries torque.
+
+so semi floating transfers vehicle weight/load through the axle shaft.
+
+full floating transfers vehicle weight/load through the hub bearings into the axle housing, not through the axle shaft.
+
+easy way to remember:
+
+semi floating = axle shaft carries torque + vehicle load.
+full floating = axle shaft carries torque only.
+
+hypoid gear set is used.
+
+need to study and identify
+drive coast side & convex coast side of a tooth
+and heel/toe side of tooth
+
+the pitch line is the design center of contact between two gears and is about halfway up the tooth. the face of the tooth is above the pitch line, and flank is below it.
+the drive side of the ring gear teeth is the vertical convex side of the tooth.
+
+
+
+full textbook page dump on teeth:
+Ring and Pinion Gears
+Final Gear Ratio
+The ring gear and the pinion gear are the final drive reduction gears.
+
+The final drive gear ratio and tire size are selected to provide the best engine RPM for cruise speed. Sometimes the ratio must be selected so that it will provide sufficient torque for low-speed operation.
+
+The ring and pinion gear set must also turn the power flow from the driveshaft 90 degrees to align with the axles.
+
+Hypoid Gear Set
+The ring and pinion gear set is a hypoid type. These are similar to spiral bevel gears except for the location of the pinion gear. ● SEE Figure 12–6.
+
+Figure 12–6
+An illustration of a hypoid gear set.
+A hypoid gear set uses a drive pinion that meshes with the ring gear below the center line of the ring gear.
+
+
+
+Figure 12–6 Full Alternative Text
+ Frequently Asked Question
+What Does the 9-Inch Refer to when Describing a Drive Axle?
+A 9-inch drive axle actually is referring to the rough diameter of the ring gear. A 9-inch gear set is bigger and stronger than an 8-inch gear set. ● SEE Figure 12–7.
+
+A hypoid gear set has the pinion gear below the center line. This accomplishes two purposes:
+
+Allows a lower driveshaft so that the tunnel or hump in the floor of the vehicle can be smaller.
+
+Allows a larger and stronger drive pinion gear in which the pinion gear teeth slide across the teeth of the ring gear. This also makes a hypoid gear set quieter. The sliding, wiping action of the gear teeth requires a special GL-4 or GL-5 lubricant.
+
+Hypoid Gear Set Manufacturing
+As a gear set is made, after the gears have been cut, hardened, and ground to shape, the ring and pinion are run against each other in a machine with abrasive compound on their teeth. This laps or wears them to match each other perfectly. At this point, they become a matched set, and damage to one will require replacement of both with another matched set. There is normally a mark etched on the head of the pinion gear and on the side of the ring gear to identify a particular set. There is often a stamping that indicates the gear ratio or part number, and sometimes there will also be a marking that indicates the pinion gear depth.
+
+Hypoid Gear Tooth Terminology
+When a hypoid ring and pinion gear set is adjusted, reference is often made to particular parts of the gears and their teeth. The outer ends of the ring gear teeth are called the heel and the inner ends the toe. ● SEE
+
+The drive side of the ring gear teeth is the vertical, convex side of the tooth. This is the side of the tooth that contacts the pinion gear while the engine is driving the vehicle forward.
+
+There should be a clearance at the coast side of the tooth which is called backlash. The coast side of ring gear teeth is the slanted, concave side of the tooth. This surface receives pressure while the vehicle is coasting and the vehicle is driving the engine. While coasting, the backlash will be at the drive side of the tooth. The third tooth-load condition is called float. During float there is no load on the gear teeth, and backlash will be on both sides. ● SEE Figure 12–9.
+
+12.4-1 Full Alternative Text
+An illustration of a float condition.
+(a) During a drive condition, the pinion gear is driving the ring gear and there is backlash at the coast side of the ring gear tooth. (b) During a coast condition, this action is reversed. (c) During a float condition, lash is split between both sides of the tooth.
+
+12.4-1 Full Alternative Text
+Hunting and Non-Hunting Gear Set
+The final drive gear ratio determines how many times a drive pinion tooth will make contact with a particular ring gear tooth during one revolution. This affects final drive gear set manufacture and service. Final drive gear sets may be divided into three types, depending on the final drive gear ratio.
+
+Hunting gear sets are gear sets with final drive ratios expressible in a fraction that cannot be reduced to any lower terms. An example of a hunting gear set is one that has 41 teeth on the ring gear and 11 teeth on the drive pinion. This combination creates a 3.73:1 axle ratio. This type of gear set requires no timing marks or alignment during assembly. As the pinion gear drives the ring gear, each pinion tooth will hunt for, or seek, contact with every ring gear tooth.
+
+Non-hunting gear sets are gear sets with final drive ratios expressible as a whole number. An example of a non-hunting gear set is a differential that uses 39 teeth on the ring gear and 13 teeth on the pinion gear which gives a 3.00:1 gear ratio. Non-hunting gear sets require timing marks. As the pinion gear drives the ring gear, each pinion tooth contacts only a few ring gear teeth during each revolution.
+
+Partially non-hunting gear sets are gear sets with final drive ratios expressible as a reducible fraction not equaling a whole number. An example of a partial non-hunting gear set is an axle ratio of 3.50:1. Partially non-hunting gear sets also require timing marks. During final drive operation, each pinion tooth contacts only some of the ring pinion teeth. For the pinion teeth to make contact with the highest number of ring gear teeth, the pinion gear must drive the ring gear more than one revolution. On non-hunting and partially non-hunting gears, manufacturers lap (provide a surface finish) the contacting gear teeth to decrease wear. For this reason, these gear sets are marked to ensure proper alignment during assembly procedures. To preserve the wear patterns, the gear sets should be reassembled using the same alignment. This prolongs the life of the gear set and decreases operational noise.
+
+Reverse-Cut Ring and Pinion Gears
+Reverse-cut ring and pinion gears were primarily designed for front-wheel drive applications to take advantage of their increased strength. The gears have the teeth spirally cut in the opposite direction of standard gears.
+
+Figure 12–10 Full Alternative Text
+Some 4WD vehicles use a standard rear-drive axle that has been turned around for the front, but this arrangement drives on the coast side of the gear tooth which results in a gear that is 15% to 30% weaker. Reverse-cut gears are stronger when used in the front axle and move the drive pinion above the centerline of the ring gear. When the drive pinion is above the centerline of the ring gear (high-mounted), the angle of the driveshaft will be decreased and this is especially useful when the vehicle has been lifted for additional ground clearance. The housing is especially designed with different oiling passages to properly lubricate the gears. ● SEE Figure 12–11.
+
+ABS Reluctor Wheel
+On rear-wheel-drive vehicles with antilock braking system (ABS), the rear wheel speed sensor(s) is attached to the rear axle assembly. Some older vehicles that are equipped with a three-channel ABS will use one speed sensor mounted to the driveshaft flange, drive pinion shaft, or ring gear, whereas others use a pair of sensors near the end of the axle at each wheel hub. Because they include a magnetic core, sensors that are in the axle housing can be affected by metal particles worn from the gears or bearings. Sensors at the axle shafts can be affected by worn axle bearings. ● SEE Figure 12–12.
+
+Gear and Pinion Mounting
+The ring and pinion gears must be mounted securely because of the large torque load involved. Gear separation forces try to move the gears away from each other. The ring gear is bolted or riveted to the differential case. Rivets provide a secure and permanent mounting, but they make it harder to remove the ring gear. The differential case is mounted on a pair of tapered roller bearings, which are commonly called carrier bearings or side bearings. ● SEE Figure 12–13.
+
+a hunting gear set is a fraction that cannot be reduced to any lower terms. no pinion tooth matches no ring gear tooth. it will contact every one. and there are no timing marks.
+non hunting: expressed as a whole number fraction. contacts its matched tooth.
+so a pinion with 10 teeth and ring gear with 40 would be non hunting and would touch 4 teeth.
+partially hunting sets: expressed as a reducible fraction that isnt a whole number. partially hunting sets require timing marks.
+hunting gear sets: do not make a cyclic hum or vibration compared to non hunting gear sets. rythmic noise etc.
+
+hunting is most common.
+
+reverse cut ring and pinion gears.
+primarily designed for fwd to take advantage of their increased strength.
+gear shapes must be reversed bc of the oposite direction they are being turned when in fwd differential. ie awd applications.
+
+some ring gears have a reluctor wheel for abs. just a note.
+
+Types of Carriers
+Removable carriers—Most early trucks and passenger vehicle drive axles had removable carriers, which could be unbolted and removed from the housing for service. They are also known as
+
+A removal carrier such as this Ford 9 inch unit. This older design uses an axle housing that is often called a “banjo” because of the shape, which is similar to the musical instrument.
+
+Integral carriers—Most rear-wheel-drive passenger vehicles and light trucks use integral carriers, and the axle tubes are welded to extensions of the carrier. An integral carrier is stronger in the areas around the carrier bearings. An integral carrier axle assembly, sometimes called a Salisbury or Spicer axle, has a removable rear cover for access to the differential and other internal parts.
+
+rear drive axle is splash lubrication.
+
+note, drive axle fluid level may or may not be at the fill hole. spec may want fluid level to be x inches below fill hole for example.
+
+Most drive axle problems are related to noise, vibration, leaks, and failure to transmit power.
+
+The road test should include the following driving conditions:
+DRIVE. Light-to-moderate throttle acceleration
+CRUISE. Enough throttle to maintain a constant speed
+FLOAT. Just enough throttle to keep engine load off the drivetrain as the vehicle slows
+COAST. Closed throttle deceleration
+COAST WHILE IN NEUTRAL. Isolates transmission noises
+
+Noise Diagnosis
+Drive axle noise problems normally fall into one of these categories:
+GEAR NOISE. Howling or whining and is often torque sensitive but can be continuous.
+BEARING NOISE. Can be a high-pitched, whistlelike sound but is usually a rough growl or rumble. Bearings will often make a “wow-wow” type of sound at the speed frequency of the spinning shaft.
+CLUNK. Heavy metallic slapping noise during reversal of power flow or engagement of power from neutral. This fault is caused by excessive slack or excessive clearances in the drivetrain and can be felt in the drive axle.
+CHUCKLE. A rattling noise, similar to a playing card against spinning bicycle spokes, during deceleration below 40 MPH (64 km/h). This fault is often caused by excessive clearance in the differential.
+CHATTER ON CORNERS. A vibration or noise as the vehicle turns a corner, especially after prolonged straight driving. This noise is often called chatter, commonly caused by a stick/slip condition at the clutch plates of a limited slip differential. After changing the lubricant in a limited slip differential to cure a chatter problem, drive the vehicle through 10 to 12 figure-8 turns. This procedure will force the new lubricant between the clutch plates.
+
+noise stuff from textbook. note we may visit this later in notes.
+/home/logan/projects/manual transmissions/screenshot-noise-chart.png
+
+Passenger car and light pickup axles are semi-floating and are retained in the housing by either a C-lock at the inner end of the axle or by the axle bearing retainer at the outer end. Axle service includes removing the axle for bearing or seal replacement and bent or broken axle replacement.
+
+Noises Can Travel
+While diagnosing noise problems, remember that they can come from the exhaust system (both normEEal air-transmitted noises and noises from metal-to-metal contact between the exhaust system and the vehicle body or frame), tires, and wind. Drivetrain noises can usually be heard while the vehicle is operated and being supported on a hoist or safety stands. Vehicle loads can be simulated by applying the brake for short periods of time.
+
+going over crush sleeve / collapsible spacer that is on the pinion assembly. class discussion and notes.
+when new it is too long, we slide it onto the shaft and it sets on the shelf of the pinion gear shaft.
+when we assemble the pinion gear. the outer bearing sits on the crush sleeve spacer which is too long,
+when we assemble, we tighten the pinion gear nut/ yoke nut, and it tightens the outer bearing into the sleeve, and we have to tighten the nut enough to crush the sleeve so that the bearing can seat into the race. then when tightening the bearing contacts, and it contacts the race and gives us some preload, this makes us tighten to large amounts of torque, with the right preload.
+it takes so much torque to crush the sleeve so that when we have the right preload, we have lots of torque on the nut.
+
+if u need to adjust the depth of the pinion gear, the crash sleeve is one time use and needs to be replaced.
+interesting note. to replace the seal without replacing the crush sleeve, i need to measure the total rotating torque.. then after replacing the seal, i retorque the nut, and measure the total rotating torque again while tightening, and set the rotating torque to the same value as before but just a small amount more.
+
+notes after the first created guides
+
+locking differentials
+traction control on open differentials is done by the abs applying brakes to stop a wheel spin
+aka positraction
+focusing on the eaton locker bc thats what gm uses...
+
+when two gears are in mesh and under power there is a escape force that the gears exhibit that tries to escape the differential housing. that force when u have a differential gears the force is strong. the pinion gears of a differential assembly dont rotate  when the vehicle is driving straight.
+under acceleration when we have angle pinion gear side seperation force, we install a clutch pack behind the axle side gears that when the side gears push outward with the side seperation force, the force pushes the side gears outward into the clutch packs.
+so when you have a wheel speed difference the pinion gears, not to be confused with the pinion input gear, the pinion gears spin normally, the spinning pinion angle gears are spinning and press the clutch packs and try to rotate the side gears as if it was a solid axle.
+this above discription is a older style,
+in order to have a locked rear axle as one, all we have to do is stop one axle gear, or one pinion gear, if we prevent any of the 4 gears from moving, then all the gears rotate as a solid axle. this definition is what basically defines the basic style of a locking rear axle differential.
+
+torson differential: is a weird older style of a locking rear axle differential. with helical side gears, and spiral pinion gears that are locked with straight cut gears
+
+eaton locker: is a fully open differential until there is a wheel speed difference. the side gears have clutches. and there is a governor style shaft that spins thats has weights, and when a certain torque or speed engages this weight, it locks the side gears into their cam gear and in turn locks the clutches.
+the governor shaft locks itself against a lock out claw that swings away so that it will not lock under high speed, so at speeds above 20 and one wheel breaks traction, the governor shaft will not lock up because the lock out claw will swing away too far from centrifical rotation.
+the cam plate is stopped by the governor shaft, and the cam then moves out and applies side pressure on the siide gears which engages the clutches, allowing the two different axles to share toque.
+
+elocker and air locker are similar in that they both apply clutch packs via air power or a electromagnet on on side of the differential.
+detroit locker is another style
+
+more stuff on noise: perticular to rear drive axles ig? depending on what the ase prep says on amount of questions on noise, but instructor stated def some noise questions on ase and prob in turn his exams too.
+
+gearset: traditional whine noise, most likely throttle related - Accel - Decell - maybe both : if we float the throttle we make the whine go away.
+usually if u have a gear whine, that whine has been there for quite a while.
+if its a whine that starts later when the car has more while we might worry about bearings
+whine is normally gears etc.
+service information says "growl, rough growl, or grating sound rather than a typical whine"
+
+bearings: assume the noise is probably a growl (rough growl or grating sound rather than a typical whine)
+
+pinion bearings: pitch of the noise, less dependant on the throttle, dont matter whether your coasting, floating, or accelerating etc. faster pitch.
+
+side bearings aka carrier bearings: also a pitch noise. might be able to affect the noise, could be throttle sensitive vs pinion being not throttle sensitive. need load etc.
+
+side bearings vs pinion bearings growl difference: the speed of the bearings, pinion bearings are turning faster than side bearings, so if the noise is a growlish noise, and increases pitch more quickly, it might be pinion bearings. if im listening to the noise while its in the air on the lift, dont make noise = side bearings because its not loaded etc.
+
+axle bearings: pitch noise. slow like side bearings, similar in sound and pitch to side bearings. test by turning swerving like the front wheel bearings and loading the wheel bearings, chaning noise.
+
+front wheel bearings: pitch noise. same as axle bearings, but for the front wheel. based on where you hear or feel it etc.
+
+tire noise: pitch is similar to bearing noise. can rotate tires and affect the noise. slower and start making noise the faster u got. can inspect visually etc. on the lift totally quiet. obviously.

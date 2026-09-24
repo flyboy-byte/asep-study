@@ -1,0 +1,50 @@
+transfer case:
+new notes monday discussion before we wrap up mantrans, important for the transfer case etc part of the ase.
+range definition - direct drive (HIGH RANGE) or reduction (LOW RANGE)
+mode definition - 2wd or 4wd
+mode fork is the fork to change 2wd or 4wd etc
+interesting way to think about 4wd and 2wd, in this range and mode definition. so 2 hi and 4 hi both have no reduction, just a engaged transfer case drive chain or whatever.
+
+planetary gears:
+he made a comment, important to memorize, prob refereing to ase, could be refereing to final this afternoon.
+1. ring gear/internal gear with teeth on the inside of the ring
+2. sun gear at the center of the assy.
+3. planet carriet w/ pinned planet gears that rotate around the ring gear and sun, in mesh with both.
+rules of planetary gearset;
+if i hold the ring gear and apply power to the sun gear, gona rotate the carrier assy. 4:1 in example
+theme: in order for this planetary gearset to function, we need to hold one of the 3. if we dont we have movement but neautreal
+if i hold the sun, and rotate the ring gear, the carrier is what turns the output, if that makes sense. 1.3:1 in example.
+if i hold the carrier, rotate the ring gear, and sun being output has reverse direction and has, .33:1 overdrive in the example.
+and if we lock two of the gears together we have direct drive..
+
+applying ase type question. vehicle wont go into 4 wheel drive, tech a says it could be a worn range fork, tech b says it could be a worn mode fork.
+
+driveslines class discussion
+somewhat need this, especially for ase, although when i say we need this im not saying its more important than other topics by any means.
+outer cv is almost always fixed and not plunge type
+inside cv joint is a plunge joint.
+
+all driveshafts are balanced.
+
+ujoints allow the wheels and the rear axle to move up and down, remain flexibel and still trasfer torque
+ujoints similar in design to flex type sockets for example.
+most ujoints are called crossyoke joints or cardan joints.
+
+if wer talking about a cardan joint wer talking about a typical ujoint classic.
+ujoints:> most important thing, the output speed of the ujoint changes because of the angle of the joint. the speed changes twice per rev. the greater the angle, the greater the change in speed (velocity)
+
+1st order vibration: vibration is the same speed as the source.
+2nd order vibration: is a multiple of the rotation speed.
+a ujoint axle vibration, bc of the varying speed bc of the design, is a inherent 2nd order vibration.
+to solve ujoint axle vibration, we need to phase the ujoints 180 degrees apart. this gives a opposite angle the ujoint pivot is at, so they would cancel each other out.
+not only do we need the ujoints to be phased apart, but we also need to have them at the same angle.
+universal joints used in a typical driveshaft should have a working angleof 1/2 to 3 degrees. the working angle is the angle between the driving and driven end of the joint.
+if the ujoints are not angles, the bearings in the ujoints will not turn and could damage them bc of the constant pressure.
+so we need them in phase, at least 3 degrees apart, but no more than 3 or they will not cancel out. they must match degrees within .5 degrees apart.
+remember these basic terms when dealing with ujoint axle vibration, and questions etc.
+
+cv joints are different, they do not have the vibration problem the cardan has. constant velocity. it is fixed does not plunge.
+but we can have cv joints that do plunge. idk.
+tripod fixed joint is a plunging joint.
+
+at the wheel on a drive axle its fixed, and at the transfer case or transmission etc its a plunging joint.

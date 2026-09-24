@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GM ASEP A3 Class Final</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { --ink:#171715; --muted:#6b6860; --faint:#98958c; --line:#dedbd3; --soft:#f5f3ee; --accent:#1f4e6f; }
+    @page { size: Letter; margin: 0.58in 0.62in 0.62in; }
+    html { background:#eceae4; }
+    body { width:8.5in; margin:0 auto; padding:0.55in 0.62in; background:white; color:var(--ink); font-family:Georgia,'Times New Roman',serif; font-size:10.25pt; line-height:1.48; }
+    .cover { min-height:9.45in; display:flex; flex-direction:column; justify-content:center; page-break-after:always; }
+    .kicker { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:9pt; font-weight:650; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); margin-bottom:.22in; }
+    .cover h1 { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:30pt; font-weight:520; line-height:1.08; letter-spacing:-.025em; margin:0 0 .12in; max-width:6.35in; }
+    .cover .subtitle { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:14pt; color:var(--muted); line-height:1.35; max-width:5.9in; margin-bottom:.55in; }
+    .cover .meta { border-top:.7pt solid var(--line); padding-top:.14in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:8.5pt; color:var(--faint); line-height:1.65; }
+    .part-title { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:24pt; font-weight:520; letter-spacing:-.02em; margin:0 0 .2in; }
+    .toc { background:var(--soft); border-radius:8px; padding:.16in .22in; margin:0 0 .28in; break-inside:avoid; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; }
+    .toc-title { margin:0 0 .08in; font-size:8pt; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--faint); }
+    .toc ol { columns:2; column-gap:.35in; margin:0; padding-left:.22in; font-size:8.7pt; line-height:1.58; }
+    .toc li { break-inside:avoid; margin:0; }
+    .toc li.level-1 { font-weight:650; }
+    .toc a { color:#41413e; text-decoration:none; }
+    h1,h2,h3,h4 { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; break-after:avoid; color:#181817; }
+    .document > h1, .document section > h1 { break-before:auto; font-size:20pt; font-weight:540; line-height:1.15; letter-spacing:-.02em; margin:.34in 0 .14in; padding-top:.15in; border-top:.7pt solid var(--line); }
+    h2 { font-size:15.2pt; font-weight:580; line-height:1.24; margin:.29in 0 .08in; padding-top:.14in; border-top:.55pt solid var(--line); }
+    h3 { font-size:12.1pt; font-weight:620; margin:.2in 0 .055in; }
+    h4 { font-size:10.6pt; font-weight:650; margin:.15in 0 .04in; }
+    p { margin:0 0 .095in; }
+    ul,ol { margin:.035in 0 .105in; padding-left:.25in; }
+    li { margin-bottom:.03in; }
+    strong { font-weight:700; }
+    blockquote { margin:.16in 0; padding:.11in .17in; border-left:3pt solid var(--accent); background:#f3f7fa; color:#303942; font-style:normal; break-inside:avoid; }
+    blockquote p:last-child { margin-bottom:0; }
+    table { width:100%; border-collapse:collapse; margin:.09in 0 .15in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:8.2pt; line-height:1.33; break-inside:avoid; }
+    thead { display:table-header-group; }
+    tr { break-inside:avoid; }
+    th { text-align:left; vertical-align:bottom; padding:.072in .085in; border-bottom:1pt solid #b9b6ad; font-weight:650; background:var(--soft); }
+    td { vertical-align:top; padding:.067in .085in; border-bottom:.5pt solid #e4e1da; }
+    code { font-family:Menlo,Consolas,monospace; font-size:8.7pt; background:#efeee9; padding:.02in .045in; border-radius:3px; }
+    hr { border:0; border-top:.6pt solid var(--line); margin:.25in 0; }
+    .practice { break-before:page; columns:2; column-gap:.3in; font-size:8.55pt; line-height:1.36; }
+    .practice h1,.practice h2,.practice h3 { column-span:all; }
+    .practice h2 { font-size:11.5pt; margin:.12in 0 .055in; padding-top:.07in; }
+    .practice p { break-inside:avoid; margin-bottom:.08in; }
+    .answers { break-before:page; columns:2; column-gap:.3in; font-size:8.55pt; line-height:1.36; }
+    .answers h2 { column-span:all; }
+    .answers p { break-inside:avoid; }
+    .source-note { margin-top:.22in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:7.8pt; color:var(--faint); border-top:.5pt solid var(--line); padding-top:.08in; }
+    @media print { html,body { background:white; } body { width:auto; margin:0; padding:0; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+  <section class="cover"><div class="kicker">GM ASEP · A3 · Class Final · Version 2</div><h1>GM ASEP A3 Class Final</h1><p class="subtitle">Notes-led review of clutch, transmission/transaxle, and drive-axle material, with instructor-style practice.</p><div class="meta"><strong>Version 2</strong><br>Revised September 18, 2026<br>Final: Monday, September 21, 2026<br>Primary sources: current class notes and inspected Unit 2 exam</div></section>
+  <main class="document"><h1 class="part-title" style="break-before:auto;border-top:0;padding-top:0;">Study Guide</h1><nav class="toc"><p class="toc-title">Contents</p><ol><li class="level-2"><a href="#doc-source-boundary">Source boundary</a></li>
+<li class="level-2"><a href="#doc-how-your-instructor-appears-to-test">How your instructor appears to test</a></li>
+<li class="level-2"><a href="#doc-the-master-mental-model">The master mental model</a></li>
+<li class="level-1"><a href="#doc-unit-1-clutch">Unit 1 — Clutch</a></li>
+<li class="level-1"><a href="#doc-unit-2-manual-transmission-and-transaxle">Unit 2 — Manual Transmission and Transaxle</a></li>
+<li class="level-1"><a href="#doc-unit-3-drive-axles-and-rear-final-drive">Unit 3 — Drive Axles and Rear Final Drive</a></li>
+<li class="level-1"><a href="#doc-high-value-distinctions">High-value distinctions</a></li>
+<li class="level-1"><a href="#doc-original-class-style-practice">Original class-style practice</a></li>
+<li class="level-1"><a href="#doc-study-sequence-through-monday">Study sequence through Monday</a></li></ol></nav><p><strong>Version 2 · Working draft — revised September 18, 2026</strong><br><strong>Final: Monday, September 21, 2026</strong></p>
+<p>This guide is built for the <strong>class final</strong>, so it follows the material your instructor emphasized in the notes and on the Unit 2 exam. It is not organized by the professional ASE percentages. It now includes the September 18 additions on differential types and bearing-noise localization. Refresh it again if Monday&#39;s notes add or change final-exam material.</p>
+<h2 id="doc-source-boundary">Source boundary</h2>
+<ul>
+<li><strong>Primary:</strong> <a href="../notes/clutchsection.txt"><code>clutchsection.txt</code></a>, <a href="../notes/gears.txt"><code>gears.txt</code></a>, <a href="../notes/drive-axles.txt"><code>drive-axles.txt</code></a>, the whiteboard photo, the noise chart, and the inspected Unit 2 exam.</li>
+<li><strong>Clarification:</strong> the corrected synchronizer explanation already embedded in <code>gears.txt</code> and narrowly used technical qualifications from the research foundation.</li>
+<li><strong>Not used to set class emphasis:</strong> professional ASE category weights. Your instructor&#39;s coverage controls this guide.</li>
+<li><strong>Still developing:</strong> any additional Unit 3 material taught after the September 18 locker and noise-diagnosis notes.</li>
+</ul>
+<h2 id="doc-how-your-instructor-appears-to-test">How your instructor appears to test</h2>
+<p>The Unit 2 exam used 30 multiple-choice questions and repeatedly asked you to do four things:</p>
+<ol>
+<li><strong>State the part&#39;s job.</strong> Example pattern: detent versus interlock, blocker ring versus sleeve.</li>
+<li><strong>Follow power flow.</strong> Example pattern: why one range is quiet, why direct drive still works when the countershaft path does not.</li>
+<li><strong>Connect a symptom to the affected mechanism.</strong> Example pattern: one-gear clash, all-gear hard shifting, or jump-out.</li>
+<li><strong>Identify what a measurement checks.</strong> Example pattern: radial clearance, axial clearance, blocker-ring clearance, or endplay.</li>
+</ol>
+<p>Expect Technician A/B, <strong>EXCEPT</strong>, <strong>least likely</strong>, and picture-based questions. Evaluate Technician A and Technician B independently. In an exception question, first say what the other three choices have in common, then find the choice that does not fit.</p>
+<h2 id="doc-the-master-mental-model">The master mental model</h2>
+<p>For almost every question, run this chain:</p>
+<p><strong>Operating condition → parts rotating → parts carrying torque → load direction → symptom → next confirming check</strong></p>
+<p>A part may rotate without carrying the selected drive torque. A symptom can point in a direction without proving one exact failed part. On this final, use the simplified classroom rule when the question clearly supplies the matching conditions, but pay attention to words such as <strong>could</strong>, <strong>most likely</strong>, and <strong>only</strong>.</p>
+<hr>
+<h1 id="doc-unit-1-clutch">Unit 1 — Clutch</h1>
+<h2 id="doc-torque-path-and-terminology">Torque path and terminology</h2>
+<p>With the pedal <strong>up</strong>, the clutch is <strong>engaged</strong>:</p>
+<p><strong>Crankshaft/flywheel → clamped clutch disc → splined input shaft → transmission</strong></p>
+<p>With the pedal <strong>down</strong>, the clutch is <strong>disengaged/released</strong>. The release mechanism loads the pressure-plate fingers and removes clamp force so engine torque is disconnected from the transmission.</p>
+<p>The language feels backward because pressing the pedal <em>releases</em> the clutch. Keep these pairs together:</p>
+<table>
+<thead>
+<tr>
+<th>Pedal</th>
+<th>Clutch state</th>
+<th>Torque transfer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Up</td>
+<td>Engaged</td>
+<td>Engine connected to transmission</td>
+</tr>
+<tr>
+<td>Down</td>
+<td>Disengaged/released</td>
+<td>Engine disconnected from transmission</td>
+</tr>
+</tbody></table>
+<h2 id="doc-components-and-jobs">Components and jobs</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Job</th>
+<th>Test clue</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Flywheel</td>
+<td>Stores inertia, damps engine pulses, provides friction surface, absorbs heat, carries starter ring gear</td>
+<td>Check surface condition and runout when chatter or odd wear is present</td>
+</tr>
+<tr>
+<td>Pressure plate</td>
+<td>Clamps the disc to the flywheel</td>
+<td>Weak or incomplete clamp can cause slip</td>
+</tr>
+<tr>
+<td>Clutch disc</td>
+<td>Transfers torque through its splined hub to the input shaft; hub springs help damp torsional pulses</td>
+<td>Contamination may produce slip, grab, or chatter</td>
+</tr>
+<tr>
+<td>Release bearing</td>
+<td>Transfers release force to pressure-plate fingers</td>
+<td>Noise beginning as pedal force loads the release system points here in the classroom model</td>
+</tr>
+<tr>
+<td>Pilot bearing/bushing</td>
+<td>Supports the engine end of a separate transmission input shaft</td>
+<td>A seized pilot can continue driving the input shaft with the pedal down and imitate clutch drag</td>
+</tr>
+<tr>
+<td>Linkage/hydraulics</td>
+<td>Moves the release bearing far enough to disengage the clutch</td>
+<td>Lost travel causes drag; incorrect adjustment may leave constant release load</td>
+</tr>
+<tr>
+<td>Clutch pedal switch</td>
+<td>Starter-interlock input</td>
+<td>Vehicle normally should not crank unless the pedal is depressed</td>
+</tr>
+</tbody></table>
+<p>Some concentric release-bearing designs rotate continuously, so pedal position changes <strong>load</strong> more reliably than it proves the bearing&#39;s first instant of rotation. For a simple classroom question, use the stated operating condition and the instructor&#39;s release-bearing/pilot-bearing distinction.</p>
+<h2 id="doc-slip-versus-drag">Slip versus drag</h2>
+<p>This is the most important Unit 1 split.</p>
+<h3 id="doc-slip-the-clutch-will-not-hold">Slip: the clutch will not hold</h3>
+<ul>
+<li>Engine rpm rises without a matching rise in vehicle speed.</li>
+<li>Most obvious when torque demand is high: high gear, heavy acceleration, or lugging load.</li>
+<li>Shop check from the notes: warm vehicle, block wheels, apply parking brake, select a high gear, and release the pedal smoothly. A healthy clutch should stall the engine promptly. Follow the actual shop procedure and safety rules.</li>
+<li>Causes in the notes: worn or contaminated disc, weak pressure plate, incorrect adjustment, or incorrect flywheel height.</li>
+</ul>
+<h3 id="doc-drag-the-clutch-will-not-let-go">Drag: the clutch will not let go</h3>
+<ul>
+<li>Difficult first/reverse engagement while stopped.</li>
+<li>Gear clash because the input shaft continues rotating.</li>
+<li>Severe case: vehicle tries to move while cranking in gear with the clutch pedal down.</li>
+<li>Causes: too little release travel, excessive free play, warped disc/pressure-plate fingers, hydraulic or linkage fault, or seized pilot bearing/bushing.</li>
+</ul>
+<h3 id="doc-free-play-relationship">Free-play relationship</h3>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>What happens</th>
+<th>Likely symptom</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Too much free play</strong></td>
+<td>Pedal travel is used before the release mechanism moves; it may hit the floor before full release</td>
+<td><strong>Drag / hard shifting / clash</strong></td>
+</tr>
+<tr>
+<td><strong>Too little free play</strong></td>
+<td>Release mechanism can remain partially loaded with pedal up; full clamp may not return</td>
+<td><strong>Slip</strong> and release-component wear</td>
+</tr>
+</tbody></table>
+<p>Remember: clutch wear does <strong>not</strong> automatically mean the hydraulic reservoir level drops. Fluid movement with wear depends on system design; a leak is different from normal wear compensation.</p>
+<h2 id="doc-noise-and-chatter-logic">Noise and chatter logic</h2>
+<ul>
+<li>Noise that begins as the pedal starts loading the release system: release-bearing/release-mechanism direction.</li>
+<li>Noise strongest with the clutch fully disengaged, when the engine and input shaft have relative motion: pilot-bearing direction.</li>
+<li>Noise with pedal up and the input shaft rotating can involve the transmission input/front bearing.</li>
+<li>Chatter or pulsation: inspect disc contamination, flywheel/pressure-plate surface condition, runout, alignment, and mounts.</li>
+<li>A seized pilot bearing can keep the input shaft turning even when the disc itself is released.</li>
+</ul>
+<h2 id="doc-unit-1-answers-you-should-be-able-to-explain-aloud">Unit 1 answers you should be able to explain aloud</h2>
+<ol>
+<li>Why does high gear expose clutch slip better than first gear?</li>
+<li>Why can a seized pilot bearing cause hard shifting?</li>
+<li>Why does excessive free play cause drag rather than slip?</li>
+<li>Why can insufficient free play cause slip with the driver&#39;s foot off the pedal?</li>
+<li>Which parts turn together with the pedal up, and which can turn at different speeds with it down?</li>
+</ol>
+<hr>
+<h1 id="doc-unit-2-manual-transmission-and-transaxle">Unit 2 — Manual Transmission and Transaxle</h1>
+<h2 id="doc-ratio-and-power-flow">Ratio and power flow</h2>
+<ul>
+<li><strong>Reduction:</strong> output slower, torque multiplied; numerical ratio greater than 1:1.</li>
+<li><strong>Direct:</strong> input and output same speed; 1:1.</li>
+<li><strong>Overdrive:</strong> output faster than input; numerical ratio less than 1:1.</li>
+<li>Ratio for a simple external pair: <strong>driven teeth ÷ drive teeth</strong>.</li>
+<li>An idler adds another direction reversal, changing the output direction compared with a simple two-gear pair, but it does not change the overall input-to-output ratio. A 10:7:20 train still gives <code>20 ÷ 10 = 2:1</code>.</li>
+<li>Helical gears are quiet but create axial/end thrust.</li>
+</ul>
+<p>In a constant-mesh transmission, the gear teeth remain meshed. The shift does not slide one full-size gear into another. The synchronizer locks the selected freewheeling speed gear to its shaft.</p>
+<h2 id="doc-synchronizer-sequence">Synchronizer sequence</h2>
+<p>Know the parts separately:</p>
+<table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Hub</td>
+<td>Splined to the shaft; rotates with it</td>
+</tr>
+<tr>
+<td>Sleeve</td>
+<td>Slides on the hub and provides positive engagement</td>
+</tr>
+<tr>
+<td>Keys/struts and springs</td>
+<td>Move/preload the blocker ring before the sleeve reaches the gear teeth</td>
+</tr>
+<tr>
+<td>Blocker ring</td>
+<td>Uses friction at the gear cone to change gear speed and blocks sleeve engagement while speeds differ</td>
+</tr>
+<tr>
+<td>Gear cone</td>
+<td>Friction surface used for speed matching</td>
+</tr>
+<tr>
+<td>Gear dog/clutch teeth</td>
+<td>Teeth the sleeve finally engages to lock the gear to the shaft</td>
+</tr>
+</tbody></table>
+<p>Correct chain:</p>
+<p><strong>Fork moves sleeve → keys/struts push blocker ring → ring contacts gear cone → friction speeds or slows the freewheeling gear → ring blocks while speeds differ → speeds match → sleeve passes the ring and engages the gear&#39;s dog teeth</strong></p>
+<p>The sleeve does <strong>not</strong> engage the cone. The cone is a friction surface. The synchronizer changes the freewheeling gear&#39;s speed to match the hub/sleeve/shaft.</p>
+<p>During a normal upshift, the next gear normally must be slowed to the new lower shaft-speed relationship. Do not answer a power-flow question by memorizing “upshift means slow” alone; identify which shaft and gear the question names.</p>
+<h2 id="doc-shift-controls">Shift controls</h2>
+<ul>
+<li><strong>Detent:</strong> helps hold a rail/gear in its selected position.</li>
+<li><strong>Interlock:</strong> prevents two gears from being selected at the same time.</li>
+<li><strong>Reverse lockout:</strong> prevents accidental reverse selection.</li>
+<li><strong>Shift fork:</strong> positions the sleeve. Excessive fork-to-sleeve groove clearance can prevent full dog-tooth engagement.</li>
+</ul>
+<p>Resting a hand on the shifter can maintain force on the fork/sleeve interface and increase wear.</p>
+<h2 id="doc-symptom-map">Symptom map</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>First direction</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>One gear clashes</td>
+<td>That gear&#39;s synchronizer/blocker ring</td>
+<td>Localized speed-matching fault</td>
+</tr>
+<tr>
+<td>Most or all gears clash</td>
+<td>Clutch drag/release problem first</td>
+<td>Input shaft remains driven</td>
+</tr>
+<tr>
+<td>Hard shift with engine running but easier with engine off</td>
+<td>Clutch release/rotation-related cause moves high on list</td>
+<td>Removing engine-driven shaft speed removes one condition; it does not prove every internal part is good</td>
+</tr>
+<tr>
+<td>Pops out of gear</td>
+<td>Incomplete engagement or axial movement</td>
+<td>Fork/groove wear, linkage, worn engagement teeth, detent, bearing wear/endplay</td>
+</tr>
+<tr>
+<td>Noise only in one ratio</td>
+<td>Components uniquely loaded or turning at that ratio</td>
+<td>Use the power-flow diagram</td>
+</tr>
+<tr>
+<td>No drive in reduction gears but direct drive works</td>
+<td>Countershaft/input drive path fault can be bypassed in direct</td>
+<td>Follow torque path, not the gear name alone</td>
+</tr>
+<tr>
+<td>Hard shift after fluid service</td>
+<td>Wrong fluid or level</td>
+<td>Synchronizer friction depends on the specified lubricant</td>
+</tr>
+</tbody></table>
+<p>The Unit 2 exam treated both excessive selected-gear axial clearance and worn synchronizer engagement parts as possible causes of jump-out. Keep <strong>speed matching</strong> separate from <strong>positive engagement/retention</strong>: a worn blocker surface causes clash; worn hub/sleeve/dog engagement can contribute to jump-out.</p>
+<h2 id="doc-inspection-and-measurements">Inspection and measurements</h2>
+<ul>
+<li><strong>Radial clearance/runout:</strong> movement or deviation across the shaft&#39;s radius; dial-indicator stylus is positioned to detect side-to-side movement.</li>
+<li><strong>Axial clearance/endplay:</strong> movement along the shaft axis; dial indicator is positioned to detect in-and-out movement.</li>
+<li><strong>Blocker-ring clearance:</strong> seat the ring on the gear cone and measure the specified remaining gap. Less gap can indicate wear, but the exact limit is application-specific.</li>
+<li><strong>Oil grooves in a blocker ring:</strong> cut through the lubricant film so the friction surfaces can act; the grooves are not simply a universal wear gauge.</li>
+<li>Select-fit thrust washers or snap rings may be used to set axial clearance on some designs.</li>
+</ul>
+<h2 id="doc-lubrication-and-towing">Lubrication and towing</h2>
+<p>Most class examples use splash lubrication: the lower gear/countershaft distributes oil. Some manual transmissions should not be flat towed because the output may turn without the normal parts that throw lubricant. Use the vehicle&#39;s actual towing instructions.</p>
+<p>Wrong viscosity or wrong fluid type can change shift effort and synchronizer behavior. “Manual transmission” does not automatically mean one universal gear oil.</p>
+<h2 id="doc-transaxle">Transaxle</h2>
+<ul>
+<li>A transaxle combines the transmission and final drive/differential in one assembly.</li>
+<li>The final-drive pinion is on the transaxle&#39;s output path.</li>
+<li>Synchronizers can appear on different shafts depending on design; use the diagram rather than a universal shaft-name shortcut.</li>
+<li>Half-shafts connect through the differential side gears.</li>
+<li>Differential noise when cornering points toward the parts that permit left/right speed difference.</li>
+<li>Low lubricant can overheat and damage the whole transaxle.</li>
+<li>In the typical classroom transverse-transaxle layout, the final-drive ring gear and pinion are <strong>helical gears</strong> on parallel shafts, not the offset hypoid arrangement used in a RWD rear axle. Identify the actual gear type shown or specified because layouts can differ.</li>
+</ul>
+<hr>
+<h1 id="doc-unit-3-drive-axles-and-rear-final-drive">Unit 3 — Drive Axles and Rear Final Drive</h1>
+<h2 id="doc-why-the-rear-axle-changes-direction">Why the rear axle changes direction</h2>
+<p>In a typical longitudinal RWD layout, the engine, transmission output, and propeller shaft rotate along the vehicle. The ring-and-pinion set turns the torque path approximately 90 degrees so it can reach the left and right axle shafts.</p>
+<p>Torque path:</p>
+<p><strong>Driveshaft → pinion → ring gear → differential case → spider/pinion gears → side gears → axle shafts</strong></p>
+<p>The differential case turns with the ring gear. In a straight line, the side gears rotate together. In a turn, spider-gear action permits one side gear/axle to turn faster than the other.</p>
+<h2 id="doc-semi-floating-versus-full-floating">Semi-floating versus full-floating</h2>
+<table>
+<thead>
+<tr>
+<th>Design</th>
+<th>Axle shaft carries</th>
+<th>Vehicle load path</th>
+<th>Failure implication</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Semi-floating</td>
+<td>Torque <strong>and</strong> vehicle weight/load</td>
+<td>Wheel load passes through axle shaft and outer bearing into housing</td>
+<td>Depending on retention design, a broken shaft can allow wheel/shaft separation</td>
+</tr>
+<tr>
+<td>Full-floating</td>
+<td>Primarily torque</td>
+<td>Wheel hub bearings carry vehicle load into the housing/spindle</td>
+<td>Axle shaft can be removed without supporting vehicle weight</td>
+</tr>
+</tbody></table>
+<p>Memory: <strong>semi = shaft carries two jobs; full = shaft carries torque while the hub carries load.</strong></p>
+<h2 id="doc-hypoid-gear-terminology">Hypoid gear terminology</h2>
+<ul>
+<li>A hypoid pinion meshes below the ring-gear centerline in the class example.</li>
+<li>The offset helps lower the driveshaft and permits a strong, quiet gear arrangement, but creates sliding action that requires the specified lubricant.</li>
+<li>Ring and pinion are lapped as a matched set. If one gear is damaged, the matched set is normally replaced together.</li>
+<li><strong>Heel:</strong> outer end of the ring-gear tooth.</li>
+<li><strong>Toe:</strong> inner end.</li>
+<li><strong>Face:</strong> above the pitch line.</li>
+<li><strong>Flank:</strong> below the pitch line.</li>
+<li>In the class/textbook description, the ring gear&#39;s <strong>drive side is convex</strong> and the <strong>coast side is concave</strong>.</li>
+</ul>
+<p>Load states:</p>
+<table>
+<thead>
+<tr>
+<th>State</th>
+<th>What is happening</th>
+<th>Lash/load idea</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Drive</td>
+<td>Engine drives vehicle</td>
+<td>Drive side loaded; clearance at coast side</td>
+</tr>
+<tr>
+<td>Coast</td>
+<td>Vehicle drives engine during closed-throttle deceleration</td>
+<td>Coast side loaded; clearance shifts to drive side</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>Enough throttle to remove most drive/coast load</td>
+<td>Lash is effectively split between both sides</td>
+</tr>
+</tbody></table>
+<h2 id="doc-hunting-non-hunting-and-partially-non-hunting">Hunting, non-hunting, and partially non-hunting</h2>
+<ul>
+<li><strong>Hunting:</strong> tooth-count fraction cannot be reduced. Each pinion tooth eventually contacts every ring-gear tooth. No timing marks required for tooth pairing.</li>
+<li><strong>Non-hunting:</strong> ratio is a whole number, such as <code>40/10 = 4</code>. A pinion tooth repeatedly meets the same subset of ring-gear teeth. Timing/alignment marks matter.</li>
+<li><strong>Partially non-hunting:</strong> reducible fraction that does not reduce to a whole number. Each pinion tooth meets only part of the ring gear before the pattern repeats. Timing marks matter.</li>
+</ul>
+<p>Examples:</p>
+<ul>
+<li><code>41/11 = 3.73</code> and the fraction cannot reduce → hunting.</li>
+<li><code>39/13 = 3</code> → non-hunting.</li>
+<li><code>42/12 = 3.5</code>, reducible to <code>7/2</code> → partially non-hunting.</li>
+</ul>
+<h2 id="doc-reverse-cut-concept">Reverse-cut concept</h2>
+<p>A front axle built from a standard rear-drive gear arrangement can force the ring gear to work on its weaker coast side. A purpose-built reverse-cut gear set reverses the spiral direction so the intended drive side carries forward load in the front-axle installation. Housing oiling and pinion position are design-specific; do not treat a standard gear set as interchangeable merely because it physically fits.</p>
+<h2 id="doc-open-limited-slip-and-locking-differentials">Open, limited-slip, and locking differentials</h2>
+<p>Use the broad classification first: <strong>open permits differentiation, limited slip resists it, and a locker can couple both axle outputs.</strong> Trace the exact parts only when the question names a design. The GM/Eaton sequence deserves extra attention because the instructor taught it directly.</p>
+<p>Start with the differential&#39;s job. The case turns with the ring gear. With equal wheel speeds, the spider/pinion gears travel with the case without rotating on their own shaft. When the wheel speeds differ, the spiders rotate on their shaft so the two side gears can turn at different speeds.</p>
+<table>
+<thead>
+<tr>
+<th>Design</th>
+<th>Class-ready mechanism</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Open + brake traction control</td>
+<td>ABS-based brake action can slow a spinning wheel and create reaction torque; the carrier remains mechanically open</td>
+</tr>
+<tr>
+<td>Clutch-type limited slip / Posi example</td>
+<td>Side-gear separating thrust loads clutch packs, resisting left/right speed difference while still allowing turns</td>
+</tr>
+<tr>
+<td>Helical/Torsen limited slip</td>
+<td>Helical-gear thrust and internal friction bias torque; it is not a fully locked axle</td>
+</tr>
+<tr>
+<td>GM/Eaton mechanical locker</td>
+<td>Wheel-speed difference spins governor → flyweight catches latch → cam ramps → clutches self-apply → side gears lock to case; high-speed lockout prevents engagement above roughly 20 mph</td>
+</tr>
+<tr>
+<td>Eaton ELocker</td>
+<td>An electromagnetic actuator locks a side gear to the case when commanded</td>
+</tr>
+<tr>
+<td>Air locker</td>
+<td>Pneumatic actuator commands lock; do not assume its internal locking member is the same as an ELocker or clutch LSD</td>
+</tr>
+<tr>
+<td>Detroit Locker</td>
+<td>Automatic-locking design with a different operating strategy from the GM/Eaton governor-and-cam unit</td>
+</tr>
+</tbody></table>
+<p>Do not use <strong>limited slip</strong>, <strong>Positraction</strong>, and <strong>locker</strong> as interchangeable mechanism names. First identify the design, then apply its fluid, actuation, and diagnostic rule.</p>
+<h2 id="doc-noise-diagnosis">Noise diagnosis</h2>
+<p>Road-test under four load conditions:</p>
+<ol>
+<li><strong>Drive:</strong> light/moderate acceleration.</li>
+<li><strong>Cruise:</strong> enough throttle to hold speed.</li>
+<li><strong>Float:</strong> just enough throttle to remove most load while speed falls slowly.</li>
+<li><strong>Coast:</strong> closed-throttle deceleration.</li>
+</ol>
+<p>Use coast-in-neutral as an extra isolation step when safe and permitted by procedure.</p>
+<table>
+<thead>
+<tr>
+<th>Noise/condition</th>
+<th>Direction to investigate</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Howl/whine that changes between drive and coast</td>
+<td>Ring-and-pinion wear or setup; identify the loaded tooth side</td>
+</tr>
+<tr>
+<td>Rough growl/rumble, sometimes “wow-wow”</td>
+<td>Bearing direction</td>
+</tr>
+<tr>
+<td>Faster-pitched growl rising quickly with speed and changing little with throttle</td>
+<td>Pinion-bearing direction; the pinion turns faster than carrier or axle bearings</td>
+</tr>
+<tr>
+<td>Slower growl that changes with carrier load</td>
+<td>Carrier/side-bearing direction; lack of noise on a lightly loaded lift is only a clue</td>
+</tr>
+<tr>
+<td>Road-speed growl changing during a controlled swerve</td>
+<td>Axle/wheel-bearing load response; confirm by location, feel, looseness, and roughness</td>
+</tr>
+<tr>
+<td>Low rumble above road speed threshold</td>
+<td>Carrier or other rotating bearing direction; confirm with loading/location</td>
+</tr>
+<tr>
+<td>Clunk on torque reversal</td>
+<td>Excess lash/clearance, U-joints, splines, or differential parts</td>
+</tr>
+<tr>
+<td>Chatter in tight turns</td>
+<td>Clutch-type limited-slip fluid/friction condition or worn clutch pack</td>
+</tr>
+<tr>
+<td>Noise changes with road surface</td>
+<td>Tire direction</td>
+</tr>
+<tr>
+<td>Noise changes with cornering load</td>
+<td>Wheel/axle/carrier bearing or differential direction; use location and other conditions to narrow it</td>
+</tr>
+</tbody></table>
+<p>The chart gives <strong>directions</strong>, not automatic verdicts. Ask what changed: speed, torque direction, cornering load, or the engaged torque path.</p>
+<p>Pitch rate helps because pinion bearings rotate faster than carrier and axle bearings. Tire noise can still imitate bearing noise; use road-surface response, tire rotation/inspection, and lift behavior. A gear whine is usually load-sensitive and may fade in float. A bearing growl is usually more speed-linked, although load can still change it.</p>
+<h2 id="doc-backlash-depth-and-preload">Backlash, depth, and preload</h2>
+<ul>
+<li><strong>Backlash:</strong> clearance between ring and pinion teeth.</li>
+<li><strong>Pinion depth:</strong> pinion position relative to the ring gear.</li>
+<li><strong>Pinion-bearing preload:</strong> controlled initial bearing load, checked by <strong>rotating torque</strong>, not by confusing it with the high torque used to tighten/crush components.</li>
+<li><strong>Carrier/side-bearing preload:</strong> initial load supporting the differential carrier.</li>
+<li><strong>Contact pattern:</strong> evidence of where the teeth meet under marking compound; interpret it with the axle&#39;s procedure.</li>
+</ul>
+<h3 id="doc-collapsible-crush-sleeve">Collapsible/crush sleeve</h3>
+<p>The new sleeve begins too long. Tightening the pinion nut collapses it until the bearings seat and the specified rotating preload is reached. Once over-crushed, it is not repaired by simply backing off the nut; use a new sleeve and repeat the setup. When a service procedure permits seal replacement without changing the sleeve, measure the original rotating torque and follow that application-specific procedure precisely.</p>
+<h2 id="doc-lower-yield-but-testable-unit-3-points">Lower-yield but testable Unit 3 points</h2>
+<ul>
+<li>Semi-floating axle retention may use an inner C-lock or an outer bearing retainer.</li>
+<li>Integral/Salisbury-style carrier: removable rear cover; housing and tubes form the main assembly.</li>
+<li>Removable/banjo-style carrier: center carrier assembly removes from the housing.</li>
+<li>Axle fluid level is not universally exactly even with the fill hole; use the specification.</li>
+<li>Metal debris can disturb magnetic wheel-speed sensors in or near an axle housing.</li>
+<li>Inspect a repeated axle-seal leak for shaft movement, vent restriction, or surface damage instead of replacing the seal blindly.</li>
+</ul>
+<hr>
+<h1 id="doc-high-value-distinctions">High-value distinctions</h1>
+<table>
+<thead>
+<tr>
+<th>Do not mix up</th>
+<th>Correct distinction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clutch slip / drag</td>
+<td>Slip will not hold; drag will not release</td>
+</tr>
+<tr>
+<td>Engaged / released</td>
+<td>Engaged is pedal up; released/disengaged is pedal down</td>
+</tr>
+<tr>
+<td>Pilot / release bearing</td>
+<td>Pilot supports input shaft; release bearing operates pressure plate</td>
+</tr>
+<tr>
+<td>Blocker ring / sleeve</td>
+<td>Ring matches speed and blocks; sleeve locks gear to hub</td>
+</tr>
+<tr>
+<td>Detent / interlock</td>
+<td>Detent holds a selection; interlock prevents two selections</td>
+</tr>
+<tr>
+<td>Gear teeth / dog teeth</td>
+<td>Gear teeth stay meshed; dog teeth provide selected engagement</td>
+</tr>
+<tr>
+<td>Radial / axial</td>
+<td>Radial is side-to-side; axial is along the shaft</td>
+</tr>
+<tr>
+<td>Backlash / preload</td>
+<td>Gear clearance / bearing load</td>
+</tr>
+<tr>
+<td>Pinion depth / backlash</td>
+<td>Pinion position / tooth clearance</td>
+</tr>
+<tr>
+<td>Heel / toe</td>
+<td>Outer end / inner end of ring-gear tooth</td>
+</tr>
+<tr>
+<td>Gear whine / bearing growl</td>
+<td>Tooth contact / rough bearing sound</td>
+</tr>
+<tr>
+<td>Semi-float / full-float</td>
+<td>Shaft carries load + torque / shaft mainly carries torque</td>
+</tr>
+<tr>
+<td>Limited slip / locker</td>
+<td>Resists differentiation / mechanically couples outputs for full lock</td>
+</tr>
+<tr>
+<td>Clutch / helical limited slip</td>
+<td>Clutch-pack friction / gear-thrust friction</td>
+</tr>
+<tr>
+<td>GM/Eaton mechanical locker / ELocker</td>
+<td>Automatic governor-cam sequence / commanded electromagnetic actuation</td>
+</tr>
+<tr>
+<td>Pinion / carrier / axle-bearing speed</td>
+<td>Fastest / case speed / wheel speed</td>
+</tr>
+</tbody></table>
+<hr>
+<section class="practice"><h1 id="doc-original-class-style-practice">Original class-style practice</h1>
+<p>Answer these without the key. For Technician A/B questions, decide whether each statement is true before looking at the four choices.</p>
+<ol>
+<li><p>A clutch has excessive pedal free play. Which complaint is most likely?<br>A. Slip under load<br>B. Drag and difficult first/reverse engagement<br>C. Wheel-bearing growl<br>D. Differential chatter</p>
+</li>
+<li><p>Technician A says a seized pilot bearing can keep the input shaft turning with the clutch pedal down. Technician B says this can cause gear clash while the vehicle is stopped. Who is correct?<br>A. A only<br>B. B only<br>C. Both A and B<br>D. Neither A nor B</p>
+</li>
+<li><p>A vehicle accelerates in a high gear and engine rpm rises sharply without a matching speed increase. This is:<br>A. Clutch drag<br>B. Clutch slip<br>C. Interlock failure<br>D. Excessive axle preload</p>
+</li>
+<li><p>Which clutch component supports the engine end of a separate transmission input shaft?<br>A. Release bearing<br>B. Pilot bearing/bushing<br>C. Detent ball<br>D. Blocker ring</p>
+</li>
+<li><p>A 12-tooth drive gear turns an idler and then a 36-tooth driven gear. The overall ratio is:<br>A. 1:3 and reversed at the output<br>B. 3:1 with the output rotating in the same direction as the input<br>C. Determined by the idler tooth count<br>D. 1:1</p>
+</li>
+<li><p>Technician A says the synchronizer sleeve engages the speed gear&#39;s cone. Technician B says the blocker ring uses the cone to match speed before the sleeve engages dog teeth. Who is correct?<br>A. A only<br>B. B only<br>C. Both A and B<br>D. Neither A nor B</p>
+</li>
+<li><p>Which part prevents two gears from being selected simultaneously?<br>A. Detent<br>B. Interlock<br>C. Blocker ring<br>D. Pilot bearing</p>
+</li>
+<li><p>A transmission grinds only during the 3–4 shift. The most direct first suspect is:<br>A. Clutch release system<br>B. 3–4 synchronizer/blocker mechanism<br>C. Differential side bearings<br>D. Pinion crush sleeve</p>
+</li>
+<li><p>All of these can contribute to a transmission jumping out of one gear <strong>EXCEPT</strong>:<br>A. Worn fork-to-sleeve interface<br>B. Excess shaft endplay<br>C. Worn engagement teeth<br>D. A correctly operating interlock</p>
+</li>
+<li><p>Technician A says blocker-ring oil grooves help cut through the oil film. Technician B says less blocker-ring-to-gear clearance can indicate wear when the service procedure uses that measurement. Who is correct?<br>A. A only<br>B. B only<br>C. Both A and B<br>D. Neither A nor B</p>
+</li>
+<li><p>A vehicle has no drive in the reduction ranges but still drives in a direct 1:1 range. Which idea best explains the symptom?<br>A. Direct drive can bypass the failed countershaft reduction path<br>B. The clutch is completely released<br>C. Both axle shafts are broken<br>D. The transfer case must be in neutral</p>
+</li>
+<li><p>A dial indicator is positioned to measure in-and-out movement along a shaft. It is measuring:<br>A. Radial runout<br>B. Axial endplay<br>C. Gear ratio<br>D. Pinion tooth depth</p>
+</li>
+<li><p>In a typical manual transaxle, the half-shafts are splined to the differential:<br>A. Spider gears<br>B. Side gears<br>C. Case only<br>D. Ring-gear teeth</p>
+</li>
+<li><p>Which statement describes a full-floating axle?<br>A. The axle shaft carries vehicle weight and torque<br>B. The axle shaft carries primarily torque while hub bearings carry vehicle load<br>C. The axle has no differential<br>D. The pinion is centered with the ring gear</p>
+</li>
+<li><p>Technician A says the heel is the outer end of a ring-gear tooth. Technician B says the class/textbook describes the drive side as convex and the coast side as concave. Who is correct?<br>A. A only<br>B. B only<br>C. Both A and B<br>D. Neither A nor B</p>
+</li>
+<li><p>A ring gear has 41 teeth and the pinion has 11. The fraction cannot be reduced. This is a:<br>A. Non-hunting set requiring tooth-pair timing<br>B. Hunting set in which each pinion tooth eventually meets every ring tooth<br>C. Partially non-hunting set<br>D. Direct-drive set</p>
+</li>
+<li><p>A rear axle produces a whine on acceleration but becomes much quieter during float. Which condition changed most directly?<br>A. Road surface<br>B. Gear-tooth load<br>C. Tire circumference<br>D. Clutch free play</p>
+</li>
+<li><p>A new crush sleeve is tightened until rotating preload is far above specification. What is the correct direction?<br>A. Back off the nut until the reading drops<br>B. Reuse the sleeve with extra lubricant<br>C. Replace the sleeve and repeat the setup<br>D. Increase backlash</p>
+</li>
+<li><p>A clutch-type limited-slip differential chatters during tight turns shortly after service. What should be checked before overhaul?<br>A. Correct axle lubricant/friction modifier for the application<br>B. Clutch pedal free play<br>C. Synchronizer sleeve clearance<br>D. Transmission pilot bearing</p>
+</li>
+<li><p>Technician A says pinion-bearing preload is checked using rotating torque. Technician B says the torque used to collapse the sleeve and the final rotating-torque measurement are the same quantity. Who is correct?<br>A. A only<br>B. B only<br>C. Both A and B<br>D. Neither A nor B</p>
+</li>
+<li><p>In a conventional open differential moving straight ahead with equal wheel speeds, the spider/pinion gears normally:<br>A. Spin on their shaft at twice axle speed<br>B. Travel with the case without spinning on their shaft<br>C. Lock one side gear to the case<br>D. Stop the ring gear</p>
+</li>
+<li><p>Which sequence describes the GM/Eaton mechanical locker discussed in class?<br>A. Wheel-speed difference → governor/flyweight latch → cam ramp → clutch apply/full lock<br>B. Driver pedal → hydraulic slave → blocker ring<br>C. Tire wear → wheel bearing → pinion depth<br>D. Electromagnet → transfer-case fork → planetary reduction</p>
+</li>
+<li><p>Technician A says a helical/Torsen differential biases torque using gear thrust and internal friction. Technician B says it is the same mechanism as a clutch-type Posi unit. Who is correct?<br>A. A only<br>B. B only<br>C. Both A and B<br>D. Neither A nor B</p>
+</li>
+<li><p>A rough growl rises in pitch quickly with road speed, changes little between drive and coast, and is faster than a wheel-speed rumble. Which class-note direction is strongest?<br>A. Pinion bearings<br>B. Clutch release bearing<br>C. Synchronizer blocker ring<br>D. Tire tread only</p>
+</li>
+</ol>
+</section><section class="answers"><h2 id="doc-answer-key-and-reasoning">Answer key and reasoning</h2>
+<ol>
+<li><strong>B</strong> — excessive free play reduces release travel and causes drag.  </li>
+<li><strong>C</strong> — the seized pilot can continue driving the input shaft, producing clash.  </li>
+<li><strong>B</strong> — the clutch is failing to hold torque.  </li>
+<li><strong>B</strong> — the pilot bearing/bushing supports the input-shaft end.  </li>
+<li><strong>B</strong> — <code>36 ÷ 12 = 3:1</code>; two external meshes return the output to the input&#39;s direction.  </li>
+<li><strong>B</strong> — the cone is the friction surface; the sleeve ultimately engages dog teeth.  </li>
+<li><strong>B</strong> — an interlock prevents simultaneous selection.  </li>
+<li><strong>B</strong> — a one-shift complaint localizes the synchronizer direction.  </li>
+<li><strong>D</strong> — a correctly operating interlock prevents conflicting selections and does not cause single-gear jump-out.  </li>
+<li><strong>C</strong> — both describe valid functions/inspection logic, with the actual clearance limit coming from service information.  </li>
+<li><strong>A</strong> — direct drive can couple input to output while bypassing the failed reduction path.  </li>
+<li><strong>B</strong> — along-axis movement is axial endplay.  </li>
+<li><strong>B</strong> — side gears connect the differential to the half-shafts.  </li>
+<li><strong>B</strong> — hub bearings support vehicle load; the shaft primarily transfers torque.  </li>
+<li><strong>C</strong> — both match the current class notes/textbook wording.  </li>
+<li><strong>B</strong> — irreducible tooth counts produce a hunting set.  </li>
+<li><strong>B</strong> — float removes most tooth load, so a load-sensitive gear noise changes.  </li>
+<li><strong>C</strong> — an over-collapsed sleeve is replaced.  </li>
+<li><strong>A</strong> — correct limited-slip lubricant/additive is the first check after service.  </li>
+<li><strong>A</strong> — tightening effort collapses the sleeve; bearing rotating torque is the controlled result being measured.</li>
+<li><strong>B</strong> — equal side-gear speeds let the spiders travel with the case without rotating on their shaft.  </li>
+<li><strong>A</strong> — the governor/latch triggers cam-and-clutch full lock in the class-taught unit.  </li>
+<li><strong>A</strong> — helical and clutch-type limited slips use different friction mechanisms.  </li>
+<li><strong>A</strong> — pinion bearings rotate faster, so their growl can climb in pitch more quickly and be less throttle-sensitive than gear whine.</li>
+</ol>
+</section><hr><h1 id="doc-study-sequence-through-monday">Study sequence through Monday</h1>
+<h2 id="doc-through-the-last-note-update">Through the last note update</h2>
+<ul>
+<li>Read this once and mark every statement you cannot explain without looking.</li>
+<li>Add new class notes normally; do not rewrite them into this guide during lecture.</li>
+<li>If Monday adds material before the final, refresh Unit 3 and the practice questions once more.</li>
+</ul>
+<h2 id="doc-saturday">Saturday</h2>
+<ul>
+<li>Draw three paths from memory: clutch torque path, one selected transmission ratio, and rear-axle torque path.</li>
+<li>Work the 24 questions closed-book.</li>
+<li>For every miss, write one sentence stating <strong>what condition in the question mattered</strong>.</li>
+</ul>
+<h2 id="doc-sunday">Sunday</h2>
+<ul>
+<li>Explain the high-value distinctions aloud without the table.</li>
+<li>Redo only missed questions, then make yourself explain why each rejected option is wrong.</li>
+<li>Spend the largest block on the newest Unit 3 material unless the practice results show another weakness.</li>
+</ul>
+<h2 id="doc-monday-quick-review">Monday quick review</h2>
+<ul>
+<li>Slip versus drag.</li>
+<li>Synchronizer sequence.</li>
+<li>Detent versus interlock.</li>
+<li>Radial versus axial.</li>
+<li>Semi-float versus full-float.</li>
+<li>Heel/toe, drive/coast, convex/concave.</li>
+<li>Hunting-set classification.</li>
+<li>Backlash versus depth versus preload.</li>
+</ul>
+<p>Stop learning new details immediately before the exam. Use the final minutes to recall mechanisms and diagnostic conditions.</p>
+<p class="source-note">Styled with the visual system from Logan's claude-paper whitepaper formatter. Content remains sourced and scoped by the Markdown guide.</p></main>
+</body>
+</html>

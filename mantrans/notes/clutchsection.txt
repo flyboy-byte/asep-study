@@ -1,0 +1,148 @@
+chapter 3...
+
+clutches section of the semester.
+Purpose and Function
+The clutch assembly is located between the engine and the transmission/transaxle. The purpose and function of a clutch include the following:
+To disconnect engine power from the transmission/transaxle to permit the engine to remain running when the vehicle is stopped with the transmission in gear and to permit the transmission/transaxle to be shifted.
+To connect and transmit engine torque to the transmission/transaxle
+To dampen and absorb engine power impulses and drive train vibration
+To provide a smooth engagement and disengagement of torque between the engine and the transmission/transaxle.
+note, pure copy paste lol
+
+release/throwout bearing
+release fork, isnt as common on modern?
+important to understand the clutch disc is splined to the trans input shaft.
+the way to understand how the clutch works. if the disc is splined to the input shaft. therefore if either is turning, the other is turning.
+the wheel and brake rotor are one as a function
+likewise
+pressure plate and flywheel
+
+flywheel is inertia. pressure plate is giant clamp.
+flywheel is also a heatsink.
+
+key to remember, when pedal is back, no pressure, released: the clutch is tight to the flywheel. 
+seems backwards. this applies to adjustments and clutch symptoms.
+
+noting that release throwout bearing noise and pilot bearing noise make noise at different points in the engaged and disengaged system, ie pilot bearing make noise only when input shaft and flywheel are moving different speeds.
+
+generally release bearing makes noise only when its under pressure. seems wierd, i think that a throwout bearing with worn balls etc could make noise without being under pressure. but makes sense that ase or test questions need to be black and white.
+
+clutch released(disengaged) is pedal depressed
+clutch engaged is pedal up.
+
+the point that a clutch engages and releases is the same point.
+interesting note. modern clutches release point like a compound bow, if i understood the lecture right.
+warped spring, not all the same height, also worn spring could have a groove. part of diag why clutch is dragging...
+
+random idk if important. marcel springs being tthe springs inside the clutch material, in a wave shape.
+
+release bearing should live real close to the fingers. noting the release bearing dont have a return spring. if we have a wonky pressure plate ie warped fingers, release bearing will be homed to the tallest position of the release plate, and if warped youll lose pedal travel until u contact all the release fingers, throwing off the window where the clutch works.
+adding too much free play and we may hit the floor with the pedal before the throwout can move all the way, and fully release the clutch
+
+too much freeplay is gona cause, dragging grabbing clutch
+confusing whether it would be slip, but teacher says its grab which i kina leaned towards. noting this as a confusing item for tests.
+dragging scenario, grinding into gear, but it does go into gear, and when u release the clutch vehicle moves right away. this is a light drag
+dragging can be so severe that it go into gear at all, and starting the car with it in gear and clutch in tries to move the car. this is the extreme case.
+
+not enough freeplay. if my clutch dont have enuf free play type of question
+slipping. not enough free play, stays partially unengaged.ie, in the travel, it engages right away, so its still partially pushing on the fingers when the clutch is all the way disengaged and the driver isnt touching the pedal at all. 
+we still have the release being partially on the fingers when clutch isnt pressed.
+
+drag is more common term than grabbing.
+need to visualize as clutch wears, fluid goes up, and pressure plate fingers go out not in.
+
+standard question in exams appling to ase.
+dragging and slipping
+too much vs too little free play.
+clutch pedal adjustments etc
+generally we need a little freeplay, not much, a inch or less or something.
+
+quiz question we had about, testing clutch slip, "tech a says slippage will be most noticeable when accelerating in first gear." if in the shop, we put into high gear, and see if it stalls right away. if driving, we put it in higher gear and lug the engine, and see if it slips and revs away.
+
+Release Bearing Location
+The transmission front bearing retainer has a long, hollow tube extending toward the engine.
+
+The release bearing sleeve slides on the outer surface of this tube, which is also commonly called (slang):
+quill
+quill shaft
+candlestick
+
+a pull type release bearing is clamped, or part of the fingers of the pressure plate. prob not on the ase. idk..
+
+summing up the chapter. clutch pedal switch. part of the starter circuits. shouldnt be able to crank the engine without pressing the clutch pedal.
+
+textbook summery...
+Summary
+The purpose and function of a clutch include the following:
+To disconnect the engine torque from the transmission/transaxle to permit the engine to remain running when the vehicle is stopped and to permit the transmission/transaxle to be shifted.
+To connect and transmit engine torque to the transmission/transaxle.
+To dampen and absorb engine power impulses and drive train vibration.
+To provide a smooth engagement and disengagement of torque between the engine and the transmission/transaxle.
+The clutch assembly includes the flywheel, clutch disc, release (throwout) bearing, and pressure plate.
+The purpose of the clutch disc is to transfer engine torque from the flywheel to the input shaft of the transmission/transaxle.
+The engine flywheel serves four basic purposes:
+Smooths out or dampens engine power pulses.
+Absorbs some of the heat created by clutch operation.
+Provides the connection point for the starter motor to rotate the engine.
+Provides the application surface for the clutch friction disc.
+The engine end of a transmission input (clutch) shaft is supported by a pilot bearing that is pressed into the end of the crankshaft.
+The purpose and function of the clutch pedal linkage is to transfer the force the driver exerts on the clutch pedal to the release bearing.
+
+
+
+
+chapter 4....
+
+
+Symptoms of a Defective Clutch
+The following symptoms will occur if there is a fault in the clutch or in the linkage or hydraulic system that could prevent the clutch from being fully disengaged:
+The transmission will be difficult (or impossible) to shift into reverse.
+The transmission will be difficult (or impossible) to shift between forward gears.
+
+clutch wear never drops fluid level.
+
+could a dragging clutch be caused by a pilot bearing failure
+could seize. even when the clutch is released, pilot bearing is turning the input shaft.
+
+The Case of the Stuck in Gear Jeep
+A Jeep Wrangler (120,000 mi) sometimes got stuck in first or reverse, and the only way to get it out of gear is to shut the engine off. The transmission shifted okay most of the time.
+Thinking that clutch or related components were the most likely cause, the transmission was removed, and an inspection revealed a seizing pilot bushing. Replacement of the bushing fixed this problem. The pilot bushing did not allow the input shaft to move independently of the flywheel when the clutch was depressed.
+
+Clutch Slippage Diagnosis
+Clutch slippage can be checked easily in a shop, however, a more thorough check can be made during a road test.
+To check for slippage in a shop, perform the following steps:
+Step 1Check and adjust clutch pedal free travel.
+Step 2Warm up the engine to operating temperature, block the wheels, and apply the parking brake completely.
+Step 3Shift the transmission into a high gear and let out the clutch pedal smoothly. The engine should stall immediately. A delay indicates slow engagement and slipping.
+
+pasted textbook text. idk.
+
+Clutch Slips
+Clutch is worn or out-of-adjustment.
+ie freeplay issue. or hydralic issue ig.
+Clutch disc has oil on the surface.
+Flywheel height is out-of-specifications.
+
+Clutch Grabs
+Clutch disc has oil on the surface.
+Clutch linkage is binding.
+
+oil on surface can actually change coeficient of friction, and make it more grabby more friction etc. which seems backwards. just a note.
+
+Clutch Noises
+Possible causes include the following:
+Pilot bearing is defective or worn.
+Release bearing is defective or worn.
+Note
+A squeal that begins as the clutch pedal is depressed about 1 inch (25 mm) is probably caused by a defective or worn release (throwout) bearing.
+
+If there is a vibration concern or an odd wear pattern at the hub of the disc or pressure plate release levers, the flywheel should be checked for excessive runout. Face or axial runout is checked by positioning a dial indicator with the indicating stylus at the outer edge of the flywheel face.
+
+Pressure Plate Assembly Inspection
+A used pressure plate assembly should be inspected visually for all of the following.
+Friction surface damage
+Release lever wear
+Lever pivot wear
+Cover distortion
+
+went over this chapter quick in class. definally not as gone over as chapter 3. infering not as important, and its just inspection, common sense stuff. lots of just pasting textbook passages instead of better notes.

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASE A3 Cram Sheet</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { --ink:#171715; --muted:#6b6860; --faint:#98958c; --line:#dedbd3; --soft:#f5f3ee; --accent:#1f4e6f; }
+    @page { size: Letter; margin: 0.5in 0.55in 0.55in; }
+    html { background:#eceae4; }
+    body { width:8.5in; margin:0 auto; padding:0.45in 0.55in; background:white; color:var(--ink); font-family:Georgia,'Times New Roman',serif; font-size:8.3pt; line-height:1.32; }
+    .doc-title { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:18pt; font-weight:600; letter-spacing:-.02em; margin:0 0 .04in; }
+    .doc-meta { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:8pt; font-weight:650; color:var(--accent); margin:0 0 .1in; }
+    h2 { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:11pt; font-weight:650; line-height:1.15; margin:.16in 0 .05in; padding-top:.08in; border-top:.6pt solid var(--line); break-after:avoid; color:#181817; }
+    h2.first { border-top:none; margin-top:0; }
+    p { margin:0 0 .06in; }
+    ul,ol { margin:.02in 0 .06in; padding-left:.2in; }
+    li { margin-bottom:.02in; }
+    strong { font-weight:700; }
+    .weak-spots { background:var(--soft); border:.6pt solid var(--line); border-radius:3px; padding:.1in .14in; margin:0 0 .12in; }
+    .weak-spots ul { margin:.03in 0 0; }
+    .instant-answers { columns:2; column-gap:.3in; }
+    .instant-answers ol { margin:0; padding-left:.18in; }
+    .instant-answers li { break-inside:avoid; margin-bottom:.035in; }
+    .source-note { margin-top:.14in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:6.6pt; color:var(--faint); border-top:.5pt solid var(--line); padding-top:.06in; }
+    @media print { html,body { background:white; } body { width:auto; margin:0; padding:0; } }
+  </style>
+</head>
+<body>
+<h1 class="doc-title">ASE A3 Cram Sheet — All Six Categories</h1>
+<p class="doc-meta">Version 2 · September 22, 2026</p>
+
+<h2 class="first">Confirmed weak spots (graded final)</h2>
+<div class="weak-spots">
+<ul>
+<li>Working angle = angle between the two connected members, not shaft slope. Cancel vibration with equal angles <strong>and</strong> ~180&deg; phasing.</li>
+<li>Contact pattern: <strong>depth</strong> moves face&harr;flank, <strong>backlash</strong> moves heel&harr;toe.</li>
+<li>Range fork = high/low. Mode fork = 2WD/4WD. Separate actuators.</li>
+<li>Planetary: hold one member for a ratio, hold none = neutral, lock two = direct 1:1.</li>
+<li><strong>Chatter</strong> &ne; slip/drag: contamination, uneven pressure-plate torque, low hydraulic fluid — not free play.</li>
+<li>Continuous-contact (self-adjusting) release bearing is noisiest <strong>engaged</strong>; traditional pedal-actuated bearing is noisiest <strong>disengaged</strong>.</li>
+<li>Heel/toe: toe = inside, heel = outside.</li>
+<li><strong>Hunting</strong> = tooth counts share no common factor (e.g. 41/11), ratio doesn&#39;t reduce — no timing marks, each pinion tooth eventually meets every ring tooth. <strong>Non-hunting</strong> = ratio reduces to a whole number (e.g. 39/13 = 3) — repeating subset of tooth contacts, timing marks required at reassembly.</li>
+</ul>
+</div>
+
+<h2>A. Clutch — 16%</h2>
+<p><strong>Slip</strong> = will not hold torque (RPM flare under load). <strong>Drag</strong> = will not release (hard shift/clash while stopped).</p>
+<ul>
+<li>Too much free play &rarr; can cause drag. Too little free play &rarr; can cause slip.</li>
+<li>Engaged: flywheel &rarr; clamped disc &rarr; disc splines &rarr; input shaft. Released: linkage/hydraulics &rarr; release bearing &rarr; pressure-plate fingers &rarr; clamp force removed.</li>
+<li>Pulsation at pedal = rotating-component runout (flywheel/pressure plate/disc warp), not a hydraulic fault.</li>
+<li>Never air-blow clutch dust; use the required controlled cleaning method.</li>
+<li><strong>Chatter cause map (separate from slip/drag):</strong> contamination (oil/grease/coolant on the disc) is the classic cause; uneven pressure-plate fastener torque and low clutch master-cylinder fluid can also cause it. Free play is not the chatter answer.</li>
+<li><strong>Noise timing:</strong> traditional pedal-actuated release bearing &rarr; noisiest disengaged (pedal down). Continuous-contact/self-adjusting (SAC) release bearing (common GM) &rarr; noisiest engaged (rotates continuously with the engine).</li>
+<li>15&ndash;20 mph full-throttle high-gear road test checks <strong>both</strong> slippage and spin-down, not just one.</li>
+<li>Air in the hydraulic clutch circuit = a <strong>drag</strong> cause; bleed after any repair that opens the circuit.</li>
+</ul>
+
+<h2>B. Transmission — 17%</h2>
+<ul>
+<li>Synchro sequence: <strong>fork &rarr; sleeve/keys &rarr; blocker ring &rarr; gear-cone friction &rarr; speed match &rarr; sleeve engages the gear&#39;s dog teeth</strong> (not the cone).</li>
+<li>One gear clashes = that synchro. Every gear clashes = check linkage/release/fluid first, not all synchros at once.</li>
+<li>Pop-out = engagement depth, detent/retention, or endplay.</li>
+<li>Also officially tested (easy to forget): gaskets/seals/sealing surfaces, case bores/dowels/vents (blocked vent &rarr; leak past a good seal), and mount inspection.</li>
+</ul>
+
+<h2>C. Transaxle — 17%</h2>
+<ul>
+<li>Same synchronizer logic as B, plus an integrated final drive/differential in the same case.</li>
+<li>Don&#39;t assume shaft naming/layout carries over from a RWD transmission — verify the specific unit&#39;s input/output arrangement.</li>
+<li>The transaxle&#39;s final drive is tested on the <strong>same preload/backlash/contact-pattern logic as Section E&#39;s rear axle</strong> — it&#39;s not a separate topic, just a different housing.</li>
+<li>Also officially tested: gaskets/seals/vents (same as B), fluid level/lube system, and sensor/actuator/control-module circuits.</li>
+<li>Differential logic is the same as Section E below.</li>
+</ul>
+
+<h2>D. Shafts / U-CV joints — 13%</h2>
+<ul>
+<li><strong>Outer CV</strong> = fixed (no plunge), near the wheel, clicks/pops on turns. <strong>Inner CV</strong> = plunges, near trans/transfer case, shudders under acceleration.</li>
+<li>A Cardan (cross-type) U-joint has <strong>inherent 2nd-order vibration</strong> — output speed varies twice per revolution because its effective radius changes through the operating angle.</li>
+<li>Cancel it with <strong>both</strong>: joints phased ~180&deg; apart, AND working angles matched (commonly within ~0.5&deg; of each other). Missing either one leaves vibration.</li>
+<li><strong>Working angle</strong> = the angle <em>between the two connected members</em> at that joint (e.g., trans output vs. driveshaft), not the shaft&#39;s slope off the ground.</li>
+<li>Typical joint operating range is roughly 0.5&deg;&ndash;3&deg;. A 0&deg; angle is also a fault — no rocking motion means the needle bearings sit static and can brinell.</li>
+<li>Compound angles (vertical + horizontal together) don&#39;t simply add arithmetically.</li>
+<li>Four different things, four different checks: <strong>balance &ne; runout &ne; phasing &ne; working angle.</strong></li>
+</ul>
+
+<h2>E. Drive Axle — 17%</h2>
+<ul>
+<li>Power flow: <strong>pinion &rarr; ring gear &rarr; differential case &rarr; spider/pinion gears &rarr; side gears &rarr; axle shafts.</strong></li>
+<li>On an <strong>open</strong> diff, a broken axle shaft can cause a <strong>no-drive condition on both wheels</strong> — the broken side just spins free, so the intact side never gets reaction torque.</li>
+<li><strong>Heel</strong> = outer tooth end. <strong>Toe</strong> = inner. <strong>Face</strong> = above pitch line. <strong>Flank</strong> = below.</li>
+<li>Contact pattern reading — two adjustments, two axes:
+  <ul>
+  <li><strong>Pinion depth</strong> moves the pattern <strong>face &harr; flank</strong> (top &harr; root). High/face = pinion too shallow &rarr; move <strong>in</strong>. Low/flank = pinion too deep &rarr; move <strong>out</strong>.</li>
+  <li><strong>Backlash</strong> (side-bearing shims) moves the pattern <strong>heel &harr; toe</strong> (outer &harr; inner). Toward toe = too much backlash &rarr; move ring <strong>in</strong>. Toward heel = too little backlash &rarr; move ring <strong>out</strong>.</li>
+  </ul>
+</li>
+<li>Preload is measured by <strong>rotating torque</strong>, not tightening torque. A crush sleeve is one-time use — exceed the preload spec and you need a new sleeve, not a loosened nut.</li>
+<li><strong>Semi-floating</strong> shaft carries torque + vehicle weight. <strong>Full-floating</strong> shaft carries mainly torque; hub bearings carry the weight.</li>
+<li>Traction-device map: open (+ possible brake-traction-control) &rarr; clutch-type LSD/Posi (clutch packs) &rarr; helical/Torsen LSD (gear-thrust biasing, <strong>no clutch pack, not a full locker</strong>) &rarr; GM/Eaton-style automatic mechanical locker (governor/cam engagement at low speed) &rarr; electric or air locker (commanded, full lock).</li>
+<li>Whine/howl = gears. Growl/rumble = bearings. Clunk on reversal = lash/splines/joints. Chatter in tight turns = LSD fluid/friction condition.</li>
+</ul>
+
+<h2>F. 4WD/AWD — 20% (largest single category)</h2>
+<ul>
+<li><strong>Part-time 4WD</strong>: no center differential — normal windup/bind/hop on dry-pavement turns is expected for this architecture, not automatically a fault.</li>
+<li><strong>Full-time 4WD/AWD</strong>: a center differential or controlled coupling manages front/rear speed difference.</li>
+<li><strong>On-demand AWD</strong>: one axle normally primary; a controlled coupling adds the other. May engage preemptively (throttle, steering angle, modeled demand) — don&#39;t assume it waits for wheelspin.</li>
+<li><strong>Range fork</strong> = high/low (a gearing decision). <strong>Mode fork</strong> = 2WD/4WD (a coupling decision). Two separate actuators — a fault in one does not confirm the other.</li>
+<li>Planetary gearset: hold <strong>one</strong> of sun/ring/carrier for a fixed ratio; hold <strong>none</strong> = neutral; lock <strong>any two</strong> together = direct drive, 1:1.
+  <ul>
+  <li>Hold ring, sun in, carrier out = reduction.</li>
+  <li>Hold sun, ring in, carrier out = smaller reduction.</li>
+  <li>Hold carrier, ring in, sun out = overdrive, output can reverse direction.</li>
+  </ul>
+</li>
+<li>Engagement-failure diagnosis order: request/condition met &rarr; module has valid input &rarr; command issued &rarr; ground/return path carries current &rarr; actuator moves &rarr; mechanical engagement completes &rarr; position feedback agrees &rarr; calibration/init complete.</li>
+<li>Mismatched tire circumference (size, wear, spare) forces a persistent speed difference — rule it out before condemning a coupling or transfer case for bind/vibration.</li>
+<li>Transfer-case fluid is application-specific; never assume &ldquo;all transfer cases use ATF.&rdquo;</li>
+</ul>
+
+<h2>Exam mechanics</h2>
+<ul>
+<li>50 total questions, 40 scored, 60 minutes. Unscored research questions are <strong>not identified</strong> — treat every question as scored.</li>
+<li><strong>Technician A/B:</strong> evaluate each statement independently; don&#39;t let one being obviously right or wrong bias the other.</li>
+<li><strong>Could cause</strong> = one valid mechanism is enough. <strong>Most likely</strong> = compare frequency and the exact conditions given. <strong>First</strong> = the safest, simplest discriminating check before teardown. <strong>EXCEPT/least likely</strong> = find the shared rule, then pick the outlier.</li>
+</ul>
+
+<h2>Twenty-five instant answers</h2>
+<div class="instant-answers">
+<ol>
+<li>Slip? <strong>Won&#39;t hold torque.</strong></li>
+<li>Drag? <strong>Won&#39;t release.</strong></li>
+<li>Sleeve locks onto? <strong>The gear&#39;s dog teeth, not the cone.</strong></li>
+<li>One gear clashes? <strong>Local synchro problem.</strong></li>
+<li>Outer CV joint? <strong>Fixed, clicks on turns.</strong></li>
+<li>Inner CV joint? <strong>Plunges, shudders on accel.</strong></li>
+<li>Cardan-joint vibration order? <strong>2nd order — speed varies twice per rev.</strong></li>
+<li>How to cancel it? <strong>Phase ~180&deg; apart AND match working angles.</strong></li>
+<li>Working angle is measured between? <strong>The two members the joint connects, not shaft slope alone.</strong></li>
+<li>Heel? <strong>Outer.</strong> Toe? <strong>Inner.</strong></li>
+<li>Pattern toward toe? <strong>Too much backlash — move ring gear in.</strong></li>
+<li>Pattern high/toward face? <strong>Pinion too shallow — move pinion in.</strong></li>
+<li>Bearing preload measured with? <strong>Rotating torque.</strong></li>
+<li>Semi-floating shaft carries? <strong>Torque and vehicle weight.</strong></li>
+<li>Range fork controls? <strong>High/low range.</strong></li>
+<li>Mode fork controls? <strong>2WD/4WD coupling.</strong></li>
+<li>Planetary set with nothing held? <strong>Neutral.</strong></li>
+<li>Planetary set with two members locked? <strong>Direct drive, 1:1.</strong></li>
+<li>Whine vs. growl? <strong>Whine = gears. Growl = bearings.</strong></li>
+<li>Helical/Torsen LSD vs. clutch LSD? <strong>Helical biases torque via gear geometry, no clutch pack — not a full locker.</strong></li>
+<li>Classic chatter cause? <strong>Contamination on the friction disc</strong> (also: uneven pressure-plate torque, low hydraulic fluid).</li>
+<li>SAC (self-adjusting) release bearing noisiest when? <strong>Engaged</strong> — it rotates continuously.</li>
+<li>Open diff, broken axle shaft? <strong>No-drive on both wheels</strong>, not just the broken side.</li>
+<li>Hunting set needs timing marks? <strong>No</strong> — no common factor, no repeating pattern to preserve.</li>
+<li>Non-hunting set needs timing marks? <strong>Yes</strong> — ratio reduces, tooth pattern repeats, marks preserve original break-in contact.</li>
+</ol>
+</div>
+
+<p class="source-note">Condensed from <code>ase_a3_study_guide.md</code> (Version 3, September 22, 2026). Styled with the visual system from Logan&#39;s claude-paper whitepaper formatter.</p>
+</body>
+</html>

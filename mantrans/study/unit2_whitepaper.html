@@ -1,0 +1,480 @@
+<!doctype html>
+<title>Unit 2: Gearset & Synchronizer</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:        #edf0ee;
+    --surface:   #ffffff;
+    --surface-2: #e3e7e3;
+    --ink:       #14191b;
+    --muted:     #4d5659;
+    --faint:     #7c8688;
+    --line:      #d2d8d3;
+    --line-hi:   #b6bfb9;
+    --accent:    #c8481c;
+    --accent-ink:#fff6f1;
+    --accent-2:  #2c4a4a;
+    --accent-2-ink: #dff0ec;
+    --good:      #3d6b4f;
+    --shadow:    0 1px 0 rgba(20,25,27,.04);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:        #14181a;
+      --surface:   #1b2123;
+      --surface-2: #212a2b;
+      --ink:       #e9ede9;
+      --muted:     #aab4b1;
+      --faint:     #7c8886;
+      --line:      #313a3b;
+      --line-hi:   #47514f;
+      --accent:    #e46c3f;
+      --accent-ink:#1c110b;
+      --accent-2:  #7fb3ab;
+      --accent-2-ink: #0c1817;
+      --good:      #7fbf95;
+      --shadow:    0 1px 0 rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:        #14181a;
+    --surface:   #1b2123;
+    --surface-2: #212a2b;
+    --ink:       #e9ede9;
+    --muted:     #aab4b1;
+    --faint:     #7c8886;
+    --line:      #313a3b;
+    --line-hi:   #47514f;
+    --accent:    #e46c3f;
+    --accent-ink:#1c110b;
+    --accent-2:  #7fb3ab;
+    --accent-2-ink: #0c1817;
+    --good:      #7fbf95;
+    --shadow:    0 1px 0 rgba(0,0,0,.3);
+  }
+
+  /* ============ BASE ============ */
+  *,*::before,*::after{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-block: clamp(1.5rem, 4vw, 3.5rem);
+  }
+  .wrap{ max-width: 760px; margin:0 auto; padding-inline: 18px; }
+  ::selection{ background: var(--accent); color: var(--accent-ink); }
+
+  h1,h2,h3,h4{ font-family:'Oswald', 'Arial Narrow', sans-serif; text-transform:uppercase; letter-spacing:.02em; text-wrap:balance; color:var(--ink); font-weight:600; }
+  p{ margin:0 0 .95em; line-height:1.7; color:var(--ink); }
+  strong{ font-weight:600; }
+  code, .mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  /* ============ MASTHEAD ============ */
+  .masthead{
+    border: 1px solid var(--line-hi);
+    border-radius: 3px;
+    background: var(--surface);
+    padding: 1.5rem 1.6rem 1.35rem;
+    margin-bottom: 1.1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:6px;
+    background: var(--accent);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono'; font-size:11.5px; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+    display:flex; align-items:center; gap:.5em; margin-bottom:.6rem;
+  }
+  .eyebrow .sep{ color: var(--faint); }
+  .masthead h1{ font-size: clamp(26px,4.4vw,34px); line-height:1.1; margin: 0 0 .35rem; }
+  .masthead .sub{
+    font-size:14.5px; color:var(--muted); font-style:italic; margin-bottom: 1rem;
+    font-family:'IBM Plex Sans'; text-transform:none; letter-spacing:0;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap: .5rem 1.4rem;
+    font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--muted);
+    border-top:1px solid var(--line); padding-top:.75rem;
+  }
+  .meta-row b{ color:var(--ink); font-weight:600; }
+
+  /* ============ TOC ============ */
+  .toc{
+    background: var(--surface); border:1px solid var(--line);
+    border-radius:3px; padding: 1.1rem 1.3rem; margin-bottom: 1.6rem;
+  }
+  .toc-title{ font-family:'IBM Plex Mono'; font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-bottom:.65rem; }
+  .toc ol{ list-style:none; margin:0; padding:0; counter-reset: toc; display:grid; gap:.4rem; }
+  .toc li{ counter-increment: toc; font-size:14px; }
+  .toc a{
+    display:flex; gap:.6em; align-items:baseline; text-decoration:none; color:var(--ink);
+    padding:.15rem 0;
+  }
+  .toc a::before{
+    content: counter(toc,decimal-leading-zero);
+    font-family:'IBM Plex Mono'; font-size:11px; color:var(--accent); flex:none;
+  }
+  .toc a:hover{ text-decoration: underline; text-decoration-color: var(--accent); }
+
+  /* ============ SECTIONS ============ */
+  section{ margin-bottom: 2.1rem; }
+  .sec-head{
+    display:flex; align-items:baseline; gap:.7rem;
+    border-bottom: 2px solid var(--ink); padding-bottom:.4rem; margin-bottom: 1rem;
+  }
+  .sec-num{
+    font-family:'IBM Plex Mono'; font-size:13px; font-weight:600; color:var(--accent);
+    flex:none;
+  }
+  h2{ font-size: 20px; margin:0; }
+  h3{ font-size: 15.5px; margin: 1.5rem 0 .5rem; color: var(--accent-2); letter-spacing:.03em; }
+  h3 .n{ font-family:'IBM Plex Mono'; color:var(--faint); font-weight:500; margin-right:.4em; }
+
+  /* ============ TABLES ============ */
+  .tbl-wrap{ overflow-x:auto; margin: .9rem 0 1.2rem; border:1px solid var(--line); border-radius:3px; }
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; background:var(--surface); }
+  thead th{
+    text-align:left; font-family:'IBM Plex Mono'; font-size:10.5px; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--faint);
+    padding:.55rem .8rem; border-bottom:1px solid var(--line-hi); background:var(--surface-2);
+    white-space:nowrap;
+  }
+  td{ padding:.6rem .8rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  tbody tr:last-child td{ border-bottom:none; }
+  td:first-child, th:first-child{ font-weight:500; }
+
+  /* ============ LISTS ============ */
+  ul.plain, ol.plain{ padding-left: 1.3rem; margin: 0 0 1rem; }
+  ul.plain li, ol.plain li{ margin-bottom:.4rem; line-height:1.65; }
+
+  /* ============ SHOP NOTE (callout) ============ */
+  .note{
+    display:flex; gap:.8rem; background: var(--surface); border:1px solid var(--line);
+    border-left: 3px solid var(--accent); border-radius: 2px;
+    padding: .85rem 1rem; margin: 1rem 0; font-size:13.5px;
+  }
+  .note .tag{
+    font-family:'IBM Plex Mono'; font-size:10px; font-weight:600; letter-spacing:.1em;
+    color:var(--accent); text-transform:uppercase; flex:none; padding-top:.1rem;
+    writing-mode: horizontal-tb;
+  }
+  .note.rule{ border-left-color: var(--accent-2); }
+  .note.rule .tag{ color: var(--accent-2); }
+  .note p{ margin:0; }
+  .note strong{ color: var(--ink); }
+
+  /* ============ SYNCHRONIZER DIAGRAM ============ */
+  .diagram{
+    background: var(--surface); border:1px solid var(--line); border-radius:3px;
+    padding: 1.1rem 1rem .9rem; margin: 1.2rem 0;
+  }
+  .diagram svg{ width:100%; height:auto; display:block; }
+  .diagram figcaption{
+    font-family:'IBM Plex Mono'; font-size:10.5px; color:var(--faint); text-align:center;
+    margin-top:.6rem; letter-spacing:.03em;
+  }
+
+  /* ============ CRAM SHEET ============ */
+  .cram-head{ text-align:center; margin: 2.6rem 0 1.4rem; }
+  .cram-head .eyebrow{ justify-content:center; }
+  .cram-head h2{ font-size:24px; }
+  .cram-grid{
+    display:grid; grid-template-columns: repeat(2,1fr); gap:.7rem;
+  }
+  @media (max-width: 620px){ .cram-grid{ grid-template-columns: 1fr; } }
+  .card{
+    background: var(--surface); border:1px solid var(--line); border-radius:3px;
+    padding: .95rem 1.05rem;
+  }
+  .card h4{
+    font-size:12px; color:var(--accent-2); margin:0 0 .55rem; letter-spacing:.09em;
+    display:flex; align-items:center; gap:.5em;
+  }
+  .card h4::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .card p{ font-size:13px; line-height:1.6; margin:0 0 .5rem; color:var(--ink); }
+  .card p:last-child{ margin-bottom:0; }
+  .card .chain{
+    font-family:'IBM Plex Mono'; font-size:12px; background:var(--surface-2);
+    border-radius:2px; padding:.5rem .6rem; line-height:1.75; color:var(--ink);
+    margin: .3rem 0 .6rem; word-break: break-word;
+  }
+  .card .arrow{ color:var(--accent); }
+
+  /* ============ FOOTER ============ */
+  footer{
+    margin-top:2.4rem; padding-top:1rem; border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono'; font-size:11px; color:var(--faint);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+  }
+
+  hr.div{ border:none; border-top:1px dashed var(--line-hi); margin: 2rem 0; }
+
+  @media print{
+    :root{ --bg:#fff; --surface:#fff; --surface-2:#f2f4f2; }
+    body{ padding: 0; }
+    .wrap{ max-width: none; padding-inline: 0; }
+    a{ color: inherit; text-decoration: none; }
+    section{ break-inside: avoid-page; page-break-inside: avoid; }
+    .diagram, .card, .note, .tbl-wrap{ break-inside: avoid; page-break-inside: avoid; }
+    .cram-grid{ break-before: page; page-break-before: always; }
+    .toc{ break-after: page; page-break-after: always; }
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="eyebrow">GM ASEP <span class="sep">/</span> A3 MANUAL DRIVE TRAIN &amp; AXLES <span class="sep">/</span> UNIT 2</div>
+    <h1>Transmission &amp; Transaxle Internals</h1>
+    <p class="sub">Gearset theory, synchronizer operation, and the shift-symptom logic covered between the Unit 1 clutch quiz and the Unit 2 quiz.</p>
+    <div class="meta-row">
+      <span><b>Prepared</b> September 11, 2026</span>
+      <span><b>Source</b> class notes, chapter 5 &amp; instructor discussion</span>
+      <span><b>Scope</b> gearset &amp; synchronizer only — clutch (Unit 1) and differentials/axles (Unit 3) covered separately</span>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1">Gear Theory &amp; Power Flow</a></li>
+      <li><a href="#s2">Synchronizer Assembly &amp; Shift Mechanism</a></li>
+      <li><a href="#s3">Symptom Diagnosis &amp; Transaxle Concepts</a></li>
+      <li><a href="#cram">Cram Sheet</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ SECTION 1 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Gear Theory &amp; Power Flow</h2></div>
+
+    <p>Think of the transmission as a <strong>selective torque multiplier</strong>: low gears trade speed for torque, high gears trade torque for speed. Every ratio is that trade — you never get both for free.</p>
+
+    <h3><span class="n">1.1</span>Gear ratio basics</h3>
+    <ul class="plain">
+      <li><strong>Reduction</strong> — output turns slower than input, torque increases (numerically higher ratio, e.g. 3.5:1).</li>
+      <li><strong>Direct drive</strong> — 1:1, input speed equals output speed, no multiplication.</li>
+      <li><strong>Overdrive</strong> — output turns faster than input, torque drops below engine output (ratio under 1:1, e.g. 0.8:1).</li>
+    </ul>
+    <p>Ratio math: driven teeth ÷ drive teeth. A <span class="mono">10:7:20</span> three-gear train still reduces to a <span class="mono">2:1</span> overall ratio — the idler's own tooth count never enters the final number.</p>
+
+    <div class="note rule">
+      <div class="tag">Rule</div>
+      <p>An <strong>idler gear</strong> reverses rotational direction only. Even at a different diameter than the drive/driven gears, it does not change the ratio.</p>
+    </div>
+
+    <h3><span class="n">1.2</span>Constant-mesh principle</h3>
+    <p>Gear pairs stay <strong>always meshed</strong> — nothing slides tooth-to-tooth during a shift. What changes is which gear gets <strong>locked to its shaft</strong> by a synchronizer sleeve.</p>
+    <div class="note">
+      <div class="tag">Memorize</div>
+      <p>It is <strong>never</strong> a fixed gear meshed to a fixed gear — always fixed gear ↔ speed gear (a gear that freewheels on the shaft until locked). Only one gearset is locked at a time.</p>
+    </div>
+
+    <h3><span class="n">1.3</span>Gear type &amp; lubrication</h3>
+    <p><strong>Helical gears</strong> run quiet but generate <strong>endthrust</strong> (axial load) — shafts need thrust surfaces to control it. Most manual transmissions are <strong>splash lubricated</strong>: the countershaft dips into the sump, spins, and throws oil onto the mainshaft. There's no oil pump in a typical setup.</p>
+
+  </section>
+
+  <hr class="div">
+
+  <!-- ============ SECTION 2 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Synchronizer Assembly &amp; Shift Mechanism</h2></div>
+
+    <p>This is the core Unit 2 topic. A complete synchronizer assembly is the <strong>hub, sleeve, blocker/synchronizer ring(s), keys/struts, and springs</strong>. The speed gear and shift fork work with it but are not part of the assembly itself.</p>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Part</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td>Hub</td><td>Splined solid to the shaft — never moves independently of it.</td></tr>
+          <tr><td>Sleeve</td><td>Slides axially on the hub's external splines; the shift fork moves it.</td></tr>
+          <tr><td>Speed gear</td><td>Freewheels on the shaft until locked; has a friction <em>cone</em> and side <em>dog/clutch teeth</em>.</td></tr>
+          <tr><td>Blocker ring</td><td>Friction ring with limited rotational play. Contacts the cone; while speeds differ, friction twists it just enough to misalign its teeth from the sleeve — physically blocking premature engagement.</td></tr>
+          <tr><td>Keys / struts</td><td>Spring-loaded, seated under the sleeve. Transfer the sleeve's first motion to the blocker ring, so the ring hits the cone before the sleeve reaches the gear's teeth.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <figure class="diagram">
+      <svg viewBox="0 0 700 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Synchronizer engagement sequence diagram">
+        <style>
+          .db{ font-family:'IBM Plex Mono', monospace; font-size:11.5px; font-weight:600; }
+          .dl{ font-family:'IBM Plex Sans', sans-serif; font-size:9.5px; }
+        </style>
+        <defs>
+          <marker id="arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L8,4 L0,8 z" fill="var(--accent)"></path>
+          </marker>
+        </defs>
+        <!-- nodes -->
+        <g>
+          <!-- FORK -->
+          <rect x="8" y="46" width="86" height="46" rx="2" fill="var(--surface-2)" stroke="var(--line-hi)"></rect>
+          <text x="51" y="74" text-anchor="middle" class="db" fill="var(--ink)">FORK</text>
+          <!-- SLEEVE -->
+          <rect x="138" y="46" width="90" height="46" rx="2" fill="var(--surface-2)" stroke="var(--line-hi)"></rect>
+          <text x="183" y="74" text-anchor="middle" class="db" fill="var(--ink)">SLEEVE</text>
+          <!-- KEYS -->
+          <rect x="272" y="46" width="80" height="46" rx="2" fill="var(--surface-2)" stroke="var(--line-hi)"></rect>
+          <text x="312" y="74" text-anchor="middle" class="db" fill="var(--ink)">KEYS</text>
+          <!-- RING -->
+          <rect x="396" y="34" width="108" height="70" rx="2" fill="var(--accent-2)" stroke="var(--accent-2)"></rect>
+          <text x="450" y="63" text-anchor="middle" class="db" fill="var(--accent-2-ink)">BLOCKER</text>
+          <text x="450" y="78" text-anchor="middle" class="db" fill="var(--accent-2-ink)">RING</text>
+          <text x="450" y="20" text-anchor="middle" class="dl" fill="var(--faint)">friction matches speed on gear cone</text>
+          <!-- DOG TEETH -->
+          <rect x="548" y="46" width="144" height="46" rx="2" fill="var(--accent)" stroke="var(--accent)"></rect>
+          <text x="620" y="68" text-anchor="middle" class="db" fill="var(--accent-ink)">DOG TEETH</text>
+          <text x="620" y="82" text-anchor="middle" class="dl" fill="var(--accent-ink)">gear now locked</text>
+        </g>
+        <!-- arrows -->
+        <line x1="96" y1="69" x2="134" y2="69" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"></line>
+        <line x1="230" y1="69" x2="268" y2="69" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"></line>
+        <line x1="354" y1="69" x2="392" y2="69" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"></line>
+        <line x1="506" y1="69" x2="544" y2="69" stroke="var(--accent)" stroke-width="2" marker-end="url(#arrow)"></line>
+        <text x="123" y="116" text-anchor="middle" class="dl" fill="var(--faint)">moves</text>
+        <text x="249" y="116" text-anchor="middle" class="dl" fill="var(--faint)">loads</text>
+        <text x="373" y="116" text-anchor="middle" class="dl" fill="var(--faint)">pushes toward cone</text>
+        <text x="525" y="116" text-anchor="middle" class="dl" fill="var(--faint)">once speed matches</text>
+      </svg>
+      <figcaption>SYNCHRONIZER ENGAGEMENT SEQUENCE — the sleeve engages the gear's dog teeth, never the cone itself</figcaption>
+    </figure>
+
+    <div class="note">
+      <div class="tag">Reframe</div>
+      <p>The synchronizer isn't "synchronizing the sleeve to the gear." The sleeve/hub are already at shaft speed — friction is bringing the <strong>freewheeling gear</strong> up or down to match. A question can exploit that distinction.</p>
+    </div>
+
+    <p><strong>Material note:</strong> paper-coated steel blocker rings wear fast with the wrong fluid — another reason manual-trans fluid type is a real diagnostic item, not "gear oil is gear oil."</p>
+
+    <h3><span class="n">2.1</span>Shift mechanism</h3>
+    <p>The shift mechanism transfers the driver's lever motion to the shift forks. <strong>Fork-to-sleeve groove clearance matters</strong> — if the fork or groove wears on the leading edge, the fork can't push the sleeve far enough to fully seat the dog teeth, and a partially engaged gear (dog teeth are angled like arrowheads) pops back out under load.</p>
+    <p>Shift shafts are typically named by the gear pairs they control: <span class="mono">1–2</span>, <span class="mono">3–4</span>, <span class="mono">5–R</span>. Older designs may use external linkage instead of internal rails.</p>
+
+    <h3><span class="n">2.2</span>Detents &amp; interlocks</h3>
+    <ul class="plain">
+      <li><strong>Detent</strong> — spring-loaded ball that holds a shift rail/fork in position. Can be overcome by force; it holds the gear, it doesn't lock it rigidly.</li>
+      <li><strong>Interlock</strong> — mechanically prevents two gears being selected at once (commonly pin-and-ball). A mechanical-integrity feature, not a shift-feel feature.</li>
+      <li><strong>Reverse lockout</strong> — specifically prevents accidental reverse engagement.</li>
+    </ul>
+  </section>
+
+  <hr class="div">
+
+  <!-- ============ SECTION 3 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Symptom Diagnosis &amp; Transaxle Concepts</h2></div>
+
+    <h3><span class="n">3.1</span>Three classic gear/shift symptoms</h3>
+
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Symptom</th><th>What's actually happening</th></tr></thead>
+        <tbody>
+          <tr><td>Grinding / clash</td><td>Sleeve grinds on dog teeth that can't engage cleanly. <strong>One gear</strong> → that gear's blocker ring. <strong>Every gear</strong> → suspect clutch drag before condemning every synchro at once. Damage shows on the dog teeth, not the tooth flanks.</td></tr>
+          <tr><td>"Block out" — won't shift at all</td><td>Shifts fine engine-off, not running → input shaft is still turning when it shouldn't be (clutch drag / speed mismatch). Ask: is the synchronizer assembly truly stopped, or still rotating?</td></tr>
+          <tr><td>Pops out of gear</td><td>Fork-to-sleeve groove clearance (top answer) → shaft endplay → worn dog teeth → weak detent → linkage wear.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="note rule">
+      <div class="tag">Rule</div>
+      <p>"Block out" and all-gear grinding are frequently <strong>clutch</strong> problems wearing a transmission costume. Rule out clutch drag before opening the case.</p>
+    </div>
+
+    <h3><span class="n">3.2</span>Noise diagnosis — the road-speed test</h3>
+    <p>Hold a constant road speed and shift through the gears, listening to how the pitch changes:</p>
+    <ul class="plain">
+      <li>Pitch <strong>tracks road speed</strong> in every gear (same in 3rd, 4th, 5th) → the noisy part turns at <strong>output-shaft speed</strong> → suspect the output shaft/bearing.</li>
+      <li>Pitch is <strong>different per gear</strong> at the same road speed → the part's speed is changing with ratio → suspect the <strong>gearset</strong> engaged in that range.</li>
+    </ul>
+    <p>Master question, here and everywhere else in A3: <strong>what's rotating, and at what speed, when the noise happens?</strong></p>
+
+    <h3><span class="n">3.3</span>Transaxle-specific concepts</h3>
+    <p>In a transaxle, the <strong>input shaft ("clutch shaft")</strong> is integral to the mainshaft assembly — not a separate piece. That's why it needs <strong>no pilot bearing</strong>: the whole assembly is self-supported by its own bearings. Compare a longitudinal (non-transaxle) transmission, where the input shaft is separate from the mainshaft and needs a <strong>third bearing</strong> — the pilot bearing, supported at the crank/flywheel — for that free end.</p>
+    <p>Because A3 treats the drivetrain as one system, a transaxle's final-drive output gets the same diagnostic treatment as a differential's output — this carries straight into Unit 3.</p>
+
+    <h3><span class="n">3.4</span>Torque steer</h3>
+    <p>Pulling to one side under hard acceleration. <strong>Most common cause: unequal CV joint operating angles</strong> between the two half-shafts (contributing factors: unequal shaft length, a longer shaft twisting more under load).</p>
+    <div class="note">
+      <div class="tag">Mental model</div>
+      <p>A wobble socket on an extension still transmits torque at an angle, but loses efficiency as the angle grows — past some point it whips and stops working. Equal angles on both sides cancel out symmetrically, even with imperfect mounts. Conceptual cousin: <strong>bump steer</strong> in suspension geometry.</p>
+    </div>
+  </section>
+
+  <!-- ============ CRAM SHEET ============ -->
+  <div class="cram-head">
+    <div class="eyebrow">QUICK REFERENCE <span class="sep">/</span> ONE PAGE</div>
+    <h2 id="cram">Unit 2 Cram Sheet</h2>
+  </div>
+
+  <div class="cram-grid">
+
+    <div class="card">
+      <h4>Ratios</h4>
+      <p>Reduction = more torque, less speed (numerically high). Overdrive = less torque, more speed (&lt;1). Direct = 1:1.</p>
+      <p>Idler changes direction only — never the ratio, even at a different size. <span class="mono">10:7:20 → 2:1</span> overall.</p>
+    </div>
+
+    <div class="card">
+      <h4>Constant Mesh</h4>
+      <p>Never fixed-to-fixed — always fixed gear ↔ speed gear (freewheeling until locked). Only one gearset locked at a time.</p>
+      <p>Helical gears: quiet, but cause endthrust → need thrust surfaces. Splash lubricated: countershaft throws oil onto mainshaft.</p>
+    </div>
+
+    <div class="card">
+      <h4>Synchronizer Chain</h4>
+      <div class="chain">FORK <span class="arrow">→</span> SLEEVE <span class="arrow">→</span> KEYS <span class="arrow">→</span> RING <span class="arrow">→</span> CONE<br><span class="arrow">→</span> DOG TEETH (lock)</div>
+      <p>Hub = fixed to shaft. Ring = blocks until speed matches. It syncs the <strong>freewheeling gear</strong> to hub speed, not "sleeve to gear." Wrong fluid → fast ring wear.</p>
+    </div>
+
+    <div class="card">
+      <h4>Shift Mechanism</h4>
+      <p>Detent = holds gear selected, can be overcome by force. Interlock = physically prevents two gears engaging at once.</p>
+      <p>Fork-to-sleeve groove clearance must be right or the sleeve won't fully seat.</p>
+    </div>
+
+    <div class="card">
+      <h4>Symptom Logic</h4>
+      <p>One gear grinds → that synchro. All gears grind → clutch drag first.</p>
+      <p>Won't shift, but fine engine-off → clutch drag. Pops out → fork/sleeve clearance → endplay → dog teeth → detent → linkage.</p>
+    </div>
+
+    <div class="card">
+      <h4>Noise Test</h4>
+      <p>Constant road speed, shift through gears:</p>
+      <p>Same pitch every gear → output shaft/bearing. Pitch changes per gear → that gearset.</p>
+      <p><strong>Always ask:</strong> what's rotating, at what speed, when the noise happens?</p>
+    </div>
+
+    <div class="card">
+      <h4>Transaxle</h4>
+      <p>Input shaft = "clutch shaft," part of mainshaft → no pilot bearing needed.</p>
+      <p>Longitudinal trans: input shaft separate → needs pilot bearing (3rd support point).</p>
+      <p>Transaxle final-drive output = treat like a differential (bridges into Unit 3).</p>
+    </div>
+
+    <div class="card">
+      <h4>Torque Steer</h4>
+      <p>Most common cause: unequal CV joint operating angles (also unequal shaft length/twist).</p>
+      <p>Equal angles both sides → no torque steer, even with imperfect mounts. Cousin: bump steer.</p>
+    </div>
+
+  </div>
+
+  <footer>
+    <span>Unit 2 — Transmission &amp; Transaxle Internals</span>
+    <span>Next: Unit 3 — Differentials &amp; Axles</span>
+  </footer>
+
+</div>

@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASE A3 Manual Drive Train and Axles</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { --ink:#171715; --muted:#6b6860; --faint:#98958c; --line:#dedbd3; --soft:#f5f3ee; --accent:#1f4e6f; }
+    @page { size: Letter; margin: 0.58in 0.62in 0.62in; }
+    html { background:#eceae4; }
+    body { width:8.5in; margin:0 auto; padding:0.55in 0.62in; background:white; color:var(--ink); font-family:Georgia,'Times New Roman',serif; font-size:10.25pt; line-height:1.48; }
+    .cover { min-height:9.45in; display:flex; flex-direction:column; justify-content:center; page-break-after:always; }
+    .kicker { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:9pt; font-weight:650; letter-spacing:.13em; text-transform:uppercase; color:var(--accent); margin-bottom:.22in; }
+    .cover h1 { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:30pt; font-weight:520; line-height:1.08; letter-spacing:-.025em; margin:0 0 .12in; max-width:6.35in; }
+    .cover .subtitle { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:14pt; color:var(--muted); line-height:1.35; max-width:5.9in; margin-bottom:.55in; }
+    .cover .meta { border-top:.7pt solid var(--line); padding-top:.14in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:8.5pt; color:var(--faint); line-height:1.65; }
+    .part-title { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:24pt; font-weight:520; letter-spacing:-.02em; margin:0 0 .2in; }
+    .toc { background:var(--soft); border-radius:8px; padding:.16in .22in; margin:0 0 .28in; break-inside:avoid; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; }
+    .toc-title { margin:0 0 .08in; font-size:8pt; font-weight:700; letter-spacing:.09em; text-transform:uppercase; color:var(--faint); }
+    .toc ol { columns:2; column-gap:.35in; margin:0; padding-left:.22in; font-size:8.7pt; line-height:1.58; }
+    .toc li { break-inside:avoid; margin:0; }
+    .toc li.level-1 { font-weight:650; }
+    .toc a { color:#41413e; text-decoration:none; }
+    h1,h2,h3,h4 { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; break-after:avoid; color:#181817; }
+    .document > h1, .document section > h1 { break-before:auto; font-size:20pt; font-weight:540; line-height:1.15; letter-spacing:-.02em; margin:.34in 0 .14in; padding-top:.15in; border-top:.7pt solid var(--line); }
+    h2 { font-size:15.2pt; font-weight:580; line-height:1.24; margin:.29in 0 .08in; padding-top:.14in; border-top:.55pt solid var(--line); }
+    h3 { font-size:12.1pt; font-weight:620; margin:.2in 0 .055in; }
+    h4 { font-size:10.6pt; font-weight:650; margin:.15in 0 .04in; }
+    p { margin:0 0 .095in; }
+    ul,ol { margin:.035in 0 .105in; padding-left:.25in; }
+    li { margin-bottom:.03in; }
+    strong { font-weight:700; }
+    blockquote { margin:.16in 0; padding:.11in .17in; border-left:3pt solid var(--accent); background:#f3f7fa; color:#303942; font-style:normal; break-inside:avoid; }
+    blockquote p:last-child { margin-bottom:0; }
+    table { width:100%; border-collapse:collapse; margin:.09in 0 .15in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:8.2pt; line-height:1.33; break-inside:avoid; }
+    thead { display:table-header-group; }
+    tr { break-inside:avoid; }
+    th { text-align:left; vertical-align:bottom; padding:.072in .085in; border-bottom:1pt solid #b9b6ad; font-weight:650; background:var(--soft); }
+    td { vertical-align:top; padding:.067in .085in; border-bottom:.5pt solid #e4e1da; }
+    code { font-family:Menlo,Consolas,monospace; font-size:8.7pt; background:#efeee9; padding:.02in .045in; border-radius:3px; }
+    hr { border:0; border-top:.6pt solid var(--line); margin:.25in 0; }
+    .practice { break-before:page; columns:2; column-gap:.3in; font-size:8.55pt; line-height:1.36; }
+    .practice h1,.practice h2,.practice h3 { column-span:all; }
+    .practice h2 { font-size:11.5pt; margin:.12in 0 .055in; padding-top:.07in; }
+    .practice p { break-inside:avoid; margin-bottom:.08in; }
+    .answers { break-before:page; columns:2; column-gap:.3in; font-size:8.55pt; line-height:1.36; }
+    .answers h2 { column-span:all; }
+    .answers p { break-inside:avoid; }
+    .source-note { margin-top:.22in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:7.8pt; color:var(--faint); border-top:.5pt solid var(--line); padding-top:.08in; }
+    @media print { html,body { background:white; } body { width:auto; margin:0; padding:0; } a { color:inherit; } }
+  </style>
+</head>
+<body>
+  <section class="cover"><div class="kicker">Professional ASE · Test A3 · Version 3</div><h1>ASE A3 Manual Drive Train and Axles</h1><p class="subtitle">Officially weighted review of all six A3 content areas, grounded in the current class notes and supporting research.</p><div class="meta"><strong>Version 3</strong><br>Revised September 22, 2026<br>Blueprint: 2026 ASE Automobile Study Guide<br>50 total questions · 40 scored · 60 minutes</div></section>
+  <main class="document"><h1 class="part-title" style="break-before:auto;border-top:0;padding-top:0;">Study Guide</h1><nav class="toc"><p class="toc-title">Contents</p><ol><li class="level-2"><a href="#doc-source-boundary">Source boundary</a></li>
+<li class="level-2"><a href="#doc-exam-map">Exam map</a></li>
+<li class="level-2"><a href="#doc-priority-for-this-folder">Priority for this folder</a></li>
+<li class="level-2"><a href="#doc-ase-question-method">ASE question method</a></li>
+<li class="level-1"><a href="#doc-confirmed-weak-spots">Confirmed weak spots — pulled from the graded class final</a></li>
+<li class="level-1"><a href="#doc-a-clutch-diagnosis-and-repair-16">A. Clutch Diagnosis and Repair — 16%</a></li>
+<li class="level-2"><a href="#doc-what-ase-can-test">What ASE can test</a></li>
+<li class="level-2"><a href="#doc-mechanism">Mechanism</a></li>
+<li class="level-2"><a href="#doc-diagnostic-map">Diagnostic map</a></li>
+<li class="level-2"><a href="#doc-chatter-cause-map">Chatter — cause map</a></li>
+<li class="level-1"><a href="#doc-b-transmission-diagnosis-and-repair-17">B. Transmission Diagnosis and Repair — 17%</a></li>
+<li class="level-2"><a href="#doc-what-ase-can-test-2">What ASE can test</a></li>
+<li class="level-2"><a href="#doc-constant-mesh-and-synchronizer-operation">Constant-mesh and synchronizer operation</a></li>
+<li class="level-2"><a href="#doc-diagnostic-map-2">Diagnostic map</a></li>
+<li class="level-2"><a href="#doc-measurements">Measurements</a></li>
+<li class="level-2"><a href="#doc-electrical-electronic-coverage">Electrical/electronic coverage</a></li>
+<li class="level-2"><a href="#doc-gaskets-seals-and-case-integrity">Gaskets, seals, and case integrity</a></li>
+<li class="level-1"><a href="#doc-c-transaxle-diagnosis-and-repair-17">C. Transaxle Diagnosis and Repair — 17%</a></li>
+<li class="level-2"><a href="#doc-what-changes-from-the-transmission-category">What changes from the transmission category</a></li>
+<li class="level-2"><a href="#doc-do-not-overgeneralize-shaft-names">Do not overgeneralize shaft names</a></li>
+<li class="level-2"><a href="#doc-transaxle-diagnostic-map">Transaxle diagnostic map</a></li>
+<li class="level-2"><a href="#doc-differential-and-limited-slip">Differential and limited slip</a></li>
+<li class="level-2"><a href="#doc-transaxle-setup-seals-fluid-electronics">Setup, seals, fluid, and electronics</a></li>
+<li class="level-1"><a href="#doc-d-drive-half-shafts-and-u-cv-joints-13">D. Drive/Half-Shafts and U/CV Joints — 13%</a></li>
+<li class="level-2"><a href="#doc-symptom-anchors">Symptom anchors</a></li>
+<li class="level-2"><a href="#doc-four-different-vibration-terms">Four different vibration terms</a></li>
+<li class="level-2"><a href="#doc-why-a-cardan-u-joint-vibrates">Why a Cardan U-joint vibrates</a></li>
+<li class="level-2"><a href="#doc-measuring-working-angle">Measuring and reading working angle</a></li>
+<li class="level-2"><a href="#doc-wheel-bearing-logic">Wheel bearing logic</a></li>
+<li class="level-1"><a href="#doc-e-drive-axle-diagnosis-and-repair-17">E. Drive Axle Diagnosis and Repair — 17%</a></li>
+<li class="level-2"><a href="#doc-official-coverage-groups">Official coverage groups</a></li>
+<li class="level-2"><a href="#doc-differential-power-flow">Differential power flow</a></li>
+<li class="level-2"><a href="#doc-exam-level-traction-device-map">Exam-level traction-device map</a></li>
+<li class="level-2"><a href="#doc-axle-support-types">Axle support types</a></li>
+<li class="level-2"><a href="#doc-hypoid-terminology-and-load">Hypoid terminology and load</a></li>
+<li class="level-2"><a href="#doc-hunting-vs-non-hunting-gear-sets">Hunting vs. non-hunting gear sets</a></li>
+<li class="level-2"><a href="#doc-setup-variables">Setup variables</a></li>
+<li class="level-2"><a href="#doc-reading-contact-pattern">Reading the contact pattern</a></li>
+<li class="level-2"><a href="#doc-noise-load-map">Noise/load map</a></li>
+<li class="level-1"><a href="#doc-f-four-wheel-drive-all-wheel-drive-20">F. Four-Wheel Drive / All-Wheel Drive — 20%</a></li>
+<li class="level-2"><a href="#doc-start-by-identifying-the-architecture">Start by identifying the architecture</a></li>
+<li class="level-2"><a href="#doc-high-and-low-range">High and low range</a></li>
+<li class="level-2"><a href="#doc-range-fork-vs-mode-fork">Range fork vs. mode fork</a></li>
+<li class="level-2"><a href="#doc-planetary-gearset">Planetary gearset</a></li>
+<li class="level-2"><a href="#doc-gm-oriented-mode-example">GM-oriented mode example</a></li>
+<li class="level-2"><a href="#doc-engagement-diagnosis">Engagement diagnosis</a></li>
+<li class="level-2"><a href="#doc-tire-circumference">Tire circumference</a></li>
+<li class="level-2"><a href="#doc-complaint-map">Complaint map</a></li>
+<li class="level-2"><a href="#doc-fluid-and-service">Fluid and service</a></li>
+<li class="level-1"><a href="#doc-measurement-and-specification-table">Measurement and specification table</a></li>
+<li class="level-1"><a href="#doc-rapid-recall-sheet">Rapid-recall sheet</a></li></ol></nav><p><strong>Version 3 · Working draft — revised September 22, 2026</strong><br><strong>Post-final ASE refresh — adds transfer-case fork logic, planetary gearset rules, U-joint order-of-vibration/working-angle detail, and ring&pinion contact-pattern adjustment, based on missed final-exam topics</strong></p>
+<p>This guide is for the <strong>professional ASE A3 exam</strong>. It combines the official 2026 task list with the current GM ASEP notes, the existing Unit 2 guide, the deep-research blueprint, and the sourced research foundation. Class examples help explain mechanisms, but ASE questions are manufacturer-independent unless the question identifies an application.</p>
+<h2 id="doc-source-boundary">Source boundary</h2>
+<ul>
+<li>Governing blueprint: <a href="../../sources/ase/ASE_Automobile_Study_Guide_2026.pdf"><code>ASE_Automobile_Study_Guide_2026.pdf</code></a>, A3 printed pages 16–20.</li>
+<li>Classroom foundation: <a href="../../notes/clutchsection.txt"><code>clutchsection.txt</code></a>, <a href="../../notes/gears.txt"><code>gears.txt</code></a>, <a href="../../notes/drive-axles.txt"><code>drive-axles.txt</code></a>, and <a href="../../notes/transfercases-ujoints.txt"><code>transfercases-ujoints.txt</code></a>.</li>
+<li>Broader explanations and research blueprint: <a href="../../sources/deep-research-report%20%283%29.md"><code>deep-research-report (3).md</code></a>.</li>
+<li>Qualifications, worked measurements, official-source audit, and application boundaries: <a href="../../a3_research_foundation_2026-09-13.md"><code>a3_research_foundation_2026-09-13.md</code></a>.</li>
+</ul>
+<h2 id="doc-exam-map">Exam map</h2>
+<p>The 2026 guide lists <strong>50 total questions, 40 scored, 60 minutes</strong>. Ten questions are unscored research items, but they are not identified during the test, so treat every question as scored.</p>
+<table>
+<thead>
+<tr>
+<th>Official category</th>
+<th align="right">Scored questions</th>
+<th align="right">Published share</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A. Clutch diagnosis and repair</td>
+<td align="right">6</td>
+<td align="right">16%</td>
+</tr>
+<tr>
+<td>B. Transmission diagnosis and repair</td>
+<td align="right">7</td>
+<td align="right">17%</td>
+</tr>
+<tr>
+<td>C. Transaxle diagnosis and repair</td>
+<td align="right">7</td>
+<td align="right">17%</td>
+</tr>
+<tr>
+<td>D. Drive/half-shafts and U/CV joints</td>
+<td align="right">5</td>
+<td align="right">13%</td>
+</tr>
+<tr>
+<td>E. Drive axle diagnosis and repair</td>
+<td align="right">7</td>
+<td align="right">17%</td>
+</tr>
+<tr>
+<td>F. 4WD/AWD diagnosis and repair</td>
+<td align="right">8</td>
+<td align="right">20%</td>
+</tr>
+<tr>
+<td><strong>Total</strong></td>
+<td align="right"><strong>40</strong></td>
+<td align="right"><strong>100%</strong></td>
+</tr>
+</tbody></table>
+<p>The percentages are ASE&#39;s published figures. Use them to make sure every category is covered, not as a rigid minute-by-minute study formula.</p>
+<h2 id="doc-priority-for-this-folder">Priority for this folder</h2>
+<ol>
+<li><strong>4WD/AWD:</strong> largest individual category and thinnest area in the current class notes.</li>
+<li><strong>Transmission + transaxle:</strong> 34% combined. Classroom coverage is strong, but ASE transfers the same mechanisms to unfamiliar layouts and includes measurements, coolers, controls, and the transaxle differential.</li>
+<li><strong>Drive axle:</strong> currently fresh and detailed. Preserve the new locker and bearing-localization material, then add setup measurements, shafts/retainers, vents, and design-specific controls.</li>
+<li><strong>Drive/half-shafts:</strong> a smaller category, but phasing, working angle, balance, runout, CV symptoms, and wheel bearings are easy points if kept separate.</li>
+<li><strong>Clutch:</strong> mechanisms are already familiar; review measurement, contamination/alignment, hydraulics, and design qualifications.</li>
+</ol>
+<p>For Logan, this is a seventh ASE and electrical fundamentals are already established. The useful electrical review here is the drivetrain application chain:</p>
+<p><strong>Request/input → module decision → output command → usable voltage/current at the load → actuator movement → position/engagement feedback → calibration or initialization</strong></p>
+<h2 id="doc-ase-question-method">ASE question method</h2>
+<p>Before choosing a component, identify:</p>
+<ol>
+<li><strong>Operating state:</strong> stopped, accelerating, coasting, turning, one gear, every gear, 2HI/AUTO/4HI/4LO, front axle engaged or disengaged.</li>
+<li><strong>Torque path:</strong> which parts carry the selected torque?</li>
+<li><strong>Rotation:</strong> which parts rotate even if they are not carrying the selected torque?</li>
+<li><strong>Load change:</strong> engine speed, road speed, torque direction, cornering load, or engagement state.</li>
+<li><strong>Best next check:</strong> prefer the check that separates the remaining causes.</li>
+</ol>
+<p>Words matter:</p>
+<ul>
+<li><strong>Could cause:</strong> one valid mechanism is enough.</li>
+<li><strong>Most likely:</strong> compare frequency and the exact conditions supplied.</li>
+<li><strong>First:</strong> choose the safest, simplest discriminating check before teardown.</li>
+<li><strong>EXCEPT / least likely:</strong> identify the shared rule, then find the choice outside it.</li>
+<li><strong>Technician A/B:</strong> evaluate each statement independently.</li>
+</ul>
+<hr>
+<h2 id="doc-confirmed-weak-spots">Confirmed weak spots — pulled from the graded class final</h2>
+<p>These are logged in one place because they&#39;re the specific points Logan lost on the graded final, cross-checked against the key. Each fact also lives in its normal category section below — this is an index/focus list, not a duplicate source of truth.</p>
+<table>
+<thead>
+<tr>
+<th>Missed area</th>
+<th>Category</th>
+<th>Where it&#39;s covered below</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Working angle = angle between the two connected members, not shaft slope; canceling needs equal angles <strong>and</strong> ~180° phasing</td>
+<td>D — Shafts/U-CV joints</td>
+<td><a href="#doc-why-a-cardan-u-joint-vibrates">Why a Cardan U-joint vibrates</a>, <a href="#doc-measuring-working-angle">Measuring and reading working angle</a></td>
+</tr>
+<tr>
+<td>Ring &amp; pinion contact pattern: pinion depth moves face↔flank, backlash moves heel↔toe</td>
+<td>E — Drive Axle</td>
+<td><a href="#doc-reading-contact-pattern">Reading the contact pattern</a></td>
+</tr>
+<tr>
+<td>Transfer-case range fork (high/low) vs. mode fork (2WD/4WD) are separate actuators</td>
+<td>F — 4WD/AWD</td>
+<td><a href="#doc-range-fork-vs-mode-fork">Range fork vs. mode fork</a></td>
+</tr>
+<tr>
+<td>Planetary gearset: hold one member for a ratio, hold none = neutral, lock two = direct 1:1</td>
+<td>F — 4WD/AWD</td>
+<td><a href="#doc-planetary-gearset">Planetary gearset</a></td>
+</tr>
+<tr>
+<td>Clutch chatter has its own cause map (contamination, uneven pressure-plate torque, low hydraulic fluid) — separate from slip/drag and free play</td>
+<td>A — Clutch</td>
+<td><a href="#doc-chatter-cause-map">Chatter — a second, distinct cause map from slip/drag</a></td>
+</tr>
+<tr>
+<td>Continuous-contact (self-adjusting) release bearing noise is most noticeable <strong>engaged</strong>, not disengaged like a traditional pedal-actuated bearing</td>
+<td>A — Clutch</td>
+<td><a href="#doc-bearing-qualification">Bearing qualification</a></td>
+</tr>
+<tr>
+<td>Heel = outer tooth end, toe = inner — confirmed correct as already documented</td>
+<td>E — Drive Axle</td>
+<td><a href="#doc-hypoid-terminology-and-load">Hypoid terminology and load</a></td>
+</tr>
+<tr>
+<td>Hunting = no common tooth-count factor, no timing marks. Non-hunting = ratio reduces to a whole number, timing marks required</td>
+<td>E — Drive Axle</td>
+<td><a href="#doc-hunting-vs-non-hunting-gear-sets">Hunting vs. non-hunting gear sets</a></td>
+</tr>
+</tbody></table>
+<p><strong>Heel/toe (Q58) — resolved:</strong> Logan confirmed directly (2026-09-22) — <strong>toe = inside (inner end), heel = outside (outer end)</strong>. That matches what was already documented below, so nothing changed there; the confusion was real but the guide&#39;s content was already right. The photographed key&#39;s apparent &ldquo;Student A only&rdquo; reading (which would have scored &ldquo;toe = inner&rdquo; wrong) doesn&#39;t square with this and is set aside as a probable misread or key error, not acted on.</p>
+<p><strong>Hunting/non-hunting (Q60) — added:</strong> the standard definition is now documented in Section E (&ldquo;Hunting vs. non-hunting gear sets&rdquo;) — hunting = tooth counts share no common factor, no timing marks; non-hunting = ratio reduces to a whole number, repeating tooth contact pattern, timing marks required at reassembly. The photographed key&#39;s &ldquo;Both A and B&rdquo; reading, which would credit both technicians despite the two statements having the definitions swapped relative to each other, is set aside rather than reflected here.</p>
+<hr>
+<h1 id="doc-a-clutch-diagnosis-and-repair-16">A. Clutch Diagnosis and Repair — 16%</h1>
+<h2 id="doc-what-ase-can-test">What ASE can test</h2>
+<p>Diagnosis of noise, binding, slip, pulsation, chatter, pedal effort, and release faults; mechanical linkage and pedal switches; hydraulic masters/slaves/lines/dampers; release and pilot bearings; disc/pressure plate; flywheel, dual-mass flywheel, ring gear, runout and crankshaft endplay; contamination sources; bellhousing/case alignment and dowels; and powertrain mounts.</p>
+<h2 id="doc-mechanism">Mechanism</h2>
+<p>Pedal up and engaged:</p>
+<p><strong>Flywheel → clamped disc → disc splines → input shaft</strong></p>
+<p>Pedal down and released:</p>
+<p><strong>Pedal/linkage or hydraulic pressure → release bearing → pressure-plate fingers → clamp force removed</strong></p>
+<h2 id="doc-diagnostic-map">Diagnostic map</h2>
+<table>
+<thead>
+<tr>
+<th>Complaint</th>
+<th>Strong direction</th>
+<th>Confirm before replacement</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>RPM flare under load</td>
+<td>Slip: clamp, friction material, adjustment, contamination</td>
+<td>Verify free play/release position, leak source, disc/pressure-plate/flywheel condition</td>
+</tr>
+<tr>
+<td>Hard first/reverse or clash while stopped</td>
+<td>Drag: incomplete release or pilot support</td>
+<td>Release travel, hydraulics/linkage, disc warp, pilot bearing, alignment</td>
+</tr>
+<tr>
+<td>Pulsation at pedal</td>
+<td>Rotating release/flywheel/pressure-plate geometry</td>
+<td>Runout, warped/uneven surfaces, release components</td>
+</tr>
+<tr>
+<td>Chatter on takeoff</td>
+<td>Uneven friction or powertrain movement</td>
+<td>Contamination source, hot spots/runout, mounts, alignment</td>
+</tr>
+<tr>
+<td>Noise as release load begins</td>
+<td>Release-system direction</td>
+<td>Bearing, retainer/guide tube, fork/pivot, preload/contact design</td>
+</tr>
+<tr>
+<td>Noise with full release and relative engine/input-shaft motion</td>
+<td>Pilot-bearing direction</td>
+<td>Confirm input-shaft state and support condition</td>
+</tr>
+</tbody></table>
+<h3 id="doc-slip-versus-drag">Slip versus drag</h3>
+<ul>
+<li><strong>Slip = will not hold torque.</strong> High load makes it obvious.</li>
+<li><strong>Drag = will not release torque.</strong> Stopped shifts and reverse make it obvious.</li>
+<li>Too much free play can reduce release travel and cause drag.</li>
+<li>Too little free play can maintain release load and cause slip.</li>
+</ul>
+<h3 id="doc-bearing-qualification">Bearing qualification</h3>
+<p>Pedal position is an observation framework, not a universal proof of when a bearing starts rotating. Some concentric release systems maintain bearing contact and rotation. Ask what changed: rotation, release load, or relative speed.</p>
+<p><strong>Resolving &ldquo;when is it noisiest&rdquo; (a missed question type):</strong> a traditional, pedal-actuated release bearing normally only contacts the pressure-plate fingers when the pedal is pressed — so its noise is typically most noticeable <strong>disengaged</strong>. A <strong>continuous-contact/self-adjusting clutch (SAC) release bearing</strong>, common on GM vehicles, rides against the fingers and rotates with the engine essentially all the time the engine runs — so its noise is typically most noticeable <strong>engaged</strong> (normal driving), since that&#39;s when it&#39;s continuously loaded and turning, not just during the moment of a shift. Identify which design is in the vehicle before picking an answer; don&#39;t assume the pedal-actuated pattern is universal.</p>
+<h3 id="doc-chatter-cause-map">Chatter — a second, distinct cause map from slip/drag</h3>
+<p>Chatter (a shudder/judder on engagement, not simple slip or drag) has its own set of causes, and a class question testing chatter is not testing the same thing as one testing slip vs. drag:</p>
+<ul>
+<li><strong>Contamination</strong> — oil, grease, or coolant on the friction disc causes uneven grab as the disc engages. This is the classic chatter cause, not a free-play problem.</li>
+<li><strong>Uneven pressure-plate clamp load</strong> — pressure-plate fasteners tightened unevenly (not to the sequence/torque spec) load the diaphragm/springs unevenly, so clamp force isn&#39;t uniform around the disc as it engages.</li>
+<li><strong>Inconsistent hydraulic apply</strong> — a low clutch master-cylinder fluid level can produce inconsistent release/engagement travel and contribute to chatter, separately from contamination or fastener torque.</li>
+<li>Free play (too much or too little) is a <strong>slip/drag</strong> cause, not the standard chatter explanation — don&#39;t reach for it first on a chatter question.</li>
+</ul>
+<h3 id="doc-measurements-and-service-logic">Measurements and service logic</h3>
+<ul>
+<li>Flywheel runout and crankshaft endplay require a dial indicator and an application specification.</li>
+<li>Inspect the rear main seal and other contamination sources before installing a new clutch.</li>
+<li>Bellhousing/case mating surfaces and alignment dowels matter because misalignment can load the pilot/input shaft and cause repeated symptoms.</li>
+<li>Dual-mass flywheel movement and reuse limits are application-specific.</li>
+<li>Do not blow clutch dust with compressed air; use the required controlled cleaning method.</li>
+<li>A road test at 15–20 mph, full throttle, in high gear checks for <strong>both</strong> clutch slippage and clutch spin-down (deceleration) behavior — it&#39;s not a single-purpose test.</li>
+<li>Air in a hydraulic clutch system is a <strong>drag</strong> cause (incomplete release from a spongy/inconsistent hydraulic apply); a repair that opens the hydraulic circuit should be followed by a bleed procedure.</li>
+</ul>
+<hr>
+<h1 id="doc-b-transmission-diagnosis-and-repair-17">B. Transmission Diagnosis and Repair — 17%</h1>
+<h2 id="doc-what-ase-can-test-2">What ASE can test</h2>
+<p>Noise, clash, hard shifting, jump-out, leaks and fluid; external linkages/cables and mounts; disassembly and inspection; forks, rails, sleeves, detents and interlocks; input/output/countershaft/reverse components; synchronizers and blocking-ring clearance; bearing preload/endplay and shim selection; cases/bores/vents; lubrication pumps/coolers; sensors/actuators; and circuit/module/data diagnosis.</p>
+<h2 id="doc-constant-mesh-and-synchronizer-operation">Constant-mesh and synchronizer operation</h2>
+<ul>
+<li>Gear pairs remain meshed.</li>
+<li>A freewheeling speed gear becomes the selected ratio when the sleeve locks its dog teeth to the shaft-mounted hub.</li>
+<li>Hub = fixed to shaft; sleeve = slides; ring = matches speed and blocks; keys/struts = apply the ring first.</li>
+</ul>
+<p>Sequence:</p>
+<p><strong>Fork → sleeve/keys → blocker ring → gear cone friction → speed match → sleeve engages gear dog teeth</strong></p>
+<h2 id="doc-diagnostic-map-2">Diagnostic map</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>First direction</th>
+<th>Required caution</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>One gear clashes</td>
+<td>Its synchronizer/blocker mechanism</td>
+<td>Inspect fluid and linkage too; “most likely” depends on conditions</td>
+</tr>
+<tr>
+<td>All/most gears clash</td>
+<td>Clutch drag or global linkage/fluid fault</td>
+<td>Do not condemn every synchronizer</td>
+</tr>
+<tr>
+<td>Hard shift, engine-on worse than engine-off</td>
+<td>Release/rotation cause high on list</td>
+<td>Engine-off success does not certify every internal part</td>
+</tr>
+<tr>
+<td>Pops out</td>
+<td>Incomplete engagement or axial movement</td>
+<td>Linkage, fork/groove, hub/sleeve/dogs, detent, bearings/endplay, mounts</td>
+</tr>
+<tr>
+<td>Noise in one gear</td>
+<td>Parts uniquely loaded/speeded in that power path</td>
+<td>A rotating part may be unloaded; trace actual torque path</td>
+</tr>
+<tr>
+<td>Noise in every ratio</td>
+<td>Common rotating support, fluid, or broad wear</td>
+<td>Use input/output speed and load changes to narrow</td>
+</tr>
+<tr>
+<td>Complaint after fluid change</td>
+<td>Wrong type/viscosity/level</td>
+<td>Use exact specification</td>
+</tr>
+</tbody></table>
+<h2 id="doc-measurements">Measurements</h2>
+<ul>
+<li><strong>Endplay/preload:</strong> identify the temporary assembly, measurement points, shim/spacer location, and final verification. Never apply a remembered shim formula to a different unit.</li>
+<li><strong>Blocking-ring clearance:</strong> seat the ring as the procedure states; compare measured remaining gap with the model&#39;s limit.</li>
+<li><strong>Radial versus axial:</strong> side-to-side/runout versus along-axis/endplay.</li>
+<li><strong>Pump/cooler:</strong> a manual transmission may have an active lubrication/cooling circuit. A restricted cooler can create high temperature and repeat failure on an equipped application.</li>
+</ul>
+<h2 id="doc-electrical-electronic-coverage">Electrical/electronic coverage</h2>
+<p>The official task list includes sensors, actuators, switches, modules, solenoids, connectors, harnesses, module inputs/outputs, and data communication. Use circuit fundamentals in the actual operating state. Resistance checks on an unpowered circuit may miss voltage loss that appears only under load.</p>
+<h2 id="doc-gaskets-seals-and-case-integrity">Gaskets, seals, and case integrity</h2>
+<p>Officially tested and easy to skip past: gaskets, sealants, seals, and fasteners at every mating joint, plus the sealing surfaces themselves — a good gasket on a warped or damaged surface still leaks. The case/extension-housing mating surfaces, bores, dowels, bushings, and <strong>vents</strong> are also explicit task-list items. A blocked vent pressurizes the case as it heats up and pushes fluid past a seal that may be perfectly good — check the vent before condemning a seal on a repeat leak. Transmission mounts are inspected/replaced under this category too; a failed mount can present as noise or vibration that looks like an internal fault.</p>
+<hr>
+<h1 id="doc-c-transaxle-diagnosis-and-repair-17">C. Transaxle Diagnosis and Repair — 17%</h1>
+<h2 id="doc-what-changes-from-the-transmission-category">What changes from the transmission category</h2>
+<p>A transaxle integrates the geartrain and final-drive differential. The same shift diagnosis still applies, but the suspect path expands to:</p>
+<p><strong>Clutch/input → selected gear path → output/final-drive pinion → ring gear/differential case → side gears → half-shafts</strong></p>
+<p>ASE also includes the transaxle differential, side bearings, preload/endplay, limited-slip diagnosis, subframe/cradle alignment, pumps/coolers, sensors/actuators, and electronic controls.</p>
+<h2 id="doc-do-not-overgeneralize-shaft-names">Do not overgeneralize shaft names</h2>
+<p>Transaxle layouts differ. Synchronizers can be on input or output shafts; the final-drive pinion is placed in the output path; some units use an intermediate shaft. Use the labeled diagram and determine which member is fixed, freewheeling, or delivering final-drive torque.</p>
+<h2 id="doc-transaxle-diagnostic-map">Transaxle diagnostic map</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>One ratio noisy</td>
+<td>Selected gear pair/support before the always-active final drive</td>
+</tr>
+<tr>
+<td>Noise in all ratios and tied to vehicle speed</td>
+<td>Final drive, differential, output/intermediate support, half-shaft, or wheel bearing</td>
+</tr>
+<tr>
+<td>Noise only while cornering</td>
+<td>Differential gears/bearings or wheel-bearing load response</td>
+</tr>
+<tr>
+<td>Gear clash in all shifts</td>
+<td>Clutch drag, linkage/fluid, or other global cause</td>
+</tr>
+<tr>
+<td>Low-fluid overheat</td>
+<td>Broad bearing/gear damage possible; find the leak/source</td>
+</tr>
+<tr>
+<td>Torque steer</td>
+<td>Compare tire/steering geometry, mounts, half-shaft/CV geometry, shaft stiffness and actual drive torque; unequal CV angle is one cause, not the only universal cause</td>
+</tr>
+</tbody></table>
+<h2 id="doc-differential-and-limited-slip">Differential and limited slip</h2>
+<ul>
+<li>Side gears connect to half-shafts.</li>
+<li>Spider/pinion gears allow left/right speed difference.</li>
+<li>Open-differential torque is limited by the low-traction side; avoid saying it “sends all power” without defining torque and speed.</li>
+<li>Limited-slip chatter on tight turns after service: verify specified fluid/additive before teardown.</li>
+<li>Limited-slip designs vary: clutch packs, helical/geared units, viscous or controlled couplers, and lockers do not share one service method.</li>
+<li>Brake-based traction control may use the ABS hydraulic unit to slow a spinning wheel, creating reaction torque without mechanically locking the carrier.</li>
+</ul>
+<h2 id="doc-transaxle-setup-seals-fluid-electronics">Setup, seals, fluid, and electronics — same logic as Sections B and E</h2>
+<p>The official task list tests the transaxle&#39;s integrated final drive on the <strong>same measurement and adjustment logic as Section E&#39;s rear axle</strong> — differential pinion (spider) gears/shaft/side gears/thrust washers, case/carrier runout, and shaft/differential bearing preload and endplay via shim/spacer selection. Don&#39;t treat the transaxle differential as untested just because it isn&#39;t a separate rear axle housing; apply <a href="#doc-setup-variables">Setup variables</a> and <a href="#doc-reading-contact-pattern">Reading the contact pattern</a> from Section E directly.</p>
+<p>Also explicitly on the task list and easy to overlook here: gaskets/seals/sealing surfaces and case bores/dowels/bushings/vents (same logic as <a href="#doc-gaskets-seals-and-case-integrity">Section B&#39;s note above</a> — a blocked vent can push fluid past a good seal); the lubrication system, pumps, coolers, and plumbing; checking and refilling transaxle fluid; and transaxle sensors, actuators, switches, and control-module circuits/data communication (same approach as <a href="#doc-electrical-electronic-coverage">Section B&#39;s electrical coverage</a> — use circuit fundamentals under the actual operating state, not just resistance checks on a dead circuit).</p>
+<hr>
+<h1 id="doc-d-drive-half-shafts-and-u-cv-joints-13">D. Drive/Half-Shafts and U/CV Joints — 13%</h1>
+<h2 id="doc-symptom-anchors">Symptom anchors</h2>
+<table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Strong direction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Clicking/popping on turns</td>
+<td>Outer CV joint</td>
+</tr>
+<tr>
+<td>Shudder under acceleration</td>
+<td>Inner/plunging CV joint</td>
+</tr>
+<tr>
+<td>Clunk on accel/decel or forward/reverse</td>
+<td>U/CV joint, splines, slip joint, or driveline lash</td>
+</tr>
+<tr>
+<td>Speed-related vibration</td>
+<td>Tire/wheel, shaft balance/runout, working angle, phasing, or stiff joint</td>
+</tr>
+<tr>
+<td>Growl changing with cornering load</td>
+<td>Wheel bearing direction</td>
+</tr>
+</tbody></table>
+<p>A torn CV boot proves a contamination/lubricant-loss risk, not automatically that the joint is already unusable. Inspect the joint and follow the service criteria.</p>
+<h2 id="doc-four-different-vibration-terms">Four different vibration terms</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Meaning</th>
+<th>Typical check</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Balance</td>
+<td>Uneven mass distribution</td>
+<td>Balance procedure/weights and physical damage</td>
+</tr>
+<tr>
+<td>Runout</td>
+<td>Shaft does not rotate true</td>
+<td>Dial indicator at specified locations</td>
+</tr>
+<tr>
+<td>Phasing</td>
+<td>Relationship of yokes on a multi-joint shaft</td>
+<td>Compare yoke orientation to design marks/specification</td>
+</tr>
+<tr>
+<td>Working angle</td>
+<td>Angle through which each joint operates</td>
+<td>Measure member slopes and calculate/compare actual joint angles</td>
+</tr>
+</tbody></table>
+<p>A conventional two-joint shaft relies on suitable working angles and correct phasing so the speed variation from one Cardan joint can be canceled by the other. Do not use one universal maximum angle; shaft speed and the manufacturer&#39;s design govern.</p>
+<h2 id="doc-why-a-cardan-u-joint-vibrates">Why a Cardan (cross-type) U-joint vibrates</h2>
+<p>A standard Cardan/cross-type U-joint&#39;s output speed varies twice per revolution because the joint&#39;s effective radius changes as it rotates through an angle — the greater the angle, the greater the speed variation. This is an inherent design characteristic, not a fault by itself. Framed in vibration-order terms: 1st order = vibration at the same frequency as the shaft&#39;s rotation speed; 2nd order = a multiple (here, 2×) of rotation speed. A Cardan-joint driveshaft&#39;s angle-driven vibration is inherently 2nd order.</p>
+<p><strong>Canceling it on a two-joint shaft requires both conditions, not just one:</strong></p>
+<ul>
+<li><strong>Phasing:</strong> the yokes at each end of the shaft are oriented so the two joints&#39; speed variations are out of step with each other — commonly described as the joints phased 180° apart — so one joint&#39;s speed-up cancels the other&#39;s slow-down.</li>
+<li><strong>Equal working angles:</strong> the two joints&#39; operating angles must also match (commonly cited within about half a degree of each other), or the cancellation is incomplete even with correct phasing.</li>
+</ul>
+<p>A widely cited rule of thumb keeps each joint&#39;s working angle in roughly the 0.5°–3° range: too small an angle and the joint&#39;s needle bearings ride on the same contact point without the slight rocking motion that distributes wear, risking brinelling/false-brinelling damage; too large an angle increases the speed variation (and vibration/wear) each joint must cancel. Treat these as general working-angle guidance, not a universal spec — always check the manufacturer&#39;s actual angle and phasing tolerance. <strong>CV joints do not share this problem</strong> — a constant-velocity joint is designed to hold the output speed constant through its operating angle, which is why they are used near the wheel instead of a plain cross-type joint.</p>
+<p><strong>Fixed versus plunging location, as a general layout pattern:</strong> the wheel-end joint is typically a fixed-type CV joint (no in/out travel), and the driveline/transmission-side or transfer-case-side joint is typically a plunging design (a tripod plunge joint is one common plunging type) that absorbs the shaft-length change as suspension travels. Verify the specific vehicle&#39;s layout rather than assuming this split always holds.</p>
+<h2 id="doc-measuring-working-angle">Measuring and reading working angle (a missed area — go slow here)</h2>
+<p>A joint&#39;s <strong>working angle</strong> is not the shaft&#39;s slope off the ground by itself — it&#39;s the angle <em>between the two members the joint connects</em> (e.g., transmission/transfer-case output shaft centerline vs. driveshaft centerline at the front joint; driveshaft centerline vs. pinion-yoke/companion-flange centerline at the rear joint). Practical method: an angle finder/protractor (digital or bubble type) is set on each component&#39;s flat, machined reference surface (companion flange, shaft, or a specified reference point) with the vehicle at normal ride height, and each member&#39;s angle relative to level/horizontal is recorded. The <strong>working angle at a joint = the difference between the angles of the two members it connects</strong>, not either member&#39;s raw angle alone.</p>
+<p>Two separate conditions must both be evaluated — missing either one is the classic way to miss these questions:</p>
+<ol>
+<li><strong>Equal (canceling) angles:</strong> the front and rear joint working angles on a given shaft segment should match within the manufacturer&#39;s tolerance (commonly cited around 0.5°) so their speed variations cancel, per the phasing discussion above.</li>
+<li><strong>Angle exists in the correct plane, and isn&#39;t excessive or too small:</strong> compound angles (vertical <strong>and</strong> horizontal offset together) don&#39;t simply add arithmetically — a joint can be within a "vertical-only" spec but still be out of tolerance once horizontal misalignment is included. A U-joint also needs <em>some</em> angle (generally that same rough 0.5°–3° range cited above) to keep its bearings rocking instead of sitting static under load; a working angle of 0° is also a fault, not an ideal.</li>
+</ol>
+<p>When a question gives you two or three measured angles (e.g., transmission output, driveshaft, pinion/axle) and asks whether the driveline is correct: compute each joint&#39;s working angle as the difference between the two members it joins, compare the front and rear joint angles to each other for cancellation, and only then judge whether either is within the reasonable operating range. A shaft that "looks level" can still have a working-angle problem if the transmission and axle mounting angles don&#39;t produce matching joint angles.</p>
+<h2 id="doc-wheel-bearing-logic">Wheel bearing logic</h2>
+<p>Wheel-bearing noise follows wheel speed and often changes when cornering transfers load. Which side becomes louder is not a perfect universal rule; use the load change, location, looseness, roughness, and service procedure together.</p>
+<hr>
+<h1 id="doc-e-drive-axle-diagnosis-and-repair-17">E. Drive Axle Diagnosis and Repair — 17%</h1>
+<h2 id="doc-official-coverage-groups">Official coverage groups</h2>
+<ol>
+<li>Ring/pinion diagnosis, runout, depth, pinion preload, carrier preload, backlash, pattern, crush sleeve/shims.</li>
+<li>Differential carrier, spider/side gears, bearings, thrust washers, and carrier runout.</li>
+<li>Limited-slip/locking diagnosis, lubricant, internal parts, sensors/modules/actuators/calibration.</li>
+<li>Axle shafts, studs, splines, seals, bearings, retainers, flange runout, endplay, housing and vent.</li>
+</ol>
+<h2 id="doc-differential-power-flow">Differential power flow</h2>
+<p><strong>Pinion → ring gear → differential case → spider/pinion gears → side gears → axle shafts</strong></p>
+<p>Straight ahead, side gears rotate together. During a turn, spider gears rotate on their shaft and allow the outer wheel to travel farther/faster than the inner wheel.</p>
+<p>On an <strong>open</strong> differential, a broken axle shaft on one side can produce a <strong>no-drive condition on both wheels</strong> — with no resistance on the broken side, the case just spins that side gear freely and the intact side never sees enough reaction torque to drive the vehicle. Don&#39;t assume a broken axle only affects its own wheel.</p>
+<h2 id="doc-exam-level-traction-device-map">Exam-level traction-device map</h2>
+<p>Start broad: <strong>open</strong>, <strong>limited slip</strong>, or <strong>locker</strong>. Then use the named parts or control system to identify the subtype. ASE prep needs recognition and diagnostic direction; it does not require memorizing every product&#39;s internal service sequence.</p>
+<table>
+<thead>
+<tr>
+<th>Design</th>
+<th>Recognition clue</th>
+<th>First direction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Open + brake traction control</td>
+<td>ABS brakes a spinning wheel; carrier stays open</td>
+<td>Check wheel-speed input and commanded brake action</td>
+</tr>
+<tr>
+<td>Clutch limited slip / Posi</td>
+<td>Clutch packs resist left/right speed difference</td>
+<td>Verify specified fluid/additive before teardown</td>
+</tr>
+<tr>
+<td>Helical/Torsen limited slip</td>
+<td>Helical gears bias torque; no clutch pack</td>
+<td>Do not apply a clutch-LSD rule automatically</td>
+</tr>
+<tr>
+<td>GM/Eaton MLocker/G80 example</td>
+<td>Automatic low-speed governor/cam lock</td>
+<td>Use the named design&#39;s engagement conditions</td>
+</tr>
+<tr>
+<td>Electric or air locker</td>
+<td>Commanded actuator produces full lock</td>
+<td>Check command, actuator, and actual completion</td>
+</tr>
+<tr>
+<td>Other automatic locker</td>
+<td>Locks/unlocks without driver command</td>
+<td>Identify the design before borrowing G80 logic</td>
+</tr>
+</tbody></table>
+<p>ASE can ask identification, diagnosis, internal inspection, sensors/actuators, calibration, or lubricant selection. “Limited slip” and “locker” are not enough information to select one universal test.</p>
+<h2 id="doc-axle-support-types">Axle support types</h2>
+<ul>
+<li><strong>Semi-floating:</strong> shaft carries torque and vehicle load.</li>
+<li><strong>Full-floating:</strong> hub bearings carry vehicle load into housing; shaft mainly carries torque.</li>
+</ul>
+<p>Know retainers and service implications: C-lock versus outer retainer, shaft/bearing/seal inspection, flange runout, and endplay.</p>
+<h2 id="doc-hypoid-terminology-and-load">Hypoid terminology and load</h2>
+<ul>
+<li>Heel = outer tooth end; toe = inner.</li>
+<li>Face = above pitch line; flank = below.</li>
+<li>In the current class material, drive side is convex and coast side is concave.</li>
+<li>Hypoid sliding action requires the specified lubricant.</li>
+<li>Ring and pinion are a matched set.</li>
+</ul>
+<h2 id="doc-hunting-vs-non-hunting-gear-sets">Hunting vs. non-hunting gear sets</h2>
+<p>Whether a given ring-and-pinion tooth count combination is &ldquo;hunting&rdquo; or &ldquo;non-hunting&rdquo; comes down to whether the tooth-count ratio reduces to a whole number:</p>
+<ul>
+<li><strong>Hunting set:</strong> the ring/pinion tooth counts share no common factor — the fraction can&#39;t reduce (e.g., <code>41/11</code>). Because of that, a given pinion tooth doesn&#39;t return to the same ring-gear tooth on any short, predictable cycle; over enough revolutions, each pinion tooth eventually contacts every ring-gear tooth in turn. No factory timing marks are needed at assembly, since there&#39;s no single &ldquo;correct&rdquo; relative tooth position to preserve.</li>
+<li><strong>Non-hunting set:</strong> the tooth counts share a common factor and the ratio reduces to a whole number (e.g., <code>39/13 = 3</code>). A given pinion tooth repeatedly re-contacts the same limited subset of ring-gear teeth on a short, fixed cycle. Because that original tooth-to-tooth relationship was what the gear set was originally lapped/matched to, <strong>factory timing marks matter</strong> — the set must be reassembled with the marks aligned to preserve the original break-in contact pattern.</li>
+<li><strong>Partially non-hunting</strong> is the in-between case: the ratio reduces, but not to a whole number (e.g., <code>42/12 = 7/2</code>) — still a repeating pattern, still needs timing marks.</li>
+</ul>
+<p>Ring and pinion sets are matched/lapped as a set regardless of type; hunting vs. non-hunting affects reassembly (timing marks) and long-run wear distribution, not whether the set is replaced as a pair.</p>
+<h2 id="doc-setup-variables">Setup variables</h2>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>What it controls/measures</th>
+<th>Evidence source</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Pinion depth</td>
+<td>Pinion position relative to ring gear</td>
+<td>Setup dimension and tooth-contact pattern</td>
+</tr>
+<tr>
+<td>Backlash</td>
+<td>Clearance between mating teeth</td>
+<td>Dial indicator at multiple ring-gear positions</td>
+</tr>
+<tr>
+<td>Pinion-bearing preload</td>
+<td>Initial load on pinion bearings</td>
+<td>Rotating torque under the specified seal/lubrication conditions</td>
+</tr>
+<tr>
+<td>Side-bearing preload</td>
+<td>Initial load supporting carrier</td>
+<td>Shim/adjuster procedure and assembly checks</td>
+</tr>
+<tr>
+<td>Ring-gear runout</td>
+<td>Variation in ring-gear mounting/rotation</td>
+<td>Dial indicator around ring gear</td>
+</tr>
+<tr>
+<td>Carrier runout</td>
+<td>Carrier rotation/mounting accuracy</td>
+<td>Dial indicator per procedure</td>
+</tr>
+<tr>
+<td>Contact pattern</td>
+<td>Actual tooth-contact location</td>
+<td>Marking compound under the procedure&#39;s load direction</td>
+</tr>
+</tbody></table>
+<p>Do not diagnose a pattern from one mnemonic without identifying drive/coast side, pinion depth, backlash, and the manufacturer&#39;s adjustment sequence. Measure backlash at several positions; one convenient point can hide runout or mounting problems.</p>
+<h3 id="doc-reading-contact-pattern">Reading the contact pattern (a missed area — the two adjustments control different axes)</h3>
+<p>Two separate adjustments move the pattern in two separate directions. Keep them apart:</p>
+<table>
+<thead>
+<tr>
+<th>Adjustment</th>
+<th>Moves the pattern...</th>
+<th>Because it changes...</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>Pinion depth</strong> (shim under/behind the pinion head)</td>
+<td>Toward <strong>face</strong> (top of tooth) or <strong>flank</strong> (toward the root)</td>
+<td>How deep the pinion meshes into the ring gear</td>
+</tr>
+<tr>
+<td><strong>Backlash</strong> (side-bearing shims — moves the ring gear itself)</td>
+<td>Toward <strong>heel</strong> (outer end) or <strong>toe</strong> (inner end)</td>
+<td>The radial distance between ring gear and pinion</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Pattern observed</th>
+<th>Read as</th>
+<th>General correction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>High on the tooth, toward the <strong>face</strong></td>
+<td>Pinion too far from ring gear (too shallow)</td>
+<td>Move pinion <strong>in</strong> (deeper mesh)</td>
+</tr>
+<tr>
+<td>Low on the tooth, toward the <strong>flank/root</strong></td>
+<td>Pinion too close to ring gear (too deep)</td>
+<td>Move pinion <strong>out</strong> (shallower mesh)</td>
+</tr>
+<tr>
+<td>Toward the <strong>toe</strong> (small end)</td>
+<td>Excess backlash / ring gear too far from pinion</td>
+<td>Move ring gear <strong>in</strong> toward pinion (reduce backlash)</td>
+</tr>
+<tr>
+<td>Toward the <strong>heel</strong> (large end)</td>
+<td>Insufficient backlash / ring gear too close to pinion</td>
+<td>Move ring gear <strong>out</strong> away from pinion (increase backlash)</td>
+</tr>
+<tr>
+<td>Centered on the tooth, correct face-to-flank height, correct heel-to-toe position</td>
+<td>Good pattern</td>
+<td>No correction needed</td>
+</tr>
+</tbody></table>
+<p>Read the pattern on the <strong>drive side</strong> (the loaded side used to diagnose setup); a pattern check normally records both drive and coast sides, and the coast-side pattern should move consistently with the drive-side correction. Because pinion depth and backlash are not independent (moving one shifts backlash and can shift the pattern read for the other), re-check backlash after any depth shim change, and always finish against the manufacturer&#39;s specific pattern illustration and adjustment sequence — this table is the general mnemonic, not a substitute for the axle-specific chart.</p>
+<h3 id="doc-crush-sleeve">Crush sleeve</h3>
+<p>The tightening operation collapses the sleeve; the target is specified bearing <strong>rotating torque</strong>. If preload is exceeded, a typical crush-sleeve procedure requires a new sleeve rather than loosening the nut. A seal-only procedure may specify recording original rotating torque and adding a small amount, but only use that when the identified service procedure says so.</p>
+<h2 id="doc-noise-load-map">Noise/load map</h2>
+<table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Whine/howl changing between acceleration and deceleration</td>
+<td>Ring/pinion contact or setup; note which tooth side is loaded</td>
+</tr>
+<tr>
+<td>Rough growl/rumble</td>
+<td>Bearing direction</td>
+</tr>
+<tr>
+<td>High-frequency growl whose pitch rises quickly and changes little with drive/coast</td>
+<td>Pinion-bearing direction; pinion bearings rotate faster than carrier or axle bearings</td>
+</tr>
+<tr>
+<td>Lower-frequency growl affected by carrier load</td>
+<td>Carrier/side-bearing direction; a no-load hoist result is a clue, not a verdict</td>
+</tr>
+<tr>
+<td>Road-speed growl changing during cornering</td>
+<td>Axle/wheel-bearing load response; confirm with location, feel, looseness, and roughness</td>
+</tr>
+<tr>
+<td>Bearing-like pitch changing with road surface or tire rotation</td>
+<td>Tire direction before internal axle teardown</td>
+</tr>
+<tr>
+<td>Clunk on torque reversal</td>
+<td>Backlash/lash, spider/side gears, splines, U/CV joints</td>
+</tr>
+<tr>
+<td>Chatter on tight turns</td>
+<td>Clutch-type LSD lubricant/friction or clutch condition</td>
+</tr>
+<tr>
+<td>Repeated seal leak</td>
+<td>Vent restriction, shaft/runout/bearing movement, or damaged sealing surface before another seal</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="doc-f-four-wheel-drive-all-wheel-drive-20">F. Four-Wheel Drive / All-Wheel Drive — 20%</h1>
+<h2 id="doc-start-by-identifying-the-architecture">Start by identifying the architecture</h2>
+<h3 id="doc-part-time-4wd">Part-time 4WD</h3>
+<p>When engaged, front and rear output paths may be positively coupled without a center differential. On high-traction pavement, the axles need different average speeds in a turn. If the system cannot accommodate that difference, torque winds up in the driveline and produces bind, hop, steering effort, or difficult disengagement.</p>
+<h3 id="doc-full-time-4wd-awd">Full-time 4WD/AWD</h3>
+<p>Uses a center differential or controlled coupling that allows or manages front/rear speed difference. The mechanism may be geared, viscous, hydraulic, electromagnetic, electromechanical, or multi-plate-clutch based.</p>
+<h3 id="doc-on-demand-awd">On-demand AWD</h3>
+<p>One axle is normally primary; a controlled coupling adds the secondary axle. Locate the coupling in the real torque path:</p>
+<ul>
+<li>Front-drive-based example: transaxle/PTU → propeller shaft → rear coupling.</li>
+<li>Rear-drive-based example: transmission/transfer case → controlled front connection.</li>
+</ul>
+<p>Do not assume engagement waits for wheelspin. Some systems use preemptive inputs such as throttle, steering angle, or modeled demand.</p>
+<h2 id="doc-high-and-low-range">High and low range</h2>
+<ul>
+<li>High range is near direct transfer-case ratio.</li>
+<li>Low range is torque multiplication/reduction for low-speed operation.</li>
+<li>A planetary example may use sun input, fixed ring, and carrier output. For that stated arrangement, ratio is <code>1 + ring teeth/sun teeth</code>. Always identify input, output, and held member before using a formula.</li>
+<li>Range selection and axle coupling are separate functions even if one actuator mechanism serves both.</li>
+</ul>
+<h2 id="doc-range-fork-vs-mode-fork">Range fork vs. mode fork — two different actuators</h2>
+<p>Many transfer cases use two distinct forks driven by two distinct actuators, and ASE-style questions test whether you keep them separate:</p>
+<ul>
+<li><strong>Range fork:</strong> selects direct drive (<strong>high range</strong>) or reduction (<strong>low range</strong>). This is a gearing decision — it does not by itself decide 2WD/4WD.</li>
+<li><strong>Mode fork:</strong> selects <strong>2WD or 4WD</strong> (i.e., whether the secondary output is coupled at all). This is a coupling decision — it does not by itself decide range.</li>
+</ul>
+<p>Framed this way, 2HI and 4HI share the same range (no reduction); they differ only in whether the mode fork has coupled the second output. A concern in one function does not confirm the other function&#39;s hardware.</p>
+<blockquote>
+<p><strong>Tech A/Tech B — worn transfer-case fork:</strong> A vehicle will not shift into 4WD. Technician A says a worn range fork could be the cause. Technician B says a worn mode fork could be the cause. Who is right?<br>
+Correct approach: separate the symptom (won&#39;t engage 4WD — a <em>mode</em> function) from the mechanism named. A worn <strong>mode</strong> fork directly explains a failure to couple 4WD. A worn <strong>range</strong> fork governs high/low reduction, not 2WD/4WD coupling, so it does not directly explain this symptom unless the question&#39;s wiring ties the same actuator to both. Default answer with two independent forks: <strong>Technician B only.</strong> Re-read the question for any statement that the same fork/actuator serves both functions before answering — that detail changes the conclusion.</p>
+</blockquote>
+<h2 id="doc-planetary-gearset">Planetary gearset — the three-member hold rule</h2>
+<p>A simple planetary set has three members: the <strong>sun gear</strong> (center), the <strong>ring/internal gear</strong> (outer, teeth cut on the inside), and the <strong>planet carrier</strong> (holds the planet pinions, which mesh with both sun and ring simultaneously).</p>
+<p><strong>Core rule:</strong> the set only produces a fixed, predictable ratio when exactly one of the three members is <strong>held stationary</strong>. Apply input to a second member and take output from the third. If nothing is held, torque still transfers but there is no fixed output ratio — the set is effectively in neutral. If any two members are locked together, the whole set turns as a unit: <strong>direct drive, 1:1</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>Held member</th>
+<th>Input</th>
+<th>Output</th>
+<th>Result (general pattern)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Ring</td>
+<td>Sun</td>
+<td>Carrier</td>
+<td>Reduction (torque multiplication); output turns same direction as input</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Ring</td>
+<td>Carrier</td>
+<td>Reduction, but a smaller ratio than holding the ring</td>
+</tr>
+<tr>
+<td>Carrier</td>
+<td>Ring</td>
+<td>Sun (or reverse)</td>
+<td>Overdrive (output faster than input); output can reverse direction</td>
+</tr>
+<tr>
+<td>Any two locked together</td>
+<td>—</td>
+<td>—</td>
+<td>Direct drive, 1:1</td>
+</tr>
+</tbody></table>
+<p>The exact numeric ratio in any case depends on the sun/ring tooth counts for that specific gearset — do not carry a specific class example&#39;s ratio (e.g., a particular 4:1 or 1.3:1 figure worked from one instructor&#39;s tooth counts) into a different planetary set. The <strong>pattern</strong> of which member is held, and what that produces (reduction, overdrive, or reverse), is the transferable, exam-relevant part.</p>
+<h2 id="doc-gm-oriented-mode-example">GM-oriented mode example</h2>
+<p>On the GM systems described in the research source:</p>
+<ul>
+<li><strong>2HI:</strong> rear-drive mode.</li>
+<li><strong>AUTO:</strong> front axle can be engaged while delivered torque is varied as needed.</li>
+<li><strong>4HI:</strong> front and rear driveline engaged for suitable low-traction conditions.</li>
+<li><strong>4LO:</strong> low-range reduction with vehicle-specific shift conditions.</li>
+</ul>
+<p>A flashing lamp can indicate an attempted shift; if the shift fails, the prior mode may remain active. This is a GM example, not a universal meaning for every manufacturer&#39;s labels or lamps.</p>
+<h2 id="doc-engagement-diagnosis">Engagement diagnosis</h2>
+<p>For “will not engage,” separate these layers:</p>
+<ol>
+<li>Driver request or automatic request recognized?</li>
+<li>Required speed/gear/brake/neutral conditions met?</li>
+<li>Module has valid inputs and no inhibiting fault?</li>
+<li>Command reaches actuator under load?</li>
+<li>Ground/return path can carry current?</li>
+<li>Motor/solenoid/vacuum/hydraulic mechanism moves?</li>
+<li>Fork/cam/clutch/axle disconnect completes mechanical engagement?</li>
+<li>Position feedback agrees?</li>
+<li>Calibration/initialization complete after repair?</li>
+</ol>
+<p>A meter showing battery voltage at one motor terminal does not prove correct voltage <strong>across</strong> the motor or useful current through it. Measure with the circuit operating and use the actual reversing/PWM/ground-control design.</p>
+<h2 id="doc-tire-circumference">Tire circumference</h2>
+<p>Different tire circumference can force persistent front/rear or left/right speed difference. Before replacing an AWD coupling or transfer case for binding or vibration after tire service, check:</p>
+<ul>
+<li>Placard/application size.</li>
+<li>All four installed sizes.</li>
+<li>Inflation and load.</li>
+<li>Tread depth/circumference.</li>
+<li>Temporary spare use.</li>
+</ul>
+<h2 id="doc-complaint-map">Complaint map</h2>
+<table>
+<thead>
+<tr>
+<th>Complaint</th>
+<th>First questions</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Binds/hops only in engaged part-time 4WD on dry turns</td>
+<td>Is this normal windup for this architecture and surface? Are tires matched?</td>
+</tr>
+<tr>
+<td>Vibration only when front axle engages</td>
+<td>Front shaft/CV/U-joint/angle/runout; front axle; tire mismatch</td>
+</tr>
+<tr>
+<td>Will not shift into 4LO</td>
+<td>Are required shift conditions met? Did request, command, movement, and feedback occur?</td>
+</tr>
+<tr>
+<td>Stuck in 4WD</td>
+<td>Actuator/shift mechanism versus driveline windup preventing release</td>
+</tr>
+<tr>
+<td>Chatter/bind after fluid service</td>
+<td>Correct fluid, fill procedure, adaptation/reset, and tire match</td>
+</tr>
+<tr>
+<td>Repeated transfer-case or axle seal leak</td>
+<td>Vent, shaft movement/runout, surface condition, and fluid level</td>
+</tr>
+</tbody></table>
+<h2 id="doc-fluid-and-service">Fluid and service</h2>
+<p>Transfer-case lubricant is application-specific; “all transfer cases use ATF” is unsafe. The official task list includes fluid level/type and resetting service parameters. It also includes transfer-case internals, shifting mechanisms, shafts/joints, wheel hubs, vents, and calibration/initialization.</p>
+<hr>
+<h1 id="doc-measurement-and-specification-table">Measurement and specification table</h1>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Instrument/evidence</th>
+<th>Meaning</th>
+<th>Trap</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Flywheel runout</td>
+<td>Dial indicator</td>
+<td>Face/axial deviation</td>
+<td>Do not reuse one universal limit</td>
+</tr>
+<tr>
+<td>Shaft endplay</td>
+<td>Dial indicator along axis</td>
+<td>Axial clearance</td>
+<td>Do not confuse with radial clearance</td>
+</tr>
+<tr>
+<td>Blocking-ring clearance</td>
+<td>Feeler gauge or specified method</td>
+<td>Remaining friction/engagement geometry</td>
+<td>One passing gap does not prove every synchronizer part good</td>
+</tr>
+<tr>
+<td>Driveshaft runout</td>
+<td>Dial indicator at specified points</td>
+<td>Shaft rotation truth</td>
+<td>Balance and runout are different</td>
+</tr>
+<tr>
+<td>Working angle</td>
+<td>Angle measurements/calculation</td>
+<td>Joint operating geometry</td>
+<td>Shaft slope alone is not always the compound joint angle</td>
+</tr>
+<tr>
+<td>Backlash</td>
+<td>Dial indicator at ring gear</td>
+<td>Tooth clearance</td>
+<td>Check at multiple positions</td>
+</tr>
+<tr>
+<td>Pinion preload</td>
+<td>Inch-pound rotating torque method</td>
+<td>Bearing load</td>
+<td>Tightening torque is not the measured preload</td>
+</tr>
+<tr>
+<td>Ring/carrier runout</td>
+<td>Dial indicator</td>
+<td>Mounting/rotation variation</td>
+<td>Can distort backlash readings/pattern</td>
+</tr>
+<tr>
+<td>Contact pattern</td>
+<td>Marking compound under specified loading</td>
+<td>Tooth relationship</td>
+<td>Use the axle-specific adjustment chart</td>
+</tr>
+<tr>
+<td>Circuit voltage drop</td>
+<td>Voltmeter on operating circuit</td>
+<td>Voltage lost in supply/return path</td>
+<td>Open-circuit resistance or one terminal voltage may mislead</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="doc-rapid-recall-sheet">Rapid-recall sheet</h1>
+<blockquote>
+<p><strong>CLUTCH</strong><br>Slip = will not hold. Drag = will not release.<br>Release travel, pilot support, contamination, runout, alignment, mounts.</p>
+<p><strong>TRANSMISSION</strong><br>Ring friction matches speed; sleeve engages dog teeth.<br>One gear clash = local synchro direction. All gears = global release/linkage/fluid first.<br>Pop-out = engagement depth/retention/endplay.</p>
+<p><strong>TRANSAXLE</strong><br>Add final drive, differential, half-shafts, wheel bearings, cradle/mounts, and controls to the same logic.</p>
+<p><strong>SHAFTS</strong><br>Outer CV fixed, near wheel; inner CV plunges, near trans/transfer case.<br>Balance ≠ runout ≠ phasing ≠ working angle.<br>Cardan joint = inherent 2nd-order vibration (speed varies 2×/rev). Cancel with equal working angles <strong>and</strong> ~180° phasing.<br>Working angle = angle between the <em>two connected members</em>, not shaft slope alone. Compound (vertical + horizontal) angles don&#39;t add arithmetically.</p>
+<p><strong>AXLE</strong><br>Backlash = tooth clearance. Preload = bearing load. Depth = pinion position. Pattern = contact evidence.<br>Whine = gears; growl = bearings; clunk = lash; turn chatter = LSD fluid/friction.<br>Pattern: <strong>depth</strong> moves face↔flank (top↔root); <strong>backlash</strong> moves heel↔toe (outer↔inner).<br>High/face = pinion too shallow, move in. Low/flank = pinion too deep, move out.<br>Toe = too much backlash, move ring in. Heel = too little backlash, move ring out.</p>
+<p><strong>4WD/AWD</strong><br>Largest category. Identify architecture and completed mode.<br>Range fork = high/low. Mode fork = 2WD/4WD. Two different actuators — don&#39;t blame one for the other&#39;s symptom.<br>Planetary: hold one of sun/ring/carrier for a ratio; lock two together = direct 1:1; hold none = neutral.<br>Tire circumference and fluid type matter.<br>Request → command → loaded circuit → actuator → mechanical engagement → feedback/calibration.</p>
+</blockquote>
+<p class="source-note">Styled with the visual system from Logan's claude-paper whitepaper formatter. Content remains sourced and scoped by the Markdown guide.</p></main>
+</body>
+</html>

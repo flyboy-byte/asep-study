@@ -1,0 +1,32 @@
+The Hydraulic System
+
+as we talked about in powerflowetc.txt...
+Purpose and Function
+The automatic transmission’s hydraulic system has several important purposes and functions including:
+Applies the clutches and bands and therefore control the transmission’s power flow
+Transmits sufficient force and motion to completely apply the control units to prevent slippage
+Maintains fluid flow through the torque converter for its proper operation
+Maintains fluid flow to lubricate and cool the moving parts of the gear train
+
+more textbook dumps: Definition
+Hydraulics, often called fluid power, is a method of transmitting motion and/or force using a fluid. Hydraulics is based on the principle that liquids can flow easily through complicated paths, but they cannot be compressed. All the components in a hydraulic system are interconnected so that fluid pressure can be transmitted to all parts to work as designed.
+
+Pascal’s Law Definition
+pressure is transmitted equally and undiminshed in every direction...
+pascal's studied in brakes...
+To help understand this principle, assume that a force of 10 lbs is exerted on a piston with a surface area of 1 square inch (sq. in.). Since this force, measured in lb or Newton (N), is applied to a piston with an area measured in square inches (sq. in.), the pressure is the force divided by the area, that is, “10 pounds per square inch (PSI).” It is this “pressure” that is transmitted, without loss, throughout the hydraulic system.
+
+Every hydraulic system requires a pump to maintain fluid flow and to pressurize the fluid in the system
+
+the pump itself dont create pressure. pressure comes from a resistance to flow.
+
+in a autotrans, it is always a internal pump.
+The internal–external gears with crescent (or gear) pump
+The Gerotor (rotor) pump
+The vane pump
+basically all the same function.
+they all work on the same principle, an expanding cavity.
+
+Variable Displacement Pumps
+Variable displacement pumps are also positive displacement in that they will pump a certain volume on each revolution, but the displacement, and therefore the fluid volume, can be changed. This is done by moving the vane housing to reduce the size of the pumping chambers
+vane housing moves on a hinge btw... weird.lol

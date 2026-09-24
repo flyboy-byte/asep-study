@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ASE A3 Simple Sheet</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    :root { --ink:#171715; --muted:#6b6860; --faint:#98958c; --line:#dedbd3; --soft:#f5f3ee; --accent:#1f4e6f; }
+    @page { size: Letter; margin: 0.58in 0.62in 0.62in; }
+    html { background:#eceae4; }
+    body { width:8.5in; margin:0 auto; padding:0.55in 0.62in; background:white; color:var(--ink); font-family:Georgia,'Times New Roman',serif; font-size:9.6pt; line-height:1.4; }
+    .doc-title { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:22pt; font-weight:560; letter-spacing:-.02em; margin:0 0 .05in; }
+    .doc-meta { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:9pt; font-weight:650; color:var(--accent); margin:0 0 .12in; }
+    .doc-intro { font-size:9.3pt; color:var(--muted); border-bottom:1pt solid var(--line); padding-bottom:.18in; margin-bottom:.16in; }
+    h1,h2,h3,h4 { font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; break-after:avoid; color:#181817; }
+    h2 { font-size:13.6pt; font-weight:600; line-height:1.2; margin:.2in 0 .07in; padding-top:.12in; border-top:.6pt solid var(--line); }
+    p { margin:0 0 .085in; }
+    ul,ol { margin:.03in 0 .09in; padding-left:.22in; }
+    li { margin-bottom:.03in; }
+    strong { font-weight:700; }
+    hr { border:0; border-top:.6pt solid var(--line); margin:.14in 0; }
+    .source-note { margin-top:.18in; font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif; font-size:7.6pt; color:var(--faint); border-top:.5pt solid var(--line); padding-top:.07in; }
+    @media print { html,body { background:white; } body { width:auto; margin:0; padding:0; } }
+  </style>
+</head>
+<body>
+<h1 class="doc-title">ASE A3 Simple Sheet — Manual Drive Train and Axles</h1>
+<p class="doc-meta">Version 2 · September 22, 2026</p>
+<p class="doc-intro">A condensed, four-page middle ground between the full study guide and the one-page cram sheet: enough explanation to reason through a Tech A/B or &ldquo;most likely&rdquo; question, without the full guide&#39;s setup-procedure depth. Official weights: Clutch 16% &middot; Transmission 17% &middot; Transaxle 17% &middot; Shafts/joints 13% &middot; Drive axle 17% &middot; 4WD/AWD 20%. 50 questions, 40 scored, 60 minutes &mdash; unscored items aren&#39;t identified, so treat every question as scored.</p>
+
+<h2>A. Clutch — 16%</h2>
+<p><strong>Power path (engaged):</strong> flywheel &rarr; clamped disc &rarr; disc splines &rarr; input shaft. <strong>Release path:</strong> pedal/linkage or hydraulic pressure &rarr; release bearing &rarr; pressure-plate fingers &rarr; clamp force removed.</p>
+<p>The two failure directions are opposites, and exam questions hinge on telling them apart:</p>
+<ul>
+<li><strong>Slip</strong> — the clutch will not <em>hold</em> torque. Shows up as RPM flare under load. Causes: worn/glazed friction material, contamination, weak clamp load, or too little free play holding the release bearing against the fingers.</li>
+<li><strong>Drag</strong> — the clutch will not <em>release</em>. Shows up as hard engagement or clash into first/reverse while stopped. Causes: incomplete release travel (too much free play, air in hydraulics, worn linkage), warped disc, or a bound pilot bearing.</li>
+</ul>
+<p>Pulsation at the pedal points to a <em>rotating</em> component (flywheel runout, warped pressure plate/disc) rather than the hydraulic system. Always check the rear main seal and other contamination sources before a new clutch goes in, and never air-blow clutch dust.</p>
+<p><strong>Chatter is a separate cause map from slip/drag</strong> — don&#39;t reach for free play here. The classic chatter cause is contamination (oil/grease/coolant) on the friction disc; uneven pressure-plate fastener torque and a low clutch master-cylinder fluid level can also cause it.</p>
+<p><strong>Release-bearing noise timing depends on the design.</strong> A traditional pedal-actuated release bearing only contacts the pressure-plate fingers when the pedal is pressed, so it&#39;s noisiest <em>disengaged</em>. A continuous-contact/self-adjusting (SAC) release bearing, common on GM vehicles, rotates with the engine essentially all the time, so it&#39;s noisiest <em>engaged</em> — identify the design before picking an answer. A 15-20 mph full-throttle road test in high gear checks both slippage and spin-down, and air in a hydraulic clutch circuit is a drag cause that calls for a bleed after repair.</p>
+
+<h2>B. Transmission — 17%</h2>
+<p>The constant-mesh synchronizer sequence is the single most important sentence in this category:</p>
+<p><strong>Fork moves the sleeve &rarr; sleeve carries the keys/struts against the blocker ring &rarr; the ring&#39;s friction cone matches gear speed to shaft speed &rarr; once speeds match, the sleeve slides past the ring and locks onto the gear&#39;s dog teeth</strong> — not the cone. The cone only synchronizes speed; the dog teeth carry the actual torque.</p>
+<p>Reading clash symptoms: if only <em>one</em> gear clashes, suspect that gear&#39;s synchronizer specifically. If clash happens shifting into <em>every</em> gear, look at something shared by all of them first — clutch release, linkage adjustment, or fluid — before condemning every synchro at once. Pop-out of gear points to engagement depth, worn detent, or shaft endplay rather than the synchronizer itself.</p>
+<p>Don&#39;t overlook the less glamorous officially-tested items: gaskets, seals, and sealing surfaces at every mating joint; case/extension-housing bores, dowels, and <strong>vents</strong> (a blocked vent pressurizes the case and can push fluid past a seal that&#39;s perfectly fine); and mount inspection, since a failed mount can mimic an internal noise or vibration complaint.</p>
+
+<h2>C. Transaxle — 17%</h2>
+<p>Everything from Section B applies — same synchronizer logic, same clash/pop-out reasoning, same gasket/seal/vent/mount coverage. What&#39;s added is that the final drive and differential live in the same case as the transmission, so the differential logic from Section E (below) is in scope here too — and specifically, the transaxle&#39;s final drive is tested on the <strong>same preload/backlash/contact-pattern setup logic as Section E&#39;s rear axle</strong>, just in a different housing, not a separate topic. Shaft/component naming doesn&#39;t automatically carry over from a rear-wheel-drive transmission — confirm the specific unit&#39;s input/output arrangement rather than assuming. Fluid level, the lubrication system, and sensor/actuator/control-module circuits are officially tested here too, same as Section B.</p>
+
+<h2>D. Drive/Half-Shafts and U/CV Joints — 13%</h2>
+<p><strong>Symptom map:</strong> clicking/popping in turns &rarr; outer CV joint (it&#39;s the fixed one, nearest the wheel). Shudder on acceleration &rarr; inner/plunging CV joint (nearest the transmission or transfer case). Clunk on accel/decel &rarr; driveline lash, splines, or a slip joint. Speed-related vibration that isn&#39;t obviously a CV joint &rarr; balance, runout, working angle, or phasing.</p>
+<p><strong>Why a U-joint vibrates at all:</strong> a standard cross-type (Cardan) joint&#39;s output speed varies <em>twice per revolution</em> because the joint&#39;s effective radius changes as it rotates through an angle — bigger angle, bigger variation. This is called 2nd-order vibration (a multiple of shaft rotation speed, as opposed to 1st-order, which tracks shaft speed directly). It&#39;s inherent to the design, not automatically a fault.</p>
+<p><strong>Canceling it on a two-joint shaft takes two separate things, and missing either one is the classic way to get this wrong:</strong></p>
+<ol>
+<li><strong>Phasing</strong> — the yokes at each end are oriented so the two joints&#39; speed-ups and slow-downs happen out of step with each other, commonly described as phased about 180&deg; apart.</li>
+<li><strong>Equal working angles</strong> — the operating angle at each joint has to match the other (commonly cited within about half a degree), or cancellation is incomplete even with correct phasing.</li>
+</ol>
+<p>The <strong>working angle</strong> itself is the angle <em>between the two members a joint connects</em> — for example, the transmission/transfer-case output shaft versus the driveshaft, or the driveshaft versus the pinion yoke — not just how much the shaft appears to slope off level ground. It&#39;s measured with an angle finder on each member&#39;s reference surface, and the working angle at a joint is the <em>difference</em> between those two readings. A typical acceptable range is roughly 0.5&deg;&ndash;3&deg;; a 0&deg; angle is also wrong, because the joint needs a little rocking motion to keep distributing bearing load instead of sitting static. Vertical and horizontal misalignment together (a compound angle) don&#39;t simply add — a shaft can pass a vertical-only check and still be out of tolerance once horizontal offset is included.</p>
+<p>CV joints don&#39;t have this problem at all — they&#39;re built to hold output speed constant through their operating angle, which is why they sit at the wheel end instead of a plain cross-type joint.</p>
+
+<h2>E. Drive Axle Diagnosis and Repair — 17%</h2>
+<p><strong>Power flow:</strong> pinion &rarr; ring gear &rarr; differential case &rarr; spider/pinion gears &rarr; side gears &rarr; axle shafts. Straight ahead, the side gears turn together; in a turn, the spider gears roll on their shaft so the outer wheel can turn faster than the inner one. On an <strong>open</strong> differential, a broken axle shaft can cause a no-drive condition on <strong>both</strong> wheels — the broken side spins free and the intact side never gets reaction torque.</p>
+<p><strong>Tooth geometry vocabulary:</strong> heel = outer (large) end of the tooth, toe = inner (small) end; face = above the pitch line, flank = below it.</p>
+<p><strong>Hunting vs. non-hunting:</strong> if the ring/pinion tooth counts share no common factor (the ratio doesn&#39;t reduce — e.g. 41/11), it&#39;s a <strong>hunting</strong> set — a given pinion tooth eventually meets every ring-gear tooth over enough revolutions, and no factory timing marks are needed. If the ratio reduces to a whole number (e.g. 39/13 = 3), it&#39;s <strong>non-hunting</strong> — a repeating, limited subset of tooth contacts, so factory timing marks matter at reassembly to preserve the original break-in pattern.</p>
+<p><strong>Reading a contact pattern is two separate adjustments controlling two separate axes</strong> — this is the piece worth memorizing cold:</p>
+<ul>
+<li><strong>Pinion depth</strong> moves the pattern toward the <strong>face</strong> (shallow mesh, pattern rides high) or the <strong>flank</strong> (deep mesh, pattern rides low/toward the root). High on the face &rarr; pinion is too far from the ring gear &rarr; move it <strong>in</strong>. Low on the flank &rarr; pinion is too close &rarr; move it <strong>out</strong>.</li>
+<li><strong>Backlash</strong>, adjusted at the side bearings (which moves the ring gear itself), moves the pattern toward the <strong>toe</strong> (too much backlash) or the <strong>heel</strong> (too little backlash). Toward toe &rarr; move the ring gear <strong>in</strong> to reduce backlash. Toward heel &rarr; move it <strong>out</strong> to increase backlash.</li>
+</ul>
+<p>Always read the pattern on the drive side, expect the coast side to move consistently with the correction, and finish against the manufacturer&#39;s own illustration — this is the general mnemonic, not a substitute for the axle-specific chart.</p>
+<p><strong>Setup basics:</strong> backlash is tooth clearance (dial indicator at the ring gear, check several positions). Preload is bearing load, and it&#39;s confirmed by <em>rotating torque</em>, not the wrench&#39;s tightening torque. A crush sleeve collapses once to set that preload — if you overshoot the spec, the fix is a new sleeve, not backing off the nut.</p>
+<p><strong>Axle support types:</strong> semi-floating shafts carry both torque and vehicle weight; full-floating shafts carry mainly torque, with the hub bearings carrying weight into the housing.</p>
+<p><strong>Traction-device map</strong>, broadest to most specific: open differential (possibly paired with brake-based traction control) &rarr; clutch-type limited slip/Posi (clutch packs resist side-speed difference, need the specified friction-modified fluid) &rarr; helical/Torsen limited slip (gear-geometry torque biasing, no clutch pack — don&#39;t apply clutch-LSD logic to it) &rarr; GM/Eaton-style automatic mechanical locker (a low-speed governor/cam mechanism engages full lock) &rarr; electric or air locker (a commanded actuator produces full lock on demand). &ldquo;Limited slip&rdquo; or &ldquo;locker&rdquo; alone isn&#39;t enough identification — find the actual mechanism before choosing a test.</p>
+<p><strong>Noise map:</strong> whine/howl that changes between drive and coast = ring/pinion contact or setup. Rough growl/rumble = a bearing. Growl that changes with cornering load = wheel bearing. Clunk on torque reversal = backlash/lash or worn splines/joints. Chatter on tight turns = limited-slip fluid or clutch condition.</p>
+
+<h2>F. Four-Wheel Drive / All-Wheel Drive — 20% (the largest single category)</h2>
+<p><strong>Start by naming the architecture</strong>, because the right diagnostic path depends on it:</p>
+<ul>
+<li><strong>Part-time 4WD</strong> — front and rear are positively coupled with no center differential. On dry pavement in a turn, the axles want different average speeds; since the system can&#39;t provide that, torque winds up in the driveline. Bind, hop, or hard disengagement in this situation can be normal for the architecture, not automatically a fault.</li>
+<li><strong>Full-time 4WD/AWD</strong> — a center differential or controlled coupling (geared, viscous, hydraulic, electromagnetic, or multi-plate clutch) manages the front/rear speed difference continuously.</li>
+<li><strong>On-demand AWD</strong> — one axle is normally the primary driver; a controlled coupling adds the second axle when needed, and engagement can be commanded preemptively from throttle position, steering angle, or a modeled demand — not only in response to actual wheelspin.</li>
+</ul>
+<p><strong>Two forks, two jobs — the point Logan&#39;s final tested directly:</strong></p>
+<ul>
+<li><strong>Range fork</strong> selects high range (near direct) or low range (torque multiplication/reduction). Purely a gearing decision.</li>
+<li><strong>Mode fork</strong> selects 2WD or 4WD — whether the secondary output is coupled at all. Purely a coupling decision.</li>
+</ul>
+<p>They&#39;re driven by separate actuators. 2HI and 4HI share the same range and differ only in whether the mode fork has coupled the front axle. A worn range fork doesn&#39;t explain a failure to engage 4WD unless the question specifically says one actuator serves both functions — read carefully before answering a Tech A/B question built around this.</p>
+<p><strong>Planetary gearset — the rule that generates the high/low ratio:</strong> a simple set has a sun gear (center), a ring/internal gear (outer, teeth cut inward), and a planet carrier (pinions meshing with both). The set only produces a fixed ratio when exactly <strong>one</strong> member is held stationary — apply input to a second member, take output from the third. Hold nothing, and torque still passes through but there&#39;s no fixed ratio (effectively neutral). Lock any <strong>two</strong> members together and the whole set turns as a unit: direct drive, 1:1. Holding the ring (sun in, carrier out) gives reduction; holding the carrier (ring in, sun out) gives overdrive and can reverse output direction. The <em>pattern</em> — which member is held, and what that produces — is the transferable fact; a specific class example&#39;s numeric ratio is not.</p>
+<p><strong>Engagement won&#39;t complete? Work the chain in order:</strong> driver/automatic request recognized &rarr; required speed/gear/brake/neutral conditions met &rarr; module has valid inputs, no inhibiting fault &rarr; command reaches the actuator under load &rarr; ground/return path carries current &rarr; motor/solenoid/vacuum/hydraulic mechanism actually moves &rarr; fork/cam/clutch completes mechanical engagement &rarr; position feedback agrees &rarr; calibration/initialization completes. A meter reading battery voltage at one motor terminal doesn&#39;t prove correct voltage <em>across</em> the motor under load — measure with the circuit operating.</p>
+<p><strong>Don&#39;t overlook tires:</strong> mismatched circumference (wrong size, uneven wear, a temporary spare) forces a persistent speed difference that can mimic a binding coupling or transfer case. Check placard size, all four installed sizes, inflation, and tread depth before condemning hardware.</p>
+<p><strong>Fluid:</strong> transfer-case lubricant is application-specific — &ldquo;every transfer case uses ATF&rdquo; is an unsafe assumption. The task list also covers shifting mechanisms, shafts/joints, wheel hubs, vents, and calibration/reset after service.</p>
+
+<h2>Quick Tech A/B method</h2>
+<p>Evaluate each technician&#39;s statement independently against the stated symptom before comparing them to each other. Ask: does this mechanism directly explain the described symptom, or does it explain a <em>different</em> function that only sounds related (range vs. mode, pinion depth vs. backlash, balance vs. runout vs. phasing vs. working angle)? The exam rewards keeping adjacent-but-different mechanisms separate more than it rewards memorizing part names.</p>
+<p class="source-note">Condensed from <code>ase_a3_study_guide.md</code> (Version 3, September 22, 2026). Styled with the visual system from Logan&#39;s claude-paper whitepaper formatter.</p>
+</body>
+</html>
