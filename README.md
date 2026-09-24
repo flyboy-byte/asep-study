@@ -37,8 +37,5 @@ make new PDFs match the existing ones).
 
 - Private. It includes instructor exams and a third-party PDF (`mantrans/sources/drivetrain/`), so do
   not make it public.
-- Each course folder still has a leftover `.gitignore` containing `*`. The files were force-added,
-  so existing content is tracked, but new files inside a course folder are ignored until you run
-  `git add -f` or delete those `.gitignore` files.
 - `autotrans/note/` and `autotrans/notes/` both exist; `note/` is the organized intake from
   2026-09-22.
