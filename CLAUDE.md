@@ -2,9 +2,9 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-This is not a codebase. It's Logan's GM ASEP study workspace, with one folder per course/ASE exam.
-There are no build, lint, or test commands, and it is not a git repo. Each course's `.gitignore` is
-`*`, which keeps personal coursework out of any parent repo.
+This is not a codebase. It is Logan's GM ASEP study workspace, with one folder per course/ASE exam, in one private git repo (`flyboy-byte/asep-study`). See `README.md`.
+There are no build, lint, or test commands. Each course's leftover `.gitignore` is
+`*`, so use `git add -f` for new files there.
 
 ## Layout
 
