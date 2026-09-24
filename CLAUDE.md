@@ -28,8 +28,8 @@ source boundaries, and the file inventory. If it conflicts with this file, `CONT
 
 ## Reusable framework
 
-The process is defined in the separate public repo `/home/logan/projects/asep-study-workflow`
-(github.com/flyboy-byte/asep-study-workflow) and the `ase-study` skill. `WORKFLOW.md` in each
+The process is defined in `workflow/` (merged into this repo 2026-09-24 from the former public repo
+github.com/flyboy-byte/asep-study-workflow) and the `ase-study` skill. `WORKFLOW.md` in each
 scaffolded folder is a copy of that process. Use it, but don't reorganize existing notes to fit it.
 
 ## Rules that apply across every course
