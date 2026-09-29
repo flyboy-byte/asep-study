@@ -1,3 +1,4 @@
+added issoss.pdf, its a representation of how a clutch drum or whatever can be used as a reluctor for the iss or oss sensors.
 # Image-derived automatic-transmission notes
 
 This folder was created on **2026-09-22** to turn the supplied screenshots into readable Markdown while keeping every original image available for checking diagrams and labels.
