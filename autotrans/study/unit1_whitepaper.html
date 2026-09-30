@@ -1,0 +1,510 @@
+<!doctype html>
+<title>Unit 1: Automatic Transmission Fundamentals</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+  /* ============ TOKENS ============ */
+  :root{
+    --bg:        #edf0ee;
+    --surface:   #ffffff;
+    --surface-2: #e3e7e3;
+    --ink:       #14191b;
+    --muted:     #4d5659;
+    --faint:     #7c8688;
+    --line:      #d2d8d3;
+    --line-hi:   #b6bfb9;
+    --accent:    #c8481c;
+    --accent-ink:#fff6f1;
+    --accent-2:  #2c4a4a;
+    --accent-2-ink: #dff0ec;
+    --good:      #3d6b4f;
+    --shadow:    0 1px 0 rgba(20,25,27,.04);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:        #14181a;
+      --surface:   #1b2123;
+      --surface-2: #212a2b;
+      --ink:       #e9ede9;
+      --muted:     #aab4b1;
+      --faint:     #7c8886;
+      --line:      #313a3b;
+      --line-hi:   #47514f;
+      --accent:    #e46c3f;
+      --accent-ink:#1c110b;
+      --accent-2:  #7fb3ab;
+      --accent-2-ink: #0c1817;
+      --good:      #7fbf95;
+      --shadow:    0 1px 0 rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:        #14181a;
+    --surface:   #1b2123;
+    --surface-2: #212a2b;
+    --ink:       #e9ede9;
+    --muted:     #aab4b1;
+    --faint:     #7c8886;
+    --line:      #313a3b;
+    --line-hi:   #47514f;
+    --accent:    #e46c3f;
+    --accent-ink:#1c110b;
+    --accent-2:  #7fb3ab;
+    --accent-2-ink: #0c1817;
+    --good:      #7fbf95;
+    --shadow:    0 1px 0 rgba(0,0,0,.3);
+  }
+
+  /* ============ BASE ============ */
+  *,*::before,*::after{ box-sizing:border-box; }
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    padding-block: clamp(1.5rem, 4vw, 3.5rem);
+  }
+  .wrap{ max-width: 760px; margin:0 auto; padding-inline: 18px; }
+  ::selection{ background: var(--accent); color: var(--accent-ink); }
+
+  h1,h2,h3,h4{ font-family:'Oswald', 'Arial Narrow', sans-serif; text-transform:uppercase; letter-spacing:.02em; text-wrap:balance; color:var(--ink); font-weight:600; }
+  p{ margin:0 0 .95em; line-height:1.7; color:var(--ink); }
+  strong{ font-weight:600; }
+  code, .mono{ font-family:'IBM Plex Mono', ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  /* ============ MASTHEAD ============ */
+  .masthead{
+    border: 1px solid var(--line-hi);
+    border-radius: 3px;
+    background: var(--surface);
+    padding: 1.5rem 1.6rem 1.35rem;
+    margin-bottom: 1.1rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .masthead::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0; width:6px;
+    background: var(--accent);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono'; font-size:11.5px; font-weight:600;
+    letter-spacing:.14em; text-transform:uppercase; color:var(--accent);
+    display:flex; align-items:center; gap:.5em; margin-bottom:.6rem;
+  }
+  .eyebrow .sep{ color: var(--faint); }
+  .masthead h1{ font-size: clamp(26px,4.4vw,34px); line-height:1.1; margin: 0 0 .35rem; }
+  .masthead .sub{
+    font-size:14.5px; color:var(--muted); font-style:italic; margin-bottom: 1rem;
+    font-family:'IBM Plex Sans'; text-transform:none; letter-spacing:0;
+  }
+  .meta-row{
+    display:flex; flex-wrap:wrap; gap: .5rem 1.4rem;
+    font-family:'IBM Plex Mono'; font-size:11.5px; color:var(--muted);
+    border-top:1px solid var(--line); padding-top:.75rem;
+  }
+  .meta-row b{ color:var(--ink); font-weight:600; }
+
+  /* ============ TOC ============ */
+  .toc{
+    background: var(--surface); border:1px solid var(--line);
+    border-radius:3px; padding: 1.1rem 1.3rem; margin-bottom: 1.6rem;
+  }
+  .toc-title{ font-family:'IBM Plex Mono'; font-size:10.5px; font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--faint); margin-bottom:.65rem; }
+  .toc ol{ list-style:none; margin:0; padding:0; counter-reset: toc; display:grid; gap:.4rem; }
+  .toc li{ counter-increment: toc; font-size:14px; }
+  .toc a{
+    display:flex; gap:.6em; align-items:baseline; text-decoration:none; color:var(--ink);
+    padding:.15rem 0;
+  }
+  .toc a::before{
+    content: counter(toc,decimal-leading-zero);
+    font-family:'IBM Plex Mono'; font-size:11px; color:var(--accent); flex:none;
+  }
+  .toc a:hover{ text-decoration: underline; text-decoration-color: var(--accent); }
+
+  /* ============ SECTIONS ============ */
+  section{ margin-bottom: 2.1rem; }
+  .sec-head{
+    display:flex; align-items:baseline; gap:.7rem;
+    border-bottom: 2px solid var(--ink); padding-bottom:.4rem; margin-bottom: 1rem;
+  }
+  .sec-num{
+    font-family:'IBM Plex Mono'; font-size:13px; font-weight:600; color:var(--accent);
+    flex:none;
+  }
+  h2{ font-size: 20px; margin:0; }
+  h3{ font-size: 15.5px; margin: 1.5rem 0 .5rem; color: var(--accent-2); letter-spacing:.03em; }
+  h3 .n{ font-family:'IBM Plex Mono'; color:var(--faint); font-weight:500; margin-right:.4em; }
+
+  /* ============ TABLES ============ */
+  .tbl-wrap{ overflow-x:auto; margin: .9rem 0 1.2rem; border:1px solid var(--line); border-radius:3px; }
+  table{ width:100%; border-collapse:collapse; font-size:13.5px; background:var(--surface); }
+  thead th{
+    text-align:left; font-family:'IBM Plex Mono'; font-size:10.5px; font-weight:600;
+    letter-spacing:.08em; text-transform:uppercase; color:var(--faint);
+    padding:.55rem .8rem; border-bottom:1px solid var(--line-hi); background:var(--surface-2);
+    white-space:nowrap;
+  }
+  td{ padding:.6rem .8rem; border-bottom:1px solid var(--line); vertical-align:top; }
+  tbody tr:last-child td{ border-bottom:none; }
+  td:first-child, th:first-child{ font-weight:500; }
+
+  /* ============ LISTS ============ */
+  ul.plain, ol.plain{ padding-left: 1.3rem; margin: 0 0 1rem; }
+  ul.plain li, ol.plain li{ margin-bottom:.4rem; line-height:1.65; }
+
+  /* ============ NOTE (callout) ============ */
+  .note{
+    display:flex; gap:.8rem; background: var(--surface); border:1px solid var(--line);
+    border-left: 3px solid var(--accent); border-radius: 2px;
+    padding: .85rem 1rem; margin: 1rem 0; font-size:13.5px;
+  }
+  .note .tag{
+    font-family:'IBM Plex Mono'; font-size:10px; font-weight:600; letter-spacing:.1em;
+    color:var(--accent); text-transform:uppercase; flex:none; padding-top:.1rem;
+  }
+  .note.rule{ border-left-color: var(--accent-2); }
+  .note.rule .tag{ color: var(--accent-2); }
+  .note p{ margin:0; }
+  .note strong{ color: var(--ink); }
+
+  /* ============ FIGURE ============ */
+  .figure{
+    background: var(--surface); border:1px solid var(--line); border-radius:3px;
+    padding: 1.1rem 1rem .9rem; margin: 1.2rem 0;
+  }
+  .figure img{ width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:2px; }
+  .figure figcaption{
+    font-family:'IBM Plex Mono'; font-size:10.5px; color:var(--faint);
+    margin-top:.6rem; letter-spacing:.02em; line-height:1.6;
+  }
+  .figure figcaption em{ font-family:'IBM Plex Sans'; font-style:italic; color:var(--muted); display:block; margin-top:.35rem; }
+
+  /* ============ CRAM SHEET ============ */
+  .cram-head{ text-align:center; margin: 2.6rem 0 1.4rem; }
+  .cram-head .eyebrow{ justify-content:center; }
+  .cram-head h2{ font-size:24px; }
+  .cram-list{
+    background: var(--surface); border:1px solid var(--line); border-radius:3px;
+    padding: 1.2rem 1.4rem;
+  }
+  .cram-list ul{ margin:0; padding-left: 1.2rem; }
+  .cram-list li{ font-size:13.5px; line-height:1.7; margin-bottom:.55rem; }
+  .cram-list li:last-child{ margin-bottom:0; }
+  .cram-list .mono{ background:var(--surface-2); padding:.05em .35em; border-radius:2px; }
+
+  /* ============ FOOTER ============ */
+  footer{
+    margin-top:2.4rem; padding-top:1rem; border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono'; font-size:11px; color:var(--faint);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem;
+  }
+
+  hr.div{ border:none; border-top:1px dashed var(--line-hi); margin: 2rem 0; }
+
+  @media print{
+    :root{ --bg:#fff; --surface:#fff; --surface-2:#f2f4f2; }
+    body{ padding: 0; }
+    .wrap{ max-width: none; padding-inline: 0; }
+    a{ color: inherit; text-decoration: none; }
+    section{ break-inside: avoid-page; page-break-inside: avoid; }
+    .figure, .note, .tbl-wrap, .cram-list{ break-inside: avoid; page-break-inside: avoid; }
+    .cram-head{ break-before: page; page-break-before: always; }
+    .toc{ break-after: page; page-break-after: always; }
+  }
+</style>
+
+<div class="wrap">
+
+  <div class="masthead">
+    <div class="eyebrow">GM ASEP <span class="sep">/</span> A2 AUTOMATIC TRANSMISSION &amp; TRANSAXLE <span class="sep">/</span> UNIT 1</div>
+    <h1>Automatic Transmission Fundamentals</h1>
+    <p class="sub">Power flow, planetary gear theory, apply devices, hydraulics, and electronic controls — everything covered in class notes so far. Built from class notes, not the ASE task list.</p>
+    <div class="meta-row">
+      <span><b>Prepared</b> September 30, 2026</span>
+      <span><b>Source</b> class notes (power flow, hydraulics, electronics) + GM/ACDelco training slides + 6L80 technician guide excerpt</span>
+      <span><b>Scope</b> Unit 1 only</span>
+    </div>
+  </div>
+
+  <nav class="toc">
+    <div class="toc-title">Contents</div>
+    <ol>
+      <li><a href="#s1">Power Flow &amp; Planetary Gear Fundamentals</a></li>
+      <li><a href="#s2">Apply Devices, Shift Quality &amp; the Illustrated 10-Speed</a></li>
+      <li><a href="#s3">Hydraulic System &amp; Electronic Controls</a></li>
+      <li><a href="#cram">Cram Sheet</a></li>
+    </ol>
+  </nav>
+
+  <!-- ============ SECTION 1 ============ -->
+  <section id="s1">
+    <div class="sec-head"><span class="sec-num">01</span><h2>Power Flow &amp; Planetary Gear Fundamentals</h2></div>
+
+    <p>A manual transmission physically connects gears with a sleeve/synchronizer assembly. An automatic transmission does the same job a different way: <strong>a clutch pack, pushed by hydraulic pressure, locks the gear connection instead.</strong> The ability to "stall" while in gear belongs to the <strong>torque converter</strong>, not the transmission — once a gear is engaged, turning the input shaft mechanically turns the output shaft.</p>
+
+    <h3><span class="n">1.1</span>Simple planetary gear set</h3>
+    <p>Three members, always in mesh:</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Member</th><th>Role</th></tr></thead>
+        <tbody>
+          <tr><td>Sun gear</td><td>Center of the set.</td></tr>
+          <tr><td>Planet carrier (+ pinions)</td><td>Holds the pinions, which revolve around the sun gear and stay in constant mesh with both the sun and the ring gear.</td></tr>
+          <tr><td>Ring (annulus) gear</td><td>Outermost member, internal teeth.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <div class="tag">Memorize</div>
+      <p>One member is held (reaction), one is driven (input), one is the output. Two held/driven together = direct drive. None held = neutral. More planet pinions adds strength, not ratio change.</p>
+    </div>
+
+    <h3><span class="n">1.2</span>General planetary rules</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Result</th><th>Condition</th></tr></thead>
+        <tbody>
+          <tr><td>Neutral</td><td>No driving member or reaction member</td></tr>
+          <tr><td>Forward direct drive, 1:1</td><td>Two members are driven</td></tr>
+          <tr><td>Forward reduction</td><td>Carrier is the output</td></tr>
+          <tr><td>Forward overdrive</td><td>Carrier is the input</td></tr>
+          <tr><td>Reverse, reduction or overdrive</td><td>Carrier is the reaction member</td></tr>
+          <tr><td>Forward or reverse overdrive</td><td>Sun gear is the output</td></tr>
+          <tr><td>Forward or reverse reduction</td><td>Sun gear is the input</td></tr>
+          <tr><td>Reverse rotation</td><td>One external gear drives another external gear</td></tr>
+          <tr><td>Same-direction rotation</td><td>An external gear drives an internal gear, or vice versa</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Identify the actual input, reaction, and output members in the diagram <em>before</em> applying these rules.</p>
+
+    <h3><span class="n">1.3</span>Calculating gear ratios</h3>
+    <p>A simple planetary set produces seven ratios plus neutral, depending on which member is driven and which is held: ring held/sun driven → reduction; ring held/carrier driven → overdrive (reciprocal); sun held/ring driven → reduction; sun held/carrier driven → overdrive (reciprocal); carrier held/sun driven → reverse reduction; carrier held/ring driven → reverse overdrive (reciprocal). You should be able to work through which member is doing what and get the ratio type right using the reference material — not necessarily recite every formula cold.</p>
+
+    <h3><span class="n">1.4</span>Compound gear sets</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Set</th><th>Built from</th><th>Used for</th></tr></thead>
+        <tbody>
+          <tr><td>Simpson</td><td>Two ring gears + two planet carriers sharing one sun gear</td><td>4- and 5-speed transmissions</td></tr>
+          <tr><td>Ravigneaux</td><td>One carrier with two sets of planet gears + two sun gears + one ring gear</td><td>Combined with a simple set for 6–8 speeds</td></tr>
+          <tr><td>LePelletier</td><td>A Ravigneaux set + a simple planetary set</td><td>6/7/8-speed (Ford 6R60/6R80, GM 6L80E)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>In a LePelletier train, the ring gear is always an input and the sun gear is always a reaction member (splined to the pump), so the simple set is always in reduction — it feeds a reduced-speed input into the Ravigneaux set, which has three possible inputs and two reaction members.</p>
+    <div class="note rule">
+      <div class="tag">Instructor note</div>
+      <p>You don't need to memorize the full power flow. You do need the basic concepts — what a planetary set is, how ratios are determined, and the difference between gear-set families.</p>
+    </div>
+
+    <h3><span class="n">1.5</span>Why more ratios (8/9/10-speed)</h3>
+    <p>More ratios → lower first gear (better launch) and higher overdrive ratios (lower engine speed at highway speed → better fuel economy, lower emissions). Eight/nine/ten-speed gear sets are hard to classify into one simple family — they combine more than one compound set. Always check service information for the actual design rather than assuming a family.</p>
+
+    <h3><span class="n">1.6</span>Synchronous vs. nonsynchronous shifts</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>What it means</th><th>Uses a one-way clutch?</th></tr></thead>
+        <tbody>
+          <tr><td>Synchronous (overlap / clutch-to-clutch)</td><td>The new driving/reaction member must be <em>timed</em> with the release of the old one. A band must release and reapply at an exact moment.</td><td>No</td></tr>
+          <tr><td>Nonsynchronous (asynchronous / freewheel)</td><td>A one-way clutch self-releases (overruns) the instant the next member applies — no timing needed.</td><td>Yes</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note">
+      <div class="tag">Memorize</div>
+      <p>Synchronous shifts don't use a one-way clutch; nonsynchronous shifts do. Mistiming a clutch-to-clutch shift risks applying two ratios at once — a very harsh shift, or a flare the other way. Most modern transmissions are fully synchronous.</p>
+    </div>
+  </section>
+
+  <hr class="div">
+
+  <!-- ============ SECTION 2 ============ -->
+  <section id="s2">
+    <div class="sec-head"><span class="sec-num">02</span><h2>Apply Devices, Shift Quality &amp; the Illustrated 10-Speed</h2></div>
+
+    <h3><span class="n">2.1</span>Clutch packs</h3>
+    <p>Alternating <strong>frictions</strong> (fiber plates) and <strong>steels</strong> (separator plates), finished with a pressure plate retained by a snap ring. Unapplied plates need clearance to stay cool, avoid drag, and let fluid pass between them. Fluid feeds from the shaft into the drum, sealed with sealing rings. A <strong>controlled release</strong> matters as much as apply timing for synchronous shifts — most transmissions use a return spring pack, though some use fluid on both sides of the piston when release needs to be faster than a spring alone.</p>
+
+    <h3><span class="n">2.2</span>Bands and servos</h3>
+    <p>A <strong>band</strong> is a lined metal strip that wraps a drum to prevent it from rotating — rigid (thick) or flexible (thin/flex) types. A <strong>servo</strong> is the hydraulic assembly that applies the band, using pressure to move a piston that tightens it.</p>
+
+    <h3><span class="n">2.3</span>One-way clutches</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Type</th><th>How it works</th></tr></thead>
+        <tbody>
+          <tr><td>Roller clutch</td><td>Roller bearings lock into a ramped outer race.</td></tr>
+          <tr><td>Sprag clutch</td><td>Hourglass-shaped sprags between smooth inner/outer races; major diameter &gt; race gap, minor diameter &lt; race gap.</td></tr>
+          <tr><td>Mechanical diode</td><td>Spring-loaded rectangular struts (pocket plate) engage notches (notch plate); stronger than a roller or sprag design — think of a ratchet wrench.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>A one-way clutch applies or holds only when needed and self-releases (overruns) when not — that's what makes a nonsynchronous shift possible without timing.</p>
+
+    <h3><span class="n">2.4</span>Garage shifts vs. power shifts</h3>
+    <ul class="plain">
+      <li><strong>Garage shift</strong> — a neutral-to-drive or neutral-to-reverse shift made at rest. Slower and less severe (3–4 seconds), but needs high <em>static</em> friction since it's moving a stopped vehicle. Some apply devices are pre-applied at rest so only the last one is needed to complete the shift.</li>
+      <li><strong>Power shift</strong> — a clutch applied while the vehicle is already moving, under load. Needs a high <em>dynamic</em> coefficient of friction.</li>
+    </ul>
+
+    <h3><span class="n">2.5</span>Shift quality</h3>
+    <p>Smooth power shifts require precise timing between the outgoing and incoming apply device. Flare, harsh engagement, bump, or unusual noise (squeak/squawk/shriek) are all shift-quality faults.</p>
+    <div class="note rule">
+      <div class="tag">Rule</div>
+      <p><strong>Accumulator:</strong> tied hydraulically to a clutch/band servo. Absorbs fluid during pressure buildup, slowing the rise and lengthening lockup time. Unlike a brake accumulator, it stores no backup pressure — smoothing is its only job. If the piston bottoms out before the shift finishes, a sudden pressure spike causes a <strong>slide-bump shift</strong> (smooth start, harsh finish).</p>
+    </div>
+    <p><strong>Wave plate</strong> (Belleville/cushion plate) — a non-flat plate that adds shift smoothing. Many transmissions skip it and rely on accumulators/orifices plus, on electronic units, solenoid cycling instead.</p>
+
+    <h3><span class="n">2.6</span>The illustrated 10-speed (range-reference chart)</h3>
+    <p>Source: GM/ACDelco training slides. Model not identified in the images — don't guess it. Every range needs an input, an output, and usually a reaction member. Applied ≠ automatically driving — the complete path through the gearset is what matters (Neutral applies three clutches, but no output torque path exists).</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Range/gear</th><th>C1</th><th>C2</th><th>C3</th><th>C4</th><th>C5</th><th>C6</th><th>OWC</th></tr></thead>
+        <tbody>
+          <tr><td>Park</td><td>Applied</td><td>Applied</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>Reverse</td><td>Applied</td><td>Applied</td><td>—</td><td>Applied</td><td>—</td><td>Applied</td><td>—</td></tr>
+          <tr><td>Neutral</td><td>Applied</td><td>Applied</td><td>—</td><td>Applied</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>1st</td><td>Applied</td><td>Applied</td><td>—</td><td>Applied¹</td><td>Applied</td><td>—</td><td>Holding</td></tr>
+          <tr><td>2nd</td><td>Applied</td><td>Applied</td><td>Applied</td><td>Applied</td><td>—</td><td>—</td><td>Holding</td></tr>
+          <tr><td>3rd</td><td>Applied</td><td>—</td><td>Applied</td><td>Applied</td><td>Applied</td><td>—</td><td>O/R</td></tr>
+          <tr><td>4th</td><td>Applied</td><td>—</td><td>Applied</td><td>Applied</td><td>—</td><td>Applied</td><td>O/R</td></tr>
+          <tr><td>5th</td><td>Applied</td><td>—</td><td>Applied</td><td>—</td><td>Applied</td><td>Applied</td><td>O/R</td></tr>
+          <tr><td>6th</td><td>Applied</td><td>—</td><td>—</td><td>Applied</td><td>Applied</td><td>Applied</td><td>O/R</td></tr>
+          <tr><td>7th</td><td>—</td><td>—</td><td>Applied</td><td>Applied</td><td>Applied</td><td>Applied</td><td>O/R</td></tr>
+          <tr><td>8th</td><td>—</td><td>Applied</td><td>—</td><td>Applied</td><td>Applied</td><td>Applied</td><td>—</td></tr>
+          <tr><td>9th</td><td>—</td><td>Applied</td><td>Applied</td><td>—</td><td>Applied</td><td>Applied</td><td>—</td></tr>
+          <tr><td>10th</td><td>—</td><td>Applied</td><td>Applied</td><td>Applied</td><td>—</td><td>Applied</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="font-size:12.5px;color:var(--muted);">¹ In 1st, C4 gets only enough pressure to prevent slip — not full line pressure. O/R = over-running.</p>
+
+    <div class="note">
+      <div class="tag">Pattern</div>
+      <p>High reduction (Reverse ≈ 4.87:1, 1st ≈ 4.70:1) → decreasing reduction through 6th (≈1.28:1) → 7th direct drive (1.000:1) → increasing overdrive through 10th (≈0.64:1). OWC holds in 1st–2nd, overruns 3rd–7th, unused in 8th–10th (no element to overrun for free coasting — engine compression slows the car on lift-throttle until it downshifts).</p>
+    </div>
+
+    <p><strong>Diagnostic use of this chart:</strong> if two affected ranges share an applied element, that element is a candidate cause. If an unaffected range also depends on that same element, more evidence is needed — pressure tests, speed-sensor data, ratio-error info, and the exact SI chart separate a hydraulic, mechanical, or control cause. Always pull the exact chart for the vehicle/calibration — calibration changes can make a clutch's functional name inaccurate.</p>
+  </section>
+
+  <hr class="div">
+
+  <!-- ============ SECTION 3 ============ -->
+  <section id="s3">
+    <div class="sec-head"><span class="sec-num">03</span><h2>Hydraulic System &amp; Electronic Controls</h2></div>
+
+    <h3><span class="n">3.1</span>Hydraulic system — purpose</h3>
+    <ol class="plain">
+      <li>Applies clutches/bands, controlling power flow.</li>
+      <li>Transmits enough force to fully apply control units and prevent slippage.</li>
+      <li>Maintains flow through the torque converter.</li>
+      <li>Lubricates and cools the gear train.</li>
+    </ol>
+    <p><strong>Pascal's Law:</strong> pressure is transmitted equally and undiminished in every direction through a fluid. Force ÷ area = pressure (e.g. 10 lb on a 1 sq-in piston = 10 PSI), and that pressure transmits without loss throughout the system (same principle used in brake hydraulics).</p>
+    <div class="note rule">
+      <div class="tag">Rule</div>
+      <p>The pump does <strong>not</strong> create pressure by itself — pressure comes from <em>resistance to flow</em>. An automatic transmission always uses an internal pump: internal/external gear (crescent/gear), Gerotor (rotor), or vane — same underlying principle, an expanding cavity.</p>
+    </div>
+    <p><strong>Variable displacement pumps</strong> are still positive-displacement (fixed volume per revolution) but can change that displacement — typically by moving the vane housing to change the pumping-chamber size.</p>
+
+    <h3><span class="n">3.2</span>Electronic controls — evolution</h3>
+    <p>Older transmissions used <strong>governor pressure</strong> (100% road-speed-based) working against <strong>throttle valve pressure</strong> (rises with throttle position) — the more throttle, the more governor pressure needed to trigger a shift. Modern transmissions replace that hydraulic logic with the TCM, which sits on the CAN network.</p>
+
+    <h3><span class="n">3.3</span>TCM inputs (direct)</h3>
+    <ul class="plain">
+      <li>Input and output shaft speed sensors</li>
+      <li>Transmission range sensor</li>
+      <li>Fluid pressure sensors</li>
+      <li>Fluid temperature sensor</li>
+      <li>Shift and pressure control solenoids</li>
+    </ul>
+    <p>Shift timing/quality and TCC apply timing/quality are largely software-driven — the same hardware can behave differently across vehicle variants purely through calibration, and some TCMs can be reprogrammed in the field.</p>
+    <p><strong>Transmission Range (TR) switch</strong> — also called the manual lever position (MLP) sensor. Mounted on the case, attached to the shifter, tells the TCM which range the driver selected.</p>
+
+    <h3><span class="n">3.4</span>Speed sensors — ISS and OSS</h3>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Sensor</th><th>Also called</th><th>Measures</th><th>Used for</th></tr></thead>
+        <tbody>
+          <tr><td>Input Speed Sensor (ISS)</td><td>Turbine Speed Sensor (TSS)</td><td>Input/turbine shaft speed (≈ engine speed)</td><td>Line pressure, shift timing, TCC slip speed, gear ratio</td></tr>
+          <tr><td>Output Speed Sensor (OSS)</td><td>Vehicle Speed (VS) sensor</td><td>Output shaft speed</td><td>Speedometer, cruise control, shift timing, vehicle speed, fault detection</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Both are <strong>hall-effect sensors</strong> that can use a clutch drum or housing itself as the reluctor (trigger wheel) — not always a dedicated toothed wheel.</p>
+
+    <figure class="figure">
+      <img src="issoss_fig.png" alt="ISS/OSS sensor mounting and reluctor detail, 6L80 technician guide page 41">
+      <figcaption>FIGURE — 6L80 TECHNICIAN GUIDE, P.41 (ELECTRICAL COMPONENTS / TRANSMISSION SPEED SENSORS)
+        <em>The ISS faces the 1-2-3-4 and 3-5-R clutch housing and is triggered by splines on its outside diameter. The OSS faces the output shaft and is triggered by machined slots. Both sensors receive 8.3–9.3 V on the shared ISS/OSS supply circuit from the TCM. An improper signal from either sensor sets a DTC.</em>
+      </figcaption>
+    </figure>
+
+    <h3><span class="n">3.5</span>Pressure switches and pressure logic</h3>
+    <p>Most pressure sensors are transducers (variable resistance proportional to pressure) — e.g. the line pressure sensor (LPS). Pressure <strong>switches</strong> at the valve body are simpler: on/off, either normally open (N.O.) or normally closed (N.C.). The TCM reads the on/off pattern of multiple switches (routed through the pressure switch manifold, PSM) to determine which gear is actually engaged, and uses that to adjust line pressure, TCC apply, and shift solenoid operation.</p>
+    <div class="note">
+      <div class="tag">6L80 example</div>
+      <p>Teacher's analogy: "like a keyboard switch." The fluid pressure switches are normally closed — current flows when no pressure is present. When pressure reaches the switch, it moves a diaphragm/piston/disk that opens the circuit (current stops).</p>
+    </div>
+
+    <h3><span class="n">3.6</span>Temperature sensors</h3>
+    <p>Most are <strong>NTC thermistors</strong> (negative temperature coefficient — resistance <em>drops</em> as temperature <em>rises</em>). The TFT (transmission fluid temperature) sensor works this way: cold fluid = high resistance = high signal voltage; as fluid warms, resistance and signal voltage drop. The TCM uses this for shift quality and TCC apply quality across the operating temperature range.</p>
+
+    <h3><span class="n">3.7</span>Sensors shared with the PCM</h3>
+    <p>Accelerator pedal position (APP), throttle position (TP, a potentiometer), engine coolant temperature (ECT, a thermistor), and MAP/MAF (engine load) all feed both the PCM and TCM so engine and transmission operation stay coordinated. The brake switch is a transmission input too — it can affect torque converter clutch state (detail covered later in the course).</p>
+
+    <h3><span class="n">3.8</span>Solenoids</h3>
+    <p>An electronic transmission shifts by turning solenoids on/off, which control the hydraulic pressure operating the shift valves or the torque converter clutch.</p>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>Solenoid</th><th>Type</th><th>Function</th></tr></thead>
+        <tbody>
+          <tr><td>EPC (Electronic Pressure Control) / PCS / VFS / force motor</td><td>Normally closed, PWM (~300–600 Hz)</td><td>Controls the pressure regulator valve → line pressure. Higher duty cycle = more current = lower pressure. Max current ≈ 1 amp.</td></tr>
+          <tr><td>Shift solenoids (e.g. 6L80)</td><td>Normally closed, 3-port, ON/OFF</td><td>Work with pressure control solenoids to operate shift/clutch regulator valves; TCM picks the on/off combination for the commanded gear.</td></tr>
+          <tr><td>TCC PC solenoid</td><td>Normally-low, precision regulator</td><td>Controls TCC apply/release pressure; can "ramp" apply/release for smoother TCC engagement.</td></tr>
+          <tr><td>Line PC solenoid</td><td>Normally-high, precision regulator</td><td>~0.1 A = max line pressure, ~1.0 A = min line pressure — opposite current/pressure relationship from the EPC. Based on throttle position, fluid temp, gear state.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3><span class="n">3.9</span>Adaptive learning (TAP)</h3>
+    <p>The TCM/PCM compares commanded shift timing against actual output-speed change. A shift that takes longer than normal (often from clutch pack wear) causes the TCM to <strong>start the shift sooner</strong> next time — adaptive control/learning, keeping shift duration within a target range based on the driver's own habits. Adapts (TAP) are reset after installing a new transmission or after clutch-to-clutch shift work, and also account for valve body personality, pump variation, and different drive-feel modes (Sport, Tow/Haul, Off-Road, etc.).</p>
+  </section>
+
+  <!-- ============ CRAM SHEET ============ -->
+  <div class="cram-head">
+    <div class="eyebrow">QUICK REFERENCE <span class="sep">/</span> ONE PAGE</div>
+    <h2 id="cram">Unit 1 Cram Sheet</h2>
+  </div>
+
+  <div class="cram-list">
+    <ul>
+      <li><strong>Autotrans vs. mantrans:</strong> hydraulic clutch pack replaces the sleeve/synchronizer. Torque converter is what allows stall-in-gear, not the transmission.</li>
+      <li><strong>Planetary set:</strong> sun / carrier (+ pinions) / ring. One held (reaction), one driven (input), one output. More pinions = strength, not ratio change.</li>
+      <li><strong>Ratio rule of thumb:</strong> carrier output → reduction; carrier input → overdrive; carrier held → reverse. Sun input → reduction; sun output → overdrive.</li>
+      <li><strong>Compound sets:</strong> Simpson (1 sun, 2 carriers, 2 rings) → 4–5 spd. Ravigneaux (2 suns, 1 dual carrier, 1 ring) w/ simple set → 6–8 spd. LePelletier = Ravigneaux + simple set (6L80E, 6R60/80).</li>
+      <li><strong>Synchronous</strong> = timed, no one-way clutch, mistime → harsh shift/flare. <strong>Nonsynchronous</strong> = one-way clutch self-releases, no timing needed. Most modern units: synchronous.</li>
+      <li><strong>Clutch pack:</strong> alternating frictions/steels + pressure plate + snap ring. <strong>Band:</strong> wraps a drum, applied by a servo.</li>
+      <li><strong>One-way clutches:</strong> roller (rollers on ramped race), sprag (hourglass sprags), mechanical diode (strongest, like a ratchet).</li>
+      <li><strong>Garage shift</strong> = at rest, high static friction, can pre-stage devices. <strong>Power shift</strong> = under load, high dynamic friction.</li>
+      <li><strong>Accumulator:</strong> smooths pressure rise only (no backup pressure, unlike brakes). Bottoms out early → slide-bump shift.</li>
+      <li><strong>10-speed pattern:</strong> high reduction → 7th direct <span class="mono">1.000:1</span> → overdrive through 10th. OWC holds 1st–2nd, overruns 3rd–7th, unused 8th–10th.</li>
+      <li><strong>Pascal's Law:</strong> pressure = force ÷ area, transmitted equally everywhere. Pump doesn't create pressure — resistance to flow does.</li>
+      <li><strong>ISS</strong> (= TSS) reads input/turbine speed; <strong>OSS</strong> (= VS sensor) reads output/vehicle speed. Both hall-effect, both can use a clutch drum as the reluctor, both run on a shared 8.3–9.3 V supply. Bad signal from either → DTC.</li>
+      <li><strong>Pressure switches:</strong> on/off, N.O./N.C., read as a pattern (pressure logic) to confirm actual gear.</li>
+      <li><strong>Temp sensors:</strong> NTC thermistor — resistance drops as temperature rises.</li>
+      <li><strong>EPC solenoid:</strong> normally closed, more current = lower pressure. <strong>Line PC solenoid:</strong> normally high, more current = lower pressure, opposite amp range from EPC.</li>
+      <li><strong>Adaptive learning (TAP):</strong> resets after transmission replacement/clutch-to-clutch work; adjusts for wear, valve body, and driver habit; varies by drive mode.</li>
+    </ul>
+  </div>
+
+  <footer>
+    <span>Unit 1 — Automatic Transmission Fundamentals</span>
+    <span>GM ASEP A2</span>
+  </footer>
+
+</div>
