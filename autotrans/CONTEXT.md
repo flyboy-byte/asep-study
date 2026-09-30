@@ -1,6 +1,6 @@
 # A2 study context
 
-Status: Note intake continuing; official task list verified and coverage mapping against it started in `research.md`.
+Status: ASE-focused research pass done 2026-09-30 (weighted 63-task map + indexed research notes). Note intake continues. No study package requested yet.
 Created: 2026-09-20. Last updated: 2026-09-30.
 
 ## Intent
@@ -17,7 +17,9 @@ Build understanding from course notes, public teaching material, shop examples a
 - `notes/hydralics.txt` (hydraulic system purpose, Pascal's law, pump types) and `notes/electronics.txt` (TCM inputs, ISS/OSS/TSS/VSS, pressure switches, EPC/PC/TCC PC solenoids, adaptive learning/TAP) were added 2026-09-23 and 2026-09-29 respectively and are now mapped in `research.md`. Both mix the learner's own notes with pasted textbook/6L80-tech-guide excerpts; the learner flagged `electronics.txt` as closer to his strongest ASE reasoning area.
 - `note/issoss.pdf` (2026-09-29, one page) shows a clutch drum/housing used as a reluctor for the ISS/OSS speed sensors; logged in `research.md` under Electronic Systems.
 - The original PNGs were moved, without renaming, to `note/images/`. Their organized transcription and study synthesis is `note/notes.md`; `note/README.md` records the intake method and limits.
-- Start date, class-final date, and ASE appointment: unknown; do not infer them.
+- ASE A2 appointment: about two weeks after 2026-09-30, per the learner. The exact date wasn't given, so don't infer one. Start date and class-final date: unknown.
+- Learner profile (stated 2026-09-30): GM ASEP student with about 2 years at a GM dealership and 7 ASE passes in a row; confident in electrical. Wants ASE-weighted prep with basics kept light. Noted that ASE rewards textbook and service-manual reasoning over shop habit.
+- Research evidence: `research_notes/A2 open gap research/` holds 20 tagged research files from 2026-09-30, indexed in `research.md` under "Weighted research pass". The session's network policy blocked full-page fetches, so the findings are search-snippet level; verify against the full page or SI before a guide quotes them. Read `conflict_resolution.md` first: it corrects 5 claims in the other files and flags task-number errors. `handoff-2026-09-30/` is a frozen snapshot made for outside tools and is now stale.
 - Learner experience and strengths for A2: learner self-reports electrical/electronic questions as his most confident reasoning area on the ASE so far.
 - Textbook/edition, prep books, named lab assemblies, and other supplied notes: not yet recorded (notes reference a "6L80 technician guide" and general textbook passages by description only, no edition given).
 - Existing official, commercial, instructor, or manufacturer-training question sources for A2: not yet recorded. Keep them separate from generated guides unless the learner requests integration and the content can be used.
