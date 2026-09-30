@@ -1,7 +1,7 @@
 # A2 study context
 
 Status: Note intake continuing; official task list verified and coverage mapping against it started in `research.md`.
-Created: 2026-09-20. Last updated: 2026-09-29.
+Created: 2026-09-20. Last updated: 2026-09-30.
 
 ## Intent
 
@@ -37,5 +37,12 @@ For the 2026-09-22 intake, the learner specifically requested that the PNGs be c
 - Remaining boundary: several training slides in `note/notes.md`'s source images contain scrollable prose, and the screenshots capture only the visible portion. The `research.md` coverage table also shows real gaps: no notes yet cover general transmission-type ID/OBD II basics (Area A), valve body/accumulator/fluid-filter in-vehicle service (Area B), or R&I/end-play/clutch-pack-clearance procedure (Area C) — these are procedure and measurement tasks, distinct from the strong conceptual coverage already present for planetary gearing, hydraulic theory, and electronic sensor/solenoid theory.
 - 2026-09-29 (second pass): Ran a web-first research pass against three named coverage gaps and logged tagged findings in `research.md`'s "Web-first research pass" section: transmission-type identification (torque converter vs. DCT vs. CVT), OBD II monitor readiness/DTC-clearing principles, valve-body/accumulator/servo inspection technique, and end-play/clutch-pack-clearance measurement method, plus general (non-secure) A2 Tech-A/Tech-B test-taking strategy. All findings are public technician/rebuilder-industry material, tagged DOCUMENTED or INFERRED with sources and access date, and explicitly flagged as needing SI/primary-source verification before any spec number is quoted in a guide. No raw notes were touched and no guide/cram sheet was created.
 - Remaining open after the second pass: scan-tool bidirectional control usage, TCM/module reprogram-and-relearn procedure detail, hydraulic pressure test procedure/spec interpretation, torque-converter stator one-way-clutch failure diagnosis, and hybrid/electrified drive transmission identification — none of these got real research coverage yet.
-- Next action: keep accepting course notes as they arrive, and route any that touch the still-open items above with priority. A class-final or ASE study package has not been requested and should wait for that request; when it comes, `research.md`'s coverage table and web-first findings are the starting point. Learner asked (2026-09-29) to carry the `issoss.pdf` ISS/OSS diagrams into whichever future guide covers speed sensors, as an actual figure rather than cited text.
+- 2026-09-30: Learner direction: ASE A2 is about two weeks away, so focus on ASE. Research follows the official task list and weights, not the earlier gap list.
+  - Learner profile: 7 ASE passes, about 2 years at a GM dealership, confident in electrical. Keep basic principles light.
+  - This session's role is research only; curating into guides happens later in the framework.
+  - Read the A2 task list from the local ASE guide PDF. Added "Weight per task" and a 63-task map against notes and research to `research.md`. Area B has the highest yield per task and was the thinnest coverage; Area C is about 0.3 questions per task.
+  - Ran parallel web research and saved tagged notes to `research_notes/A2 open gap research/` (indexed in `research.md`).
+  - Network policy blocked full-page fetches, so the findings are snippet-level and need verifying before a guide uses them.
+  - No raw notes changed; no guide or cram sheet built.
+- Next action: fold the six pending research files into the `research.md` index. Then curate the research notes into a weighted ASE A2 package, when the learner asks for one. Keep accepting course notes as they arrive. A class-final or ASE study package has not been requested and should wait for that request; when it comes, `research.md`'s coverage table and web-first findings are the starting point. Learner asked (2026-09-29) to carry the `issoss.pdf` ISS/OSS diagrams into whichever future guide covers speed sensors, as an actual figure rather than cited text.
 

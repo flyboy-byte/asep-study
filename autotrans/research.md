@@ -149,6 +149,39 @@ Targets were the three gaps already named in the coverage table above. This is p
 
 **Still open after this pass:** scan-tool bidirectional control usage, TCM/module reprogram-and-relearn procedure detail, hydraulic pressure test procedure/spec interpretation, torque converter stator one-way-clutch failure diagnosis, and hybrid/electrified drive transmission identification — none of these got real research coverage this round and remain gaps in the coverage table above.
 
+*2026-09-30 outcome:* all five items above now have research notes: `scan_tool_bidirectional.md`, `tcm_programming_relearn.md`, `hydraulic_pressure_testing.md` and `stator_owc_diagnosis.md`. Hybrid identification was dropped as low-weight (part of A.1 only). The task-list map above re-weights all of them.
+
+### Weighted research pass, 2026-09-30 (research only, not curated)
+
+Parallel web research, prioritized by the official weights and the learner profile:
+- GM ASEP student with about 2 years in a GM dealership and 7 ASE passes in a row;
+- confident in electrical;
+- ASE rewards textbook and service-manual reasoning over shop habit.
+
+Each file is raw evidence, tagged DOCUMENTED / INFERRED / OPEN (plus ANECDOTAL for forum claims), with URLs, the access date, scope (universal / GM-specific / needs SI) and A2 task numbers. It still needs curating and has not been merged into guides.
+
+**Evidence limit:** the session's network policy blocked full-page fetches from almost every technical site, so nearly all findings come from search-result snippets ("DOCUMENTED (snippet)"). Re-verify against the full page or SI before a guide quotes anything, especially any number. Each file ends with its own conflicts and gaps.
+
+Files are in `research_notes/A2 open gap research/`:
+
+| File | Tasks | What it covers |
+|---|---|---|
+| `area_a_mech_hydraulic_diagnosis.md` | A.2–A.4, A.8–A.10, A.13–A.15, A.22 | Diagnostic order; fluid level (no-dipstick) and condition; leaks; road-test terms; NVH; TCC symptoms; overheating; stop/start pump/accumulator; engine-vs-transmission traps |
+| `area_a_electronic_diagnosis.md` | A.5–A.7, A.16, A.18–A.21, A.23, A.26–A.28 | Speed sensor types and tests; TFT open/short behavior; TR switch; solenoid current ramps; voltage drop; CAN 60 Ω check; OBD II DTC types and permanent codes; P07xx meanings; shift-by-wire |
+| `hydraulic_pressure_testing.md` | A.11, A.17, C.21 | Pressure-test procedure and interpretation (low all ranges / one range / high / no rise); electronic pressure control inverse logic; stall test; air checks |
+| `stator_owc_diagnosis.md` | A.12, A.13 | Stator freewheel vs. seized symptoms; low/high stall meaning; removed-converter checks; TCC stuck-on/shudder |
+| `shift_phases_adapts.md` | A.9, A.23, C.6 | Clutch-to-clutch shift phases; flare (underlap) vs. tie-up (overlap); GM adaptive pressure cells; maxed adapts = mechanical/hydraulic fault; Ford keep-alive-memory adapts; Chrysler clutch volume index |
+| `apply_chart_reasoning.md` | A.8, A.9, A.14, C.13, C.19–C.23 | Elimination method; lost-hold vs. extra-hold symptoms; manual range/coast separators; ASE sample chart matches Ford 5R55; classic unit charts; common mistakes |
+| `cross_system_concerns.md` | A.21, A.22 | Other modules' data used by the TCM; ABS/wheel-speed faults; engine torque signal; battery/network U-codes; brake switch; ADAS torque requests; transfer case/driveline |
+| `textbook_vs_shop.md` | multiple | 12 shop-habit vs. by-the-book contrasts; how "most likely" answers work; stall-test limits |
+| `area_b_in_vehicle.md` | B.1–B.12 | TR/linkage symptoms; yoke/bushing; pan debris by material; cooler flush/flow test and thermal bypass valve; valve body assembly errors; accumulator/servo; harness wicking and fretting; mounts; fluid service and no-dipstick checks |
+| `area_c_overhaul.md` | C.1–C.23 (except C.6, C.15) | Converter seating; dowels/pilot; cooler flush; air test; bushings; check balls; sealing rings; one-way clutch orientation; friction soak; methods for band, pump, chain and preload checks |
+| `scan_tool_bidirectional.md` | A.24 | Commanded vs. actual; GM line-pressure control via scan tool; Chrysler 41TE clutch volume index (low weight) |
+| `tcm_programming_relearn.md` | A.25, C.6 | Programming basics; solenoid body calibration data (Ford, GM 8-speed); Service Fast Learn rules (low weight) |
+| `study_resources_catalog.md` | — | Official ASE practice test; WeberAuto; textbooks by edition; free industry material; brain-dump sites to avoid |
+
+Six more files are being researched: hardest topics and strategy, CVT, DCT, GM failure patterns, hydraulic valves and circuits, and TCC. Add them to this table when they land.
+
 ## Sources
 
 Record only what was actually accessed. Public notes, lessons and videos may supply leads; verify important technical claims with applicable primary sources. Link commercial sources and record any user-supplied edition/pages without assuming access to the rest of the book.
