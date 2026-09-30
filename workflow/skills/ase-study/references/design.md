@@ -60,7 +60,8 @@ Existing competence should reduce repetitive fundamentals. It should not erase s
 |---|---|
 | `CONTEXT.md` | Purpose, actual dates, learner preferences, current state, and next action. |
 | `WORKFLOW.md` | Reusable process; adjust locally where the course needs it. |
-| `research.md` | Coverage, open questions, verified findings, source locations, and consequential practice errors. |
+| `research.md` | Coverage, open questions, verified findings, source locations, and consequential practice errors. The curated index — not where raw evidence from a large pass should live. |
+| `research_notes/<pass name>/` | Optional. Raw tagged evidence from a large or parallel research pass, one file per topic, with its own short README. `research.md` points into it; it doesn't duplicate it. |
 | Raw notes | Unedited source material, wherever the learner already keeps it. |
 | `study/` | Guides, cram sheets, requested practice and final outputs. |
 | `sources/` | Original reference documents and a record of what was actually inspected. |

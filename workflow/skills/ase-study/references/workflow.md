@@ -57,6 +57,8 @@ Keep material coverage and demonstrated understanding separate. If the course ha
 
 Research can mean finding a broad teaching guide or investigating one specific claim. Prefer the smallest addition that resolves the question. Record the explanation, source/date/location, application, evidence strength, teaching use, and remaining boundary in the existing research file. Use the source strategy that accompanies this skill.
 
+For a large or parallel research pass (many open gaps at once, or several agents/sessions working concurrently), put the raw tagged findings in a dated subfolder — `research_notes/<pass name>/`, one file per topic — rather than growing `research.md` itself into raw evidence. `research.md` stays the curated index: task numbers, weights, and a pointer into each file. Give the subfolder its own short `README.md` stating the tag legend, how to use it, and which file to read first if the pass produced cross-file conflicts. Note any access limitation that affects the whole pass (e.g., search-snippet-only evidence) once at the top instead of in every file. This keeps `research.md` scannable while preserving the full evidence trail.
+
 ## Study and review
 
 Use short explanations, retrieval, worked measurements, and new diagnostic scenarios as appropriate. Ask the learner to explain why a competing answer is less suitable under the stated conditions. Distinguish mechanism errors, missed conditions, diagram-reading errors, and question-reading mistakes.
