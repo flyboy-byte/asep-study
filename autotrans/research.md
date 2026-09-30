@@ -185,6 +185,7 @@ Files are in `research_notes/A2 open gap research/`:
 | `tcc_diagnosis.md` | A.9, A.13, A.18, A.22 | Enable inputs; two- vs. three-pass; controlled slip; slip PIDs; GM PIP5504 shudder-vs-misfire rule; slip causes outside the converter (bores, stator-support bushing, release flow) |
 | `cvt_diagnosis.md` | A.1 (plus A.19, A.26) | Primary/secondary pulley roles; the ASE CVT sample question (matches Subaru Lineartronic: "won't ratio down" = primary-down circuit); step motor vs. pressure; push belt vs. chain; CVT fluid; Nissan/GM calibration data |
 | `dct_diagnosis.md` | A.1 | Dry vs. wet and actuation type as separate questions; touch-point relearn; Ford DPS6 seal-leak judder vs. TCM failure; DCT vs. torque-converter symptom reasoning (low weight) |
+| `conflict_resolution.md` | all | **Read before curating.** Cross-file check of 38 items: 16 resolved (TFT open reads cold/short reads hot; high stall = slipping element, low stall = freewheeling stator/weak engine; permanent DTC clearing; pan drop is partial; line pressure before stall), 10 likely, 12 still open. Flags 5 claims in other files that contradict standard theory (low roller clutch scope; 4L60-E overrun clutch in D3; Allison reverse = C3+C5; etc.) and task-number errors. |
 | `gm_failure_patterns.md` | multiple | GM bulletins as worked examples, each ending in a brand-neutral lesson: 18-NA-355 (8L fluid shudder), 16-NA-019 (adapts), PIP5437B, 16-NA-014 (drainback), 22-NA-182 (cooler circuit), 6T 3-5-R wave plate; unverified bulletin numbers flagged |
 
 ## Sources
