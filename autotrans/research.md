@@ -180,7 +180,12 @@ Files are in `research_notes/A2 open gap research/`:
 | `tcm_programming_relearn.md` | A.25, C.6 | Programming basics; solenoid body calibration data (Ford, GM 8-speed); Service Fast Learn rules (low weight) |
 | `study_resources_catalog.md` | — | Official ASE practice test; WeberAuto; textbooks by edition; free industry material; brain-dump sites to avoid |
 
-Six more files are being researched: hardest topics and strategy, CVT, DCT, GM failure patterns, hydraulic valves and circuits, and TCC. Add them to this table when they land.
+| `hardest_topics_and_strategy.md` | multiple | Ranked hard topics (apply charts, solenoid electrical vs. performance faults, pressure/stall interpretation, TCC vs. misfire); ASE's own test-taking guidance; qualifier words. **Caveat:** its task numbers use an older numbering (e.g., apply charts as A.1–A.3), so re-map with the table above. It also calls CVT/DCT coverage unconfirmed, but 2026 A.1 names both. |
+| `hydraulic_valves_circuits.md` | A.9, A.11, A.14, A.17, B.6, B.8 | Pressure regulator and reverse boost; manual/shift/TCC valves; worn-bore symptoms; 6L80 check balls, clutch select and default gears; cooler/lube circuit; tracing a low-pressure reading to its circuit; legacy TV/modulator |
+| `tcc_diagnosis.md` | A.9, A.13, A.18, A.22 | Enable inputs; two- vs. three-pass; controlled slip; slip PIDs; GM PIP5504 shudder-vs-misfire rule; slip causes outside the converter (bores, stator-support bushing, release flow) |
+| `cvt_diagnosis.md` | A.1 (plus A.19, A.26) | Primary/secondary pulley roles; the ASE CVT sample question (matches Subaru Lineartronic: "won't ratio down" = primary-down circuit); step motor vs. pressure; push belt vs. chain; CVT fluid; Nissan/GM calibration data |
+| `dct_diagnosis.md` | A.1 | Dry vs. wet and actuation type as separate questions; touch-point relearn; Ford DPS6 seal-leak judder vs. TCM failure; DCT vs. torque-converter symptom reasoning (low weight) |
+| `gm_failure_patterns.md` | multiple | GM bulletins as worked examples, each ending in a brand-neutral lesson: 18-NA-355 (8L fluid shudder), 16-NA-019 (adapts), PIP5437B, 16-NA-014 (drainback), 22-NA-182 (cooler circuit), 6T 3-5-R wave plate; unverified bulletin numbers flagged |
 
 ## Sources
 
