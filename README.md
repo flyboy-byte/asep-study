@@ -8,7 +8,7 @@ material, and the reusable workflow that builds it. Last updated 2026-09-24.
 | Folder | Exam | State |
 | --- | --- | --- |
 | `mantrans/` | A3 Manual Drive Train & Axles | Done for the class final. ASE prep package (full guide, simple sheet, cram sheet, PDFs) in `study/ase/`. |
-| `autotrans/` | A2 Automatic Transmissions | Note intake active (`note/`, `notes/`). No study package yet. |
+| `autotrans/` | A2 Automatic Transmissions | Note intake active (`note/`, `notes/`). ASE research in `research.md` + `research_notes/` (2026-09-30). No study package yet. |
 | `engine-performance/` | A8 | Scaffold only (spring semester). |
 | `l1/` | L1 | Scaffold only. |
 | `l2/`, `l3/` | — | Empty placeholders. |
