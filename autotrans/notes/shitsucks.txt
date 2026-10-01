@@ -1,0 +1,99 @@
+did the unit 1.
+completely missed everything on planetary gears.
+i mixed up carrier and ring gears.
+i missed what a ravingneaux definition
+also i know nothing about lepellitier gearsets, but accidently got that one right
+14. when a mulitple disc clutch is used as a holding reaction member, the lugs of the unlined steel plates are splined into what: a large drum, the reaction carier, the transmission case, and the output shaft. i chose a large drum, and was wrong. correct answer was. the transmission case.
+next one i missed was back to mixing up carrier and ring gear layout.
+missed calculating a total gear ratio. i added the two gear ratios together, simply bc the large number i got when multiplying them together was too large i thought.
+one question, tech b says the planetary sun gear is also called the internal gear. that was wrong, and i still dont honestly know why.
+note to self, when u hold the carrier the rotation is always reversed.
+
+chatgpt:
+You’ve actually identified a pretty clean failure pattern: the problem isn’t really “planetary gears” as one giant topic. It’s that the names, physical locations, and ratio math aren’t anchored yet. That’s fixable.
+
+The terminology you need locked down first is:
+
+Sun gear = small gear in the center.
+
+Planet gears = the small gears that orbit the sun.
+
+Planet carrier = holds the planet gears. It is the part that physically carries/orbits them.
+
+Ring gear = large outer gear with INTERNAL teeth. The planet gears mesh with its inside.
+
+A useful mental picture is:
+
+```text
+        RING GEAR
+     ┌─────────────┐
+     │  ⚙       ⚙  │
+     │      ☀      │
+     │  ⚙       ⚙  │
+     └─────────────┘
+          ↑
+     PLANET GEARS
+          ↑
+    CARRIER HOLDS THEM
+```
+
+The carrier is not the big outer gear. The ring gear is.
+
+Your Ravigneaux question is testing whether you recognize a particular compound planetary arrangement. A Ravigneaux gearset uses two sun gears, two sets of planet gears, one carrier, and one ring gear. The key thing to memorize is “two suns, two planet sets, one carrier, one ring.”
+
+Lepeletier is a different concept. It combines a simple planetary gearset with a Ravigneaux gearset, giving more possible ratios in an automatic transmission. So if you got that question right accidentally, don't count it as knowledge yet. The recognition phrase to attach to it is “simple planetary + Ravigneaux.”
+
+Question 14 makes more sense once you stop thinking about the clutch as a gearset component. A multiple-disc clutch can be used to hold a member stationary. When it is a holding/reaction clutch, the stationary side has to ultimately be connected to the transmission case.
+
+So:
+
+Clutch holding something stationary → reaction member → transmission case.
+
+The unlined steel plates are splined to the stationary member/case side. The friction plates are associated with the rotating member through their splines/tabs. The exact construction varies by transmission, but the principle being tested is that the reaction clutch anchors a component to the case.
+
+Your gear-ratio mistake is important too. If two gear reductions happen sequentially, you multiply the ratios, not add them.
+
+For example:
+
+1st reduction = 2:1
+2nd reduction = 3:1
+
+Total = 2 × 3 = 6:1
+
+Not 5:1.
+
+And don't reject the answer because the resulting number “looks too large.” A transmission can absolutely produce a large overall reduction when multiple reductions are compounded.
+
+The “sun gear is also called the internal gear” question is a terminology trap. The sun gear is NOT the internal gear.
+
+“Internal gear” refers to the ring gear because its teeth point inward.
+
+So lock this in:
+
+Sun = center gear.
+
+Ring = internal gear.
+
+Carrier = holds planets.
+
+Planet = meshes with sun and ring.
+
+If Tech B says “the sun gear is also called the internal gear,” that's false because the defining feature of an internal gear is that the teeth are on the inside circumference. The ring gear has those teeth; the sun gear has ordinary external teeth.
+
+For your Unit 1 review, I'd prioritize these four things before doing another full quiz:
+
+“Who holds the planets?” → Carrier.
+
+“Which gear has internal teeth?” → Ring.
+
+“What is the center gear?” → Sun.
+
+“Two ratios in series?” → Multiply.
+
+And then separately memorize:
+
+Ravigneaux = 2 sun gears + 2 planet sets + 1 carrier + 1 ring.
+
+Lepeletier = simple planetary + Ravigneaux.
+
+Your mistakes are consistent enough that I would not move on from planetary gears yet. You don't need to reread the entire unit; you need to drill identification until you can answer these relationships automatically.

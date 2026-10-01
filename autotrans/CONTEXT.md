@@ -1,7 +1,7 @@
 # A2 study context
 
-Status: Unit 1 class study guide built 2026-09-30 (`study/unit1_study_guide.pdf`), for an exam the next day. ASE-focused research pass also done 2026-09-30 (weighted 63-task map + indexed research notes). Note intake continues.
-Created: 2026-09-20. Last updated: 2026-09-30.
+Status: Unit 1 class study guide built 2026-09-30 (`study/unit1_study_guide.pdf`). Logan took the Unit 1 quiz 2026-10-01 and supplied a mistake-review note plus a hydraulics addition; captured below but not yet merged into the guide — he said he doesn't need an updated guide yet. ASE-focused research pass also done 2026-09-30 (weighted 63-task map + indexed research notes). Note intake continues.
+Created: 2026-09-20. Last updated: 2026-10-01.
 
 ## Intent
 
@@ -24,6 +24,8 @@ Build understanding from course notes, public teaching material, shop examples a
 - Textbook/edition, prep books, named lab assemblies, and other supplied notes: not yet recorded (notes reference a "6L80 technician guide" and general textbook passages by description only, no edition given).
 - Existing official, commercial, instructor, or manufacturer-training question sources for A2: not yet recorded. Keep them separate from generated guides unless the learner requests integration and the content can be used.
 - Current output versions and print/PDF preferences for A2: not yet recorded.
+- `notes/hydralics.txt` updated 2026-10-01: added spool valves, the three valve categories (switch/servo/regulator), the pressure regulator valve, and TV pressure (throttle-position-based pressure).
+- `notes/shitsucks.txt` added 2026-10-01: Logan's self-review after taking the Unit 1 quiz, plus a pasted ChatGPT correction. Confirmed mistakes/corrections (all standard automotive-theory facts, consistent with existing notes): carrier vs. ring gear mixed up (carrier holds the planets; ring is the outer gear with internal teeth — "internal gear" = ring, never sun); didn't know the Ravigneaux definition (two suns, two planet sets, one carrier, one ring); missed that series/compounded gear ratios multiply, not add; missed that a holding/reaction multi-disc clutch's unlined steel plates are splined to the transmission case (not a drum, the reaction carrier, or the output shaft); noted carrier-held always reverses rotation. Not yet folded into `study/unit1_study_guide.md` — do that the next time Logan asks for a guide update, don't do it unprompted.
 
 ## Decisions to preserve
 

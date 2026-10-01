@@ -30,3 +30,15 @@ they all work on the same principle, an expanding cavity.
 Variable Displacement Pumps
 Variable displacement pumps are also positive displacement in that they will pump a certain volume on each revolution, but the displacement, and therefore the fluid volume, can be changed. This is done by moving the vane housing to reduce the size of the pumping chambers
 vane housing moves on a hinge btw... weird.lol
+
+spool valves, is a type of hydralic valve used in transmission that is shaped like a thread spool and slides in a bore, and is most common for controlling hydraulic flow with a valve.
+
+Valve Categories : (from textbook)
+Most of the valves are controlled by fluid pressure. Some valves, like the manual valve, are operated mechanically. Valves can be divided into three categories:
+Switch valve—A switch valve controls fluid flow into the different circuits and is also called a flow control valve.
+Servo valve—A servo valve is used to move another valve. Some servo valves operate switch valves, and some help control pressure regulator valves.
+Regulator valve—Used to control fluid pressure.
+
+transmission oil pumps are capable of creating an excessive amount of pressure quickly and therefore, every transmission uses a pressure regulator valve, or pressure control valve, to control hydraulic pressure. This is usually a spool valve and spring combination..
+
+'note this down': TV PRESSURE: is pressure related to the position of the throttle.
