@@ -1,7 +1,7 @@
 # A2 study context
 
 Status: Unit 1 class study guide built 2026-09-30 (`study/unit1_study_guide.pdf`). Logan took the Unit 1 quiz 2026-10-01 and supplied a mistake-review note plus a hydraulics addition; captured below but not yet merged into the guide — he said he doesn't need an updated guide yet. ASE-focused research pass also done 2026-09-30 (weighted 63-task map + indexed research notes). Note intake continues.
-Created: 2026-09-20. Last updated: 2026-10-01.
+Created: 2026-09-20. Last updated: 2026-10-02.
 
 ## Intent
 
@@ -26,6 +26,8 @@ Build understanding from course notes, public teaching material, shop examples a
 - Current output versions and print/PDF preferences for A2: not yet recorded.
 - `notes/hydralics.txt` updated 2026-10-01: added spool valves, the three valve categories (switch/servo/regulator), the pressure regulator valve, and TV pressure (throttle-position-based pressure).
 - `notes/shitsucks.txt` added 2026-10-01: Logan's self-review after taking the Unit 1 quiz, plus a pasted ChatGPT correction. Confirmed mistakes/corrections (all standard automotive-theory facts, consistent with existing notes): carrier vs. ring gear mixed up (carrier holds the planets; ring is the outer gear with internal teeth — "internal gear" = ring, never sun); didn't know the Ravigneaux definition (two suns, two planet sets, one carrier, one ring); missed that series/compounded gear ratios multiply, not add; missed that a holding/reaction multi-disc clutch's unlined steel plates are splined to the transmission case (not a drum, the reaction carrier, or the output shaft); noted carrier-held always reverses rotation. Not yet folded into `study/unit1_study_guide.md` — do that the next time Logan asks for a guide update, don't do it unprompted.
+- 2026-10-01: Logan began Unit 2 material. Unit 1 is done (quiz taken) — don't revisit or rebuild that guide. New files in progress: `notes/torque-converters.txt` (explicitly **not finished** as of 2026-10-02 — don't map or research against it until Logan says it's ready) and `notes/vctnotes.txt` (short, GM-training symptom notes: poor engine performance/wrong fluid can mimic a shift concern; low fluid → cold cornering slip/flare that clears when warm; overfull → slip from aeration). `vctnotes.txt` is mapped into `research.md`'s task table (A.2, A.10, A.22).
+- 2026-10-02: `note/more-planetary-definitions.jpg` added — a corrected page from the Unit 1 quiz (Q24 ring=internal gear, Q25 a disconnected member creates neutral) plus a handwritten power-flow reference table. Parsed and logged in `research.md` under C.13/the source map, including a flagged inconsistency in the table's direct-drive row (shows "Sun held," which conflicts with the established two-members-driven rule) that needs Logan's confirmation before it goes in any guide.
 
 ## Decisions to preserve
 

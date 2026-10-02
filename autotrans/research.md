@@ -1,6 +1,6 @@
 # A2 coverage and research
 
-Status: Full task list mapped per task with weights; weighted research pass in progress. Created: 2026-09-20. Last updated: 2026-09-30.
+Status: Full task list mapped per task with weights; weighted research pass in progress. Created: 2026-09-20. Last updated: 2026-10-02.
 
 ## Official reference
 
@@ -47,7 +47,7 @@ Task wording is shortened from the ASE guide. Notes coverage means what the lear
 | Task | Shortened statement | Notes | Research | Priority |
 |---|---|---|---|---|
 | A.1 | Identify type: TC auto, DCT, CVT, hybrid/electrified | — | 09-29 pass (TC/DCT/CVT) | Low-medium |
-| A.2 | Verify concern, visual inspection | — | Area A mech/hydraulic pass | Medium |
+| A.2 | Verify concern, visual inspection | P (`vctnotes.txt`: poor engine performance/wrong fluid can mimic a shift concern — verify before condemning the transmission) | Area A mech/hydraulic pass | Medium |
 | A.3 | Research SI, TSBs, recalls, history | P (`note/notes.md`: "use the exact SI chart") | — | Low |
 | A.4 | Determine fluid type and level | — | Area A/B passes | **High** (sample Q1) |
 | A.5 | Diagnose with DMM, DSO, scan tool | P (`electronics.txt` sensor theory) | Area A electronic pass | Medium |
@@ -55,7 +55,7 @@ Task wording is shortened from the ASE guide. Notes coverage means what the lear
 | A.7 | Clear DTCs, run monitors, verify repair | — | 09-29 pass | Medium |
 | A.8 | Road test for mechanical/hydraulic concerns | P (`note/notes.md` shared-element fault isolation) | Area A mech/hydraulic pass | **High** |
 | A.9 | NVH and shift-quality diagnosis | P (`powerflowetc.txt`: shift quality, accumulator slide-bump, synchronous mistiming → harsh/flare) | Area A mech/hydraulic pass | **High** |
-| A.10 | Fluid loss and condition | — | Area A mech/hydraulic pass | **High** (sample Q5) |
+| A.10 | Fluid loss and condition | P (`vctnotes.txt`: low fluid → slip/flare cornering cold, no issue warm; overfull → aeration-related slip) | Area A mech/hydraulic pass | **High** (sample Q5) |
 | A.11 | Hydraulic pressure tests | P (`hydralics.txt` theory) | `hydraulic_pressure_testing.md` | **High** (sample Q3) |
 | A.12 | Torque converter stator/OWC failure | — | `stator_owc_diagnosis.md` | **High** (sample Q2) |
 | A.13 | TCC mechanical/hydraulic tests | — | stator file (TCC section); Area A mech/hydraulic pass | High |
@@ -67,7 +67,7 @@ Task wording is shortened from the ASE guide. Notes coverage means what the lear
 | A.19 | Diagnose electronic control systems | **S** (inputs/outputs, pressure-switch logic, TFT NTC) | Area A electronic pass | Medium (learner strength) |
 | A.20 | Electrical circuits incl. data communications | P ("TCM is on the CAN network") | Area A electronic pass | Medium |
 | A.21 | Charging system, battery, power/ground circuits | — | Area A electronic pass | Medium |
-| A.22 | Transmission vs. engine/ABS/ADAS/transfer case concerns | P (shared PCM inputs: APP, TP, ECT, MAP/MAF) | Area A passes | **High** (sample Q4) |
+| A.22 | Transmission vs. engine/ABS/ADAS/transfer case concerns | P (shared PCM inputs: APP, TP, ECT, MAP/MAF; `vctnotes.txt`: poor engine performance can feel like a transmission issue) | Area A passes | **High** (sample Q4) |
 | A.23 | Shift quality from electronic faults | P (adaptive learning) | Area A electronic pass | High |
 | A.24 | Scan data, bidirectional controls, DTCs | — | `scan_tool_bidirectional.md` | Low-medium |
 | A.25 | Control modules: test/replace/program/setup | P (one line: calibrations can be reprogrammed) | `tcm_programming_relearn.md` | Low |
@@ -98,7 +98,7 @@ Task wording is shortened from the ASE guide. Notes coverage means what the lear
 | C.10 | End play, input and output shaft | — | 09-29 pass | Low-medium |
 | C.11 | Shafts, splines, lube holes, bushings | P (sealing rings from shaft to drum) | Area C pass | Low |
 | C.12 | Bushings, thrust washers, bearings | — | Area C pass | Low |
-| C.13 | Planetary gear assembly | **S** (`powerflowetc.txt` gear sets, ratio rules; `note/notes.md` 10-speed chart) | — | Low-medium (covered) |
+| C.13 | Planetary gear assembly | **S** (`powerflowetc.txt` gear sets, ratio rules; `note/notes.md` 10-speed chart; `note/more-planetary-definitions.jpg` quiz-review page confirms ring gear = internal gear [sun is never the internal gear], and that a disconnected member produces neutral rather than any torque path) | — | Low-medium (covered) |
 | C.14 | Case bores, passages, vents, dowels | — | — | Low |
 | C.15 | Valve body inspection (overhaul) | — | 09-29 pass | Low (same as B.6) |
 | C.16 | Chains, sprockets, belts, pulleys/sheaves, gears | — | Area C pass | Low |
@@ -125,7 +125,7 @@ Add rows as personal notes or public resources are actually inspected. A source 
 | A - Mechanical/Hydraulic Systems (road test, NVH/shift quality, fluid loss/condition, pressure tests, torque converter/stator one-way clutch, TCC hydraulic tests) | `notes/hydralics.txt` (2026-09-23); `note/notes.md` image notes (2026-09-22, OWC states per gear, ratio progression) | Learner's own condensed textbook/instructor notes; partial (hydraulics file stops mid pump-design discussion) | Learner reports confidence reasoning through electrical questions, not stated for hydraulic/mechanical | Hydraulic pressure test procedure, TCC lock-up hydraulic test steps, and torque converter stator one-way-clutch failure diagnosis not yet in notes. |
 | A - Electronic Systems (scan tool/DMM/DSO diagnosis, TCC electronic tests, electronic pressure control, control module inspect/reprogram, sensor/solenoid testing) | `notes/electronics.txt` (2026-09-29, TCM inputs, ISS/OSS/TSS/VSS, pressure switches, EPC/PC/TCC PC solenoids, adaptive learning); `note/issoss.pdf` (2026-09-29, read in full — technician-guide page 41, "Electrical Components/Transmission Speed Sensors": ISS and OSS are both hall-effect sensors on an 8.3–9.3V TCM supply circuit; ISS is triggered by splines on the 1-2-3-4 and 3-5-R clutch-housing OD, OSS by slots machined into the output shaft; TCM uses ISS for line pressure/shift timing/TCC slip speed/gear ratio and OSS for line pressure/shift timing/vehicle speed/gear ratio; an improper signal from either sets a DTC) | Learner's own notes plus pasted textbook/6L80 tech-guide excerpts; learner states this is his strongest reasoning area | Learner self-reports highest confidence here | Scan-tool bidirectional control use, control-module reprogram/relearn procedure detail, and DMM/DSO test method specifics (not just sensor theory) are not yet in notes. **Learner asked (2026-09-29) to carry the `issoss.pdf` diagrams (clutch-housing spline ISS trigger, output-shaft slot OSS trigger) into whichever future guide covers speed sensors — as a figure, not just cited text.** |
 | B - In-Vehicle Maintenance and Repair (shift linkage/range sensor, external seals, cooler/thermostat, valve body inspection, accumulator/servo, electrical component service, fluid/filter service) | `notes/electronics.txt` (TCM-connected sensors/solenoids, partially relevant); `notes/hydralics.txt` (pump types, partially relevant) | Indirect — notes explain component theory, not in-vehicle service/inspection procedure | Unassessed | No notes yet address valve body mating-surface inspection, accumulator/servo bore inspection, or fluid/filter replacement procedure — this is a full gap. |
-| C - Removal, Inspection, and Installation (R&I procedure; disassembly/assembly; planetary gear assembly, bushings/bearings, drive chains/belts, final drive; friction/reaction units — clutch pack, one-way clutch, bands/drums) | `note/notes.md` (2026-09-22, clutch/band application chart across all ranges, OWC role by gear, general planetary-gear input/reaction/output rules); `notes/powerflowetc.txt` (2026-09-23, simple/Simpson/Ravigneaux/Lepelletier gear sets, gear-ratio calculation method, synchronous vs. nonsynchronous shift design) | Learner's own condensed instructor/textbook notes; strong conceptual coverage of planetary gear assembly and friction/reaction theory | Unassessed on procedure (torque converter install, end-play/preload measurement, clutch pack clearance) | Good foundation for "inspect components of the planetary gear assembly" and one-way-clutch/band-drum theory; no notes yet on R&I procedure, end-play/preload measurement, or clutch-pack clearance measurement. |
+| C - Removal, Inspection, and Installation (R&I procedure; disassembly/assembly; planetary gear assembly, bushings/bearings, drive chains/belts, final drive; friction/reaction units — clutch pack, one-way clutch, bands/drums) | `note/notes.md` (2026-09-22, clutch/band application chart across all ranges, OWC role by gear, general planetary-gear input/reaction/output rules); `notes/powerflowetc.txt` (2026-09-23, simple/Simpson/Ravigneaux/Lepelletier gear sets, gear-ratio calculation method, synchronous vs. nonsynchronous shift design); `note/more-planetary-definitions.jpg` (2026-10-02, a corrected Unit 1 quiz page — Q24/Q25 plus a handwritten power-flow reference table) | Learner's own condensed instructor/textbook notes; strong conceptual coverage of planetary gear assembly and friction/reaction theory | Unassessed on procedure (torque converter install, end-play/preload measurement, clutch pack clearance) | Good foundation for "inspect components of the planetary gear assembly" and one-way-clutch/band-drum theory; no notes yet on R&I procedure, end-play/preload measurement, or clutch-pack clearance measurement. **`more-planetary-definitions.jpg` reference table (member states → effect), transcribed as written:** Ring held/Carrier output/Sun input → reduction, low gear. Ring input/Carrier output/Sun held → reduction, mid gear. Ring "any"/Carrier "2 gears"/Sun held → direct drive, mid gear. Ring output/Carrier input/Sun held → overdrive, high gear. Ring output/Carrier held/Sun input → reduction, reverse. **Flag to verify:** the direct-drive row as transcribed shows Sun "held," which conflicts with the already-established rule (`research.md` C.13, Unit 1 guide) that direct drive needs *two members driven together, nothing held*. Likely the handwriting means "any two members locked/driven" rather than a literal hold — don't carry the "Sun held" detail into a guide until Logan confirms which it is. |
 
 ## Findings and meaningful practice misses
 
