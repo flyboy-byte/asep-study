@@ -11,11 +11,11 @@
 ## 2. Mechanical and hydraulic
 
 - **Fluid, no dipstick:** scan-tool temperature inside SI window, level vehicle, engine running, level plug. Drip = right, stream = overfull, none = low. Low or overfull (aeration) both slip. Cold slip or flare when cornering that clears warm = low level.
-- **Milky pink ATF:** replace radiator/cooler, overhaul (seals, frictions, converter), flush. Flush and refill alone is the distractor. Cooler breach goes both ways depending on engine on or off.
+- **Milky pink ATF:** replace radiator/cooler, overhaul (seals, frictions, converter), flush. Flush and refill alone is the distractor. Cooler leak: coolant gets into the ATF (and ATF can reach the coolant).
 - **Pan drop** replaces only part of the fluid. Pan debris: friction material black, steel magnetic, brass and aluminum not magnetic.
 - **Shift terms:** flare = release before apply, rpm up. Tie-up = bind-up = overlap, output braked. Slide-bump = accumulator bottoms out early. One harsh shift = that shift's accumulator.
 - **Pressure:** low in all ranges = supply (fluid, filter, pump, regulator). Low in one range = that circuit's leak. High in all = regulator or EPC failsafe. Reverse runs higher. Order: fluid, line pressure, then stall. Do not stall-test if line pressure is low.
-- **Stall:** high = transmission element slipping. Low = weak engine (rule out first) or freewheeling stator. **Freewheeling stator:** poor launch, normal at speed, low stall. **Seized stator:** good launch, poor top end, overheating, normal stall.
+- **Stall:** high = transmission element slipping. Low = weak engine (rule out first) or freewheeling stator. **Freewheeling stator:** poor launch, normal at speed, low stall. **Seized stator:** good launch, poor top end, overheating; stall test not diagnostic.
 - **TCC:** stuck on = stalls at a stop. Commanded on and slip stays high = not holding (check apply pressure, bores, stator-support bushing, turbine seal). Shudder disappears with TCC off or fully locked. Misfire does not.
 - **Valves:** switch routes, servo moves a valve, regulator controls pressure. Ruptured vacuum modulator = ATF in the vacuum hose, white smoke, fluid loss with no leak.
 - **Not the transmission:** misfire, TPS/MAF/MAP, wheel-speed or ABS data, tire size, mounts. Test before replacing.
@@ -29,7 +29,7 @@
 - **ISS (turbine) and OSS (vehicle speed):** hall-effect, no ohmmeter. Ratio = ISS ÷ OSS. TCC slip = engine rpm − turbine rpm. Bad signal gives ratio DTCs on a healthy unit.
 - **Pressure switches:** read as an on/off pattern to confirm the real gear. **TR/MLP:** compare range PID with the lever.
 - **Voltage drop under load,** not ohms. Several U-codes at once = battery, power, ground or bus first.
-- **OBD II:** MIL off after 3 clean trips. History erases at 40 warm-ups (80 for misfire and fuel). **Permanent DTCs** are not cleared by a scan tool or battery pull. Clear with the scan tool, never a battery pull, then verify with monitors.
+- **OBD II:** MIL off after 3 clean trips. History erases at 40 warm-ups (many OEMs say 80 for misfire/fuel). **Permanent DTCs** are not cleared by a scan tool or battery pull. Clear with the scan tool, never a battery pull, then verify with monitors.
 - **Adapts:** clearing is not a repair. Relearn after TCM, valve body or transmission replacement. Load solenoid-body characterization data. Programming needs a battery maintainer, not a charger.
 
 ## 4. Area B and Area C

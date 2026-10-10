@@ -54,7 +54,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 @page{size:Letter;margin:.55in}
 @media print{.toc{break-after:auto}}
 </style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.1</div>
 <h1>Automatic Transmission / Transaxle</h1><p class="sub">Weighted to the official 2026 A2 task list. Class notes, the Unit 1 quiz misses and the research pass, in one guide.</p>
 <div class="meta-row"><span><b>Prepared</b> October 9, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
@@ -246,7 +246,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <tbody>
 <tr>
 <td>Simpson</td>
-<td>One sun, two carriers, two rings (3- to 5-speed)</td>
+<td>One sun, two carriers, two rings (3- and 4-speed; a Simpson plus a simple set gives 4–5 per your textbook)</td>
 </tr>
 <tr>
 <td>Ravigneaux</td>
@@ -254,7 +254,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 <tr>
 <td>LePelletier</td>
-<td><strong>Simple planetary + Ravigneaux</strong> (GM 6L80, Ford 6R80, ZF 6HP: five clutches, no bands)</td>
+<td><strong>Simple planetary + Ravigneaux</strong> (GM 6L80, Ford 6R80, ZF 6HP: five shift elements (multiplate clutches/brakes), no bands)</td>
 </tr>
 </tbody>
 </table></div>
@@ -519,7 +519,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 </tbody>
 </table></div>
-<p><strong>Reverse pressure runs higher.</strong> Reverse oil acts on the pressure regulator/boost valve and raises line pressure, because the reverse holding members carry the highest reaction torque. Low pressure in R only = a reverse-circuit leak or boost-valve fault. Low everywhere = supply.</p>
+<p><strong>Reverse pressure runs higher.</strong> Reverse oil acts on the pressure regulator/boost valve and raises line pressure (documented in boost-valve patents). The usual explanation is that the reverse holding members carry the highest reaction torque (INFERRED, low-authority source). Low pressure in R only = a reverse-circuit leak or boost-valve fault. Low everywhere = supply.</p>
 <p><strong>Two-gauge method.</strong> One gauge on line pressure and one on the clutch or servo circuit, read together. A clutch circuit reading well below line pressure means a leak in that circuit (the allowed difference is SI-dependent). Air testing with the valve body off locates the leaking element.</p>
 <p><strong>Electronic pressure control: command is not pressure.</strong> The scan tool shows a <strong>command</strong>. Only a gauge shows actual pressure. Classic EPC/PCS behavior is <strong>inverse</strong>: more current = <strong>lower</strong> pressure; low or no current (or unplugged) = <strong>maximum</strong> pressure. A GM line PC solenoid is normally high the same way. Unplugging the solenoid or its connector therefore drives pressure to maximum, which can <strong>mask</strong> a subtle circuit leak.
 - Command changes and the gauge follows = solenoid, regulator and pump are working.
@@ -603,7 +603,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <tr>
 <td>Stall test</td>
 <td><strong>Low</strong></td>
-<td><strong>Normal</strong> (at stall a good stator is held anyway)</td>
+<td><strong>Not a reliable indicator.</strong> A good stator is held at stall anyway, so expect little change (reasoned; no textbook page states it). Diagnose a seized stator from the symptoms and heat</td>
 </tr>
 <tr>
 <td>Memory aid</td>
@@ -612,7 +612,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 </tbody>
 </table></div>
-<p><em>ASE expects:</em> the public-sample pattern, poor launch but normal above about 35 mph, is a <strong>freewheeling</strong> stator. The mirror image, good launch, poor top speed, overheating, normal stall, is a <strong>seized</strong> stator. Bench check on a removed converter: the stator should turn one way and lock the other; free both ways or locked both ways means replace the converter (a general shop does not repair one).</p>
+<p><em>ASE expects:</em> the public-sample pattern, poor launch but normal above about 35 mph, is a <strong>freewheeling</strong> stator. The mirror image, good launch, poor top speed, overheating, is a <strong>seized</strong> stator. Bench check on a removed converter: the stator should turn one way and lock the other; free both ways or locked both ways means replace the converter (a general shop does not repair one).</p>
 <p><strong>Stall test: interpret both directions</strong>
 - Stall rpm and procedure come from SI. Typical OEM limits are about 5 seconds at wide-open throttle and a cool-down between ranges (examples, SI-dependent). Brakes applied and wheels chocked.
 - <strong>High stall</strong> = something in the <strong>transmission</strong> is slipping (clutch, band, one-way clutch). Compare D and R to find the shared element. Nothing inside the converter makes stall higher than spec.
@@ -711,7 +711,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>Pressure order:</strong> fluid → line pressure → stall only if SI specifies. Low in all ranges = supply; low in one = that range's circuit; high all = regulator/EPC failsafe.</li>
 <li><strong>EPC:</strong> more current = less pressure (classic). Unplugged = maximum. Command is not pressure; use a gauge.</li>
 <li><strong>Flare</strong> = release before apply, rpm up. <strong>Tie-up/bind-up</strong> = overlap, output braked. <strong>Slide-bump</strong> = accumulator bottoms early.</li>
-<li><strong>Stall:</strong> high = transmission slip; low = engine or freewheeling stator; seized stator = normal stall, poor top end, heat.</li>
+<li><strong>Stall:</strong> high = transmission slip; low = engine or freewheeling stator; seized stator = good launch, poor top end, heat (stall test not diagnostic).</li>
 <li><strong>TCC:</strong> stuck on = stalls at a stop; not holding = high rpm, heat, slip with command on; shudder disappears with TCC off or fully locked.</li>
 <li><strong>Milky ATF</strong> = replace the cooler/radiator and repair, not flush alone.</li>
 </ul></section><section id="s3"><div class="sec-head"><span class="sec-num">03</span><h2>Electronic and control-system diagnosis</h2></div><p>Electronic systems are your strongest ground, so this section skips basic electrical theory and spends its words on transmission-specific logic. Nearly every electronic question comes down to one habit: <strong>separate what the module commanded from what actually happened, and separate the signal voltage from what the module reads out.</strong> Do that and the answer follows the circuit, not a remembered number.</p>
@@ -857,9 +857,9 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <h3><span class="n">3.6</span>OBD II and verifying the repair</h3>
 <ul>
 <li>A two-trip fault sets a <strong>pending</strong> DTC first; if it repeats on the next qualifying trip, the MIL lights and the DTC becomes <strong>confirmed</strong>.</li>
-<li>The MIL goes out after <strong>three consecutive trips</strong> without the fault. History and freeze frame erase after <strong>40 warm-up cycles</strong> (<strong>80</strong> for misfire and fuel-system faults).</li>
+<li>The MIL goes out after <strong>three consecutive trips</strong> without the fault. History DTCs and freeze frame erase after <strong>40 warm-up cycles</strong> without recurrence. Many OEM documents give <strong>80</strong> for misfire and fuel-system faults, so treat 40 as the general number and take any other figure from the stem.</li>
 <li>Freeze frame is captured when the DTC sets, with misfire and fuel-trim frames taking priority.</li>
-<li><strong>Permanent DTCs</strong> (required on 2010 and later vehicles) live in non-volatile memory. <strong>A scan-tool clear or a battery disconnect does not erase them.</strong> The module erases a PDTC itself once the monitor runs and passes, or after the MIL goes out through three clean trips.</li>
+<li><strong>Permanent DTCs</strong> (phased in on 2010 through 2012 model years) live in non-volatile memory. <strong>A scan-tool clear or a battery disconnect does not erase them.</strong> The module erases a PDTC itself once the monitor runs and passes, or after the MIL goes out through three clean trips.</li>
 <li><strong>P0700</strong> is only a pointer: the TCM asked for the MIL, and the specific codes are stored in the TCM, so scan the TCM directly.</li>
 </ul>
 <p><strong>Verifying a repair (A.7):</strong> record DTCs and freeze frame, repair, <strong>clear with a scan tool</strong>, drive under the freeze-frame conditions until the monitor or DTC status shows it ran and passed, and confirm no pending code. Clearing codes or disconnecting the battery resets monitors to "incomplete," so a clear with no code returning is not proof of repair.</p>
@@ -978,7 +978,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 <tr>
 <td>History DTCs always erase at 40 warm-ups</td>
-<td>80 for misfire and fuel-system faults</td>
+<td>40 is the general number; OEMs often say 80 for misfire and fuel-system faults</td>
 </tr>
 </tbody>
 </table></div></section><section id="s4"><div class="sec-head"><span class="sec-num">04</span><h2>Area B — In-Vehicle Maintenance and Repair (12 questions, 27%)</h2></div><p>Area B has the best yield per task on the exam: 12 questions across 12 tasks. It is also the thinnest area in your class notes. The questions are mostly "what is the most likely cause, or what do you do first," and the reliable scoring pattern is the same everywhere: <strong>verify the cheap root cause before you replace the expensive part.</strong></p>
@@ -1085,8 +1085,8 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <h3><span class="n">4.4</span>Cooling, cooler circuit, thermostat/bypass (B.5)</h3>
 <p>Transmission cooling is usually a heat exchanger in the radiator tank plus lines, sometimes with an ATF warmer and a thermal bypass valve (TBV).</p>
 <ul>
-<li><strong>Cooler breach, both ways.</strong> With the engine running, ATF pressure in the cooler is higher, so ATF can go into the coolant. With the engine off, the cooling system holds pressure and coolant can go into the ATF. Either way you see milky pink fluid ("strawberry milkshake") in the coolant, the ATF, or both.</li>
-<li><strong>Glycol kills friction material.</strong> It breaks down the bonding and the friction-modifier additives (shudder, especially at TCC apply).</li>
+<li><strong>Cooler breach.</strong> A leak in the radiator-tank cooler can let coolant into the ATF (the cooling system holds roughly 15–16 psi hot, which pushes coolant through even a tiny leak), and ATF can also reach the coolant. You may see milky pink fluid ("strawberry milkshake") in the ATF, the coolant, or both.</li>
+<li><strong>Even a little coolant damages a transmission.</strong> The clutch material absorbs water and glycol. Test for glycol with a strip before replacing parts.</li>
 </ul>
 <div class="note "><div class="tag">ASE expects</div><div class="nb"><p>milky/pink ATF → replace the radiator/cooler, replace seals, composition-faced plates and bands and the converter, clean and rebuild, then flush the cooling circuit. <strong>"Flush and refill" is the distractor.</strong></p></div></div>
 <ul>
@@ -1144,7 +1144,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <p><strong>Type.</strong> The fluid is hydraulic medium, lubricant, friction modifier and coolant at once. ATF, CVT fluid and DCT fluid are not interchangeable (ATF in a CVT: belt slip, shudder, pulley damage). Within ATF, use the specified fluid. The wrong friction modifier package causes shudder and shift-feel problems.</p>
 <p><strong>Level, dipstick units:</strong> at the specified temperature, level vehicle, in the range and engine state the SI names.</p>
 <p><strong>Level, no-dipstick units (the public sample item):</strong> read fluid temperature on the scan tool and confirm it is inside the SI window, vehicle level, engine idling, shift through the ranges and return to Park, then use the level/check plug. Correct is a drip from the plug opening; a steady stream means overfull.</p>
-<div class="note "><div class="tag">Classic trap</div><div class="nb"><p>checking outside the temperature window gives a wrong level. ATF expands with heat, so a hot check lets fluid run out and leaves the unit low once it cools. Windows differ by unit (examples only: about 30–50 °C on a 6L80, 35–45 °C on an AF50). <strong>Take the number from SI, the method from this page.</strong></p></div></div>
+<div class="note "><div class="tag">Classic trap</div><div class="nb"><p>checking outside the temperature window gives a wrong level either way. ATF expands as it warms, so a unit topped off while cold is <strong>overfull</strong> once hot (aeration, shudder, fluid out the vent), and a unit checked too hot can read false. Windows differ by unit (examples only: about 30–50 °C on a 6L80, 35–45 °C on an AF50). <strong>Take the number from SI, the method from this page.</strong></p></div></div>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
@@ -1257,7 +1257,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <p><strong>Clearance and soak:</strong> measure clearance with a feeler gauge and correct with the selective snap ring, pressure plate or shims. <strong>Soak new frictions in the specified ATF before assembly</strong> (duration per the friction maker or SI), since dry plates absorb fluid and change the clearance you measured.</p>
 <p><strong>Air test, before and after disassembly, valve body off:</strong> use <strong>low, regulated, clean, dry air</strong>. A dull thud as a clutch applies, or a servo thunk, is good. <strong>Hissing means a leak</strong> (piston seal, sealing ring, bushing, case passage): disassemble and inspect.</p>
 <p><strong>One-way clutches (roller, sprag, mechanical diode):</strong> no friction material, serviced as a unit, and they <strong>work only one way</strong>. Bench-check rotation before install (hold one race, turn the other: it should lock one way and freewheel the other per SI). A one-way clutch <strong>can</strong> be installed backward, and the result depends on where it sits in the power flow: <strong>no drive in the range it normally carries</strong>, or a <strong>tie-up</strong> with another member. A failed low roller clutch gives a slip in first only in Drive, not in every forward gear (manual 1 holds because the low/reverse clutch backs it up).</p>
-<p><strong>Bands and drums:</strong> inspect together. Replace a burned or worn-out band and a scored, glazed, heat-discolored or damaged drum. Adjustable bands: torque the adjusting screw to spec, back it off the specified turns, hold it and torque the locknut. Many bands are set instead by a selective servo pin. Specs are SI.</p>
+<p><strong>Bands and drums:</strong> inspect together. A worn band leaves a gap at the drum and the unit slips. On the drum, look for wear tracks from a grooved lining or a smooth worn area from a smooth lining. A drum worn undersized lets the band run out of travel and the range is lost, so replace the band <strong>and</strong> the drum. Reject limits and resurfacing are SI. Adjustable bands: torque the adjusting screw to spec, back it off the specified turns, hold it and torque the locknut. Many bands are set instead by a selective servo pin. Specs are SI.</p>
 <p><strong>Planetary assemblies:</strong> check pinion end play with a feeler gauge, thrust washers, needle bearings, and pinion shafts; pitted or discolored races mean replacement. Quick anchor from your Unit 1 miss: <strong>the ring gear is the internal gear (teeth on the inside); the carrier holds the planets.</strong></p>
 <p class="tasks">Tasks: C.13, C.19, C.20, C.21, C.22, C.23.</p></section><section id="s6"><div class="sec-head"><span class="sec-num">06</span><h2>Other transmission types: identify and diagnose at the recognition level</h2></div><p>A.1 asks you to identify the transmission type: torque-converter automatic, dual-clutch (DCT), CVT, or hybrid/electrified. That is one task of 63, so this section is recognition plus a few contrasts. The main skill is to <strong>not carry one type's logic into another</strong>: no apply chart or stator on a CVT, no stall test on a DCT.</p>
 <h3><span class="n">6.1</span>Telling the types apart</h3>
@@ -1431,7 +1431,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <td>1</td>
 <td>Apply-chart and power-flow reasoning, planetary ID and ratio math</td>
 <td>A.8, A.14, C.13, C.22</td>
-<td>The one A2-specific "hardest area" source names it. Logan's Unit 1 quiz misses were here.</td>
+<td>Your Unit 1 quiz misses were here, and apply-chart reading is a public sample-question topic.</td>
 <td>Common element across failed ranges. Carrier holds planets, ring has internal teeth. Ratios in series multiply.</td>
 </tr>
 <tr>
@@ -1504,7 +1504,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <ol>
 <li><strong>TFT sensor:</strong> open (or high signal voltage) reads very <strong>cold</strong> (−40). Short to ground reads very <strong>hot</strong>.</li>
 <li><strong>Stall:</strong> <strong>high</strong> stall = a slipping band, clutch or transmission one-way clutch. <strong>Low</strong> stall = freewheeling stator, or a weak engine (rule out the engine, including a restricted exhaust). "200 rpm high = stator" is wrong.</li>
-<li><strong>Stator:</strong> freewheeling gives a poor launch and normal speed above that. Seized gives a good launch, poor top end, overheating, and a normal stall reading.</li>
+<li><strong>Stator:</strong> freewheeling gives a poor launch and normal speed above that. Seized gives a good launch, poor top end and overheating. The stall test does not reliably show it.</li>
 <li><strong>Order:</strong> fluid, then line pressure, then stall. Do not stall-test if line pressure is low.</li>
 <li><strong>Codes:</strong> a permanent DTC is not removed by a scan-tool clear or a battery pull. It clears when its monitor passes. Clear with the scan tool, not the battery.</li>
 <li><strong>Pan drop</strong> replaces only part of the fluid. The converter and cooler keep the rest.</li>
@@ -1517,5 +1517,5 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>EPC polarity depends on design.</strong> The classic EPC: more current, less pressure; unplugged = maximum pressure. Read the stem.</li>
 <li><strong>Milky or pink ATF</strong> means coolant contamination from the radiator cooler: replace the radiator or cooler, overhaul, and flush. Flush-and-refill alone is the distractor.</li>
 </ol></section>
-<footer><span>ASE A2 Study Guide &middot; v1 &middot; 2026-10-09</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>ASE A2 Study Guide &middot; v1.1 &middot; 2026-10-09</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>
