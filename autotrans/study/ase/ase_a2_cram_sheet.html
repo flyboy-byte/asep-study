@@ -1,0 +1,95 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>ASE A2 Cram Sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{--bg:#fff;--surface:#fff;--surface-2:#eef1ee;--ink:#14191b;--muted:#4d5659;--faint:#7c8688;--line:#d2d8d3;--line-hi:#b6bfb9;--accent:#c8481c;--accent-ink:#fff6f1;--accent-2:#2c4a4a;--trap:#9b2c2c}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:12.5px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 6px}
+h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.02em;color:var(--ink);font-weight:600;text-wrap:balance}
+p{margin:0 0 .7em}
+strong{font-weight:600}
+code,.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.92em}
+a{color:inherit}
+.masthead{border:1px solid var(--line-hi);border-radius:3px;padding:1.2rem 1.4rem 1rem;margin-bottom:.9rem;position:relative;overflow:hidden}
+.masthead::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent)}
+.eyebrow{font-family:'IBM Plex Mono';font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.eyebrow .sep{color:var(--faint)}
+.masthead h1{font-size:30px;line-height:1.1;margin:0 0 .3rem}
+.masthead .sub{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:.8rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-family:'IBM Plex Mono';font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem}
+.meta-row b{color:var(--ink)}
+.toc{border:1px solid var(--line);border-radius:3px;padding:.9rem 1.2rem;margin-bottom:1.2rem}
+.toc-title{font-family:'IBM Plex Mono';font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.toc a{display:flex;gap:.6em;text-decoration:none;font-size:13px}
+.toc a .tn{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--accent);flex:none}
+section{margin-bottom:1.4rem}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;border-bottom:2px solid var(--ink);padding-bottom:.3rem;margin:0 0 .8rem;break-after:avoid}
+.sec-num{font-family:'IBM Plex Mono';font-size:12px;font-weight:600;color:var(--accent)}
+h2{font-size:19px;margin:0}
+h3{font-size:14px;margin:1.1rem 0 .4rem;color:var(--accent-2);letter-spacing:.03em;break-after:avoid}
+h3 .n{font-family:'IBM Plex Mono';color:var(--faint);font-weight:500;margin-right:.4em}
+h4{font-size:12px;margin:.8rem 0 .3rem;color:var(--muted);break-after:avoid}
+.tbl-wrap{margin:.6rem 0 .9rem;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+thead th{text-align:left;font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);padding:.4rem .6rem;border-bottom:1px solid var(--line-hi);background:var(--surface-2)}
+td{padding:.4rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tr{break-inside:avoid}
+td:first-child{font-weight:500}
+ul,ol{padding-left:1.2rem;margin:0 0 .8rem}
+li{margin-bottom:.25rem}
+.note{display:flex;gap:.7rem;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;padding:.55rem .8rem;margin:.7rem 0;font-size:12px;break-inside:avoid}
+.note .tag{font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;flex:none;padding-top:.1rem;min-width:4.6em}
+.note.rule{border-left-color:var(--accent-2)} .note.rule .tag{color:var(--accent-2)}
+.note.trap{border-left-color:var(--trap)} .note.trap .tag{color:var(--trap)}
+.note .nb p:last-child,.note .nb ul:last-child{margin-bottom:0}
+.note .nb{flex:1}
+.tasks{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin:-.2rem 0 .8rem}
+.figure{border:1px solid var(--line);border-radius:3px;padding:.7rem;margin:.9rem 0;break-inside:avoid}
+.figure img{width:100%;max-width:360px;display:block;margin:0 auto;border:1px solid var(--line)}
+.figure figcaption{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin-top:.5rem;line-height:1.5}
+footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+@page{size:Letter;margin:.55in}
+@media print{.toc{break-after:auto}}
+</style></head><body><div class="wrap">
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1</div>
+<h1>A2 Cram Sheet</h1><p class="sub">Compressed from the A2 study guide. Read the guide first; this is for the last pass.</p>
+<div class="meta-row"><span><b>Prepared</b> October 9, 2026</span><span><b>Exam</b> October 15, 2026</span>
+<span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
+<section id="s0"><div class="sec-head"><span class="sec-num">01</span><h2>Reasoning moves</h2></div><ul>
+<li><strong>Exam:</strong> 45 scored of 55, 75 min. Area A diagnosis 26 (58%), B in-vehicle 12 (27%), C R&amp;I 7 (15%). Book answer beats shop habit. Tech A/B: judge each alone; "both" and "neither" are valid.</li>
+<li><strong>Diagnostic order:</strong> verify concern, fluid (level, type, condition), SI/codes, rule out engine and inputs, road test and scan data, line pressure, stall only if SI has one, repair, clear with scan tool, relearn, verify.</li>
+<li><strong>Apply chart:</strong> several failed ranges, find the element in all of them. One failed range, the element unique to it. Anything applied in a working range is cleared. Slip or no drive = fails to hold. Tie-up or braked feel = seized or not releasing.</li>
+<li><strong>Planetary:</strong> sun = center, external teeth. <strong>Carrier holds the planets.</strong> <strong>Ring = outer gear with internal teeth = the "internal gear."</strong> One driven, one held, one output. Two driven together = direct. Nothing held = neutral. Carrier held = reverse. Carrier output = reduction, carrier input = overdrive.</li>
+<li><strong>Ratios in series multiply.</strong> 2:1 then 3:1 = 6:1. <strong>Ravigneaux</strong> = 2 suns, 2 planet sets, 1 carrier, 1 ring. <strong>LePelletier</strong> = simple planetary + Ravigneaux.</li>
+<li><strong>Reaction clutch:</strong> steel plates splined to the <strong>case</strong>. One-way clutches: roller, sprag, mechanical diode; hold one way, overrun the other. Synchronous (clutch-to-clutch) shifts need timing, no one-way clutch. Nonsynchronous uses a one-way clutch.</li>
+<li><strong>Low roller clutch</strong> = slip in D1 only, not every forward gear. <strong>Allison 1000 reverse</strong> = C3 + C5.</li>
+</ul></section><section id="s1"><div class="sec-head"><span class="sec-num">02</span><h2>Mechanical and hydraulic</h2></div><ul>
+<li><strong>Fluid, no dipstick:</strong> scan-tool temperature inside SI window, level vehicle, engine running, level plug. Drip = right, stream = overfull, none = low. Low or overfull (aeration) both slip. Cold slip or flare when cornering that clears warm = low level.</li>
+<li><strong>Milky pink ATF:</strong> replace radiator/cooler, overhaul (seals, frictions, converter), flush. Flush and refill alone is the distractor. Cooler breach goes both ways depending on engine on or off.</li>
+<li><strong>Pan drop</strong> replaces only part of the fluid. Pan debris: friction material black, steel magnetic, brass and aluminum not magnetic.</li>
+<li><strong>Shift terms:</strong> flare = release before apply, rpm up. Tie-up = bind-up = overlap, output braked. Slide-bump = accumulator bottoms out early. One harsh shift = that shift's accumulator.</li>
+<li><strong>Pressure:</strong> low in all ranges = supply (fluid, filter, pump, regulator). Low in one range = that circuit's leak. High in all = regulator or EPC failsafe. Reverse runs higher. Order: fluid, line pressure, then stall. Do not stall-test if line pressure is low.</li>
+<li><strong>Stall:</strong> high = transmission element slipping. Low = weak engine (rule out first) or freewheeling stator. <strong>Freewheeling stator:</strong> poor launch, normal at speed, low stall. <strong>Seized stator:</strong> good launch, poor top end, overheating, normal stall.</li>
+<li><strong>TCC:</strong> stuck on = stalls at a stop. Commanded on and slip stays high = not holding (check apply pressure, bores, stator-support bushing, turbine seal). Shudder disappears with TCC off or fully locked. Misfire does not.</li>
+<li><strong>Valves:</strong> switch routes, servo moves a valve, regulator controls pressure. Ruptured vacuum modulator = ATF in the vacuum hose, white smoke, fluid loss with no leak.</li>
+<li><strong>Not the transmission:</strong> misfire, TPS/MAF/MAP, wheel-speed or ABS data, tire size, mounts. Test before replacing.</li>
+</ul></section><section id="s2"><div class="sec-head"><span class="sec-num">03</span><h2>Electronic</h2></div><ul>
+<li><strong>Commanded vs. actual.</strong> Current tracks the command but no pressure or ratio change = hydraulic or mechanical. No current tracking = electrical. A solenoid click proves only the coil moved.</li>
+<li><strong>Performance DTC (ratio, slip, stuck) with a good circuit</strong> = hydraulic or mechanical. <strong>Circuit DTC (open, low, high)</strong> = test the circuit.</li>
+<li><strong>TFT (NTC):</strong> open = very cold (high signal voltage, P0713). Short to ground = very hot (P0712).</li>
+<li><strong>EPC (classic):</strong> more current = lower pressure. Unplugged = maximum pressure, harsh. Read the stem for another design.</li>
+<li><strong>ISS (turbine) and OSS (vehicle speed):</strong> hall-effect, no ohmmeter. Ratio = ISS ÷ OSS. TCC slip = engine rpm − turbine rpm. Bad signal gives ratio DTCs on a healthy unit.</li>
+<li><strong>Pressure switches:</strong> read as an on/off pattern to confirm the real gear. <strong>TR/MLP:</strong> compare range PID with the lever.</li>
+<li><strong>Voltage drop under load,</strong> not ohms. Several U-codes at once = battery, power, ground or bus first.</li>
+<li><strong>OBD II:</strong> MIL off after 3 clean trips. History erases at 40 warm-ups (80 for misfire and fuel). <strong>Permanent DTCs</strong> are not cleared by a scan tool or battery pull. Clear with the scan tool, never a battery pull, then verify with monitors.</li>
+<li><strong>Adapts:</strong> clearing is not a repair. Relearn after TCM, valve body or transmission replacement. Load solenoid-body characterization data. Programming needs a battery maintainer, not a charger.</li>
+</ul></section><section id="s3"><div class="sec-head"><span class="sec-num">04</span><h2>Area B and Area C</h2></div><ul>
+<li><strong>B:</strong> linkage, then TR switch, then module. Worn tailshaft bushing needs more than a new seal. ATF in a TCM connector means fix the pass-through leak too. Valve body: separator plate and gasket must match, check balls in place, torque from the center out, new slip after service = suspect the job. Accumulator is not a backup pressure store. TBV stuck in bypass = no cooler flow = overheats. After failure, flush and flow-check the cooler.</li>
+<li><strong>C:</strong> converter must seat in stages, never pull it on with the bellhousing bolts. Missing dowels or an unseated converter ruin the pump. End play with a dial indicator, fix with shims or thrust washers. Soak new frictions. Air test with low, clean, dry air: thud is good, hiss is a leak. One-way clutches can go in backward, bench-check rotation. Thrust washers: petroleum jelly, not white grease. Relearn after install.</li>
+<li><strong>Types:</strong> DCT has no converter, no stall test, no apply chart. Odd-even shaft split is its chart. CVT: do not use generic ATF; one-direction ratio fault = that primary circuit; low clamp = belt slip.</li>
+</ul></section>
+<footer><span>ASE A2 Cram Sheet &middot; v1 &middot; 2026-10-09</span><span>Private study material. Not ASE content.</span></footer>
+</div></body></html>

@@ -1,0 +1,1521 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>ASE A2 Study Guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{--bg:#fff;--surface:#fff;--surface-2:#eef1ee;--ink:#14191b;--muted:#4d5659;--faint:#7c8688;--line:#d2d8d3;--line-hi:#b6bfb9;--accent:#c8481c;--accent-ink:#fff6f1;--accent-2:#2c4a4a;--trap:#9b2c2c}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:12.5px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 6px}
+h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.02em;color:var(--ink);font-weight:600;text-wrap:balance}
+p{margin:0 0 .7em}
+strong{font-weight:600}
+code,.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.92em}
+a{color:inherit}
+.masthead{border:1px solid var(--line-hi);border-radius:3px;padding:1.2rem 1.4rem 1rem;margin-bottom:.9rem;position:relative;overflow:hidden}
+.masthead::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent)}
+.eyebrow{font-family:'IBM Plex Mono';font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.eyebrow .sep{color:var(--faint)}
+.masthead h1{font-size:30px;line-height:1.1;margin:0 0 .3rem}
+.masthead .sub{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:.8rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-family:'IBM Plex Mono';font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem}
+.meta-row b{color:var(--ink)}
+.toc{border:1px solid var(--line);border-radius:3px;padding:.9rem 1.2rem;margin-bottom:1.2rem}
+.toc-title{font-family:'IBM Plex Mono';font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.toc a{display:flex;gap:.6em;text-decoration:none;font-size:13px}
+.toc a .tn{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--accent);flex:none}
+section{margin-bottom:1.4rem}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;border-bottom:2px solid var(--ink);padding-bottom:.3rem;margin:0 0 .8rem;break-after:avoid}
+.sec-num{font-family:'IBM Plex Mono';font-size:12px;font-weight:600;color:var(--accent)}
+h2{font-size:19px;margin:0}
+h3{font-size:14px;margin:1.1rem 0 .4rem;color:var(--accent-2);letter-spacing:.03em;break-after:avoid}
+h3 .n{font-family:'IBM Plex Mono';color:var(--faint);font-weight:500;margin-right:.4em}
+h4{font-size:12px;margin:.8rem 0 .3rem;color:var(--muted);break-after:avoid}
+.tbl-wrap{margin:.6rem 0 .9rem;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+thead th{text-align:left;font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);padding:.4rem .6rem;border-bottom:1px solid var(--line-hi);background:var(--surface-2)}
+td{padding:.4rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tr{break-inside:avoid}
+td:first-child{font-weight:500}
+ul,ol{padding-left:1.2rem;margin:0 0 .8rem}
+li{margin-bottom:.25rem}
+.note{display:flex;gap:.7rem;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;padding:.55rem .8rem;margin:.7rem 0;font-size:12px;break-inside:avoid}
+.note .tag{font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;flex:none;padding-top:.1rem;min-width:4.6em}
+.note.rule{border-left-color:var(--accent-2)} .note.rule .tag{color:var(--accent-2)}
+.note.trap{border-left-color:var(--trap)} .note.trap .tag{color:var(--trap)}
+.note .nb p:last-child,.note .nb ul:last-child{margin-bottom:0}
+.note .nb{flex:1}
+.tasks{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin:-.2rem 0 .8rem}
+.figure{border:1px solid var(--line);border-radius:3px;padding:.7rem;margin:.9rem 0;break-inside:avoid}
+.figure img{width:100%;max-width:360px;display:block;margin:0 auto;border:1px solid var(--line)}
+.figure figcaption{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin-top:.5rem;line-height:1.5}
+footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+@page{size:Letter;margin:.55in}
+@media print{.toc{break-after:auto}}
+</style></head><body><div class="wrap">
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1</div>
+<h1>Automatic Transmission / Transaxle</h1><p class="sub">Weighted to the official 2026 A2 task list. Class notes, the Unit 1 quiz misses and the research pass, in one guide.</p>
+<div class="meta-row"><span><b>Prepared</b> October 9, 2026</span><span><b>Exam</b> October 15, 2026</span>
+<span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
+<nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#s0"><span class="tn">00</span>How to use this guide</a></li><li><a href="#s1"><span class="tn">01</span>Power Flow and Apply-Chart Reasoning</a></li><li><a href="#s2"><span class="tn">02</span>Mechanical and Hydraulic Diagnosis</a></li><li><a href="#s3"><span class="tn">03</span>Electronic and control-system diagnosis</a></li><li><a href="#s4"><span class="tn">04</span>Area B — In-Vehicle Maintenance and Repair (12 questions, 27%)</a></li><li><a href="#s5"><span class="tn">05</span>Area C — Removal, Inspection and Installation (7 questions, 15%)</a></li><li><a href="#s6"><span class="tn">06</span>Other transmission types: identify and diagnose at the recognition level</a></li><li><a href="#s7"><span class="tn">07</span>Exam strategy and the hardest topics</a></li></ol></nav><section id="s0"><div class="sec-head"><span class="sec-num">00</span><h2>How to use this guide</h2></div><p>This is the <strong>professional ASE A2 (Automatic Transmission/Transaxle)</strong> guide. It follows the official 2026 task list and weights, uses everything in the autotrans folder (your class notes, the GM training slides, the Unit 1 quiz misses, and the research pass), and treats class examples as illustrations of manufacturer-independent mechanisms. ASE questions are generic unless the stem names an application.</p>
+<p><strong>Source boundary.</strong> Governing blueprint: ASE Automobile Study Guide 2026, A2 pages 10–15. Your notes: <code>notes/</code> and <code>note/</code>. Everything else comes from the 2026-09-30 research pass, which was <strong>search-snippet level</strong> (full pages were blocked), then cross-checked in <code>conflict_resolution.md</code>. Where the guide gives a number it is an example or is SI-dependent; ASE gives the number in the stem. Torque-converter notes were still in progress when this was built.</p>
+<h3>Exam map</h3>
+<p>45 scored questions (55 total, 75 minutes). Unscored research questions are not marked, so treat every question as scored.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Official area</th>
+<th style="text-align: right;">Scored questions</th>
+<th style="text-align: right;">Share</th>
+<th style="text-align: right;">Tasks</th>
+<th style="text-align: right;">Questions per task</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A. Diagnosis (general, mechanical/hydraulic, electronic)</td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;">58%</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: right;">~0.93</td>
+</tr>
+<tr>
+<td>B. In-vehicle maintenance and repair</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">27%</td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;">1.00</td>
+</tr>
+<tr>
+<td>C. Removal, inspection, installation (incl. friction/reaction units)</td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">23</td>
+<td style="text-align: right;">~0.30</td>
+</tr>
+</tbody>
+</table></div>
+<h3>Priority for you</h3>
+<ol>
+<li><strong>Area A mechanical/hydraulic (Section 2)</strong> is the biggest block and your least-covered. Symptom to cause to distinguishing check.</li>
+<li><strong>Area B (Section 4)</strong> has the highest yield per task and almost nothing in your class notes yet. Fluid/level procedure, cooler circuit, pan debris, linkage/TR switch, valve body, accumulator/servo.</li>
+<li><strong>Apply-chart and planetary reasoning (Section 1)</strong> is where you lost points on the Unit 1 quiz, and it is also the skill the public sample questions lean on.</li>
+<li><strong>Area A electronic (Section 3)</strong> is your strongest area. Read it for the transmission-specific logic and the traps, not the fundamentals.</li>
+<li><strong>Area C (Section 5)</strong> is about 0.3 questions per task. Know the principles and the classic mistakes; skip procedures.</li>
+<li><strong>CVT/DCT/hybrid (Section 6)</strong> is a recognition-level topic.</li>
+</ol>
+<h3>Question method</h3>
+<p>Before choosing an answer, name:</p>
+<ol>
+<li><strong>Operating state:</strong> cold or warm, which range, which gear, throttle, load, steady or during a shift.</li>
+<li><strong>What is commanded vs. what is happening:</strong> the TCM's command, the sensor's signal, and the actual hydraulic or mechanical result.</li>
+<li><strong>What the stem rules out:</strong> a symptom in one range clears the elements that are applied only in other ranges.</li>
+<li><strong>The check that separates the remaining causes.</strong> Fluid and engine first, pressure test before teardown, scan data before parts.</li>
+</ol>
+<p>Words matter:</p>
+<ul>
+<li><strong>Could cause:</strong> one valid mechanism is enough.</li>
+<li><strong>Most likely:</strong> weigh frequency and the exact conditions given.</li>
+<li><strong>First / next:</strong> the safest, simplest check that separates the causes.</li>
+<li><strong>EXCEPT / least likely:</strong> find the shared rule, then pick the choice outside it.</li>
+<li><strong>Technician A / Technician B:</strong> judge each statement alone, then compare. "Both" and "neither" are valid answers.</li>
+</ul>
+<p>Textbook and service-manual reasoning beats shop habit. If your shop experience suggests a different answer than the by-the-book one, the exam wants the by-the-book one.</p>
+<h3>Confirmed weak spots, from your graded Unit 1 quiz</h3>
+<p>These are logged in one place because you missed them. Each is also covered in its normal section.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>What you missed</th>
+<th>Fix</th>
+<th>Section</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carrier vs. ring gear layout (twice)</td>
+<td>Carrier holds the planets. Ring is the big outer gear with internal teeth. Sun is the small center gear.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>"Sun gear is also called the internal gear"</td>
+<td>False. The internal gear is the ring gear.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>What a Ravigneaux set is</td>
+<td>Two suns, two planet sets, one carrier, one ring. LePelletier is a simple planetary plus a Ravigneaux.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Total ratio of two stages</td>
+<td>Multiply, don't add. A large result isn't a reason to reject it.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Reaction multi-disc clutch: steel plates are splined to what</td>
+<td>The transmission case. A reaction clutch anchors a member to the case.</td>
+<td>1</td>
+</tr>
+<tr>
+<td>Torque flow needs a driven, a held, and an output member</td>
+<td>A disconnected member gives neutral, not torque flow. Carrier held means reversed rotation.</td>
+<td>1</td>
+</tr>
+</tbody>
+</table></div></section><section id="s1"><div class="sec-head"><span class="sec-num">01</span><h2>Power Flow and Apply-Chart Reasoning</h2></div><p class="tasks">Tasks: A.8, A.14, C.13, C.22 (also feeds C.19, C.23). The apply chart is the most reusable skill on the A2: the public sample item that reads one is a no-reverse question, and the answer comes from the chart, not from memory of a specific transmission.</p>
+<h3><span class="n">1.1</span>Planetary identification (lock these in first)</h3>
+<p>An automatic uses hydraulically applied clutches and bands to connect or hold gear members, where a manual uses a sleeve and synchronizer. Torque flows only when <strong>one member is driven (input), one is held (reaction), and one is the output.</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Member</th>
+<th>How to recognize it</th>
+<th>Do not confuse with</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Sun</strong></td>
+<td>Center gear, ordinary external teeth</td>
+<td>It is <strong>not</strong> the "internal gear"</td>
+</tr>
+<tr>
+<td><strong>Planet carrier</strong></td>
+<td>Holds and carries the planet (pinion) gears</td>
+<td>It is <strong>not</strong> the big outer gear</td>
+</tr>
+<tr>
+<td><strong>Ring</strong> (annulus, internal gear)</td>
+<td>Large outer gear with teeth on the <strong>inside</strong></td>
+<td>Ring = internal gear, always</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note "><div class="tag">Learner (missed on the Unit 1 quiz)</div><div class="nb"><p>carrier and ring were swapped, and "sun gear = internal gear" was chosen as true. Anchor questions: <em>Who holds the planets?</em> Carrier. <em>Which gear has internal teeth?</em> Ring. <em>What is the center gear?</em> Sun.</p></div></div>
+<p><strong>Recognition rules</strong> (identify input, reaction and output <em>before</em> applying):</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Condition</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Neutral</td>
+<td>Nothing held, or a member disconnected: no torque path</td>
+</tr>
+<tr>
+<td>Direct drive 1:1</td>
+<td>Two members driven together</td>
+</tr>
+<tr>
+<td>Forward reduction</td>
+<td>Carrier is the output</td>
+</tr>
+<tr>
+<td>Forward overdrive</td>
+<td>Carrier is the input</td>
+</tr>
+<tr>
+<td>Reverse</td>
+<td>Carrier is held (the output always turns the opposite way)</td>
+</tr>
+<tr>
+<td>Reduction</td>
+<td>Sun is the input</td>
+</tr>
+<tr>
+<td>Overdrive</td>
+<td>Sun is the output</td>
+</tr>
+</tbody>
+</table></div>
+<p>Example ratios for a sun of 30 teeth and a ring of 70 (carrier output unless stated): ring held, sun driven = (S+R)/S = <strong>3.33:1</strong>; sun held, ring driven = (S+R)/R = <strong>1.43:1</strong>; carrier held, sun driven = R/S = <strong>2.33:1 reverse</strong>. Swapping input and output gives the reciprocal (overdrive). More planet pinions add strength, not a different ratio.</p>
+<div class="note "><div class="tag">Memorize</div><div class="nb"><p>two gear sets in series: <strong>multiply</strong> the ratios, never add. A 2:1 followed by a 3:1 is 6:1. A large product is not a sign of a mistake.</p></div></div>
+<p><strong>Compound sets (recognition phrases):</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Set</th>
+<th>Phrase</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Simpson</td>
+<td>One sun, two carriers, two rings (3- to 5-speed)</td>
+</tr>
+<tr>
+<td>Ravigneaux</td>
+<td><strong>Two suns, two sets of planets, one carrier, one ring</strong></td>
+</tr>
+<tr>
+<td>LePelletier</td>
+<td><strong>Simple planetary + Ravigneaux</strong> (GM 6L80, Ford 6R80, ZF 6HP: five clutches, no bands)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The instructor said exact power flow need not be memorized, but the definitions and the ability to calculate or classify from a reference are fair game. 8-, 9- and 10-speeds mix several compound sets and do not fit one family name; use SI.</p>
+<h3><span class="n">1.2</span>Apply devices that make the chart work</h3>
+<ul>
+<li><strong>Driving members</strong> connect the turbine shaft to a gear-set member. <strong>Reaction members</strong> (clutch, band or one-way clutch) lock a member to the <strong>transmission case</strong>.</li>
+<li><strong>Multi-disc clutch as a reaction member:</strong> the unlined <strong>steel plates are splined to the transmission case</strong> (not a drum, a carrier or the output shaft); that is what makes it a brake. Frictions ride on the rotating member.</li>
+<li><strong>Band:</strong> wraps a drum, applied by a servo. <strong>Servo:</strong> the apply piston for a band.</li>
+<li><strong>One-way clutches:</strong> <strong>roller</strong> (rollers wedge on a ramp), <strong>sprag</strong> (hourglass-shaped sprags), <strong>mechanical diode</strong> (struts engage notches; strongest). Each holds one direction and <strong>freewheels (overruns)</strong> the other. A freewheel on coast in Drive is normal where a one-way clutch carries the gear.</li>
+<li><strong>Backward one-way clutch (C.22):</strong> it holds the wrong way and gives <strong>no drive in the gear it serves</strong>, while ranges backed by a friction element (such as manual 1) can still drive. A seized one-way clutch instead causes a bind on the shift out of that gear. Check rotation direction before installing.</li>
+</ul>
+<p><strong>Shift types:</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Meaning</th>
+<th>Fault if mistimed</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Synchronous</strong> (clutch-to-clutch)</td>
+<td>Release and apply must be timed; usually no one-way clutch</td>
+<td>Tie-up (harsh, two ratios at once) or flare (rpm rises)</td>
+</tr>
+<tr>
+<td><strong>Nonsynchronous</strong> (freewheel)</td>
+<td>One-way clutch overruns as the next member applies; no timing</td>
+<td>Few timing faults</td>
+</tr>
+</tbody>
+</table></div>
+<p>Most modern transmissions are synchronous. <strong>Garage shifts</strong> (Park/Neutral to Drive or Reverse, at rest) are slower and need high static friction; <strong>power shifts</strong> happen under load and need high dynamic friction.</p>
+<h3><span class="n">1.3</span>The apply-chart elimination method (A.8, A.14)</h3>
+<ol>
+<li><strong>Sort the ranges</strong> you were told about into <strong>affected</strong> and <strong>unaffected</strong> (include Park, Neutral, manual ranges and engine braking).</li>
+<li><strong>Intersect.</strong> Several failed ranges: the culprit is applied in <strong>all</strong> of them. One failed range: the element used <strong>only</strong> there.</li>
+<li><strong>Exonerate.</strong> An element applied in any <em>working</em> range is cleared for a loss-of-hold fault.</li>
+<li><strong>Classify the symptom.</strong> Slip, flare or no drive = an element that <strong>fails to hold</strong> (worn, leaking, broken). Tie-up, bind, "braked" feel or engine pulled down = an element that is <strong>seized or not releasing</strong>, and it shows up in a range where the chart says it should be <em>off</em>.</li>
+<li><strong>Separate a one-way clutch from its backup:</strong> slip in Drive 1 but fine in manual 1 = the one-way clutch; Drive 1 fine but no engine braking in manual 1 = the manual-low friction element.</li>
+</ol>
+<p><strong>Worked example (generic Simpson-style 3-speed).</strong> 1st = forward + low roller; 2nd = forward + intermediate; 3rd = forward + direct; Reverse = direct + low/reverse; manual 1 adds low/reverse.</p>
+<ul>
+<li>Complaint: <em>no 3rd and no reverse; 1st and 2nd normal.</em> 3rd uses forward + direct; reverse uses direct + low/reverse. Common to both: <strong>direct</strong>. Forward is cleared (works in 1 and 2).</li>
+<li>Complaint: <em>no reverse only; 3rd fine.</em> Reverse uses direct + low/reverse. Direct works in 3rd, so it is cleared. Left: <strong>low/reverse</strong>. Confirm: manual-1 engine braking should be missing too.</li>
+</ul>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>a distractor may be an element that also applies in a working range (cleared), or a <em>seized</em> element offered for a no-drive symptom (a seized element binds; it does not leave you without a range).</p></div></div>
+<p><strong>The unique-element trap, using the class 10-speed chart.</strong> Reverse applies C1, C2, C4 and C6. Every one of those also applies in some forward range that works, so <strong>no single friction element is reverse-only on that unit.</strong> A "no reverse, all forward normal" complaint cannot be solved by the chart alone: move to pressure by range and the reverse circuit (see Section 2). On many units the "reverse-only" element is really shared with manual-1 engine braking, so always ask about it. The chart model is not identified in the slides; use the method, not memorized cells.</p>
+<p><strong>Multi-range symptoms are normal on clutch-to-clutch units.</strong> On a LePelletier (two elements per gear) one failed clutch removes several ranges (for example, one clutch shared by 3rd, 5th and reverse). That is a single failure, not several.</p>
+<p><strong>Name collisions:</strong> Chrysler "front clutch" is the GM/Ford "direct" clutch, and "rear" is "forward." Ford/ZF use letters, GM 6L80 uses gear-number names. Allison 1000 reverse is C3 + C5 (C2 is not applied in reverse). Read the chart given, not the names you remember.</p>
+<p><strong>Examples to recognize, not memorize (design-dependent):</strong>
+- 4L60-E: the low roller clutch holds <strong>only 1st in Drive</strong>, so it cannot cause slip in <em>all</em> forward gears; slip in every forward range with reverse working points to the forward (input) clutch, its sprag or its circuit. A backward forward sprag: no drive in D4 and D3 takeoff, yet manual 2 and 1 still move via the overrun clutch (<strong>LIKELY</strong>; forum evidence). The stock overrun clutch is applied in D3 only in 3rd (<strong>LIKELY</strong>); applying it in D3 1st/2nd is a performance modification.
+- "No reverse <strong>and</strong> no manual-1 braking" = low/reverse element. "No reverse only" = a reverse-only element if the unit has one (4L60-E reverse input clutch).</p>
+<h3><span class="n">1.4</span>What the chart does not decide</h3>
+<p>The chart narrows to one or two elements. Before blaming a friction element, rule out fluid level, range sensor and linkage, commanded gear on the scan tool, and <strong>failsafe</strong> (which can mimic a multi-element failure). Confirm with line pressure by range (a low reading in one range with the others fine = that circuit leaking) and, on disassembly, an air test of each apply piston.</p>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p>Loss of hold = failed/released; extra hold = seized/dragging. Find the range where the extra hold fights an element that should be on.</p></div></div></section><section id="s2"><div class="sec-head"><span class="sec-num">02</span><h2>Mechanical and Hydraulic Diagnosis</h2></div><p><strong>Areas A.2, A.4, A.8–A.15, A.22.</strong> This is the largest block on the exam: Area A is 58% of the test, and these tasks are the symptom-to-cause reasoning ASE asks most often. Most items give a symptom and ask for the most likely cause, the first check, or the check that separates two causes.</p>
+<p><strong>Classify the symptom by what it follows.</strong> This one move sorts most questions before you look at the choices.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>The symptom follows…</th>
+<th>Think first of…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engine rpm (also in P/N)</td>
+<td>Pump, converter, flexplate</td>
+</tr>
+<tr>
+<td>Road speed</td>
+<td>Gear train, output, final drive, tires/driveline</td>
+</tr>
+<tr>
+<td>One gear or range only</td>
+<td>The apply element unique to that range (apply chart)</td>
+</tr>
+<tr>
+<td>Every range</td>
+<td>Fluid, pump/pressure, input clutch, manual valve/linkage</td>
+</tr>
+<tr>
+<td>Cold only, clears warm</td>
+<td>Fluid level, thick-fluid or bore-leak effects</td>
+</tr>
+<tr>
+<td>First engagement after sitting</td>
+<td>Converter drain-back</td>
+</tr>
+<tr>
+<td>Only after an auto-restart</td>
+<td>Stop/start hold system (auxiliary pump or accumulator)</td>
+</tr>
+<tr>
+<td>Engine data (misfire, TPS) or wheel-speed data</td>
+<td>Not the transmission</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3><span class="n">2.1</span>Fluid first: verify the concern, then check level, type and condition</h3>
+<p class="tasks">Tasks: A.2, A.4, A.10, B.12</p>
+<p>Verify the complaint and check the fluid before anything else. A wrong level makes every later road-test symptom unreliable, and low or overfull fluid is the simplest cause consistent with many slip, delay and noise stems.</p>
+<p><strong>Level</strong>
+- <strong>Dipstick unit:</strong> follow the SI for engine running or off and for gear position. Methods differ.
+- <strong>No-dipstick unit (the public sample-question style):</strong> read fluid temperature on the scan tool and confirm it is inside the SI window; vehicle level; engine idling; shift through the ranges if SI says so; open the level plug. A small trickle or drip is correct. A steady stream is overfull; nothing coming out is low.
+- <strong>Why the temperature window matters:</strong> ATF expands as it warms, so a level set cold reads overfull once hot. A vehicle that is not level gives a false trickle or none.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>"Check the level cold" or "with the vehicle on the lift, however it sits" is the wrong answer on a plug-check unit. The temperature window and level vehicle are part of the procedure. Take the actual window from SI; it differs by unit.</p></div></div>
+<p><strong>Low vs. overfull: both slip, both are fluid problems</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>What happens</th>
+<th>Clue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Low</td>
+<td>Pump pulls air; apply pressure is weak or erratic</td>
+<td>Slip, flare or delay, worst when fluid sloshes (cornering, braking, cold)</td>
+</tr>
+<tr>
+<td>Overfull</td>
+<td>Rotating parts whip air into the fluid (aeration); foamy fluid carries pressure and heat poorly</td>
+<td>Slip, heat, fluid pushed out the vent, foam on the dipstick</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note "><div class="tag">Your notes (vct style)</div><div class="nb"><p>a vehicle that slips or flares when cornering while cold, but is fine when warm, points to <strong>low fluid level</strong>. Overfull can slip through aeration. Also: a poorly running engine can feel like a transmission problem, and the wrong fluid can cause shift issues.</p></div></div>
+<p><strong>Condition</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Observation</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Translucent red/pink, no particles</td>
+<td>Normal (color norms vary by fluid; check SI)</td>
+</tr>
+<tr>
+<td>Dark brown/black, burnt smell</td>
+<td>Overheated or oxidized fluid; burned friction material; varnish can stick valves</td>
+</tr>
+<tr>
+<td><strong>Milky pink ("milkshake")</strong></td>
+<td>Coolant has entered through a leaking in-radiator cooler</td>
+</tr>
+<tr>
+<td>Fine gray paste on the magnet</td>
+<td>Normal wear</td>
+</tr>
+<tr>
+<td>Large flakes, metal slivers, brass chunks</td>
+<td>Active failure</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>milky ATF means replace the radiator/cooler <strong>and</strong> repair the damage (seals, frictions, converter) and flush. "Drain and refill" or "flush only" is the distractor. The coolant can also be the thing that damaged the clutches.</p></div></div>
+<p><strong>Leaks and where they come from.</strong> Red fluid at the bellhousing points to the front pump seal or converter-hub seal. Dark engine oil points to the rear main seal. Confirm by pulling the inspection cover or using UV dye in an ATF-rated dye (clean first, run, then inspect). Fluid out the vent points to overfill or aeration before an internal failure.</p>
+<hr />
+<h3><span class="n">2.2</span>Road test and shift-quality vocabulary</h3>
+<p class="tasks">Tasks: A.8, A.9, A.23 (mechanical side)</p>
+<p>Road test <strong>in every range</strong>, with scan data where possible. Learn the terms by what they do to rpm, because the exam uses them precisely.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>What it is</th>
+<th>Rpm / feel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Slip</strong></td>
+<td>Friction element not holding; lasts beyond the shift and can occur while cruising in gear</td>
+<td>Rpm up, no matching speed</td>
+</tr>
+<tr>
+<td><strong>Flare</strong></td>
+<td>One element releases <strong>before</strong> the oncoming one holds (underlap / low apply pressure / late oncoming circuit)</td>
+<td>Rpm rises briefly during the shift</td>
+</tr>
+<tr>
+<td><strong>Tie-up = bind-up</strong></td>
+<td>Two ratios applied at once (overlap), or an element that fails to release or a one-way element installed backward</td>
+<td>Output feels braked; rpm pulled <strong>down</strong></td>
+</tr>
+<tr>
+<td><strong>Harsh / bump</strong></td>
+<td>Apply pressure rises too fast</td>
+<td>Firm, abrupt shift</td>
+</tr>
+<tr>
+<td><strong>Slide-bump</strong></td>
+<td>Accumulator piston bottoms out before the shift finishes, so pressure spikes at the end</td>
+<td>Smooth start, harsh finish</td>
+</tr>
+<tr>
+<td><strong>Delayed engagement</strong></td>
+<td>Lag moving from P/N into D or R</td>
+<td>Low fluid, low pump pressure, worn seals/valve body, clogged filter; worse cold</td>
+</tr>
+<tr>
+<td><strong>Garage shift</strong></td>
+<td>Neutral-to-drive or neutral-to-reverse apply made at rest</td>
+<td>Slower and softer than power shifts by design</td>
+</tr>
+</tbody>
+</table></div>
+<p>Tie-up and bind-up are the same fault, and the diagnosis is the same: an overlap or late release. Flare is the <strong>opposite</strong> of overlap. Worn friction is only one possible cause of either; both are timing faults.</p>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p>every shift change is a handoff. Offgoing releases and oncoming applies. Released too soon = flare. Applied too soon (or released late) = tie-up. A mistimed synchronous (clutch-to-clutch) shift is exactly why timing matters; a one-way clutch handoff needs no timing.</p></div></div>
+<p><strong>Accumulators.</strong> An accumulator is tied to a clutch or band circuit and absorbs fluid as pressure builds, which slows the pressure rise and lengthens the apply. It does not store backup pressure. A faulty accumulator or broken spring gives <strong>harsh</strong> shifts, and the shift it belongs to tells you which one (hard N-D points to the N-D accumulator; hard 1-2 to the 1-2). Many modern clutch-to-clutch units have dropped accumulators because pressure-control solenoids shape the apply directly.</p>
+<p><strong>Noise and vibration.</strong> Does it follow engine rpm or road speed? A whine in P/N that rises with rpm is almost always the pump (also a clogged filter or pickup-side air leak). Vibration in P/N at a fixed rpm points to the flexplate or converter. A noise in one gear only points to that gear's apply element or planetary set, found with the apply chart.</p>
+<p><strong>Delays that happen only sometimes</strong>
+- Delay only on the <strong>first engagement after sitting</strong>: converter drain-back (the converter drains to the sump). Overnight level check: note the level, recheck in the morning.
+- Clunk or delay only <strong>after an auto-restart</strong>, normal after a key start: the stop/start hold system (electric auxiliary pump, or a solenoid-latched accumulator on some units). A bad mount would clunk on every engagement. The stored-pressure accumulator is also a safety hazard on disassembly.</p>
+<p><em>ASE expects:</em> map the slang to the mechanism before answering. Flare means underlap or low apply pressure (rpm up). Tie-up means overlap (rpm down, output braked).</p>
+<hr />
+<h3><span class="n">2.3</span>Apply chart: the short version</h3>
+<p class="tasks">Tasks: A.8, A.14</p>
+<p>The full elimination method, with a worked example, is in <strong>Section 1.3</strong>. The one-line version: several failed ranges, find the element <strong>common to all of them</strong>; one failed range, find the element <strong>unique to it</strong>; clear anything that applies in a range that works. <strong>No forward and no reverse</strong> points to something common to everything (fluid level, pump or pressure, manual valve/linkage, converter/input), not one clutch.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>a one-way clutch used in first gear only cannot cause slip in <strong>every</strong> forward gear. Slip in all forward gears with reverse OK points to the forward/input clutch or its circuit. Slip in first gear in D but <strong>not</strong> in manual 1 points to the one-way clutch, because manual 1 applies a band or clutch that holds the same member.</p></div></div>
+<hr />
+<h3><span class="n">2.4</span>Pressure testing logic</h3>
+<p class="tasks">Tasks: A.11, A.14, A.17</p>
+<p><strong>Order (OEM service text states it):</strong> fluid level and condition → <strong>line pressure</strong> → stall test <strong>only if the OEM publishes one</strong>. If line pressure is low, do not stall test. Many current units have no stall spec, so check SI before assuming one.</p>
+<p><strong>Preconditions:</strong> correct fluid and level, operating temperature, engine running properly, brakes applied and wheels chocked, a gauge with enough range at the correct tap (tap location is unit-specific). Read idle and loaded pressure in each range SI lists, and compare with the SI chart.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Reading</th>
+<th>Most likely area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Low in all ranges</strong></td>
+<td>Common supply: low fluid, clogged or leaking filter/pickup (aeration), worn pump, stuck or weak pressure regulator, large common leak</td>
+</tr>
+<tr>
+<td><strong>Low in one range only</strong></td>
+<td>A leak in the circuit fed only in that range (piston seal, sealing ring, servo seal, that range's valve or passage). Confirm with the apply chart and a range that shares the element</td>
+</tr>
+<tr>
+<td><strong>High in all ranges</strong></td>
+<td>Stuck regulator; EPC/PC solenoid in failsafe (unplugged, open circuit, stuck); older units: TV cable misadjusted or modulator vacuum lost</td>
+</tr>
+<tr>
+<td><strong>Won't rise with throttle/command</strong></td>
+<td>TV linkage/cable or modulator/boost valve fault; EPC units: command not changing, solenoid not responding, boost/regulator valve stuck</td>
+</tr>
+<tr>
+<td><strong>Normal pressure, no engagement</strong></td>
+<td>Routing (manual valve, shift/clutch-select valve, check ball, separator plate) or a mechanical failure (broken clutch, sprag)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Reverse pressure runs higher.</strong> Reverse oil acts on the pressure regulator/boost valve and raises line pressure, because the reverse holding members carry the highest reaction torque. Low pressure in R only = a reverse-circuit leak or boost-valve fault. Low everywhere = supply.</p>
+<p><strong>Two-gauge method.</strong> One gauge on line pressure and one on the clutch or servo circuit, read together. A clutch circuit reading well below line pressure means a leak in that circuit (the allowed difference is SI-dependent). Air testing with the valve body off locates the leaking element.</p>
+<p><strong>Electronic pressure control: command is not pressure.</strong> The scan tool shows a <strong>command</strong>. Only a gauge shows actual pressure. Classic EPC/PCS behavior is <strong>inverse</strong>: more current = <strong>lower</strong> pressure; low or no current (or unplugged) = <strong>maximum</strong> pressure. A GM line PC solenoid is normally high the same way. Unplugging the solenoid or its connector therefore drives pressure to maximum, which can <strong>mask</strong> a subtle circuit leak.
+- Command changes and the gauge follows = solenoid, regulator and pump are working.
+- Command changes, current tracks the command, but the gauge does not follow = hydraulic supply or a leak (stuck valve, worn bore, pump).
+- No command change = input, strategy or circuit problem.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>when a stem shows rising commanded current and falling pressure, do not call it a fault. On the classic design that is normal. Read the stem for a different design before applying the rule.</p></div></div>
+<p><strong>Older (hydraulic) load signals, as principles.</strong> Governor pressure rises with road speed. Throttle valve (TV) pressure follows throttle position. They oppose at the shift valve, so more throttle needs more speed to shift. A vacuum modulator turns engine vacuum into the TV signal: <strong>high vacuum (light load) = low pressure, soft early shifts; low vacuum (load, a leak, a disconnected hose) = high pressure, firm late shifts</strong>. A <strong>ruptured modulator diaphragm</strong> draws ATF into the intake: ATF in the vacuum hose, unexplained fluid loss with no visible leak, white smoke. On a TV-cable unit (legacy 700R4 type), too loose = low pressure and early soft shifts (burns it up); too tight = high pressure and late harsh shifts.</p>
+<hr />
+<h3><span class="n">2.5</span>Valves and hydraulic-circuit reasoning</h3>
+<p class="tasks">Tasks: A.14, A.17 (also B.6, B.8)</p>
+<p>Valves fall into three jobs: <strong>switch</strong> valves route flow, <strong>servo</strong> valves move other valves, and <strong>regulator</strong> valves control pressure. Most are spool valves in a bore, usually with a spring. Transmission pumps can build excess pressure quickly, so every unit has a pressure regulator (pressure control) valve.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Valve / part</th>
+<th>Job</th>
+<th>Fault picture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pressure regulator + boost</strong></td>
+<td>Pump pressure vs. spring plus boost force; excess goes to the converter feed, then to the suction side</td>
+<td>Worn bore or sleeve: low/erratic line pressure, soft shifts, delayed or harsh reverse; worse hot</td>
+</tr>
+<tr>
+<td><strong>Manual valve</strong></td>
+<td>Driver-selected circuits for P, R, N, D, manual ranges</td>
+<td>Misadjusted linkage: creep in neutral, delayed engagement, burned clutches; symptom changes as the shifter moves a little</td>
+</tr>
+<tr>
+<td><strong>Shift / clutch-select valve</strong></td>
+<td>Routes pressure to apply circuits; stroked by a solenoid or by governor/TV force</td>
+<td>Stuck valve mimics a solenoid stuck on or off; a <strong>good solenoid circuit test with a wrong-gear symptom points to the valve</strong></td>
+</tr>
+<tr>
+<td><strong>Accumulator</strong></td>
+<td>Cushions apply</td>
+<td>Broken spring or bad seal = harsh shift for that circuit</td>
+</tr>
+<tr>
+<td><strong>Orifice and check ball</strong></td>
+<td>Meter apply and exhaust at different rates</td>
+<td>Missing/worn ball or enlarged orifice = harsh, fast apply or clunky release; plugged orifice = slow or delayed</td>
+</tr>
+<tr>
+<td><strong>TCC apply / regulator valves</strong></td>
+<td>Control converter clutch apply pressure</td>
+<td>Worn bore bleeds apply oil: slip codes. Abrupt slip swings = apply valve; gradual, load- and heat-sensitive slip = regulator or bore wear</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Sticking vs. wear.</strong> Debris or varnish tends to cause <strong>intermittent, cold-worse</strong> wrong-gear, no-shift or TCC symptoms. Bore wear tends to be <strong>progressive and hot-worse</strong> (thin fluid leaks more) and may set several pressure-control DTCs at once. <em>TCC slip + soft shifts + several solenoid DTCs, worse hot</em> fits upstream bore wear more than several failed solenoids.</p>
+<p><strong>Routing vs. supply.</strong> On clutch-to-clutch units, <em>no movement with normal line pressure</em> points to routing (clutch-select valve, check ball, separator plate), not the pump. This is "low in one range" logic applied to a solenoid-controlled unit.</p>
+<p><strong>Failsafe behavior.</strong> On many units, with the control solenoid body or TCM disabled: the pressure solenoid goes off (maximum line pressure), the TCC solenoid goes off (no lockup), and the transmission defaults to a fixed gear while reverse stays available. Firm engagement with a fixed gear after a power loss is designed failsafe, not mechanical damage (confirm the default gear in SI).</p>
+<p><strong>Converter-out → cooler → lube.</strong> Oil leaving the converter flows to the cooler and returns as lube. A restricted cooler or line reduces cooling and lube flow, causing overheating and bushing/planetary wear. Check cooler flow (or at least head pressure) before condemning internals, and flush or replace the cooler after a hard-parts failure. A thermal bypass valve stuck in bypass starves cooler flow and overheats.</p>
+<hr />
+<h3><span class="n">2.6</span>Torque converter diagnosis</h3>
+<p class="tasks">Tasks: A.12, A.13</p>
+<p><strong>Converter basics (from your notes).</strong> The <strong>impeller</strong> (pump) is the driving member and turns with the housing. The <strong>turbine</strong> is splined to the input shaft. The <strong>stator</strong> (reactor) rides on a one-way clutch and is the reaction member. At <strong>stall/low speed</strong>, return fluid hits the stator's front, the one-way clutch locks it, and it redirects fluid to help the impeller: torque is multiplied. At <strong>coupling</strong>, turbine speed nearly equals impeller speed, the fluid hits the back of the stator blades, the one-way clutch overruns, and there is no multiplication. Creep is normal with the brakes released. A non-lockup converter always has some slip. The converter is the main heat source, and <strong>stall superheats fluid</strong>.</p>
+<p><strong>Stator one-way clutch: two opposite failures</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Freewheeling (not holding)</th>
+<th>Seized (locked both ways)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launch</td>
+<td><strong>Poor</strong>; sluggish to moderate speed</td>
+<td><strong>Normal</strong></td>
+</tr>
+<tr>
+<td>High speed</td>
+<td>Normal</td>
+<td><strong>Poor</strong>: power loss, heat, poor economy</td>
+</tr>
+<tr>
+<td>Stall test</td>
+<td><strong>Low</strong></td>
+<td><strong>Normal</strong> (at stall a good stator is held anyway)</td>
+</tr>
+<tr>
+<td>Memory aid</td>
+<td>Lose the <strong>low end</strong> (no multiplication)</td>
+<td>Lose the <strong>top end</strong> (no coupling)</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>ASE expects:</em> the public-sample pattern, poor launch but normal above about 35 mph, is a <strong>freewheeling</strong> stator. The mirror image, good launch, poor top speed, overheating, normal stall, is a <strong>seized</strong> stator. Bench check on a removed converter: the stator should turn one way and lock the other; free both ways or locked both ways means replace the converter (a general shop does not repair one).</p>
+<p><strong>Stall test: interpret both directions</strong>
+- Stall rpm and procedure come from SI. Typical OEM limits are about 5 seconds at wide-open throttle and a cool-down between ranges (examples, SI-dependent). Brakes applied and wheels chocked.
+- <strong>High stall</strong> = something in the <strong>transmission</strong> is slipping (clutch, band, one-way clutch). Compare D and R to find the shared element. Nothing inside the converter makes stall higher than spec.
+- <strong>Low stall</strong> = the engine is not making power (misfire, restricted exhaust) <strong>or</strong> the stator is freewheeling. Rule out the engine first. A slightly low reading points to the engine; a very low reading with a poor launch points to the stator.
+- A TCC stuck on can make a stall test impossible or misleading (the engine may die in gear), so do not stall-test that complaint.</p>
+<div class="note "><div class="tag">ASE trap (wrong direction)</div><div class="nb"><p>some flashcards say "stall 200 rpm above spec means the stator is not holding." That is backwards. High stall is a transmission holding element; a stator that is not holding gives LOW stall. Your own note ("nothing in the converter makes stall higher than spec") is correct.</p></div></div>
+<p><strong>Torque converter clutch (TCC)</strong>
+- The module applies the TCC only when conditions are right: warm fluid/engine, enough speed and gear, steady throttle (not closed or WOT), brake off. It uses brake switch, TPS, ECT/TFT and speed sensors. A bad input usually <strong>prevents</strong> lockup (brake switch stuck "applied," TPS dead spot, cold-reading temperature sensor). Check the inputs and the TCC-enable data before condemning the solenoid or converter.
+- <strong>Flow:</strong> release oil is fed between the cover and the pressure plate to hold it off. To apply, the TCC PC solenoid regulates apply oil to the other side. Apply and release oil are routed through passages between the converter hub, stator shaft and turbine shaft.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Cause</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Engine stalls or nearly stalls coming to a stop; slip reads 0 at a stop</strong></td>
+<td>TCC <strong>stuck on</strong>: stuck solenoid or apply valve, a short keeping it energized, lost speed signal (P0742)</td>
+</tr>
+<tr>
+<td>High cruise rpm, poor economy, <strong>overheating</strong>; commanded on but slip stays high</td>
+<td>TCC <strong>not holding</strong> (P0741). Commanded on + slip high = the apply side (pressure, leaks, friction) failed, not the command</td>
+</tr>
+<tr>
+<td>Rumble-strip <strong>shudder</strong> at light-throttle cruise that goes away when the TCC releases or locks fully</td>
+<td>TCC friction stick-slip: degraded/wrong fluid, glazed lining, low clamping force</td>
+</tr>
+<tr>
+<td>Clunk on lockup</td>
+<td>Harsh apply, or slack (loose converter bolts, cracked flexplate, mounts)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Apply-pressure loss before the piston.</strong> Many "bad converter" complaints are leaks upstream of the piston: worn TCC regulator or apply valve bores, a worn stator-support (pump cover) bushing, or a damaged turbine-shaft seal or O-ring. Pressure and flow testing separates these from true converter faults (lining wear, glazing, a leaking piston seal).</p>
+<p><strong>Shudder vs. misfire.</strong> A misfire or "chuggle" follows engine firing frequency and shows in misfire or cylinder data. True TCC shudder is present in normal operation but <strong>absent with the TCC disabled and absent with it fully locked</strong>. Converter imbalance follows engine rpm even in neutral. Worn mounts imitate both. Do not reset adapts to cure shudder.</p>
+<div class="note "><div class="tag">Your notes</div><div class="nb"><p>an overdrive transmission that will not lock the converter overheats. TCC slip dropping from about 200 rpm to zero at apply is normal; "near zero at full lock" is what is tested, and any number will be in the stem.</p></div></div>
+<p><em>ASE expects:</em> diagnose from slip data and commanded state, not remembered numbers: commanded on and slip high means the apply side; slip near zero at a stop means stuck on.</p>
+<hr />
+<h3><span class="n">2.7</span>When it is not the transmission</h3>
+<p class="tasks">Task: A.22 (mechanical side), A.2</p>
+<p>Pull <strong>engine and transmission</strong> codes and verify inputs before condemning the transmission.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Looks like…</th>
+<th>Actually…</th>
+<th>Separating check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TCC shudder</td>
+<td>Engine misfire</td>
+<td>Misfire counters, cylinder data; command the TCC off and see if it follows</td>
+</tr>
+<tr>
+<td>Harsh or late/early shifts</td>
+<td>TPS, MAF/MAP input</td>
+<td>A TPS reading closed shifts early and soft; open shifts late and harsh. Check the signal first</td>
+</tr>
+<tr>
+<td>No upshift, erratic shifts</td>
+<td>Wheel-speed/ABS or VSS fault</td>
+<td>Compare speed sensors and DTCs</td>
+</tr>
+<tr>
+<td>Clunk on engagement</td>
+<td>Motor mount, CV joint, U-joint</td>
+<td>Visual; does it clunk on every engagement?</td>
+</tr>
+<tr>
+<td>Binding in turns (4WD)</td>
+<td>Mismatched tire size</td>
+<td>Compare rolling circumference</td>
+</tr>
+<tr>
+<td>Slip after fluid service</td>
+<td>Overfill</td>
+<td>Level and foam</td>
+</tr>
+<tr>
+<td>Rough shifts right after a reflash</td>
+<td>Zeroed adapts</td>
+<td>Complete the relearn before suspecting a new mechanical fault</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>"it's a transmission RO, so it's the transmission." A symptom that follows engine data, wheel-speed data, tire size or chassis movement belongs outside the transmission. One that follows TCC on/off, one range, or the transmission's own speed data belongs to the transmission.</p></div></div>
+<p><em>ASE expects:</em> the answer must explain <strong>every</strong> symptom in the stem, test before replacing, and choose the simplest verified cause over the rare one.</p>
+<hr />
+<h3>Section 2 quick reference</h3>
+<ul>
+<li><strong>First:</strong> verify the concern, then fluid (level, type, condition) the SI way. On a plug-check unit: scan-tool temperature in window, level vehicle, engine running.</li>
+<li><strong>Pressure order:</strong> fluid → line pressure → stall only if SI specifies. Low in all ranges = supply; low in one = that range's circuit; high all = regulator/EPC failsafe.</li>
+<li><strong>EPC:</strong> more current = less pressure (classic). Unplugged = maximum. Command is not pressure; use a gauge.</li>
+<li><strong>Flare</strong> = release before apply, rpm up. <strong>Tie-up/bind-up</strong> = overlap, output braked. <strong>Slide-bump</strong> = accumulator bottoms early.</li>
+<li><strong>Stall:</strong> high = transmission slip; low = engine or freewheeling stator; seized stator = normal stall, poor top end, heat.</li>
+<li><strong>TCC:</strong> stuck on = stalls at a stop; not holding = high rpm, heat, slip with command on; shudder disappears with TCC off or fully locked.</li>
+<li><strong>Milky ATF</strong> = replace the cooler/radiator and repair, not flush alone.</li>
+</ul></section><section id="s3"><div class="sec-head"><span class="sec-num">03</span><h2>Electronic and control-system diagnosis</h2></div><p>Electronic systems are your strongest ground, so this section skips basic electrical theory and spends its words on transmission-specific logic. Nearly every electronic question comes down to one habit: <strong>separate what the module commanded from what actually happened, and separate the signal voltage from what the module reads out.</strong> Do that and the answer follows the circuit, not a remembered number.</p>
+<h3><span class="n">3.1</span>The one pattern: commanded vs. actual</h3>
+<p>A "command" or "desired" value on the scan tool is what the TCM <em>asked for</em>. It is not proof the transmission did it. Use the paired checks below: a <strong>DMM or amp clamp</strong> separates electrical faults, and a <strong>pressure gauge or ratio PID</strong> separates hydraulic and mechanical ones.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>What you observe after the command</th>
+<th>Most likely area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Command sent, current tracks the command, pressure or ratio responds correctly</td>
+<td>Output path is fine. Look at inputs, calibration, adapts, or an intermittent fault</td>
+</tr>
+<tr>
+<td>Command sent, current tracks the command, but no pressure or ratio change</td>
+<td><strong>Hydraulic or mechanical</strong>: stuck valve, cross-leak, clutch or seal, pump or regulator</td>
+</tr>
+<tr>
+<td>Command sent, no click, current does not track the command, circuit DTC</td>
+<td><strong>Electrical</strong>: coil, harness, connector, TCM driver. Confirm with a DMM</td>
+</tr>
+<tr>
+<td>Module never commands the shift or apply</td>
+<td>Enable conditions or inputs (TFT, OSS/VSS, TPS, brake switch, range switch) or the module itself</td>
+</tr>
+<tr>
+<td>Commanded pressure ≠ gauge pressure, current tracks the command</td>
+<td>Hydraulic supply, regulation or a leak, not the solenoid</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note "><div class="tag">Memorize</div><div class="nb"><p>"Solenoid clicks" proves only that the coil and plunger moved. It does not prove the valve it feeds strokes or that oil reaches the clutch. Click but no shift = hydraulic or mechanical.</p>
+<p><strong>ASE trap:</strong> A rebuilder tip says a pressure mismatch always means "solenoid or wiring." Compare <strong>current</strong> to the command to judge the solenoid; compare <strong>gauge pressure</strong> to the command to judge the hydraulics. Use both.</p></div></div>
+<p><strong>DTC suffix logic.</strong> "Circuit / open / low / high / electrical" (P0712, P0713, P0753, P0960–P0963) means an electrical fault, so use a DMM or scope. "Performance / stuck off / stuck on / incorrect ratio" (P0751/52, P0741/42, P0731–P0736) is a functional result worked out from speeds or slip. The fault can be hydraulic or mechanical even though the circuit tests good.</p>
+<p class="tasks">Tasks: A.5, A.19, A.24, A.26.</p>
+<h3><span class="n">3.2</span>TCM inputs, outputs and the network</h3>
+<p>The TCM reads input and output shaft speed, range, fluid pressure and fluid temperature. It drives the shift and pressure-control solenoids. It also borrows from the engine side: accelerator pedal position (APP), throttle position (TP), engine coolant temperature, MAP/MAF load, <strong>engine torque</strong>, and the <strong>brake switch</strong>. It sits on the CAN network, so other modules' data feeds its decisions. Shift timing, shift feel and TCC timing are largely <strong>software</strong>, so the same hardware can behave differently by calibration.</p>
+<p><strong>CAN checks.</strong> With the bus powered down, CAN-H to CAN-L reads <strong>about 60 Ω</strong> (two 120 Ω terminators in parallel). About 120 Ω means one terminator is open. Near 0 Ω means H is shorted to L. At rest both lines sit near 2.5 V; when a module transmits, CAN-H rises toward 3.5 V and CAN-L falls toward 1.5 V. Both lines at 0 V is a short to ground, both at battery voltage is a short to power, and one line flat while the other switches is an open on the flat line. A single bad module can pull the whole bus down; unplug modules one at a time to find it. <strong>U0100</strong> is lost communication with the ECM/PCM, <strong>U0101</strong> with the TCM.</p>
+<p><strong>Power and ground.</strong> Test with <strong>voltage drop under load</strong>, not with an ohmmeter. An ohmmeter passes almost no current and misses a few good strands in a bad wire. About 0.1 V per connection and 0.1–0.2 V across a ground path are common limits, but the OEM spec governs. Low or noisy system voltage can reset the TCM, knock modules off the bus, freeze adapts and send the unit to a default gear.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p><strong>Several modules</strong> setting U-codes at once, or intermittent shifting after a battery change or jump-start, points to supply voltage, grounds or the bus. <strong>One</strong> U-code points to that module's power, ground or bus branch. Check battery, charging and TCM power/ground before replacing any module.</p></div></div>
+<p class="tasks">Tasks: A.19, A.20, A.21, A.27, B.10.</p>
+<h3><span class="n">3.3</span>Sensors and switches</h3>
+<p><strong>Speed sensors (ISS/OSS).</strong> The <strong>input speed sensor</strong> (also turbine speed sensor, TSS) reads input-shaft speed. The <strong>output speed sensor</strong> (also vehicle speed sensor) reads output speed. Gear ratio is <strong>ISS ÷ OSS</strong>, and TCC slip is <strong>engine rpm − turbine rpm</strong>. The 6L80 technician guide describes both as <strong>hall-effect</strong> sensors on a TCM supply of <strong>8.3–9.3 V</strong>. The ISS reads splines on a clutch-housing outside diameter; the OSS reads slots cut in the output shaft. The housing itself is the reluctor, so there is no separate tone wheel. The TCM uses ISS for line pressure, shift timing, TCC slip and gear ratio, and OSS for line pressure, shift timing, vehicle speed and gear ratio. An improper signal from either sets a DTC.</p>
+<figure class="figure"><img src="../issoss_fig.png" alt="6L80 technician guide p.41. ISS reads splines on the 1-2-3-4 / 3-5-R clutch housing; OSS reads slots on the output shaft; both run on the 8.3–9.3 V ISS/OSS supply from the TCM."><figcaption>6L80 technician guide p.41. ISS reads splines on the 1-2-3-4 / 3-5-R clutch housing; OSS reads slots on the output shaft; both run on the 8.3–9.3 V ISS/OSS supply from the TCM.</figcaption></figure>
+
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Sensor type</th>
+<th>Signal</th>
+<th>How to test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Magnetic (variable reluctance)</td>
+<td>AC; amplitude and frequency rise with speed. Produces little signal at very low speed</td>
+<td>Ohms and AC mV. Check air gap and metal debris on the tip</td>
+</tr>
+<tr>
+<td><strong>Hall / active</strong></td>
+<td>Square wave from near 0 V up to the supply or pull-up level. Works down to zero speed</td>
+<td><strong>No ohmmeter.</strong> Check reference voltage, ground, then that the signal toggles cleanly as the target turns</td>
+</tr>
+</tbody>
+</table></div>
+<p>A bad speed signal can produce ratio-error or performance codes on a mechanically healthy unit, because the TCM calculates slip and shift time from these speeds. It can also cause harsh shifts, a disabled TCC or limp mode. A circuit code such as P0715 is "not proof that the sensor failed." Wiring and connector faults are common, so scope the signal before condemning clutches.</p>
+<p><strong>Fluid temperature (TFT).</strong> Most are <strong>NTC thermistors</strong>: resistance falls as temperature rises. The TCM supplies a reference voltage and reads the drop. Cold means high resistance and high signal voltage.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Fault</th>
+<th>Signal voltage</th>
+<th>TCM reads</th>
+<th>DTC</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Open</strong> circuit</td>
+<td>High</td>
+<td><strong>Very cold</strong> (about −40 °C)</td>
+<td>P0713 (high input)</td>
+</tr>
+<tr>
+<td><strong>Short to ground</strong></td>
+<td>Low</td>
+<td><strong>Very hot</strong> (150 °C or more)</td>
+<td>P0712 (low input)</td>
+</tr>
+</tbody>
+</table></div>
+<p>A falsely hot reading can make the TCM lock up the TCC earlier or disable overdrive to shed heat. A falsely cold reading can inhibit TCC and adapts.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>Some websites say a short reads −40. That is backwards for a pull-up NTC circuit, and the Toyota factory manuals confirm open = cold, short = hot. Reason from the voltage divider.</p></div></div>
+<p><strong>Pressure switches and pressure logic.</strong> Switches are on/off, either normally open (N.O.) or normally closed (N.C.). The TCM reads the switch <strong>pattern</strong> (binary 1/0) to confirm which clutch has pressure and therefore which gear is really engaged. In the 6L80 they are normally closed: current flows with no pressure, and pressure moves a diaphragm and opens the circuit. <strong>Pressure sensors</strong> differ: a transducer gives a variable signal proportional to pressure.</p>
+<p><strong>Range sensor (TR / MLP).</strong> It tells the TCM the driver's selected range. A failed or misadjusted switch can cause no-crank in Park, a wrong gear display, a fixed default gear, and P0705 (circuit) or P0706 (range/performance). The test is to <strong>compare the physical selector position with the range the TCM reports</strong> in scan data, then adjust or replace. GM's internal mode switch uses four coded inputs, and the TCM decodes range from the high/low pattern. Use the PIDs, not memorized DTC numbers.</p>
+<p><strong>Other inputs.</strong> TP or APP errors skew the TCM's idea of engine load. A dead spot or erratic signal gives inconsistent or harsh shifts and affects kickdown. The brake switch releases the TCC, so a stuck or misadjusted switch can prevent lockup or cause stalling at a stop.</p>
+<p class="tasks">Tasks: A.5, A.19, A.23, A.26, A.28.</p>
+<h3><span class="n">3.4</span>Solenoids and how to test them</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>What it does</th>
+<th>Direction to remember</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>On/off shift solenoid</td>
+<td>Switches a shift or clutch-select valve</td>
+<td>Normally closed, 3-port in the 6L80 example</td>
+</tr>
+<tr>
+<td>PWM / variable-force pressure solenoid (EPC, line PC, clutch PC)</td>
+<td>Sets pressure by duty cycle or current</td>
+<td><strong>Design-dependent.</strong> See below</td>
+</tr>
+<tr>
+<td>TCC PC solenoid</td>
+<td>Ramps TCC apply and release for a smooth lockup</td>
+<td>Normally low in the 6L80 example</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>Classic EPC / normally-high line PC:</strong> more current (higher duty) = <strong>lower</strong> line pressure; <strong>unplugged = maximum pressure</strong>, which gives harsh engagement. In the 6L80 example the line PC runs about 0.1 A for maximum pressure to about 1.0 A for minimum, and EPC pulse-width modulates at a fixed 300–600 Hz. Some newer valves are normally low, where more current gives more pressure. If a stem describes another design, follow the stem.</p></div></div>
+<p><strong>Testing.</strong>
+- A DMM finds opens and excessive resistance but is poor at finding a partly shorted winding. An <strong>amp-clamp current ramp</strong> on a scope is better: a normal trace shows a small hump where the plunger moves, a shorted winding shows a steep, tall rise, and an open shows no current.
+- A voltage-only trace can look normal with a partly shorted coil.
+- Scope duty cycle and frequency at the TCM connector with the engine running; confirm that current follows the command.
+- Low supply voltage can keep a current-controlled solenoid from reaching its commanded current. On a normally-high design that makes pressure too high (harsh); on a normally-low design, too low (soft).
+- INFERRED: whether a short to ground turns a solenoid permanently on or off depends on whether the TCM drives it from the high side or the low side. Read the stem.</p>
+<p class="tasks">Tasks: A.5, A.17, A.18, A.26, A.27.</p>
+<h3><span class="n">3.5</span>TCC electronic tests</h3>
+<p>The TCM applies the TCC only when conditions allow: fluid and engine warm, speed and gear high enough, steady throttle, brake off. A failed input usually <strong>prevents</strong> lockup: brake switch reading "applied," a TP dead spot, a cold-reading temperature sensor, or no speed signal. A few fail the other way: a falsely hot TFT can lock up early, and a lost speed signal can leave the TCC applied as the vehicle stops, so the engine stalls.</p>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>TCC commanded on and slip stays high = the TCC is not holding.</strong> Check apply pressure and leaks (valve bores, stator-support bushing, turbine-shaft seal) before condemning the converter. Pressure low while commanded = supply side or leak. Pressure normal and slip still high = the converter lining itself. At full lock, slip is near zero. A small steady slip is normal on a controlled-slip strategy. Any "too much slip" threshold will be in the stem, because GM set criteria differ by model and year.</p></div></div>
+<p><strong>Shudder vs. misfire.</strong> True TCC shudder shows only while the clutch slips or applies. It disappears with the TCC <strong>commanded off</strong> and also with it <strong>fully locked</strong>. A misfire follows engine firing frequency, shows in misfire data, and is often <strong>worse</strong> locked because the fluid coupling no longer damps it. Fluid condition is the first suspect for shudder.</p>
+<p class="tasks">Tasks: A.13, A.18.</p>
+<h3><span class="n">3.6</span>OBD II and verifying the repair</h3>
+<ul>
+<li>A two-trip fault sets a <strong>pending</strong> DTC first; if it repeats on the next qualifying trip, the MIL lights and the DTC becomes <strong>confirmed</strong>.</li>
+<li>The MIL goes out after <strong>three consecutive trips</strong> without the fault. History and freeze frame erase after <strong>40 warm-up cycles</strong> (<strong>80</strong> for misfire and fuel-system faults).</li>
+<li>Freeze frame is captured when the DTC sets, with misfire and fuel-trim frames taking priority.</li>
+<li><strong>Permanent DTCs</strong> (required on 2010 and later vehicles) live in non-volatile memory. <strong>A scan-tool clear or a battery disconnect does not erase them.</strong> The module erases a PDTC itself once the monitor runs and passes, or after the MIL goes out through three clean trips.</li>
+<li><strong>P0700</strong> is only a pointer: the TCM asked for the MIL, and the specific codes are stored in the TCM, so scan the TCM directly.</li>
+</ul>
+<p><strong>Verifying a repair (A.7):</strong> record DTCs and freeze frame, repair, <strong>clear with a scan tool</strong>, drive under the freeze-frame conditions until the monitor or DTC status shows it ran and passed, and confirm no pending code. Clearing codes or disconnecting the battery resets monitors to "incomplete," so a clear with no code returning is not proof of repair.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>"Disconnect the battery to clear codes" is the wrong answer on a sample-style item, and it will not remove a permanent DTC either.</p></div></div>
+<p class="tasks">Tasks: A.6, A.7.</p>
+<h3><span class="n">3.7</span>Scan data and bidirectional controls</h3>
+<p>A bidirectional tool <strong>commands</strong> outputs (solenoids, relays, special functions) and watches the result. A code reader only reads. The sequence is: command the output, then meter the circuit and gauge the hydraulics before replacing a part.</p>
+<ul>
+<li><strong>Key PIDs:</strong> commanded vs. actual gear or ratio, ISS and OSS, TCC slip and TCC commanded state or pressure, solenoid commanded vs. actual current, TFT, shift time and adapt values.</li>
+<li><strong>Commanded gear changes but ISS/OSS ratio does not follow</strong> = internal hydraulic or mechanical fault. <strong>No command was sent</strong> = input, enable condition or module.</li>
+<li><strong>Pressure sweep:</strong> with a gauge installed, step the pressure command up and down and confirm the gauge follows. GM's 6-speed example allows this only in Park or Neutral below 1500 rpm. That limit is a GM example, so follow SI for other units.</li>
+<li><strong>Brake-tap test:</strong> rpm rises when the TCC releases and falls when it reapplies. Only the direction matters, not a spec.</li>
+<li><strong>Safety:</strong> output tests are gated by range, rpm and speed. Follow the scan tool and SI preconditions.</li>
+</ul>
+<p class="tasks">Tasks: A.5, A.16, A.17, A.24.</p>
+<h3><span class="n">3.8</span>Adaptive learning, relearn and programming</h3>
+<p>Adapts are the TCM's closed-loop correction of shift pressure and fill timing, learned from ISS/OSS speeds. They work like fuel trim. Names differ (GM TAP, Ford adaptive tables in KAM, Chrysler CVI), but the principle is universal.</p>
+<ul>
+<li><strong>Reading adapts:</strong> one clutch high in every load cell → that clutch circuit (worn friction, piston seal, bore, solenoid). <strong>All clutches high</strong> → shared supply (low fluid, low line pressure, filter, line-pressure solenoid, wrong fluid). <strong>Maxed out</strong> → a hard fault the TCM can no longer mask.</li>
+<li><strong>Clearing adapts is not a repair.</strong> Resetting a worn unit gives a brief improvement and the values climb back. Reset is a verification step.</li>
+<li><strong>Relearn after</strong> a TCM, valve body or transmission replacement or repair. Two classic directions: a new TCM on an old unit starts from base values (harsh or flared); an old TCM on a rebuilt unit carries worn-clutch adapts (harsh or tie-up) until they are cleared.</li>
+<li><strong>Programming</strong> (a new or used TCM, or a software update): VIN-correct calibration, loaded through the OEM tool or a J2534 pass-thru, on a <strong>stable-voltage maintainer (not a charger)</strong>, with no interruption.</li>
+<li><strong>Solenoid/valve-body characterization data:</strong> solenoids are flow-tested at manufacture, and the TCM needs that data to convert a pressure command into the right current. After replacing the solenoid body or valve body, load the new data. "Drive it and let it learn" is not a substitute. Digit counts and menu paths are OEM detail.</li>
+<li><strong>Relearn preconditions:</strong> correct fluid level, no active faults, and fluid temperature inside the SI window (viscosity changes fill time). Take any number from SI.</li>
+<li>Use the <strong>scan-tool reset</strong>, not a battery pull, to clear adapts.</li>
+</ul>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>"Clearing adapts will fix the harsh shift" vs. "adapts must be relearned after the valve body is replaced." The second is correct. The first treats a reset as a repair.</p></div></div>
+<p class="tasks">Tasks: A.23, A.25, C.6.</p>
+<h3><span class="n">3.9</span>Shift-quality faults from electronic causes</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Cause</th>
+<th>What the TCM does</th>
+<th>Feel</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>TP/APP or torque signal reads <strong>lower</strong> than actual</td>
+<td>Commands too little pressure</td>
+<td>Flare, slip, soft shifts, adapts climb</td>
+</tr>
+<tr>
+<td>Signal reads <strong>higher</strong> than actual</td>
+<td>Commands too much pressure</td>
+<td>Harsh shifts</td>
+</tr>
+<tr>
+<td>Missing torque-reduction response from the ECM</td>
+<td>Clutches absorb full engine torque</td>
+<td>Harsh upshift</td>
+</tr>
+<tr>
+<td>Noisy or dropping ISS/OSS</td>
+<td>Calculates false slip and shift time</td>
+<td>Added pressure, ratio DTCs on a healthy unit</td>
+</tr>
+<tr>
+<td>Mechanically sluggish or drifting solenoid</td>
+<td>Circuit tests normal</td>
+<td>Shift-quality complaint with <strong>no DTC</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Flare</strong> (rpm rises) means torque capacity was lost: oncoming clutch late or offgoing released early. <strong>Tie-up / bind-up</strong> (same thing) means overlap and a braked output. Graph ISS, OSS and commanded gear together to tell them apart.</p>
+<p class="tasks">Tasks: A.9, A.23.</p>
+<h3><span class="n">3.10</span>Transmission vs. engine, ABS, ADAS and driveline</h3>
+<p>Many "transmission" complaints start elsewhere. Work in this order:</p>
+<ol>
+<li>Verify the complaint and conditions (cruise or adaptive cruise on, stop/start event, turning, AWD mode, recent tires, battery or programming).</li>
+<li><strong>Whole-vehicle scan</strong> of all modules, not just the TCM.</li>
+<li>Battery, charging, and TCM power/ground voltage drop.</li>
+<li><strong>Compare received data to the source:</strong> the engine torque, vehicle speed and brake status the TCM sees vs. the sending module's own PIDs. A mismatch points to the network or the source module.</li>
+<li>Rule out chassis and driveline: tire size, AWD fuse, tight-turn binding (transfer case or coupling), vibration that follows road speed vs. engine speed, mounts and exhaust on N-to-D engagement.</li>
+<li>Only then test the transmission and run the SI relearn.</li>
+</ol>
+<p><strong>Examples.</strong> A failed wheel-speed sensor or lost EBCM data can remove vehicle speed: no upshift, dead speedometer, TCC and cruise disabled. Traction control cuts engine torque, which feels like slipping, but the TCM ratio stays correct. A misfire or fuel/airflow fault makes engine torque wrong and shifts harsh. A tire-size or axle-ratio change without recalibration throws off speed-based logic, so recalibrate before diagnosing. Adaptive cruise can command an engine-braking downshift that is normal. Stop/start bumps only on auto-restart point to the auxiliary pump or accumulator.</p>
+<p class="tasks">Tasks: A.22, A.21, A.28.</p>
+<h3><span class="n">3.11</span>Wrong-direction traps in this section</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Wrong statement</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Short to ground reads −40</td>
+<td>Open reads cold; short to ground reads hot</td>
+</tr>
+<tr>
+<td>A scan-tool clear or battery pull erases permanent DTCs</td>
+<td>Only the monitor passing (or three clean trips) does</td>
+</tr>
+<tr>
+<td>Disconnect the battery to clear codes</td>
+<td>Clear with a scan tool, then verify with a drive cycle</td>
+</tr>
+<tr>
+<td>Clearing adapts fixes a worn unit</td>
+<td>Reset is verification, not repair</td>
+</tr>
+<tr>
+<td>More EPC current always means more pressure</td>
+<td>Classic EPC: more current = less pressure; unplugged = maximum</td>
+</tr>
+<tr>
+<td>Ohmmeter-test a Hall speed sensor</td>
+<td>Check reference, ground and signal toggle</td>
+</tr>
+<tr>
+<td>Solenoid clicks, so the electrical side is done</td>
+<td>Clicks prove only the coil moved</td>
+</tr>
+<tr>
+<td>History DTCs always erase at 40 warm-ups</td>
+<td>80 for misfire and fuel-system faults</td>
+</tr>
+</tbody>
+</table></div></section><section id="s4"><div class="sec-head"><span class="sec-num">04</span><h2>Area B — In-Vehicle Maintenance and Repair (12 questions, 27%)</h2></div><p>Area B has the best yield per task on the exam: 12 questions across 12 tasks. It is also the thinnest area in your class notes. The questions are mostly "what is the most likely cause, or what do you do first," and the reliable scoring pattern is the same everywhere: <strong>verify the cheap root cause before you replace the expensive part.</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Instead of this (shop shortcut)</th>
+<th>ASE usually wants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Replace the TR switch</td>
+<td>Check cable/linkage and detent position first</td>
+</tr>
+<tr>
+<td>Replace the extension-housing seal</td>
+<td>Check the bushing and the yoke's seal surface too</td>
+</tr>
+<tr>
+<td>Flush and refill milky fluid</td>
+<td>Replace the cooler, rebuild the unit (seals, frictions, converter), then flush</td>
+</tr>
+<tr>
+<td>Replace the TCM that has ATF in the connector</td>
+<td>Repair the leaking pass-through/harness too, or the new TCM floods</td>
+</tr>
+<tr>
+<td>Add fluid because it slips</td>
+<td>Confirm the level the SI way first. Overfill slips too</td>
+</tr>
+</tbody>
+</table></div>
+<h3><span class="n">4.1</span>Linkage, cable and TR / neutral-safety switch (B.1, B.10)</h3>
+<p>The TR switch (a.k.a. MLP sensor) does two jobs: it lets the starter run only in Park and Neutral, and it tells the TCM which range the driver selected. Backup lamps often run through it. The manual valve inside is moved by the cable or lever, so a bad adjustment can fool the switch <em>and</em> the hydraulics.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Points to</th>
+<th>First check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cranks in Neutral but not Park (or the reverse); cranks in gear</td>
+<td>TR switch out of index, or cable out of adjustment</td>
+<td>Verify the cable puts the transmission lever in the matching detent, then index the switch (slotted mount or index marks/gauge pin)</td>
+</tr>
+<tr>
+<td>Wrong PRNDL display, backup lamps wrong range</td>
+<td>Same chain: switch or cable</td>
+<td>Compare scan-tool range PID with the lever position</td>
+</tr>
+<tr>
+<td>Harsh engagement, fixed "limp" gear, range DTCs</td>
+<td>TCM has no valid range input and defaults to high pressure and one gear</td>
+<td>Range PID vs. selector position</td>
+</tr>
+<tr>
+<td>Creep in Neutral, delayed engagement, burned clutch</td>
+<td>Manual valve sitting <em>between</em> detents</td>
+<td>Cable/lever adjustment</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p>linkage, then switch, then module. A misadjusted TR switch is common right after a transmission R&amp;R. A shifter-cable problem alone can leave the in-car lever in Park while the transmission lever hasn't reached Park. Test the switch with a high-impedance DMM.</p>
+<p><strong>ASE expects:</strong> a symptom that changes when you nudge the shifter within a range points at manual-valve position or linkage before internal hardware. A mount that lets the powertrain shift can load a cable and change the index too.</p></div></div>
+<p class="tasks">Tasks: B.1, B.10, B.11.</p>
+<h3><span class="n">4.2</span>Leaks, extension housing, yoke and axle seals (B.2, B.3)</h3>
+<p>Find the source before you replace anything: clean the area, add UV dye, run it, and look for the <strong>highest</strong> wet point (fluid runs down). Location narrows it: bellhousing area = converter/front pump seal (or engine rear main, so identify the fluid); pan edge = gasket; rear = extension-housing seal, bushing or yoke; cooler line fittings; fluid out of the vent or dipstick tube = overfill, aerated or overheated fluid, or a clogged vent.</p>
+<div class="note "><div class="tag">Classic trap</div><div class="nb"><p>a worn extension-housing (tailshaft) bushing lets the slip yoke wobble, and the seal leaks. <strong>A new seal alone won't fix it.</strong> Check yoke play (move it up and down in the splines), the seal surface of the yoke for pitting or grooving, and why the bushing wore (a binding U-joint, a bent driveshaft, driveline misalignment). The same logic applies to FWD axle seals: worn bearing/seal surface, then seal.</p></div></div>
+<p class="tasks">Tasks: B.2, B.3.</p>
+<h3><span class="n">4.3</span>Pan, magnet and debris (B.4)</h3>
+<p>Read the pan before you decide the transmission is bad. A thin gray paste on the magnet and a little dark friction dust is <strong>normal wear</strong>. Chunks, large flakes, "glitter," heavy sludge, or a burnt smell are not.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Debris</th>
+<th>Points to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Black/brown friction material</td>
+<td>Clutches or bands (a little is normal; a lot or chunks is not)</td>
+</tr>
+<tr>
+<td>Steel/iron (magnetic)</td>
+<td>Gears, bearings/races, shafts</td>
+</tr>
+<tr>
+<td>Brass/bronze (non-magnetic)</td>
+<td>Bushings, thrust washers</td>
+</tr>
+<tr>
+<td>Aluminum (non-magnetic, silvery)</td>
+<td>Case, pump, valve body, pistons</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note "><div class="tag">Classic trap</div><div class="nb"><p>a clean magnet does not mean no metal. Aluminum and brass don't stick to it. Casting flash or slag on a new or reman unit is normal on the first inspection.</p></div></div>
+<p class="tasks">Task: B.4.</p>
+<h3><span class="n">4.4</span>Cooling, cooler circuit, thermostat/bypass (B.5)</h3>
+<p>Transmission cooling is usually a heat exchanger in the radiator tank plus lines, sometimes with an ATF warmer and a thermal bypass valve (TBV).</p>
+<ul>
+<li><strong>Cooler breach, both ways.</strong> With the engine running, ATF pressure in the cooler is higher, so ATF can go into the coolant. With the engine off, the cooling system holds pressure and coolant can go into the ATF. Either way you see milky pink fluid ("strawberry milkshake") in the coolant, the ATF, or both.</li>
+<li><strong>Glycol kills friction material.</strong> It breaks down the bonding and the friction-modifier additives (shudder, especially at TCC apply).</li>
+</ul>
+<div class="note "><div class="tag">ASE expects</div><div class="nb"><p>milky/pink ATF → replace the radiator/cooler, replace seals, composition-faced plates and bands and the converter, clean and rebuild, then flush the cooling circuit. <strong>"Flush and refill" is the distractor.</strong></p></div></div>
+<ul>
+<li><strong>Over-temperature with normal shifting</strong> points at a restricted cooler or lines, or a TBV stuck in its bypass/recirculating position.</li>
+<li><strong>The TBV works like an engine thermostat:</strong> it holds fluid out of the cooler until warm, then opens. A thermostat stuck closed overheats the engine, and a TBV stuck in bypass (no cooler flow) overheats the transmission and converter. Stuck open: overcooled fluid and slow warm-up. A thermal valve is <strong>not</strong> the same as a pressure relief/bypass valve in the cooler circuit. (GM example: the 6L80 TBV was updated by bulletin to open at a lower temperature. The temperature doesn't matter for the exam.)</li>
+<li><strong>After any failure or overhaul:</strong> flush the cooler, lines and bypass valve, then <strong>flow-test warm using the transmission's own pump</strong>, not the flusher (it pushes harder than the pump and a cooler can clog again). Plate-type coolers and coolers holding hard-part debris get replaced. Example only, SI-dependent: one rebuilder rule is about a quart in 20 seconds minimum on 5/16-in. lines.</li>
+</ul>
+<p class="tasks">Tasks: B.5, C.4, A.10.</p>
+<h3><span class="n">4.5</span>Valve body, accumulator and servo (B.6, B.7, B.8)</h3>
+<p><strong>Valve body.</strong> Inspect valves and bores (a valve should travel smoothly and rotate out; a catch or drag means a worn bore or bent valve), check ball count and position, separator plates and gaskets, and solenoid screens and O-rings.</p>
+<ul>
+<li><strong>Separator plates and gaskets are application-specific.</strong> Compare hole-for-hole with the old ones. The wrong or misaligned one sends pressure into the wrong circuit: cross-leaks, delayed engagement, erratic shifts.</li>
+<li><strong>Missing or misplaced check balls</strong> cause no-shift or no-move.</li>
+<li><strong>Torque principle:</strong> run all bolts in by hand, then torque in steps from the <strong>center outward</strong> in a spiral/criss-cross pattern (or the SI sequence) with an inch-pound wrench. Out of sequence or uneven distorts the plate and valve body and creates cross-leaks. Values are SI-only. Example magnitudes are around 70–100 lb-in; don't quote them.</li>
+</ul>
+<div class="note "><div class="tag">ASE expects</div><div class="nb"><p>after valve body service, a <em>new</em> slip or erratic shift is most likely the job itself (sequence/torque, check-ball placement, gasket ID, an accumulator piston sitting proud of the surface), not a fresh hard-part failure.</p></div></div>
+<p><strong>Accumulators and servos.</strong> An accumulator is a spring-loaded piston teed into an apply circuit. It absorbs the first pressure rise so torque builds at a controlled rate. It is not a backup pressure store.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Symptom</th>
+<th>Points to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Smooth start, harsh finish (slide-bump)</td>
+<td>Accumulator bottoming before the shift completes (worn seal, weak/broken spring)</td>
+</tr>
+<tr>
+<td>One shift harsh</td>
+<td>That shift's accumulator (broken spring, stuck piston, leaking seal)</td>
+</tr>
+<tr>
+<td>Band slip or flare on a band-applied shift</td>
+<td>Servo seal or cover leak, broken retainer, or apply pin too short (selective pin sets band travel)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p>don't memorize a spring-rate direction. It depends on the design and orientation. Many modern clutch-to-clutch units have dropped accumulators because pressure-control solenoids shape the apply directly.</p></div></div>
+<p class="tasks">Tasks: B.6, B.7, B.8.</p>
+<h3><span class="n">4.6</span>Electrical connectors, harness, modules (B.9, B.10)</h3>
+<p>Your strength, so keep it to the transmission-specific traps:</p>
+<ul>
+<li><strong>ATF wicking:</strong> a failed case pass-through seal lets ATF creep up the wiring by capillary action and fill the TCM connector. Unplug and look. Repair the pass-through/connector/harness, not just the TCM.</li>
+<li><strong>Fretting corrosion:</strong> vibration and thermal cycling oxidize terminal contact surfaces, raising resistance and causing intermittents. Clean and treat per SI (GM example: dielectric lubricant on both halves).</li>
+<li><strong>Terminal drag (pin-fit) test:</strong> insert the correct mating test probe and feel the tension. Don't spread terminals with meter probes.</li>
+<li><strong>Communication faults</strong> (a "lost communication with TCM" DTC, several lamps, no shift or a fixed gear): check battery voltage/charging and the bus wiring before condemning the TCM.</li>
+</ul>
+<p class="tasks">Tasks: B.9, B.10.</p>
+<h3><span class="n">4.7</span>Powertrain mounts (B.11)</h3>
+<p>Worn or broken mounts give a clunk on P→R or D→R engagement, vibration through the floor and shifter, and loaded linkage, wiring and driveline angles. When installing: loosen the mounts or crossmember, let the powertrain settle to its centered position, then torque. A wedged mount transmits vibration.</p>
+<p class="tasks">Task: B.11.</p>
+<h3><span class="n">4.8</span>Fluid and filter service (B.12)</h3>
+<p><strong>Type.</strong> The fluid is hydraulic medium, lubricant, friction modifier and coolant at once. ATF, CVT fluid and DCT fluid are not interchangeable (ATF in a CVT: belt slip, shudder, pulley damage). Within ATF, use the specified fluid. The wrong friction modifier package causes shudder and shift-feel problems.</p>
+<p><strong>Level, dipstick units:</strong> at the specified temperature, level vehicle, in the range and engine state the SI names.</p>
+<p><strong>Level, no-dipstick units (the public sample item):</strong> read fluid temperature on the scan tool and confirm it is inside the SI window, vehicle level, engine idling, shift through the ranges and return to Park, then use the level/check plug. Correct is a drip from the plug opening; a steady stream means overfull.</p>
+<div class="note "><div class="tag">Classic trap</div><div class="nb"><p>checking outside the temperature window gives a wrong level. ATF expands with heat, so a hot check lets fluid run out and leaves the unit low once it cools. Windows differ by unit (examples only: about 30–50 °C on a 6L80, 35–45 °C on an AF50). <strong>Take the number from SI, the method from this page.</strong></p></div></div>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>What happens</th>
+<th>Tell</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Overfull</td>
+<td>Rotating parts whip the fluid to foam (aeration); pressure becomes unsteady, slip, overheating</td>
+<td>Fluid out the vent or dipstick tube, foamy fluid, right after a service</td>
+</tr>
+<tr>
+<td>Underfull</td>
+<td>Pump pulls air at the pickup, also aerates</td>
+<td>Delayed engagement, pump whine, slip worse on turns or when cold</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Pan drop vs. exchange.</strong> A pan drop and filter replaces only a <strong>portion</strong> of the fluid (the converter, cooler and lines keep the rest; figures run roughly 25–50%). Machine exchange reaches most of it. Some GM units have a bulletin requiring an exchange procedure because a drain and fill doesn't reach the needed new-fluid concentration.</p>
+<p class="tasks">Tasks: B.12, A.4, A.10.</p>
+<hr /></section><section id="s5"><div class="sec-head"><span class="sec-num">05</span><h2>Area C — Removal, Inspection and Installation (7 questions, 15%)</h2></div><p>Area C is 23 tasks for only about 7 questions (roughly 0.3 per task), so learn <strong>principles, order of steps and classic mistakes</strong>. Numbers (clearances, end play, torque, soak times) belong to SI. Expect "which is the most likely cause" or "which step comes first," not a spec. Your class notes already cover the concepts under C.13, C.19 and C.22 well.</p>
+<h3><span class="n">5.1</span>Engine-to-transmission interface (C.1, C.2, C.3, C.5)</h3>
+<p><strong>The chain to remember:</strong> anything that pushes the converter hub off-center or forward (missing dowels or pilot sleeve, converter not seated, no free play, drawing the unit in with the bolts) ends as <strong>pump bushing, pump gear, front seal or hub damage</strong>, or crank thrust wear. So "front pump damage right after an R&amp;I" points to <strong>installation first</strong>.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Check or step</th>
+<th>Why it matters</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dowel pins present, mating faces clean</td>
+<td>Missing dowels put the converter pilot off-center: pilot, flexplate, pump and bushing wear, vibration</td>
+</tr>
+<tr>
+<td>Pilot centering ring/sleeve not left stuck to the old converter</td>
+<td>A loose pilot in the crank bore points to a missing sleeve</td>
+</tr>
+<tr>
+<td>Flexplate: cracks (often around the bolt holes, hard to see), bolts torqued by hand/wrench, not an impact gun</td>
+<td>Cracks and loose converter bolts knock like an engine problem. Impacting the bolts stretches them and can distort the crank flange (rear main leak)</td>
+</tr>
+<tr>
+<td>Mark and reinstall the converter-to-flexplate position</td>
+<td>Parts are balanced separately; follow SI</td>
+</tr>
+<tr>
+<td>Crank end play checked with a dial indicator before install</td>
+<td>Worn thrust bearing; converter ballooning loads it</td>
+</tr>
+<tr>
+<td>Converter hub and drive lugs: burrs, grooves</td>
+<td>A groove where the pump seal rides wears the new seal</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note "><div class="tag">Classic trap, converter seating</div><div class="nb"><p>turn the converter while pushing it in and feel it engage in <strong>stages</strong> (typically three: input-shaft splines, stator-support splines, pump lugs; the exact number depends on design). Measure the converter's depth from the bellhousing face and compare with SI. Slide the transmission up until the converter has free play to the flexplate, and the converter should turn freely until every bolt is tight. <strong>Never use the bellhousing bolts to pull the unit on.</strong> Resistance while hand-tightening means the converter isn't seated: separate and start over, or the pump or stator support cracks.</p></div></div>
+<p>C.5 (routing of harnesses, cooler lines, vents, cables, mounts): misrouted or pinched lines and harnesses and cables not reconnected correctly show up as overheating, leaks, codes, vibration or wrong-range complaints after install.</p>
+<h3><span class="n">5.2</span>After install: cooler, relearn, first fill (C.4, C.6, C.18)</h3>
+<p>Flush and flow-check the cooler circuit before the unit goes in (see 4.4); a restricted or contaminated cooler is a leading cause of early failure in replacement units. After replacing the TCM, valve body or transmission, <strong>load the solenoid/valve-body characterization and calibration data and relearn adapts</strong> per SI. A reset follows a <em>repair</em>; it is not the repair for a worn unit. For a dry unit, initial fill is a partial fill, start the engine so the pump fills the converter, finish filling, and check level at the SI temperature.</p>
+<h3><span class="n">5.3</span>Disassembly, cleaning and measurement (C.7–C.12, C.14, C.16, C.17, C.9)</h3>
+<ul>
+<li><strong>Threads:</strong> stripped aluminum-case threads are repaired with a thread insert, then torqued normally.</li>
+<li><strong>Pump:</strong> clearance is checked with a <strong>straightedge and feeler gauge</strong> (gear-to-cover side clearance), plus gear-to-pocket and tip clearance. Check the pump face and converter drive surfaces.</li>
+<li><strong>End play:</strong> dial indicator; correct with a selective thrust washer, shim or snap ring.</li>
+<li><strong>Bushings:</strong> many bushings with no lube grooves are <em>sealing oil pressure</em>. A worn stator-support or pump bushing can show up as a TCC slip code or a cross-fed, burned clutch, not as noise.</li>
+<li><strong>Thrust bearings and washers:</strong> hold them in place with petroleum jelly or assembly lube, <strong>never white chassis grease</strong> (it doesn't mix with ATF).</li>
+<li><strong>Transaxle final drive/differential:</strong> tapered side bearings are set by shims or adjusters; true turning-torque preload is read only with the geartrain out of the case. Chain slack is measured by deflecting the chain both ways. CVT pulleys: inspect faces for scoring and pressure-test; replace worn sliding-sheave assemblies.</li>
+</ul>
+<h3><span class="n">5.4</span>Friction and reaction units (C.13, C.19–C.23)</h3>
+<p><strong>Clutch packs</strong> (your notes: alternating frictions and steels, pressure plate held by a snap ring, running clearance).</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Inspect for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Frictions</td>
+<td>Burned, glazed, unevenly worn, flaking material</td>
+</tr>
+<tr>
+<td>Steels</td>
+<td>Heat discoloration/bluing, warpage, scoring</td>
+</tr>
+<tr>
+<td>Piston check ball (bleed)</td>
+<td>Leaking → slip. Stuck/clogged → centrifugal force partly applies a released clutch and burns it</td>
+</tr>
+<tr>
+<td>Return springs</td>
+<td>All present and serviceable</td>
+</tr>
+<tr>
+<td>Lip seals</td>
+<td>Lip faces <strong>toward the pressure</strong>; backward leaks under apply</td>
+</tr>
+<tr>
+<td>Sealing rings</td>
+<td>Cast iron, scarf-cut Teflon, or solid Teflon (needs a sizing tool or it won't seat)</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Clearance and soak:</strong> measure clearance with a feeler gauge and correct with the selective snap ring, pressure plate or shims. <strong>Soak new frictions in the specified ATF before assembly</strong> (duration per the friction maker or SI), since dry plates absorb fluid and change the clearance you measured.</p>
+<p><strong>Air test, before and after disassembly, valve body off:</strong> use <strong>low, regulated, clean, dry air</strong>. A dull thud as a clutch applies, or a servo thunk, is good. <strong>Hissing means a leak</strong> (piston seal, sealing ring, bushing, case passage): disassemble and inspect.</p>
+<p><strong>One-way clutches (roller, sprag, mechanical diode):</strong> no friction material, serviced as a unit, and they <strong>work only one way</strong>. Bench-check rotation before install (hold one race, turn the other: it should lock one way and freewheel the other per SI). A one-way clutch <strong>can</strong> be installed backward, and the result depends on where it sits in the power flow: <strong>no drive in the range it normally carries</strong>, or a <strong>tie-up</strong> with another member. A failed low roller clutch gives a slip in first only in Drive, not in every forward gear (manual 1 holds because the low/reverse clutch backs it up).</p>
+<p><strong>Bands and drums:</strong> inspect together. Replace a burned or worn-out band and a scored, glazed, heat-discolored or damaged drum. Adjustable bands: torque the adjusting screw to spec, back it off the specified turns, hold it and torque the locknut. Many bands are set instead by a selective servo pin. Specs are SI.</p>
+<p><strong>Planetary assemblies:</strong> check pinion end play with a feeler gauge, thrust washers, needle bearings, and pinion shafts; pitted or discolored races mean replacement. Quick anchor from your Unit 1 miss: <strong>the ring gear is the internal gear (teeth on the inside); the carrier holds the planets.</strong></p>
+<p class="tasks">Tasks: C.13, C.19, C.20, C.21, C.22, C.23.</p></section><section id="s6"><div class="sec-head"><span class="sec-num">06</span><h2>Other transmission types: identify and diagnose at the recognition level</h2></div><p>A.1 asks you to identify the transmission type: torque-converter automatic, dual-clutch (DCT), CVT, or hybrid/electrified. That is one task of 63, so this section is recognition plus a few contrasts. The main skill is to <strong>not carry one type's logic into another</strong>: no apply chart or stator on a CVT, no stall test on a DCT.</p>
+<h3><span class="n">6.1</span>Telling the types apart</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Launch device</th>
+<th>How the ratio changes</th>
+<th>Words in a stem that give it away</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Torque-converter automatic</td>
+<td>Fluid coupling with a stator, usually a lock-up clutch (TCC)</td>
+<td>Planetary gearsets; clutches, bands and one-way clutches (apply chart)</td>
+<td>converter, stall, TCC, stator, planetary, band</td>
+</tr>
+<tr>
+<td>DCT</td>
+<td>A friction clutch slipped under TCM control. No converter.</td>
+<td>Two input shafts, odd gears on one and even gears plus reverse on the other, each with its own clutch. Synchronizers and forks pre-select the next gear, then the clutches swap.</td>
+<td>dual clutch, clutch actuator, mechatronic, shift fork, touch point</td>
+</tr>
+<tr>
+<td>CVT</td>
+<td>Usually a lock-up converter; some use a start clutch</td>
+<td>Two pulleys with variable-width grooves and a steel belt or chain. Continuous ratio, no fixed gears.</td>
+<td>pulley, belt, chain, primary, secondary, CVT fluid</td>
+</tr>
+<tr>
+<td>Hybrid / electrified</td>
+<td>Electric motor(s)</td>
+<td>The motor may replace the converter, sit ahead of a stepped gearbox, or act as the ratio-control element in a power-split unit</td>
+<td>high-voltage, motor/generator, inverter, engine disconnect clutch</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p>A CVT with a launch gear or a two-speed sub-gearbox is still a CVT. A DCT is not "an automatic with two clutch packs": it has no planetary gearsets and no band/clutch apply chart.</p>
+<p><strong>Boundary:</strong> Hybrid units were not researched (low weight, part of A.1 only). The hybrid row is general knowledge. Treat orange high-voltage cabling as live and follow SI before touching it.</p></div></div>
+<p class="tasks">Tasks: A.1</p>
+<h3><span class="n">6.2</span>CVT: the contrasts worth knowing</h3>
+<ul>
+<li><strong>Belt vs. chain</strong> is design identification, not diagnosis. A push belt transmits force by compression, a pull chain by tension. Audi Multitronic is a chain unit (resolved; the belt claim is wrong).</li>
+<li><strong>Pulley roles (LIKELY, not universal).</strong> In the common design, primary pressure sets the ratio and secondary pressure sets the clamping force that prevents belt slip. Some designs (Honda, Toyota) control both pulleys with dedicated solenoids, so read the stem.</li>
+<li><strong>"Ratio up" means toward overdrive.</strong> To ratio down, primary pressure must be exhausted. A fault that blocks primary feed stops ratio-up. A fault that blocks primary exhaust stops ratio-down while ratio-up still works.</li>
+<li><strong>Map each solenoid to a function.</strong> Primary up or down = one ratio direction. Secondary pressure = clamp. A low or lost clamp gives belt slip, flare and judder under load, not a clean one-direction loss. Lock-up solenoid = TCC only. Temperature sensor = an input, so a failure gives failsafe behavior, not one-direction ratio loss. The public sample topic (a CVT that won't ratio down, read from a circuit diagram) is solved this way. (INFERRED)</li>
+<li><strong>Diagnostic order:</strong> fluid level, type and condition; commanded vs. actual ratio; pulley pressures vs. commanded; only then electrical tests. A ratio DTC with good electrical results points hydraulic: pump flow control, regulator bore wear, a pulley seal leak. The TCM often blames the actuator (a stepper motor, for example) for what is really a pressure problem.</li>
+<li><strong>Split the slip.</strong> Use the speed PIDs. Belt slip shows as a ratio error. Clutch slip shows as engine speed flaring against turbine speed at a fixed ratio, mostly at launch. Converter slip shows in lock-up.</li>
+<li><strong>Judder</strong> that is load-linked and disappears on overrun points at the belt or lock-up. Launch-only judder points at the converter or forward clutch.</li>
+<li><strong>Fluid is CVT-specific.</strong> Never top off with generic ATF. Even different CVT fluids from one maker are not interchangeable. Level checks use a scan-tool temperature window and the OEM method (SI, no numbers to memorize).</li>
+<li><strong>After a valve body, TCM or unit replacement:</strong> load or program the matching calibration per SI, then run the initialization/learn. "Disconnect the battery to reset" is wrong.</li>
+<li><strong>Overheat message with normal ratio behavior</strong> points to cooling: cooler, bypass, restriction, overfill. High fluid temperature triggers a power-limiting failsafe.</li>
+</ul>
+<p class="tasks">Tasks: A.1, A.4, A.9, A.11, A.14, A.19, A.25, B.12, C.16</p>
+<h3><span class="n">6.3</span>DCT: the contrasts worth knowing</h3>
+<ul>
+<li><strong>The odd/even split is the DCT's apply chart.</strong> Only odd gears or only even gears affected points at that shaft's clutch or its actuator. Every gear affected, with a pressure DTC on a hydraulic unit, points at something common: pump, accumulator, housing leak, fluid, or TCM supply.</li>
+<li><strong>No converter means no stall test, no stator, no TCC.</strong> Creep is synthesized by controlled clutch slip, so it can be weak or absent, and rollback on a grade is often normal. Holding the vehicle on a hill with throttle slips and overheats the clutch.</li>
+<li><strong>Dry vs. wet describes the clutch environment. Electromechanical vs. hydraulic describes the actuation.</strong> They are independent. A dry clutch rejects heat poorly, so judder, creep overheating and a contaminated friction surface are its typical problems. A wet clutch is cooled and lubricated by fluid, so fluid condition matters more.</li>
+<li><strong>Fluid trap:</strong> "change the ATF" is the wrong answer for judder on a dry-clutch unit, which has no clutch fluid. On a wet unit, the exact specified fluid plus the OEM relearn is legitimate. Generic ATF is itself a cause of judder.</li>
+<li><strong>Contamination on a dry clutch is a two-fault repair:</strong> find and fix the leak source (input-shaft seal, for example), replace the clutch (cleaning is not the fix), then reprogram and relearn.</li>
+<li><strong>The touch-point (kiss-point) relearn is part of the repair.</strong> A new clutch or mechatronic with old or cleared adapts engages at the wrong point. A relearn that will not complete is itself a result: look for a mechanical cause (out-of-adjustment actuator rods, forks not engaged) instead of re-running it. OEM bulletins commonly direct a software update before a DCT is replaced for a drivability concern.</li>
+<li><strong>Judder from a stop or in creep, gone at cruise,</strong> is launch-clutch friction, contamination, adapts or calibration. Shudder at steady cruise on a converter unit is TCC, fluid or the engine. Do not swap them.</li>
+<li><strong>Loss of drive, a flashing gear indicator, no-start or U-codes:</strong> think power, ground, network and TCM first. DCT clutch actuators are motor-plus-position-sensor loops. Compare commanded and actual position.</li>
+</ul>
+<p class="tasks">Tasks: A.1, A.4, A.8, A.9, A.22, A.25, B.12</p>
+<h3><span class="n">6.4</span>What A2 would ask here</h3>
+<p>Almost certainly recognition, not unit detail. No public source states how deep type questions go, so this is INFERRED from A.1's wording and its place in the task list.</p>
+<ol>
+<li><strong>Read the stem for type clues,</strong> then use only that type's logic.</li>
+<li><strong>Eliminate any answer built from another type's parts.</strong> A stator, TCC solenoid or stall test on a DCT stem is wrong. So is an ATF change for dry-clutch judder.</li>
+<li><strong>"Just replaced the unit/valve body/clutch and it engages harshly" = relearn or calibration</strong> before "bad part."</li>
+<li><strong>A one-direction CVT ratio fault</strong> points at that direction's primary circuit, not the secondary or lock-up circuit.</li>
+</ol>
+<hr /></section><section id="s7"><div class="sec-head"><span class="sec-num">07</span><h2>Exam strategy and the hardest topics</h2></div><div class="note "><div class="tag">Boundary</div><div class="nb"><p>The method points below come from ASE's published guide wording and public prep advice (snippet-level, secondary). The ranking in 7.5 is an inferred synthesis for Logan, not published ASE data. ASE does not publish per-topic miss rates or per-test pass rates.</p></div></div>
+<h3><span class="n">7.1</span>Question types and how to take them</h3>
+<p>The 2026 A2 has <strong>55 questions, 45 scored, 75 minutes</strong>. Ten are unscored research items and are not identified, so treat every question as scored. Each has four options and one correct answer. There are three formats.</p>
+<ul>
+<li><strong>Direct/completion:</strong> answer the question as written, from the service-manual logic, with no extra facts from your own shop.</li>
+<li><strong>Technician A / Technician B:</strong> judge each statement alone as true or false, on scratch paper in an A/B column. "Both" and "neither" are valid answers, not traps. Do not let one statement color the other.</li>
+<li><strong>EXCEPT / LEAST likely:</strong> mark every choice "causes it: yes/no." The single "no" is the answer.</li>
+</ul>
+<p>Qualifier words steer the diagnosis:</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Word</th>
+<th>What it asks for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Could cause</strong></td>
+<td>One valid mechanism is enough.</td>
+</tr>
+<tr>
+<td><strong>Most likely</strong></td>
+<td>The choice that explains <strong>every</strong> symptom in the stem. A choice that explains only one symptom is usually a distractor. Pick the common, simple cause over the rare one.</td>
+</tr>
+<tr>
+<td><strong>First / next</strong></td>
+<td>The cheapest, least invasive, most informative step.</td>
+</tr>
+</tbody>
+</table></div>
+<h3><span class="n">7.2</span>Book answer beats shop habit</h3>
+<p>ASE rewards the textbook and service-manual answer, not the fastest shop shortcut. That matches Logan's own observation. For a dealership tech the risk is narrower than test technique: it is habits specific to transmissions.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Shop habit</th>
+<th>Book answer</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Disconnect the battery to clear codes or reset adapts</td>
+<td>Clear codes with the scan tool, then run the monitors or drive cycle to verify. A battery pull does not remove a permanent DTC.</td>
+</tr>
+<tr>
+<td>Eyeball the dipstick, or skip the check on a sealed unit</td>
+<td>No dipstick: scan-tool fluid temperature in the SI window, vehicle level, engine running if specified, the SI method, and the correct fluid type.</td>
+</tr>
+<tr>
+<td>"It's a trans RO, so it's the trans"</td>
+<td>Rule out the engine, inputs and fluid first (A.22). A failed TP input can mimic a bad shift.</td>
+</tr>
+<tr>
+<td>Reset adapts as the fix</td>
+<td>Adapts correct wear within limits. They do not fix a leak or worn clutch. Relearn after a repair or replacement.</td>
+</tr>
+<tr>
+<td>Replace the converter or the whole unit</td>
+<td>Test first: fluid, scan data (commanded vs. actual), then pressure test. Replacement needs a test result behind it.</td>
+</tr>
+<tr>
+<td>Skip the cooler after a failure</td>
+<td>Flow-check and flush (or replace) the cooler after an internal failure.</td>
+</tr>
+</tbody>
+</table></div>
+<h3><span class="n">7.3</span>Reading charts and schematics</h3>
+<ul>
+<li><strong>Apply chart:</strong> build the table of working and failed ranges. Find the element common to every failed range and absent from every working one. A range served only by a one-way clutch separates the one-way clutch from the friction elements. (This logic is a documented public sample topic, a no-reverse item.)</li>
+<li><strong>Circuit diagram:</strong> ask what the TCM commands and what the load actually does. Read normally-high or normally-low solenoid polarity from the stem (the classic EPC: more current, less pressure). An NTC thermistor on a pull-up circuit reads cold when open and hot when shorted to ground.</li>
+<li><strong>Pressure chart:</strong> low in <strong>all</strong> ranges = common supply (pump, regulator, filter, fluid level, EPC). Low in <strong>one</strong> range = a leak in that range's circuit. High = regulator or EPC stuck.</li>
+</ul>
+<h3><span class="n">7.4</span>Diagnostic order (the answer to most "first" and "next" stems)</h3>
+<ol>
+<li>Verify the concern. 2. Check fluid level, condition and type, correctly. 3. Check SI, TSBs, history and DTCs, remembering that <strong>the code is the starting point, not the diagnosis.</strong> 4. Rule out engine, inputs, cooler and electrical supply. 5. Road test and scan data. 6. Pressure test for a hydraulic concern. 7. Stall test only if the OEM specifies one, after line pressure, with a 5-second WOT limit. 8. Repair, clear with the scan tool, relearn if needed, verify.</li>
+</ol>
+<div class="note "><div class="tag">ASE trap (Learner)</div><div class="nb"><p>strong electrical reasoning can stop at "circuit tests good, so the solenoid is good." A <strong>performance</strong> DTC (ratio, slip, "stuck") with a good circuit means the cause is hydraulic or mechanical: valve, worn bore, seal, or friction element. An <strong>electrical</strong> DTC means test the circuit and solenoid.</p></div></div>
+<h3><span class="n">7.5</span>Pacing</h3>
+<p>55 items in 75 minutes is about 80 seconds each (INFERRED arithmetic). Cap the first pass at about 2 minutes per item, flag long apply-chart or pressure stems, and return. There is no penalty for guessing and unanswered questions score wrong, so never leave one blank. Flagged items cannot be reviewed after time expires. Change an answer only for a specific reason (a recalled fact, a misread, a clean elimination), not nerves.</p>
+<h3><span class="n">7.6</span>Hardest topics for Logan (ranked, INFERRED)</h3>
+<p>Area B has the highest yield per task (about 1.0 question per task) and the thinnest notes. Area C is about 0.3 per task, so learn it as methods, not specs.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Rank</th>
+<th>Topic</th>
+<th>Tasks</th>
+<th>Why it is a risk</th>
+<th>Resolving rule</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Apply-chart and power-flow reasoning, planetary ID and ratio math</td>
+<td>A.8, A.14, C.13, C.22</td>
+<td>The one A2-specific "hardest area" source names it. Logan's Unit 1 quiz misses were here.</td>
+<td>Common element across failed ranges. Carrier holds planets, ring has internal teeth. Ratios in series multiply.</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Solenoid electrical vs. performance fault, scan data</td>
+<td>A.17, A.19, A.24, A.26</td>
+<td>Strong electrical reasoning invites the "circuit good = part good" trap.</td>
+<td>See 7.4 trap. Compare commanded vs. actual.</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Pressure-test interpretation</td>
+<td>A.11, A.17</td>
+<td>Dealers rarely tee in gauges.</td>
+<td>All ranges vs. one range (7.3).</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Stall test and stator one-way clutch</td>
+<td>A.11, A.12</td>
+<td>Mirror-image symptoms swap under pressure.</td>
+<td>High stall = slipping element. Low = freewheeling stator or weak engine.</td>
+</tr>
+<tr>
+<td>5</td>
+<td>TCC diagnosis</td>
+<td>A.13, A.18</td>
+<td>Confused with misfire.</td>
+<td>Shudder only at lock-up and gone when released = TCC or fluid. Under load in any gear = engine.</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Fluid, no-dipstick check, cooler</td>
+<td>A.4, A.10, B.5, B.12</td>
+<td>Highest yield, thinnest notes.</td>
+<td>7.2 table.</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Valve body, accumulator, servo symptoms</td>
+<td>B.6, B.8, C.15</td>
+<td>Legacy hydraulic logic.</td>
+<td>Harsh single shift = that accumulator. Harsh all shifts = high line pressure.</td>
+</tr>
+<tr>
+<td>8</td>
+<td>Shift-quality vocabulary</td>
+<td>A.9, A.23</td>
+<td>Slang inverts the diagnosis.</td>
+<td>See the trap list below.</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Overhaul measurement methods</td>
+<td>C.19 to C.23</td>
+<td>Dealers replace, not rebuild.</td>
+<td>Method and direction, not specs.</td>
+</tr>
+<tr>
+<td>10</td>
+<td>Type identification</td>
+<td>A.1</td>
+<td>Low exposure.</td>
+<td>Section 6.</td>
+</tr>
+</tbody>
+</table></div>
+<h3><span class="n">7.7</span>Wrong-direction traps</h3>
+<p>Each of these is a case where a study source, a flashcard or shop slang reverses the correct direction. The OEM or rebuilder source won every time.</p>
+<ol>
+<li><strong>TFT sensor:</strong> open (or high signal voltage) reads very <strong>cold</strong> (−40). Short to ground reads very <strong>hot</strong>.</li>
+<li><strong>Stall:</strong> <strong>high</strong> stall = a slipping band, clutch or transmission one-way clutch. <strong>Low</strong> stall = freewheeling stator, or a weak engine (rule out the engine, including a restricted exhaust). "200 rpm high = stator" is wrong.</li>
+<li><strong>Stator:</strong> freewheeling gives a poor launch and normal speed above that. Seized gives a good launch, poor top end, overheating, and a normal stall reading.</li>
+<li><strong>Order:</strong> fluid, then line pressure, then stall. Do not stall-test if line pressure is low.</li>
+<li><strong>Codes:</strong> a permanent DTC is not removed by a scan-tool clear or a battery pull. It clears when its monitor passes. Clear with the scan tool, not the battery.</li>
+<li><strong>Pan drop</strong> replaces only part of the fluid. The converter and cooler keep the rest.</li>
+<li><strong>Allison 1000:</strong> Reverse = C3 + C5. C2 is not applied.</li>
+<li><strong>A first-gear-only one-way clutch</strong> cannot cause slip in all forward gears. Slip in all forward gears with reverse OK points at the forward/input clutch circuit.</li>
+<li><strong>Flare vs. tie-up:</strong> flare = release before apply, rpm rises. Tie-up = bind-up = overlap, output braked. They are opposites.</li>
+<li><strong>Planetary names:</strong> carrier holds the planets. Ring gear = internal gear (internal teeth). Sun is the center and is never the internal gear. Carrier held = reversed rotation.</li>
+<li><strong>Ratios in series multiply, never add.</strong> A 2:1 then a 3:1 is 6:1, and a large result is not automatically wrong.</li>
+<li><strong>Reaction clutch:</strong> the unlined steel plates of a holding clutch are splined to the <strong>transmission case</strong>.</li>
+<li><strong>EPC polarity depends on design.</strong> The classic EPC: more current, less pressure; unplugged = maximum pressure. Read the stem.</li>
+<li><strong>Milky or pink ATF</strong> means coolant contamination from the radiator cooler: replace the radiator or cooler, overhaul, and flush. Flush-and-refill alone is the distractor.</li>
+</ol></section>
+<footer><span>ASE A2 Study Guide &middot; v1 &middot; 2026-10-09</span><span>Private study material. Not ASE content.</span></footer>
+</div></body></html>

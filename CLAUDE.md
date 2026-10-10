@@ -10,7 +10,7 @@ There are no build, lint, or test commands. Only `workflow/.gitignore` exists (P
 | Folder | Exam | State (2026-09-30) |
 | --- | --- | --- |
 | `mantrans/` | A3 Manual Drive Train & Axles | Most complete. Class final taken 2026-09-21. ASE prep (Version 3 guide, simple sheet, cram sheet, PDFs) lives in `study/ase/`, separate from class-unit guides in `study/`. |
-| `autotrans/` | A2 Automatic Transmissions | ASE A2 about two weeks out (per Logan, 2026-09-30). Note intake active (`note/`, `notes/`). Weighted ASE research done 2026-09-30: task map and index in `research.md`, raw tagged evidence in `research_notes/A2 open gap research/` (snippet-level, verify before use). No study package yet. Check its `CONTEXT.md` `Status:` line. |
+| `autotrans/` | A2 Automatic Transmissions | ASE A2 exam 2026-10-15 (per Logan, 2026-10-09). Note intake active (`note/`, `notes/`). Weighted ASE research done 2026-09-30: task map and index in `research.md`, raw tagged evidence in `research_notes/A2 open gap research/` (snippet-level, verify before use). ASE A2 package v1 built 2026-10-09 in `study/ase/` (exam 2026-10-15). Check its `CONTEXT.md` `Status:` line. |
 | `engine-performance/` | A8 | Framework scaffold only (spring semester). |
 | `l1/` | L1 | Framework scaffold only. |
 | `l2/`, `l3/` | — | Empty placeholders. |
