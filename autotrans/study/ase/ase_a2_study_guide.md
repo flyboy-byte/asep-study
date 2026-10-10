@@ -399,9 +399,9 @@ A "command" or "desired" value on the scan tool is what the TCM *asked for*. It 
 
 The TCM reads input and output shaft speed, range, fluid pressure and fluid temperature. It drives the shift and pressure-control solenoids. It also borrows from the engine side: accelerator pedal position (APP), throttle position (TP), engine coolant temperature, MAP/MAF load, **engine torque**, and the **brake switch**. It sits on the CAN network, so other modules' data feeds its decisions. Shift timing, shift feel and TCC timing are largely **software**, so the same hardware can behave differently by calibration.
 
-**CAN checks.** With the bus powered down, CAN-H to CAN-L reads **about 60 Ω** (two 120 Ω terminators in parallel). About 120 Ω means one terminator is open. Near 0 Ω means H is shorted to L. At rest both lines sit near 2.5 V; when a module transmits, CAN-H rises toward 3.5 V and CAN-L falls toward 1.5 V. Both lines at 0 V is a short to ground, both at battery voltage is a short to power, and one line flat while the other switches is an open on the flat line. A single bad module can pull the whole bus down; unplug modules one at a time to find it. **U0100** is lost communication with the ECM/PCM, **U0101** with the TCM.
+**CAN checks.** With the bus powered down, CAN-H to CAN-L reads **about 60 Ω** (the bus has a 120 Ω terminator at each end, and two in parallel make 60 Ω). About 120 Ω means one terminator is open. Near 0 Ω means H is shorted to L. Both lines typically sit near 2.5 V at rest; when a module transmits, CAN-H is driven toward 3.5 V and CAN-L toward 1.5 V. Both lines at 0 V is a short to ground, both at battery voltage is a short to power, and one line flat while the other switches is an open on the flat line. A single bad module can pull the whole bus down; unplug modules one at a time to find it. **U0100** is lost communication with the ECM/PCM, **U0101** with the TCM.
 
-**Power and ground.** Test with **voltage drop under load**, not with an ohmmeter. An ohmmeter passes almost no current and misses a few good strands in a bad wire. About 0.1 V per connection and 0.1–0.2 V across a ground path are common limits, but the OEM spec governs. Low or noisy system voltage can reset the TCM, knock modules off the bus, freeze adapts and send the unit to a default gear.
+**Power and ground.** Test with **voltage drop under load**, not with an ohmmeter. An ohmmeter passes almost no current and misses a few good strands in a bad wire. Commonly cited limits are about 0.1 V per connection and 0.2 V across a ground cable (0.3 V for a whole side of the circuit), but the OEM spec governs. Low or noisy system voltage can reset the TCM, knock modules off the bus, freeze adapts and send the unit to a default gear.
 
 > **ASE trap:** **Several modules** setting U-codes at once, or intermittent shifting after a battery change or jump-start, points to supply voltage, grounds or the bus. **One** U-code points to that module's power, ground or bus branch. Check battery, charging and TCM power/ground before replacing any module.
 
@@ -416,7 +416,7 @@ The TCM reads input and output shaft speed, range, fluid pressure and fluid temp
 | Sensor type | Signal | How to test |
 |---|---|---|
 | Magnetic (variable reluctance) | AC; amplitude and frequency rise with speed. Produces little signal at very low speed | Ohms and AC mV. Check air gap and metal debris on the tip |
-| **Hall / active** | Square wave from near 0 V up to the supply or pull-up level. Works down to zero speed | **No ohmmeter.** Check reference voltage, ground, then that the signal toggles cleanly as the target turns |
+| **Hall / active** | Square wave from near 0 V up to the supply or pull-up level. Works down to zero speed | **No ohmmeter.** A DMM can check the reference voltage and ground. Scope the signal for a clean square wave as the target turns |
 
 A bad speed signal can produce ratio-error or performance codes on a mechanically healthy unit, because the TCM calculates slip and shift time from these speeds. It can also cause harsh shifts, a disabled TCC or limp mode. A circuit code such as P0715 is "not proof that the sensor failed." Wiring and connector faults are common, so scope the signal before condemning clutches.
 
@@ -450,7 +450,7 @@ A falsely hot reading can make the TCM lock up the TCC earlier or disable overdr
 > **Rule:** **Classic EPC / normally-high line PC:** more current (higher duty) = **lower** line pressure; **unplugged = maximum pressure**, which gives harsh engagement. In the 6L80 example the line PC runs about 0.1 A for maximum pressure to about 1.0 A for minimum, and EPC pulse-width modulates at a fixed 300–600 Hz. Some newer valves are normally low, where more current gives more pressure. If a stem describes another design, follow the stem.
 
 **Testing.**
-- A DMM finds opens and excessive resistance but is poor at finding a partly shorted winding. An **amp-clamp current ramp** on a scope is better: a normal trace shows a small hump where the plunger moves, a shorted winding shows a steep, tall rise, and an open shows no current.
+- A DMM finds opens and excessive resistance but is poor at finding a partly shorted winding. An **amp-clamp current ramp** on a scope is better: a normal trace shows a small hump (the "gull-wing") where the plunger moves, no hump means the plunger is not moving, a shorted winding changes the trace (compare with a known-good solenoid), and an open shows no current.
 - A voltage-only trace can look normal with a partly shorted coil.
 - Scope duty cycle and frequency at the TCM connector with the engine running; confirm that current follows the command.
 - Low supply voltage can keep a current-controlled solenoid from reaching its commanded current. On a normally-high design that makes pressure too high (harsh); on a normally-low design, too low (soft).
@@ -488,7 +488,7 @@ A bidirectional tool **commands** outputs (solenoids, relays, special functions)
 
 - **Key PIDs:** commanded vs. actual gear or ratio, ISS and OSS, TCC slip and TCC commanded state or pressure, solenoid commanded vs. actual current, TFT, shift time and adapt values.
 - **Commanded gear changes but ISS/OSS ratio does not follow** = internal hydraulic or mechanical fault. **No command was sent** = input, enable condition or module.
-- **Pressure sweep:** with a gauge installed, step the pressure command up and down and confirm the gauge follows. GM's 6-speed example allows this only in Park or Neutral below 1500 rpm. That limit is a GM example, so follow SI for other units.
+- **Pressure sweep:** with a gauge installed, step the pressure command up and down and confirm the gauge follows. Output tests like this are normally gated by range and speed, so follow the scan tool and SI preconditions.
 - **Brake-tap test:** rpm rises when the TCC releases and falls when it reapplies. Only the direction matters, not a spec.
 - **Safety:** output tests are gated by range, rpm and speed. Follow the scan tool and SI preconditions.
 
@@ -498,7 +498,7 @@ A bidirectional tool **commands** outputs (solenoids, relays, special functions)
 
 Adapts are the TCM's closed-loop correction of shift pressure and fill timing, learned from ISS/OSS speeds. They work like fuel trim. Names differ (GM TAP, Ford adaptive tables in KAM, Chrysler CVI), but the principle is universal.
 
-- **Reading adapts:** one clutch high in every load cell → that clutch circuit (worn friction, piston seal, bore, solenoid). **All clutches high** → shared supply (low fluid, low line pressure, filter, line-pressure solenoid, wrong fluid). **Maxed out** → a hard fault the TCM can no longer mask.
+- **Reading adapts (typical pattern, INFERRED):** one clutch high in every load cell → that clutch circuit (worn friction, piston seal, bore, solenoid). **All clutches high** → shared supply (low fluid, low line pressure, filter, line-pressure solenoid, wrong fluid). **Maxed out** → a hard fault the TCM can no longer mask.
 - **Clearing adapts is not a repair.** Resetting a worn unit gives a brief improvement and the values climb back. Reset is a verification step.
 - **Relearn after** a TCM, valve body or transmission replacement or repair. Two classic directions: a new TCM on an old unit starts from base values (harsh or flared); an old TCM on a rebuilt unit carries worn-clutch adapts (harsh or tie-up) until they are cleared.
 - **Programming** (a new or used TCM, or a software update): VIN-correct calibration, loaded through the OEM tool or a J2534 pass-thru, on a **stable-voltage maintainer (not a charger)**, with no interruption.
@@ -511,6 +511,8 @@ Adapts are the TCM's closed-loop correction of shift pressure and fill timing, l
 *Tasks: A.23, A.25, C.6.*
 
 ### 3.9 Shift-quality faults from electronic causes
+
+*Typical patterns, INFERRED from how the TCM scales pressure to the signals it reads; not from a single source.*
 
 | Cause | What the TCM does | Feel |
 |---|---|---|
@@ -591,14 +593,14 @@ Find the source before you replace anything: clean the area, add UV dye, run it,
 
 ### 4.3 Pan, magnet and debris (B.4)
 
-Read the pan before you decide the transmission is bad. A thin gray paste on the magnet and a little dark friction dust is **normal wear**. Chunks, large flakes, "glitter," heavy sludge, or a burnt smell are not.
+Read the pan before you decide the transmission is bad. A thin gray paste on the magnet and a little dark friction dust is **normal wear**. Chunks, large flakes, "glitter," heavy sludge, or a burnt smell are not. The table gives typical sources, not exact ones.
 
 | Debris | Points to |
 |---|---|
 | Black/brown friction material | Clutches or bands (a little is normal; a lot or chunks is not) |
 | Steel/iron (magnetic) | Gears, bearings/races, shafts |
 | Brass/bronze (non-magnetic) | Bushings, thrust washers |
-| Aluminum (non-magnetic, silvery) | Case, pump, valve body, pistons |
+| Aluminum (non-magnetic, silvery) | Case, pump, valve body, pistons, converter |
 
 > **Classic trap:** a clean magnet does not mean no metal. Aluminum and brass don't stick to it. Casting flash or slag on a new or reman unit is normal on the first inspection.
 

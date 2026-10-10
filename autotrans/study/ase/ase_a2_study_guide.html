@@ -54,7 +54,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 @page{size:Letter;margin:.55in}
 @media print{.toc{break-after:auto}}
 </style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.1</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.2</div>
 <h1>Automatic Transmission / Transaxle</h1><p class="sub">Weighted to the official 2026 A2 task list. Class notes, the Unit 1 quiz misses and the research pass, in one guide.</p>
 <div class="meta-row"><span><b>Prepared</b> October 9, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
@@ -753,8 +753,8 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <p class="tasks">Tasks: A.5, A.19, A.24, A.26.</p>
 <h3><span class="n">3.2</span>TCM inputs, outputs and the network</h3>
 <p>The TCM reads input and output shaft speed, range, fluid pressure and fluid temperature. It drives the shift and pressure-control solenoids. It also borrows from the engine side: accelerator pedal position (APP), throttle position (TP), engine coolant temperature, MAP/MAF load, <strong>engine torque</strong>, and the <strong>brake switch</strong>. It sits on the CAN network, so other modules' data feeds its decisions. Shift timing, shift feel and TCC timing are largely <strong>software</strong>, so the same hardware can behave differently by calibration.</p>
-<p><strong>CAN checks.</strong> With the bus powered down, CAN-H to CAN-L reads <strong>about 60 Ω</strong> (two 120 Ω terminators in parallel). About 120 Ω means one terminator is open. Near 0 Ω means H is shorted to L. At rest both lines sit near 2.5 V; when a module transmits, CAN-H rises toward 3.5 V and CAN-L falls toward 1.5 V. Both lines at 0 V is a short to ground, both at battery voltage is a short to power, and one line flat while the other switches is an open on the flat line. A single bad module can pull the whole bus down; unplug modules one at a time to find it. <strong>U0100</strong> is lost communication with the ECM/PCM, <strong>U0101</strong> with the TCM.</p>
-<p><strong>Power and ground.</strong> Test with <strong>voltage drop under load</strong>, not with an ohmmeter. An ohmmeter passes almost no current and misses a few good strands in a bad wire. About 0.1 V per connection and 0.1–0.2 V across a ground path are common limits, but the OEM spec governs. Low or noisy system voltage can reset the TCM, knock modules off the bus, freeze adapts and send the unit to a default gear.</p>
+<p><strong>CAN checks.</strong> With the bus powered down, CAN-H to CAN-L reads <strong>about 60 Ω</strong> (the bus has a 120 Ω terminator at each end, and two in parallel make 60 Ω). About 120 Ω means one terminator is open. Near 0 Ω means H is shorted to L. Both lines typically sit near 2.5 V at rest; when a module transmits, CAN-H is driven toward 3.5 V and CAN-L toward 1.5 V. Both lines at 0 V is a short to ground, both at battery voltage is a short to power, and one line flat while the other switches is an open on the flat line. A single bad module can pull the whole bus down; unplug modules one at a time to find it. <strong>U0100</strong> is lost communication with the ECM/PCM, <strong>U0101</strong> with the TCM.</p>
+<p><strong>Power and ground.</strong> Test with <strong>voltage drop under load</strong>, not with an ohmmeter. An ohmmeter passes almost no current and misses a few good strands in a bad wire. Commonly cited limits are about 0.1 V per connection and 0.2 V across a ground cable (0.3 V for a whole side of the circuit), but the OEM spec governs. Low or noisy system voltage can reset the TCM, knock modules off the bus, freeze adapts and send the unit to a default gear.</p>
 <div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p><strong>Several modules</strong> setting U-codes at once, or intermittent shifting after a battery change or jump-start, points to supply voltage, grounds or the bus. <strong>One</strong> U-code points to that module's power, ground or bus branch. Check battery, charging and TCM power/ground before replacing any module.</p></div></div>
 <p class="tasks">Tasks: A.19, A.20, A.21, A.27, B.10.</p>
 <h3><span class="n">3.3</span>Sensors and switches</h3>
@@ -778,7 +778,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <tr>
 <td><strong>Hall / active</strong></td>
 <td>Square wave from near 0 V up to the supply or pull-up level. Works down to zero speed</td>
-<td><strong>No ohmmeter.</strong> Check reference voltage, ground, then that the signal toggles cleanly as the target turns</td>
+<td><strong>No ohmmeter.</strong> A DMM can check the reference voltage and ground. Scope the signal for a clean square wave as the target turns</td>
 </tr>
 </tbody>
 </table></div>
@@ -843,7 +843,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </table></div>
 <div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>Classic EPC / normally-high line PC:</strong> more current (higher duty) = <strong>lower</strong> line pressure; <strong>unplugged = maximum pressure</strong>, which gives harsh engagement. In the 6L80 example the line PC runs about 0.1 A for maximum pressure to about 1.0 A for minimum, and EPC pulse-width modulates at a fixed 300–600 Hz. Some newer valves are normally low, where more current gives more pressure. If a stem describes another design, follow the stem.</p></div></div>
 <p><strong>Testing.</strong>
-- A DMM finds opens and excessive resistance but is poor at finding a partly shorted winding. An <strong>amp-clamp current ramp</strong> on a scope is better: a normal trace shows a small hump where the plunger moves, a shorted winding shows a steep, tall rise, and an open shows no current.
+- A DMM finds opens and excessive resistance but is poor at finding a partly shorted winding. An <strong>amp-clamp current ramp</strong> on a scope is better: a normal trace shows a small hump (the "gull-wing") where the plunger moves, no hump means the plunger is not moving, a shorted winding changes the trace (compare with a known-good solenoid), and an open shows no current.
 - A voltage-only trace can look normal with a partly shorted coil.
 - Scope duty cycle and frequency at the TCM connector with the engine running; confirm that current follows the command.
 - Low supply voltage can keep a current-controlled solenoid from reaching its commanded current. On a normally-high design that makes pressure too high (harsh); on a normally-low design, too low (soft).
@@ -870,7 +870,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <ul>
 <li><strong>Key PIDs:</strong> commanded vs. actual gear or ratio, ISS and OSS, TCC slip and TCC commanded state or pressure, solenoid commanded vs. actual current, TFT, shift time and adapt values.</li>
 <li><strong>Commanded gear changes but ISS/OSS ratio does not follow</strong> = internal hydraulic or mechanical fault. <strong>No command was sent</strong> = input, enable condition or module.</li>
-<li><strong>Pressure sweep:</strong> with a gauge installed, step the pressure command up and down and confirm the gauge follows. GM's 6-speed example allows this only in Park or Neutral below 1500 rpm. That limit is a GM example, so follow SI for other units.</li>
+<li><strong>Pressure sweep:</strong> with a gauge installed, step the pressure command up and down and confirm the gauge follows. Output tests like this are normally gated by range and speed, so follow the scan tool and SI preconditions.</li>
 <li><strong>Brake-tap test:</strong> rpm rises when the TCC releases and falls when it reapplies. Only the direction matters, not a spec.</li>
 <li><strong>Safety:</strong> output tests are gated by range, rpm and speed. Follow the scan tool and SI preconditions.</li>
 </ul>
@@ -878,7 +878,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <h3><span class="n">3.8</span>Adaptive learning, relearn and programming</h3>
 <p>Adapts are the TCM's closed-loop correction of shift pressure and fill timing, learned from ISS/OSS speeds. They work like fuel trim. Names differ (GM TAP, Ford adaptive tables in KAM, Chrysler CVI), but the principle is universal.</p>
 <ul>
-<li><strong>Reading adapts:</strong> one clutch high in every load cell → that clutch circuit (worn friction, piston seal, bore, solenoid). <strong>All clutches high</strong> → shared supply (low fluid, low line pressure, filter, line-pressure solenoid, wrong fluid). <strong>Maxed out</strong> → a hard fault the TCM can no longer mask.</li>
+<li><strong>Reading adapts (typical pattern, INFERRED):</strong> one clutch high in every load cell → that clutch circuit (worn friction, piston seal, bore, solenoid). <strong>All clutches high</strong> → shared supply (low fluid, low line pressure, filter, line-pressure solenoid, wrong fluid). <strong>Maxed out</strong> → a hard fault the TCM can no longer mask.</li>
 <li><strong>Clearing adapts is not a repair.</strong> Resetting a worn unit gives a brief improvement and the values climb back. Reset is a verification step.</li>
 <li><strong>Relearn after</strong> a TCM, valve body or transmission replacement or repair. Two classic directions: a new TCM on an old unit starts from base values (harsh or flared); an old TCM on a rebuilt unit carries worn-clutch adapts (harsh or tie-up) until they are cleared.</li>
 <li><strong>Programming</strong> (a new or used TCM, or a software update): VIN-correct calibration, loaded through the OEM tool or a J2534 pass-thru, on a <strong>stable-voltage maintainer (not a charger)</strong>, with no interruption.</li>
@@ -889,6 +889,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>"Clearing adapts will fix the harsh shift" vs. "adapts must be relearned after the valve body is replaced." The second is correct. The first treats a reset as a repair.</p></div></div>
 <p class="tasks">Tasks: A.23, A.25, C.6.</p>
 <h3><span class="n">3.9</span>Shift-quality faults from electronic causes</h3>
+<p><em>Typical patterns, INFERRED from how the TCM scales pressure to the signals it reads; not from a single source.</em></p>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
@@ -1053,7 +1054,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <div class="note "><div class="tag">Classic trap</div><div class="nb"><p>a worn extension-housing (tailshaft) bushing lets the slip yoke wobble, and the seal leaks. <strong>A new seal alone won't fix it.</strong> Check yoke play (move it up and down in the splines), the seal surface of the yoke for pitting or grooving, and why the bushing wore (a binding U-joint, a bent driveshaft, driveline misalignment). The same logic applies to FWD axle seals: worn bearing/seal surface, then seal.</p></div></div>
 <p class="tasks">Tasks: B.2, B.3.</p>
 <h3><span class="n">4.3</span>Pan, magnet and debris (B.4)</h3>
-<p>Read the pan before you decide the transmission is bad. A thin gray paste on the magnet and a little dark friction dust is <strong>normal wear</strong>. Chunks, large flakes, "glitter," heavy sludge, or a burnt smell are not.</p>
+<p>Read the pan before you decide the transmission is bad. A thin gray paste on the magnet and a little dark friction dust is <strong>normal wear</strong>. Chunks, large flakes, "glitter," heavy sludge, or a burnt smell are not. The table gives typical sources, not exact ones.</p>
 <div class="tbl-wrap"><table>
 <thead>
 <tr>
@@ -1076,7 +1077,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 <tr>
 <td>Aluminum (non-magnetic, silvery)</td>
-<td>Case, pump, valve body, pistons</td>
+<td>Case, pump, valve body, pistons, converter</td>
 </tr>
 </tbody>
 </table></div>
@@ -1517,5 +1518,5 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>EPC polarity depends on design.</strong> The classic EPC: more current, less pressure; unplugged = maximum pressure. Read the stem.</li>
 <li><strong>Milky or pink ATF</strong> means coolant contamination from the radiator cooler: replace the radiator or cooler, overhaul, and flush. Flush-and-refill alone is the distractor.</li>
 </ol></section>
-<footer><span>ASE A2 Study Guide &middot; v1.1 &middot; 2026-10-09</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>ASE A2 Study Guide &middot; v1.2 &middot; 2026-10-09</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>
