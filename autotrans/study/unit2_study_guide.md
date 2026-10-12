@@ -210,11 +210,42 @@ A cracked flywheel (flexplate) or cracked transmission case points to an **engin
 
 ---
 
-## 6. Expanded Theory (from the ASE research)
+<div style="break-before:page"></div>
+
+## 6. Line Pressure: High or Low
+
+**Line pressure** (mainline) is what the pump and pressure regulator send to every circuit. Most pressure questions come down to one move: **ask whether the reading is wrong in every range or only one.** Use the mainline test from 5.5.
+
+### 6.1 Low line pressure
+| Pattern | Likely causes |
+|---|---|
+| **Low in every range** (something common to the whole supply) | • **Low fluid level** or **foamy, aerated fluid** (overfill)<br>• **clogged intake filter** or an air leak on the suction side (the pump draws air)<br>• **worn pump**, including a worn pump bushing or stator-support bore<br>• **weak or stuck-open pressure regulator**, or a worn regulator bore<br>• a **large common leak** (a seal or sealing ring that feeds every range)<br>• thin, degraded or wrong fluid (worse hot) |
+| **Low in one range only** | A leak in the circuit fed **only in that range**: the clutch or servo **piston seal**, a **sealing ring** on the shaft, a servo seal, or that range's valve or passage |
+| **Fails with all valves closed** (P/N) | **Upstream** of the control system: pump, intake filter, pressure regulator |
+| **Fine until you select a range, then drops** | Leak in **that range's circuit** (Pascal's law: the circuit is connected to mainline) |
+
+### 6.2 High line pressure
+| Cause | Notes |
+|---|---|
+| **Stuck regulator valve** | Pressure can't be relieved, so it rises in every range |
+| **Pressure solenoid (EPC) in failsafe** | Classic design: **no current = maximum pressure**, so an unplugged, open or stuck solenoid gives high pressure and harsh shifts. Command is not pressure: more current = lower pressure |
+| **TV cable too tight** (older units) | Raises the TV signal: high pressure, firm and late shifts |
+| **Vacuum modulator problem** (older units) | Lost vacuum or a disconnected hose = high pressure; a ruptured diaphragm also pulls fluid into the intake |
+| **High or low in neutral** | Usually the **throttle valve, torque converter or cooler** circuits (those stay open to flow in P/N) |
+
+### 6.3 Quick rules
+- **Reverse reads higher by design.** Textbook examples: P/N/D idle 50-60 psi, **reverse 150-250 psi** (use SI first). Low in reverse only = reverse-circuit leak. Low everywhere = supply.
+- **Low pressure + slip or mushy feel** points first to fluid level, filter, pump or regulator, then to the range-specific seal if only one range is affected.
+- **Pump does not make pressure; resistance does.** A leak anywhere in a connected circuit lowers pressure.
+- **If line pressure is low, do not stall test.**
+
+---
+
+## 7. Expanded Theory (from the ASE research)
 
 Your notes set the topics; this section adds depth under them, mostly for Chapters 15, 6 and 4. It comes from the ASE A2 guide and its research pass, so it goes further than your class notes. Specs and examples vary by unit: **SI decides**.
 
-### 6.1 Shift-quality vocabulary (Ch 15)
+### 7.1 Shift-quality vocabulary (Ch 15)
 Every shift is a **handoff**: the off-going element releases while the on-coming one applies. The terms describe what rpm does.
 
 | Term | What it is | Rpm / feel |
@@ -230,20 +261,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 
 **Noise:** does it follow engine rpm or road speed? A whine in P/N that rises with rpm is usually the **pump** (or a clogged filter, or air at the pickup). Vibration in P/N at a fixed rpm points to the flexplate or converter.
 
-### 6.2 Pressure testing: reading patterns (Ch 4 and 15)
-**Order:** fluid level and condition → **line pressure** → stall test only if SI publishes one. **If line pressure is low, do not stall test.** Needs correct fluid and level, operating temperature, brakes applied, wheels chocked.
-
-| Pressure reading | Most likely area |
-|---|---|
-| **Low in all ranges** | Common supply: low fluid, clogged filter or pickup (aeration), worn pump, weak or stuck regulator |
-| **Low in one range only** | Leak in the circuit fed only in that range (piston seal, sealing ring, servo seal) |
-| **High in all ranges** | Stuck regulator; pressure solenoid in failsafe (unplugged, open circuit); TV cable or vacuum modulator fault on older units |
-| **Normal pressure, no engagement** | Routing (manual valve, shift valve, check ball) or a mechanical failure (broken clutch, sprag) |
-
-- **Reverse pressure runs higher than drive**; low pressure in reverse only means a reverse-circuit leak.
-- **Command is not pressure.** On the classic EPC design, **more current = lower pressure**, and no current or an unplugged solenoid gives **maximum** pressure. Rising commanded current with falling pressure is normal there.
-
-### 6.3 Valves in diagnosis (Ch 4)
+### 7.2 Valves in diagnosis (Ch 4)
 | Valve / part | Fault picture |
 |---|---|
 | **Pressure regulator** | Worn bore: low or erratic line pressure, soft shifts, worse hot |
@@ -254,7 +272,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 
 **Sticking vs. wear:** debris and varnish cause **intermittent, cold-worse** wrong-gear, no-shift or TCC problems. Bore wear is **progressive and worse hot** and can set several pressure-control codes at once.
 
-### 6.4 Converter and TCC diagnosis (Ch 6)
+### 7.3 Converter and TCC diagnosis (Ch 6)
 
 - **Stall test:** high stall = transmission slipping; low stall = weak engine **or** freewheeling stator. Rule out the engine first. A TCC stuck on can stall the engine in gear, so don't stall-test that complaint.
 - **TCC does not apply** when an input prevents it: brake switch reading "applied," a throttle dead spot, a cold-reading temperature sensor, no speed signal. Check inputs and TCC enable data before condemning the solenoid or converter.
@@ -263,7 +281,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 - **Shudder vs. misfire:** true TCC shudder goes away with the TCC **off** and also fully **locked**. A misfire follows firing frequency, shows in misfire data, and is often worse when locked. **Fluid condition** is the first suspect for shudder.
 - **Bench check:** the stator should turn one way and lock the other. Free both ways or locked both ways: replace the converter.
 
-### 6.5 Cooling and overheating (Ch 15)
+### 7.4 Cooling and overheating (Ch 15)
 
 - Overheating with **normal shifting** points to a restricted cooler or lines, or a **thermal bypass valve (TBV)** stuck in bypass. The TBV works like a thermostat: stuck in bypass starves the cooler and overheats the transmission.
 - **Milky ATF:** replace the radiator cooler **and** the damaged parts (seals, frictions, converter), clean and flush. "Drain and refill" or "flush only" is the wrong answer.
@@ -271,7 +289,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 
 ---
 
-## 7. One-Page Cram
+## 8. One-Page Cram
 
 - **Hydraulics:** Pascal's law, pressure = force ÷ area, equal in all directions. **Pump makes flow; resistance makes pressure.** Positive displacement pumps: gear/crescent, gerotor, vane. **Variable displacement = vane housing pivots.**
 - **Valves:** switch (routes), servo (moves a valve), regulator (pressure). Spool valves. **Manual valve = mechanical.** Every unit has a pressure regulator.
@@ -284,7 +302,8 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 - **TCC slip = engine − turbine.** TCC applied → near zero. Released by release passage (stator shaft/turbine shaft); applied by apply passage (hub/stator shaft). **PWM** solenoid. No lockup in overdrive → overheats.
 - **Fluid:** underfilled → air in the pump, mushy, neutral, slip, TCC problems. Overfilled → foam, slip, fluid out the vent. Milkshake = coolant (failed cooler). Overheating = overflowing vent, purple converter, burned clutches.
 - **Command is not pressure.** Scan tool = request; gauge = result.
+- **Low in all ranges:** fluid level, filter/air, pump, regulator. **Low in one range:** that circuit's seal. **High:** stuck regulator, pressure solenoid failsafe (no current = max), TV cable tight or modulator vacuum lost.
 - **Mainline pressure test:** taps pump output. Valves closed and fails = upstream (pump, filter, regulator). Fine until a range is selected, then drops = leak in **that** circuit. Use a **0-300 psi** gauge. Textbook examples: P/N/D idle 50-60, reverse 150-250.
 - **Cracked flexplate/case = alignment.** Dowel pins stay in the engine; reinstall them with a new transmission.
 
-*Source note: class notes (hydralics, torque-converters, ch15) and the GM technician transmission guide excerpt pasted in `notes/torque-converters.txt`. Section 6 comes from the ASE A2 guide and research pass (partly verified; see its CONTEXT/verification notes). Items marked "outside" or "typical" are general knowledge, not from the notes. Not ASE content.*
+*Source note: class notes (hydralics, torque-converters, ch15) and the GM technician transmission guide excerpt pasted in `notes/torque-converters.txt`. Section 7 comes from the ASE A2 guide and research pass (partly verified; see its CONTEXT/verification notes). Items marked "outside" or "typical" are general knowledge, not from the notes. Not ASE content.*
