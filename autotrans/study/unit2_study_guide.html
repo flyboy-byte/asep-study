@@ -1,0 +1,389 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>Unit 2 Study Guide</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{--bg:#fff;--surface:#fff;--surface-2:#eef1ee;--ink:#14191b;--muted:#4d5659;--faint:#7c8688;--line:#d2d8d3;--line-hi:#b6bfb9;--accent:#c8481c;--accent-ink:#fff6f1;--accent-2:#2c4a4a;--trap:#9b2c2c}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:12.5px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 6px}
+h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.02em;color:var(--ink);font-weight:600;text-wrap:balance}
+p{margin:0 0 .7em}
+strong{font-weight:600}
+code,.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.92em}
+a{color:inherit}
+.masthead{border:1px solid var(--line-hi);border-radius:3px;padding:1.2rem 1.4rem 1rem;margin-bottom:.9rem;position:relative;overflow:hidden}
+.masthead::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent)}
+.eyebrow{font-family:'IBM Plex Mono';font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.eyebrow .sep{color:var(--faint)}
+.masthead h1{font-size:30px;line-height:1.1;margin:0 0 .3rem}
+.masthead .sub{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:.8rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-family:'IBM Plex Mono';font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem}
+.meta-row b{color:var(--ink)}
+.toc{border:1px solid var(--line);border-radius:3px;padding:.9rem 1.2rem;margin-bottom:1.2rem}
+.toc-title{font-family:'IBM Plex Mono';font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.toc a{display:flex;gap:.6em;text-decoration:none;font-size:13px}
+.toc a .tn{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--accent);flex:none}
+section{margin-bottom:1.4rem}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;border-bottom:2px solid var(--ink);padding-bottom:.3rem;margin:0 0 .8rem;break-after:avoid}
+.sec-num{font-family:'IBM Plex Mono';font-size:12px;font-weight:600;color:var(--accent)}
+h2{font-size:19px;margin:0}
+h3{font-size:14px;margin:1.1rem 0 .4rem;color:var(--accent-2);letter-spacing:.03em;break-after:avoid}
+h3 .n{font-family:'IBM Plex Mono';color:var(--faint);font-weight:500;margin-right:.4em}
+h4{font-size:12px;margin:.8rem 0 .3rem;color:var(--muted);break-after:avoid}
+.tbl-wrap{margin:.6rem 0 .9rem;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+thead th{text-align:left;font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);padding:.4rem .6rem;border-bottom:1px solid var(--line-hi);background:var(--surface-2)}
+td{padding:.4rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tr{break-inside:avoid}
+td:first-child{font-weight:500}
+ul,ol{padding-left:1.2rem;margin:0 0 .8rem}
+li{margin-bottom:.25rem}
+.note{display:flex;gap:.7rem;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;padding:.55rem .8rem;margin:.7rem 0;font-size:12px;break-inside:avoid}
+.note .tag{font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;flex:none;padding-top:.1rem;min-width:4.6em}
+.note.rule{border-left-color:var(--accent-2)} .note.rule .tag{color:var(--accent-2)}
+.note.trap{border-left-color:var(--trap)} .note.trap .tag{color:var(--trap)}
+.note .nb p:last-child,.note .nb ul:last-child{margin-bottom:0}
+.note .nb{flex:1}
+.tasks{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin:-.2rem 0 .8rem}
+.figure{border:1px solid var(--line);border-radius:3px;padding:.7rem;margin:.9rem 0;break-inside:avoid}
+.figure img{width:100%;max-width:360px;display:block;margin:0 auto;border:1px solid var(--line)}
+.figure figcaption{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin-top:.5rem;line-height:1.5}
+footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+@page{size:Letter;margin:.55in}
+@media print{.toc{break-after:auto}}
+</style></head><body><div class="wrap">
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> A2 <span class="sep">/</span> UNIT 2 <span class="sep">/</span> VERSION 1.0</div>
+<h1>Hydraulics, Torque Converters &amp; Condition Diagnosis</h1><p class="sub">Chapters 4, 6, 10 and 15, plus TCC. Built from class notes.</p>
+<div class="meta-row"><span><b>Prepared</b> 2026-10-12</span><span><b>Scope</b> Instructor scope (class notes), not the ASE task list</span></div></div>
+<nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#s1"><span class="tn">01</span>Hydraulic Principles (Chapter 4)</a></li><li><a href="#s2"><span class="tn">02</span>Torque Converters (Chapter 6)</a></li><li><a href="#s3"><span class="tn">03</span>Torque Converter Clutch (TCC)</a></li><li><a href="#s4"><span class="tn">04</span>Electronic Transmission Controls (Chapter 10)</a></li><li><a href="#s5"><span class="tn">05</span>Condition Diagnosis (Chapter 15)</a></li><li><a href="#s6"><span class="tn">06</span>Practice Questions (original, instructor-style)</a></li><li><a href="#s7"><span class="tn">07</span>One-Page Cram</a></li></ol></nav>
+<section id="s1"><div class="sec-head"><span class="sec-num">01</span><h2>Hydraulic Principles (Chapter 4)</h2></div><p><strong>Instructor scope for Unit 2:</strong> TCC and hydraulic principles, Chapters 4, 6, 10 and 15 (hydraulic system, torque converters, electronic controls, condition diagnosis). Built from your class notes and the textbook text you pasted. Outside additions are labeled.</p>
+<h3><span class="n">1.1</span>What the hydraulic system does</h3>
+<ul>
+<li><strong>Applies the clutches and bands</strong>, which controls the transmission's power flow.</li>
+<li>Delivers enough force and motion to apply those units <strong>completely</strong>, so they don't slip.</li>
+<li>Keeps fluid flowing <strong>through the torque converter</strong> so it can work.</li>
+<li>Keeps fluid flowing to <strong>lubricate and cool</strong> the gear train.</li>
+</ul>
+<h3><span class="n">1.2</span>Pascal's law and the pump</h3>
+<p><strong>Pascal's law:</strong> pressure applied to a confined fluid is transmitted <strong>equally and undiminished in every direction</strong>. Liquids flow through complicated paths but <strong>cannot be compressed</strong>, so force and motion carry to every connected part.</p>
+<p><strong>Pressure = force ÷ area</strong> (psi = lb ÷ sq in). Example from the text: 10 lb on a 1 sq in piston makes 10 psi, and that 10 psi acts on <strong>every</strong> square inch it touches. A 5 sq in apply piston on the same 10 psi pushes with 50 lb (simple arithmetic: force = pressure × area). A bigger piston means more apply force at the same pressure.</p>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>The pump does not create pressure. Pressure comes from resistance to flow.</strong> The pump creates flow. No resistance (a big leak) means low pressure.</p></div></div>
+<p>Every automatic transmission has an <strong>internal</strong> pump, driven through the converter hub, so it turns whenever the engine runs. Three common types, all <strong>positive displacement</strong> and all working on the same principle, an expanding cavity that draws fluid in and a shrinking cavity that pushes it out:</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Pump</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Internal–external gear (crescent / gear)</strong></td>
+<td>Gears with a crescent-shaped seal between them</td>
+</tr>
+<tr>
+<td><strong>Gerotor (rotor)</strong></td>
+<td>Inner rotor turns inside an outer rotor that has one more lobe than the inner</td>
+</tr>
+<tr>
+<td><strong>Vane</strong></td>
+<td>Vanes slide in a rotor inside an offset housing</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Variable-displacement pump.</strong> Still positive displacement, but the <strong>vane housing pivots on a hinge</strong> to shrink or grow the pumping chambers, so the volume per revolution changes. It matches output to need instead of wasting engine power moving excess fluid.</p>
+<h3><span class="n">1.3</span>Valves</h3>
+<p>Most transmission valves are <strong>spool valves</strong>: a shaped plunger (like a thread spool) that slides in a bore and opens or closes passages. Most are moved by fluid pressure and returned by a spring. The <strong>manual valve</strong> is the main exception: the driver moves it mechanically with the shifter.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Job</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Switch valve</strong> (flow control valve)</td>
+<td>Directs fluid into different circuits</td>
+</tr>
+<tr>
+<td><strong>Servo valve</strong></td>
+<td>Moves another valve (some move switch valves, some help control pressure regulators)</td>
+</tr>
+<tr>
+<td><strong>Regulator valve</strong></td>
+<td>Controls fluid pressure</td>
+</tr>
+</tbody>
+</table></div>
+<p>Pumps can build pressure far too high, too fast, so <strong>every transmission has a pressure regulator (pressure control) valve</strong>, usually a spool valve plus a spring.</p>
+<h3><span class="n">1.4</span>Pressure signals</h3>
+<p><strong>TV (throttle valve) pressure</strong> is pressure that relates to <strong>throttle position</strong>: more throttle, more TV pressure. Older units made it mechanically or with vacuum; electronic units get the same idea from the TCM reading the throttle or pedal sensor.</p>
+<div class="note trap"><div class="tag">Wrong direction</div><div class="nb"><p>two common mix-ups. (1) "The pump makes pressure" is false; resistance does. (2) A bigger apply piston does not need more pressure; it makes <strong>more force</strong> at the same pressure.</p></div></div>
+<hr /></section><section id="s2"><div class="sec-head"><span class="sec-num">02</span><h2>Torque Converters (Chapter 6)</h2></div><h3><span class="n">2.1</span>What it does and where it sits</h3>
+<p>The converter is bolted to the <strong>flexplate</strong>, so it spins at <strong>engine speed</strong>. Jobs:</p>
+<ol>
+<li>Smoothly <strong>transfer</strong> engine torque to the transmission.</li>
+<li><strong>Multiply torque</strong> when the vehicle needs it (launch).</li>
+<li>Turn the <strong>pump</strong> through the converter hub.</li>
+<li>Provide a <strong>direct mechanical link</strong> to the transmission through the <strong>TCC</strong>.</li>
+</ol>
+<p><strong>Failure can cause loss of drive or loss of power.</strong></p>
+<h3><span class="n">2.2</span>The three parts</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Part</th>
+<th>Does what</th>
+<th>Connected to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Impeller</strong> (pump)</td>
+<td>Driving member. Throws fluid at the turbine. Turns whenever the housing turns</td>
+<td><strong>Engine</strong></td>
+</tr>
+<tr>
+<td><strong>Turbine</strong></td>
+<td>Driven by the fluid. Sits on the engine side of the converter. Like the disc in a manual clutch</td>
+<td>Splined to the <strong>transmission input shaft</strong></td>
+</tr>
+<tr>
+<td><strong>Stator</strong> (reactor)</td>
+<td>Reaction member. Redirects returning fluid back into the impeller</td>
+<td>Rides on a <strong>one-way clutch</strong> on the stator shaft</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>Engine → impeller. Transmission → turbine.</strong> Scan data: <strong>engine rpm = impeller speed</strong>. <strong>Turbine speed = transmission input speed sensor</strong>. (You mixed these once; use the table.)</p></div></div>
+<h3><span class="n">2.3</span>Torque multiplication and coupling</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Stall / launch</strong></th>
+<th><strong>Coupling</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Turbine speed</td>
+<td>Low or zero</td>
+<td>Close to impeller speed</td>
+</tr>
+<tr>
+<td>Fluid hits stator</td>
+<td>Front of the blades</td>
+<td><strong>Back</strong> of the blades</td>
+</tr>
+<tr>
+<td>Stator one-way clutch</td>
+<td><strong>Locks</strong> the stator</td>
+<td><strong>Overruns</strong> (freewheels)</td>
+</tr>
+<tr>
+<td>Flow pattern</td>
+<td><strong>Vortex</strong> flow (in a circle through the vanes)</td>
+<td><strong>Rotary</strong> flow (around the circumference)</td>
+</tr>
+<tr>
+<td>Torque multiplication</td>
+<td><strong>Yes</strong></td>
+<td><strong>None</strong>: turbine speed ≈ impeller speed</td>
+</tr>
+</tbody>
+</table></div>
+<p>At stall the locked stator turns the fluid so it <strong>assists the impeller</strong>, which multiplies torque. At coupling the stator must freewheel or it would block the flow. Coupling is the closest the speeds come <strong>without</strong> the TCC (a couple hundred rpm of slip).</p>
+<ul>
+<li><strong>Creep:</strong> shifting from P/N into a drive range at idle sends a little torque to the input shaft, so the vehicle moves slightly with the brakes released. <strong>Normal.</strong></li>
+<li>A <strong>non-lockup converter</strong> always has some slip; the turbine almost never matches engine speed.</li>
+<li><strong>Stall speed</strong> is a manufacturer design value. Maximum stall = engine at full throttle, brakes holding, turbine stopped.</li>
+</ul>
+<h3><span class="n">2.4</span>Stator one-way clutch failures (two opposite faults)</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th><strong>Freewheels both ways</strong> (never holds)</th>
+<th><strong>Locked both ways</strong> (never releases)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launch</td>
+<td><strong>Poor</strong> (no multiplication, flow not redirected)</td>
+<td>Normal / good</td>
+</tr>
+<tr>
+<td>Highway</td>
+<td>Normal / good</td>
+<td><strong>Poor</strong> (blocks flow at coupling)</td>
+</tr>
+<tr>
+<td>Stall rpm</td>
+<td><strong>Can't reach max stall</strong> (low)</td>
+<td>Not a useful indicator</td>
+</tr>
+<tr>
+<td>Memory aid</td>
+<td>Lose the <strong>low end</strong></td>
+<td>Lose the <strong>high end</strong> and run hot</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>Nothing inside the converter makes stall speed HIGHER than spec.</strong> A stall speed above spec means something in the <strong>transmission</strong> is slipping (clutch, band, one-way clutch).</p></div></div>
+<h3><span class="n">2.5</span>Heat</h3>
+<p><strong>Most heat in an automatic transmission comes from the torque converter</strong>, especially at <strong>stall</strong>. A stall test creates a lot of heat: limit how long and how many times (follow SI; a typical limit is about 5 seconds per test with a cool-down between). <strong>Best way to cool the fluid: apply the parking brake and let the engine idle</strong> in neutral/park.</p>
+<hr /></section><section id="s3"><div class="sec-head"><span class="sec-num">03</span><h2>Torque Converter Clutch (TCC)</h2></div><h3><span class="n">3.1</span>What it is for</h3>
+<p>The TCC applies a <strong>pressure plate</strong> against the converter cover for a <strong>mechanical link</strong> from engine to input shaft, which makes the lockup <strong>100% efficient</strong>. Slip goes from about 200 rpm to <strong>zero</strong>. The pressure plate is splined to the turbine hub. A <strong>spring-loaded damper</strong> lets the plate turn independently of the damper hub (about 45°) so lockup is cushioned and engine and road torque pulses are absorbed. Without lockup, an <strong>overdrive transmission runs hot</strong> (constant slip makes heat).</p>
+<h3><span class="n">3.2</span>TCC slip speed</h3>
+<p><strong>TCC slip speed = engine speed (impeller) − turbine speed (input speed sensor).</strong></p>
+<ul>
+<li>Open converter at cruise: some slip (coupling).</li>
+<li>TCC applied: slip → <strong>near zero</strong>.</li>
+<li>Commanded on but slip stays high → the <strong>apply side</strong> has failed, not the command.</li>
+<li>Slip near zero while stopped → TCC <strong>stuck on</strong> (will stall or nearly stall the engine at a stop).</li>
+</ul>
+<h3><span class="n">3.3</span>Release and apply flow</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>State</th>
+<th>Fluid path (GM 6-speed-style text; passages vary by unit, check SI)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Released</strong></td>
+<td>Pump sends oil into the <strong>release passage</strong> (between the <strong>stator shaft and turbine shaft</strong>). It enters on the release side of the pressure plate and pushes the plate <strong>away</strong> from the cover. Turbine can turn at any speed</td>
+</tr>
+<tr>
+<td><strong>Applied</strong></td>
+<td>TCM signals the <strong>TCC PC solenoid</strong>; it regulates line oil into the <strong>regulated apply passage</strong> (between the <strong>converter hub and stator shaft</strong>). Apply oil goes into the converter on the <strong>apply side</strong> of the plate and clamps it to the cover. Release oil exits between the <strong>turbine shaft and stator shaft</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>The TCC solenoid is <strong>PWM controlled</strong> (duty cycle sets apply pressure), which allows a smooth, ramped apply and release. Remember the sides: <em>release oil holds the plate off; apply oil clamps it.</em></p>
+<h3><span class="n">3.4</span>No TCC apply: possible causes (from the text)</h3>
+<ul>
+<li>Electrical: damaged connector, harness or solenoid</li>
+<li>Torque converter internal damage</li>
+<li>TCC control valve and spring worn, damaged or sticking</li>
+<li>Turbine shaft O-ring or seal cut or damaged</li>
+<li>TCC regulator apply valve worn, damaged or sticking</li>
+</ul>
+<hr /></section><section id="s4"><div class="sec-head"><span class="sec-num">04</span><h2>Electronic Transmission Controls (Chapter 10)</h2></div><p>Covered in Unit 1; the parts that matter most for Unit 2:</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Item</th>
+<th>What to remember</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>TCM inputs</strong></td>
+<td>Input speed (ISS/TSS) and output speed (OSS/VSS), TFT sensor, throttle/pedal position, engine temp and load, brake switch, range/pressure switch signals</td>
+</tr>
+<tr>
+<td><strong>TFT sensor</strong></td>
+<td>NTC thermistor: resistance <strong>drops</strong> as fluid warms. Used for shift and TCC quality</td>
+</tr>
+<tr>
+<td><strong>TCC PC solenoid</strong></td>
+<td>PWM, normally low; controls TCC apply and release. Can ramp apply for smoothness</td>
+</tr>
+<tr>
+<td><strong>EPC / line pressure solenoid</strong></td>
+<td>EPC: normally closed, <strong>more current = lower pressure</strong>. GM line PC: normally high, ~0.1 A max pressure, ~1.0 A min. Opposite-sounding; read the stem</td>
+</tr>
+<tr>
+<td><strong>Shift solenoids</strong></td>
+<td>On/off; TCM picks the on/off combination for the commanded gear</td>
+</tr>
+<tr>
+<td><strong>Brake switch</strong></td>
+<td>A TCM input that can release the TCC</td>
+</tr>
+<tr>
+<td><strong>Adaptive learning (TAP)</strong></td>
+<td>TCM adjusts shift timing to keep shift time in range; reset after transmission replacement or clutch-to-clutch work</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p>command is not pressure. The scan tool shows what the TCM <strong>asked</strong> for; only a gauge shows what the hydraulics <strong>did</strong>.</p></div></div>
+<hr /></section><section id="s5"><div class="sec-head"><span class="sec-num">05</span><h2>Condition Diagnosis (Chapter 15)</h2></div><h3><span class="n">5.1</span>Fluid level</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Condition</th>
+<th>Why it causes trouble</th>
+<th>Symptoms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Underfilled</strong></td>
+<td>Air enters the <strong>filter and pump intake</strong>; pressure drops and is erratic</td>
+<td>Mushy operation, may drop into neutral, slip, TCC fails to lock or unlock properly</td>
+</tr>
+<tr>
+<td><strong>Overfilled</strong></td>
+<td>Fluid level reaches the <strong>spinning gear sets</strong>, which whip it into foam (aeration)</td>
+<td>Slip, mushy operation; foamy fluid may flow out the <strong>vent or filler pipe</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>Clue from the GM training: slip or flare in <strong>cornering when cold</strong> that clears warm → <strong>low level</strong>. An overfull unit can slip from <strong>aeration</strong>. Also from that training: a <strong>poorly running engine</strong> can feel like a shift concern, and the <strong>wrong fluid</strong> can cause shift problems.</p>
+<h3><span class="n">5.2</span>Fluid condition</h3>
+<ul>
+<li><strong>"Milkshake" ATF = water (coolant) in the fluid.</strong> It can come from <strong>outside</strong> into the transmission, but the common source is a <strong>failed transmission cooler</strong> in the radiator. (Outside note: coolant contamination damages the friction material, so the repair is the cooler plus a rebuild, not just a drain and fill.)</li>
+<li><strong>Burnt smell, dark fluid, burned clutches</strong> → overheating.</li>
+</ul>
+<h3><span class="n">5.3</span>Overheating</h3>
+<p>Causes: the torque converter (stall, no TCC lockup in overdrive), restricted cooling, worn parts that slip. <strong>Symptoms to know:</strong></p>
+<ul>
+<li><strong>Fluid overflowing from the vent</strong></li>
+<li><strong>Purple (heat-stained) torque converter</strong></li>
+<li><strong>Burned clutches</strong></li>
+</ul>
+<p><strong>Cooler flow</strong> is checked by measuring <strong>flow rate</strong> through the cooler, not just seeing fluid come out.</p>
+<h3><span class="n">5.4</span>Reading the scan data</h3>
+<ul>
+<li><strong>Engine rpm</strong> = impeller speed. <strong>Input speed sensor</strong> = turbine speed.</li>
+<li><strong>TCC slip = engine rpm − turbine rpm.</strong> Near zero with TCC applied; a couple hundred at coupling.</li>
+<li>A <strong>stall test</strong> result below spec: stator freewheeling (or a weak engine, check that first). Above spec: transmission slipping.</li>
+</ul>
+<hr /></section><section id="s6"><div class="sec-head"><span class="sec-num">06</span><h2>Practice Questions (original, instructor-style)</h2></div><ol>
+<li>Which part of a torque converter is driven by the <strong>engine</strong>? (a) turbine (b) stator (c) impeller (d) TCC damper</li>
+<li>At converter <strong>coupling</strong>, the stator one-way clutch (a) locks (b) overruns (c) torque multiplication peaks (d) vortex flow is strongest</li>
+<li>A vehicle launches poorly but runs fine on the highway. The <strong>most likely</strong> cause: (a) stator locked both ways (b) stator freewheeling (c) TCC stuck on (d) overfilled</li>
+<li>A vehicle launches well but is sluggish at highway speed and overheats. The <strong>most likely</strong> cause: (a) stator locked both ways (b) stator freewheeling (c) low TFT sensor (d) cut turbine O-ring</li>
+<li>A stall test comes in <strong>well above</strong> spec. Tech A says the stator is freewheeling. Tech B says a clutch is slipping in the transmission. Who is right? (a) A only (b) B only (c) both (d) neither</li>
+<li>TCC slip speed is: (a) turbine − output shaft (b) engine rpm − turbine rpm (c) impeller − stator (d) output − vehicle speed</li>
+<li>What fluid passage releases the TCC? (a) the apply passage between hub and stator shaft (b) the release passage between stator shaft and turbine shaft (c) the manual valve (d) the cooler return</li>
+<li><strong>TV pressure</strong> relates to: (a) vehicle speed (b) fluid temperature (c) throttle position (d) stator speed</li>
+<li>Fluid looks like a milkshake. The most likely source: (a) overfill (b) failed transmission cooler in the radiator (c) worn pump (d) bad TFT sensor</li>
+<li>A 10 lb force acts on a 1 sq in piston. The pressure is: (a) 1 psi (b) 10 psi (c) 100 psi (d) 0.1 psi. What force does the same pressure make on a 4 sq in piston?</li>
+<li>Which is a <strong>symptom of overheating</strong>? (a) purple converter (b) low TCC slip (c) high stall (d) cold-only flare</li>
+<li>A vehicle slips and flares in corners <strong>when cold</strong>, fine when warm. First check: (a) TCC solenoid (b) fluid level (c) stator (d) TV cable</li>
+</ol>
+<p><strong>Answers:</strong> 1 c. 2 b. 3 b. 4 a. 5 b (nothing in the converter raises stall). 6 b. 7 b. 8 c. 9 b. 10 b, 40 lb. 11 a. 12 b.</p>
+<hr /></section><section id="s7"><div class="sec-head"><span class="sec-num">07</span><h2>One-Page Cram</h2></div><ul>
+<li><strong>Hydraulics:</strong> Pascal's law, pressure = force ÷ area, equal in all directions. <strong>Pump makes flow; resistance makes pressure.</strong> Positive displacement pumps: gear/crescent, gerotor, vane. <strong>Variable displacement = vane housing pivots.</strong></li>
+<li><strong>Valves:</strong> switch (routes), servo (moves a valve), regulator (pressure). Spool valves. <strong>Manual valve = mechanical.</strong> Every unit has a pressure regulator.</li>
+<li><strong>TV pressure</strong> = throttle position.</li>
+<li><strong>Converter:</strong> <strong>impeller = engine</strong>, <strong>turbine = input shaft</strong>, <strong>stator = reaction, on a one-way clutch.</strong> Engine rpm = impeller. Input speed sensor = turbine.</li>
+<li><strong>Stall:</strong> stator locked, vortex flow, torque multiplied. <strong>Coupling:</strong> stator freewheels, rotary flow, no multiplication.</li>
+<li><strong>Stator freewheels (never holds):</strong> poor launch, good highway, low stall. <strong>Stator locked:</strong> good launch, poor highway, heat.</li>
+<li><strong>Stall too HIGH = transmission slipping.</strong> Nothing in the converter raises stall.</li>
+<li><strong>Most heat comes from the converter</strong>, worst at stall. Cool by parking brake + idle.</li>
+<li><strong>TCC slip = engine − turbine.</strong> TCC applied → near zero. Released by release passage (stator shaft/turbine shaft); applied by apply passage (hub/stator shaft). <strong>PWM</strong> solenoid. No lockup in overdrive → overheats.</li>
+<li><strong>Fluid:</strong> underfilled → air in the pump, mushy, neutral, slip, TCC problems. Overfilled → foam, slip, fluid out the vent. Milkshake = coolant (failed cooler). Overheating = overflowing vent, purple converter, burned clutches.</li>
+<li><strong>Command is not pressure.</strong> Scan tool = request; gauge = result.</li>
+</ul>
+<p><em>Source note: class notes (hydralics, torque-converters, ch15) and the GM technician transmission guide excerpt pasted in <code>notes/torque-converters.txt</code>. Items marked "outside" or "typical" are general knowledge, not from the notes. Not ASE content.</em></p></section>
+<footer><span>Unit 2 Study Guide &middot; v1.0 &middot; 2026-10-12</span><span>Private study material.</span></footer>
+</div></body></html>
