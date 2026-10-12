@@ -83,7 +83,7 @@ An automatic uses hydraulically applied clutches and bands to connect or hold ge
 | Reduction | Sun is the input |
 | Overdrive | Sun is the output |
 
-Example ratios for a sun of 30 teeth and a ring of 70 (carrier output unless stated): ring held, sun driven = (S+R)/S = **3.33:1**; sun held, ring driven = (S+R)/R = **1.43:1**; carrier held, sun driven = R/S = **2.33:1 reverse**. Swapping input and output gives the reciprocal (overdrive). More planet pinions add strength, not a different ratio.
+Example ratios for a sun of 30 teeth and a ring of 70 (carrier output unless stated): ring held, sun driven = (S+R)/S = **3.33:1**; sun held, ring driven = (S+R)/R = **1.43:1**; carrier held, sun driven = R/S = **2.33:1 reverse**. Swapping input and output gives the reciprocal (overdrive); all eight cases are in **Section 1.4**. More planet pinions add strength, not a different ratio.
 
 > **Memorize:** two gear sets in series: **multiply** the ratios, never add. A 2:1 followed by a 3:1 is 6:1. A large product is not a sign of a mistake.
 
@@ -139,7 +139,32 @@ Most modern transmissions are synchronous. **Garage shifts** (Park/Neutral to Dr
 - 4L60-E: the low roller clutch holds **only 1st in Drive**, so it cannot cause slip in *all* forward gears; slip in every forward range with reverse working points to the forward (input) clutch, its sprag or its circuit. A backward forward sprag: no drive in D4 and D3 takeoff, yet manual 2 and 1 still move via the overrun clutch (**LIKELY**; forum evidence). The stock overrun clutch is applied in D3 only in 3rd (**LIKELY**); applying it in D3 1st/2nd is a performance modification.
 - "No reverse **and** no manual-1 braking" = low/reverse element. "No reverse only" = a reverse-only element if the unit has one (4L60-E reverse input clutch).
 
-### 1.4 What the chart does not decide
+<div style="break-before:page"></div>
+
+### 1.4 Simple planetary: every configuration (your table, corrected)
+
+Built from your handwritten reference (`note/more-planetary-definitions.jpg`). Your rows were right except direct drive, which is not "sun held"; two members are locked together and nothing is held. Two valid configurations were also missing. Ratio = input turns : output turns. Example teeth: sun 30, ring 70 (so ring/sun = 2.33).
+
+| # | Input | Held | Output | Carrier is | Result | Ratio (30/70) | Torque | Direction |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Sun | Ring | Carrier | output | **Reduction (lowest gear)** | 3.33:1 | Highest | Same as input |
+| 2 | Ring | Sun | Carrier | output | **Reduction (middle gear)** | 1.43:1 | Moderate | Same as input |
+| 3 | Any two members | Nothing | Whole set | any | **Direct drive** | 1:1 | Same as input | Same as input |
+| 4 | Carrier | Sun | Ring | input | **Overdrive** | 0.70:1 | Lower | Same as input |
+| 5 | Carrier | Ring | Sun | input | **Overdrive (steepest)** | 0.30:1 | Lowest | Same as input |
+| 6 | Sun | Carrier | Ring | held | **Reverse, reduction** | 2.33:1 | High | **Opposite** |
+| 7 | Ring | Carrier | Sun | held | **Reverse, overdrive** | 0.43:1 | Lower | **Opposite** |
+| 8 | Nothing held, or a member disconnected | | | | **Neutral** | none | none | none |
+
+**How to get any row without memorizing it.** (1) Locate the carrier: output = reduction, input = overdrive, held = reverse. (2) The sun is the smallest gear, so the hookups involving the sun and the ring with the other member held give the most extreme ratios (rows 1 and 5). (3) Swap input and output and the ratio flips to its reciprocal: row 1 and row 5 (3.33 and 0.30), row 2 and row 4 (1.43 and 0.70), row 6 and row 7 (2.33 and 0.43). Torque goes up as speed goes down.
+
+**Formulas** (S = sun teeth, R = ring teeth): row 1 = (S+R)/S; row 2 = (S+R)/R; row 4 = R/(S+R); row 5 = S/(S+R); rows 6 and 7 = R/S and S/R. Check: 100/30 = 3.33; 100/70 = 1.43; 70/100 = 0.70; 30/100 = 0.30; 70/30 = 2.33; 30/70 = 0.43.
+
+> **ASE trap:** a disconnected member means no torque path, so neutral. Question 25 on your quiz: "a member being disconnected" is the one action that is *not* needed for torque flow. Holding is not the same as disconnecting.
+
+Which rows a given unit uses, and in which gear, comes from its apply chart, not from this table.
+
+### 1.5 What the chart does not decide
 
 The chart narrows to one or two elements. Before blaming a friction element, rule out fluid level, range sensor and linkage, commanded gear on the scan tool, and **failsafe** (which can mimic a multi-element failure). Confirm with line pressure by range (a low reading in one range with the others fine = that circuit leaking) and, on disassembly, an air test of each apply piston.
 

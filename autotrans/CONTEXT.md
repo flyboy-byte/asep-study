@@ -1,7 +1,7 @@
 # A2 study context
 
-Status: ASE A2 package v1.2 built 2026-10-09 (full-page verification, rounds 1 and 2, applied) (`study/ase/ase_a2_study_guide.pdf`, 30 pp, plus `ase_a2_cram_sheet.pdf`, 2 pp) for the ASE A2 exam on 2026-10-15. Unit 1 class guide done earlier (`study/unit1_study_guide.pdf`). Class has one week left; late notes will be merged as updates.
-Created: 2026-09-20. Last updated: 2026-10-09.
+Status: ASE A2 package v1.3 built 2026-10-12 (v1.2 verification applied; new Section 1.4 planetary table) (`study/ase/ase_a2_study_guide.pdf`, 30 pp, plus `ase_a2_cram_sheet.pdf`, 2 pp) for the ASE A2 exam on 2026-10-15. Unit 1 class guide done earlier (`study/unit1_study_guide.pdf`). Class has one week left; late notes will be merged as updates.
+Created: 2026-09-20. Last updated: 2026-10-12.
 
 ## Intent
 
@@ -57,3 +57,5 @@ For the 2026-09-22 intake, the learner specifically requested that the PNGs be c
 - 2026-10-09 (verification round 2, v1.2): Logan asked to verify the remaining unverified claims while staying anchored to his notes and the official ASE guide. Checked the remaining in-scope items (CAN, voltage drop, Hall and solenoid testing, DTC definitions, TBV, pan debris, programming voltage) with a few full-page fetches; results in `research_notes/guide verification 2026-10-09/verify_round2.md`. Unverifiable items outside the task list were removed or labeled INFERRED, not expanded.
 - Next action: before 2026-10-15, merge any new class notes into the affected guide sections only (esp. torque converter notes into Section 2.6) and re-render; confirm the jpg direct-drive row with Logan. For any further ASE work: read `research_notes/A2 open gap research/conflict_resolution.md` first (cross-file conflict check), then curate the research notes into a weighted ASE A2 package when the learner asks for one — don't build it unprompted.
 
+
+- 2026-10-12: Logan confirmed the jpg's direct-drive row means any two members driven ("Sun held" was his error). Added guide Section 1.4, a corrected 8-case simple-planetary table (derived from theory, with ratios for 30/70 teeth, formulas and direction), built from the jpg; old 1.4 is now 1.5. Guide v1.3, 31 pp. Added the two cases his table lacked (carrier input with ring held; carrier held with ring input). Cram sheet unchanged apart from the version stamp. torque-converters.txt still untracked and unmapped. Next: merge new class notes into affected sections only.

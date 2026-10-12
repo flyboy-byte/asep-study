@@ -54,9 +54,9 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 @page{size:Letter;margin:.55in}
 @media print{.toc{break-after:auto}}
 </style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.2</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.3</div>
 <h1>Automatic Transmission / Transaxle</h1><p class="sub">Weighted to the official 2026 A2 task list. Class notes, the Unit 1 quiz misses and the research pass, in one guide.</p>
-<div class="meta-row"><span><b>Prepared</b> October 9, 2026</span><span><b>Exam</b> October 15, 2026</span>
+<div class="meta-row"><span><b>Prepared</b> October 12, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
 <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#s0"><span class="tn">00</span>How to use this guide</a></li><li><a href="#s1"><span class="tn">01</span>Power Flow and Apply-Chart Reasoning</a></li><li><a href="#s2"><span class="tn">02</span>Mechanical and Hydraulic Diagnosis</a></li><li><a href="#s3"><span class="tn">03</span>Electronic and control-system diagnosis</a></li><li><a href="#s4"><span class="tn">04</span>Area B — In-Vehicle Maintenance and Repair (12 questions, 27%)</a></li><li><a href="#s5"><span class="tn">05</span>Area C — Removal, Inspection and Installation (7 questions, 15%)</a></li><li><a href="#s6"><span class="tn">06</span>Other transmission types: identify and diagnose at the recognition level</a></li><li><a href="#s7"><span class="tn">07</span>Exam strategy and the hardest topics</a></li></ol></nav><section id="s0"><div class="sec-head"><span class="sec-num">00</span><h2>How to use this guide</h2></div><p>This is the <strong>professional ASE A2 (Automatic Transmission/Transaxle)</strong> guide. It follows the official 2026 task list and weights, uses everything in the autotrans folder (your class notes, the GM training slides, the Unit 1 quiz misses, and the research pass), and treats class examples as illustrations of manufacturer-independent mechanisms. ASE questions are generic unless the stem names an application.</p>
 <p><strong>Source boundary.</strong> Governing blueprint: ASE Automobile Study Guide 2026, A2 pages 10–15. Your notes: <code>notes/</code> and <code>note/</code>. Everything else comes from the 2026-09-30 research pass, which was <strong>search-snippet level</strong> (full pages were blocked), then cross-checked in <code>conflict_resolution.md</code>. Where the guide gives a number it is an example or is SI-dependent; ASE gives the number in the stem. Torque-converter notes were still in progress when this was built.</p>
@@ -233,7 +233,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 </tbody>
 </table></div>
-<p>Example ratios for a sun of 30 teeth and a ring of 70 (carrier output unless stated): ring held, sun driven = (S+R)/S = <strong>3.33:1</strong>; sun held, ring driven = (S+R)/R = <strong>1.43:1</strong>; carrier held, sun driven = R/S = <strong>2.33:1 reverse</strong>. Swapping input and output gives the reciprocal (overdrive). More planet pinions add strength, not a different ratio.</p>
+<p>Example ratios for a sun of 30 teeth and a ring of 70 (carrier output unless stated): ring held, sun driven = (S+R)/S = <strong>3.33:1</strong>; sun held, ring driven = (S+R)/R = <strong>1.43:1</strong>; carrier held, sun driven = R/S = <strong>2.33:1 reverse</strong>. Swapping input and output gives the reciprocal (overdrive); all eight cases are in <strong>Section 1.4</strong>. More planet pinions add strength, not a different ratio.</p>
 <div class="note "><div class="tag">Memorize</div><div class="nb"><p>two gear sets in series: <strong>multiply</strong> the ratios, never add. A 2:1 followed by a 3:1 is 6:1. A large product is not a sign of a mistake.</p></div></div>
 <p><strong>Compound sets (recognition phrases):</strong></p>
 <div class="tbl-wrap"><table>
@@ -310,7 +310,120 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <p><strong>Examples to recognize, not memorize (design-dependent):</strong>
 - 4L60-E: the low roller clutch holds <strong>only 1st in Drive</strong>, so it cannot cause slip in <em>all</em> forward gears; slip in every forward range with reverse working points to the forward (input) clutch, its sprag or its circuit. A backward forward sprag: no drive in D4 and D3 takeoff, yet manual 2 and 1 still move via the overrun clutch (<strong>LIKELY</strong>; forum evidence). The stock overrun clutch is applied in D3 only in 3rd (<strong>LIKELY</strong>); applying it in D3 1st/2nd is a performance modification.
 - "No reverse <strong>and</strong> no manual-1 braking" = low/reverse element. "No reverse only" = a reverse-only element if the unit has one (4L60-E reverse input clutch).</p>
-<h3><span class="n">1.4</span>What the chart does not decide</h3>
+<div style="break-before:page"></div>
+
+<h3><span class="n">1.4</span>Simple planetary: every configuration (your table, corrected)</h3>
+<p>Built from your handwritten reference (<code>note/more-planetary-definitions.jpg</code>). Your rows were right except direct drive, which is not "sun held"; two members are locked together and nothing is held. Two valid configurations were also missing. Ratio = input turns : output turns. Example teeth: sun 30, ring 70 (so ring/sun = 2.33).</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>#</th>
+<th>Input</th>
+<th>Held</th>
+<th>Output</th>
+<th>Carrier is</th>
+<th>Result</th>
+<th>Ratio (30/70)</th>
+<th>Torque</th>
+<th>Direction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Sun</td>
+<td>Ring</td>
+<td>Carrier</td>
+<td>output</td>
+<td><strong>Reduction (lowest gear)</strong></td>
+<td>3.33:1</td>
+<td>Highest</td>
+<td>Same as input</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Ring</td>
+<td>Sun</td>
+<td>Carrier</td>
+<td>output</td>
+<td><strong>Reduction (middle gear)</strong></td>
+<td>1.43:1</td>
+<td>Moderate</td>
+<td>Same as input</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Any two members</td>
+<td>Nothing</td>
+<td>Whole set</td>
+<td>any</td>
+<td><strong>Direct drive</strong></td>
+<td>1:1</td>
+<td>Same as input</td>
+<td>Same as input</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Carrier</td>
+<td>Sun</td>
+<td>Ring</td>
+<td>input</td>
+<td><strong>Overdrive</strong></td>
+<td>0.70:1</td>
+<td>Lower</td>
+<td>Same as input</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Carrier</td>
+<td>Ring</td>
+<td>Sun</td>
+<td>input</td>
+<td><strong>Overdrive (steepest)</strong></td>
+<td>0.30:1</td>
+<td>Lowest</td>
+<td>Same as input</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Sun</td>
+<td>Carrier</td>
+<td>Ring</td>
+<td>held</td>
+<td><strong>Reverse, reduction</strong></td>
+<td>2.33:1</td>
+<td>High</td>
+<td><strong>Opposite</strong></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Ring</td>
+<td>Carrier</td>
+<td>Sun</td>
+<td>held</td>
+<td><strong>Reverse, overdrive</strong></td>
+<td>0.43:1</td>
+<td>Lower</td>
+<td><strong>Opposite</strong></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Nothing held, or a member disconnected</td>
+<td></td>
+<td></td>
+<td></td>
+<td><strong>Neutral</strong></td>
+<td>none</td>
+<td>none</td>
+<td>none</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>How to get any row without memorizing it.</strong> (1) Locate the carrier: output = reduction, input = overdrive, held = reverse. (2) The sun is the smallest gear, so the hookups involving the sun and the ring with the other member held give the most extreme ratios (rows 1 and 5). (3) Swap input and output and the ratio flips to its reciprocal: row 1 and row 5 (3.33 and 0.30), row 2 and row 4 (1.43 and 0.70), row 6 and row 7 (2.33 and 0.43). Torque goes up as speed goes down.</p>
+<p><strong>Formulas</strong> (S = sun teeth, R = ring teeth): row 1 = (S+R)/S; row 2 = (S+R)/R; row 4 = R/(S+R); row 5 = S/(S+R); rows 6 and 7 = R/S and S/R. Check: 100/30 = 3.33; 100/70 = 1.43; 70/100 = 0.70; 30/100 = 0.30; 70/30 = 2.33; 30/70 = 0.43.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>a disconnected member means no torque path, so neutral. Question 25 on your quiz: "a member being disconnected" is the one action that is <em>not</em> needed for torque flow. Holding is not the same as disconnecting.</p></div></div>
+<p>Which rows a given unit uses, and in which gear, comes from its apply chart, not from this table.</p>
+<h3><span class="n">1.5</span>What the chart does not decide</h3>
 <p>The chart narrows to one or two elements. Before blaming a friction element, rule out fluid level, range sensor and linkage, commanded gear on the scan tool, and <strong>failsafe</strong> (which can mimic a multi-element failure). Confirm with line pressure by range (a low reading in one range with the others fine = that circuit leaking) and, on disassembly, an air test of each apply piston.</p>
 <div class="note rule"><div class="tag">Rule</div><div class="nb"><p>Loss of hold = failed/released; extra hold = seized/dragging. Find the range where the extra hold fights an element that should be on.</p></div></div></section><section id="s2"><div class="sec-head"><span class="sec-num">02</span><h2>Mechanical and Hydraulic Diagnosis</h2></div><p><strong>Areas A.2, A.4, A.8–A.15, A.22.</strong> This is the largest block on the exam: Area A is 58% of the test, and these tasks are the symptom-to-cause reasoning ASE asks most often. Most items give a symptom and ask for the most likely cause, the first check, or the check that separates two causes.</p>
 <p><strong>Classify the symptom by what it follows.</strong> This one move sorts most questions before you look at the choices.</p>
@@ -1518,5 +1631,5 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>EPC polarity depends on design.</strong> The classic EPC: more current, less pressure; unplugged = maximum pressure. Read the stem.</li>
 <li><strong>Milky or pink ATF</strong> means coolant contamination from the radiator cooler: replace the radiator or cooler, overhaul, and flush. Flush-and-refill alone is the distractor.</li>
 </ol></section>
-<footer><span>ASE A2 Study Guide &middot; v1.2 &middot; 2026-10-09</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>ASE A2 Study Guide &middot; v1.3 &middot; 2026-10-12</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>
