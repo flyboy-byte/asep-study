@@ -1,6 +1,6 @@
 # A2 study context
 
-Status: ASE A2 package v1.3 built 2026-10-12 (v1.2 verification applied; new Section 1.4 planetary table) (`study/ase/ase_a2_study_guide.pdf`, 30 pp, plus `ase_a2_cram_sheet.pdf`, 2 pp) for the ASE A2 exam on 2026-10-15. Unit 1 class guide done earlier (`study/unit1_study_guide.pdf`). Class has one week left; late notes will be merged as updates.
+Status: ASE A2 package v1.4 built 2026-10-12 (v1.2 verification applied; Section 1.4 planetary table; Section 0 strategy-based diagnosis flowchart) (`study/ase/ase_a2_study_guide.pdf`, 30 pp, plus `ase_a2_cram_sheet.pdf`, 2 pp) for the ASE A2 exam on 2026-10-15. Unit 1 class guide done earlier (`study/unit1_study_guide.pdf`). Class has one week left; late notes will be merged as updates.
 Created: 2026-09-20. Last updated: 2026-10-12.
 
 ## Intent
@@ -59,3 +59,5 @@ For the 2026-09-22 intake, the learner specifically requested that the PNGs be c
 
 
 - 2026-10-12: Logan confirmed the jpg's direct-drive row means any two members driven ("Sun held" was his error). Added guide Section 1.4, a corrected 8-case simple-planetary table (derived from theory, with ratios for 30/70 teeth, formulas and direction), built from the jpg; old 1.4 is now 1.5. Guide v1.3, 31 pp. Added the two cases his table lacked (carrier input with ring held; carrier held with ring input). Cram sheet unchanged apart from the version stamp. torque-converters.txt still untracked and unmapped. Next: merge new class notes into affected sections only.
+
+- 2026-10-12 (later): Logan added a PDF: GM SI "Strategy Based Diagnosis" (Silverado manual, Doc ID 1957622; page 1 is an unrelated Gmail screenshot). Moved from `study/` to `note/strategybaseddiagnostics.pdf`. `notes/vctnotes.txt` gained 4 lines ("part 2": know strategy-based diagnosis as a flowchart, mostly over symptom-based). Added guide Section 0 "Strategy-based diagnosis" (8-step table, branches, ASE trap). Guide v1.4, 32 pp. Source quirk: GM's text routes concern-found at steps 3 and 4 to "step 5"; kept as printed. vctnotes.txt change committed with this.

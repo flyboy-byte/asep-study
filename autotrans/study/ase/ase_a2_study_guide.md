@@ -42,6 +42,25 @@ Words matter:
 
 Textbook and service-manual reasoning beats shop habit. If your shop experience suggests a different answer than the by-the-book one, the exam wants the by-the-book one.
 
+### Strategy-based diagnosis (the flowchart)
+
+Your class notes say to know this mostly as a **flowchart**, and that strategy-based diagnosis is preferred over symptom-based. Source: GM Service Information, "Strategy Based Diagnosis" (Silverado 1500 manual, Document ID 1957622, printed 2026-10-12, in `note/`). It is GM's process; the order is the part to remember. Not every step is required each time, but the **first step is always understand and verify the concern** and the **last is always repair and verify the fix**.
+
+| Step | Do this | Branch |
+|---|---|---|
+| 1 | Understand and verify the customer's concern (when, where, how long, how often, aftermarket accessories) | |
+| 2 | Is it operating as designed? Compare with an identical vehicle | Yes: explain the operation to the customer (or Field Product Report if still dissatisfied). Stop |
+| 3 | Preliminary checks: visual inspection, service history, noises and odors, gather DTCs | Concern found: go to 5 (as GM prints it) |
+| 4 | Diagnostic System Check: picks the diagnostic category | Concern found: go to 5 (as GM prints it) |
+| 5 | Related bulletins, recalls and preliminary information. **Before replacing a programmable module, reprogram with the latest software and retest** | Concern found: go to 7 |
+| 6 | Follow the path: **6.1** current DTC: DTC diagnostic. **6.2** symptom, no DTC: symptom diagnostic. **6.3** no published diagnostic: analyze, plan from schematics and component locations, or call technical assistance. **6.4** intermittent or history DTC: connectors, wiring, EMI, data capture | |
+| 7 | Isolate the root cause, repair, verify the fix (road test if needed) | |
+| 8 | Re-examine the concern | Not repaired: back to step 1. Repaired: done |
+
+> **ASE trap:** a *current DTC* means follow that DTC's diagnostic; *symptom with no DTC* means symptom diagnostics; a customer concern that is **normal operation** ends at step 2 with an explanation, not a part. Verify the concern before anything else, and do not replace a control module before checking for a software update.
+
+If the scan tool cannot talk to a module, the manual's suggestion is to remove and restore its power (pull its fuse or unplug its connector), then reprogram if software is available. This is consistent with Section 3.2 and 3.8.
+
 ### Confirmed weak spots, from your graded Unit 1 quiz
 
 These are logged in one place because you missed them. Each is also covered in its normal section.

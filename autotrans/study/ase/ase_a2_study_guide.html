@@ -54,7 +54,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 @page{size:Letter;margin:.55in}
 @media print{.toc{break-after:auto}}
 </style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.3</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.4</div>
 <h1>Automatic Transmission / Transaxle</h1><p class="sub">Weighted to the official 2026 A2 task list. Class notes, the Unit 1 quiz misses and the research pass, in one guide.</p>
 <div class="meta-row"><span><b>Prepared</b> October 12, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
@@ -122,6 +122,61 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>Technician A / Technician B:</strong> judge each statement alone, then compare. "Both" and "neither" are valid answers.</li>
 </ul>
 <p>Textbook and service-manual reasoning beats shop habit. If your shop experience suggests a different answer than the by-the-book one, the exam wants the by-the-book one.</p>
+<h3>Strategy-based diagnosis (the flowchart)</h3>
+<p>Your class notes say to know this mostly as a <strong>flowchart</strong>, and that strategy-based diagnosis is preferred over symptom-based. Source: GM Service Information, "Strategy Based Diagnosis" (Silverado 1500 manual, Document ID 1957622, printed 2026-10-12, in <code>note/</code>). It is GM's process; the order is the part to remember. Not every step is required each time, but the <strong>first step is always understand and verify the concern</strong> and the <strong>last is always repair and verify the fix</strong>.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Do this</th>
+<th>Branch</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Understand and verify the customer's concern (when, where, how long, how often, aftermarket accessories)</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td>Is it operating as designed? Compare with an identical vehicle</td>
+<td>Yes: explain the operation to the customer (or Field Product Report if still dissatisfied). Stop</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Preliminary checks: visual inspection, service history, noises and odors, gather DTCs</td>
+<td>Concern found: go to 5 (as GM prints it)</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Diagnostic System Check: picks the diagnostic category</td>
+<td>Concern found: go to 5 (as GM prints it)</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Related bulletins, recalls and preliminary information. <strong>Before replacing a programmable module, reprogram with the latest software and retest</strong></td>
+<td>Concern found: go to 7</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Follow the path: <strong>6.1</strong> current DTC: DTC diagnostic. <strong>6.2</strong> symptom, no DTC: symptom diagnostic. <strong>6.3</strong> no published diagnostic: analyze, plan from schematics and component locations, or call technical assistance. <strong>6.4</strong> intermittent or history DTC: connectors, wiring, EMI, data capture</td>
+<td></td>
+</tr>
+<tr>
+<td>7</td>
+<td>Isolate the root cause, repair, verify the fix (road test if needed)</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td>Re-examine the concern</td>
+<td>Not repaired: back to step 1. Repaired: done</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>a <em>current DTC</em> means follow that DTC's diagnostic; <em>symptom with no DTC</em> means symptom diagnostics; a customer concern that is <strong>normal operation</strong> ends at step 2 with an explanation, not a part. Verify the concern before anything else, and do not replace a control module before checking for a software update.</p></div></div>
+<p>If the scan tool cannot talk to a module, the manual's suggestion is to remove and restore its power (pull its fuse or unplug its connector), then reprogram if software is available. This is consistent with Section 3.2 and 3.8.</p>
 <h3>Confirmed weak spots, from your graded Unit 1 quiz</h3>
 <p>These are logged in one place because you missed them. Each is also covered in its normal section.</p>
 <div class="tbl-wrap"><table>
@@ -1631,5 +1686,5 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>EPC polarity depends on design.</strong> The classic EPC: more current, less pressure; unplugged = maximum pressure. Read the stem.</li>
 <li><strong>Milky or pink ATF</strong> means coolant contamination from the radiator cooler: replace the radiator or cooler, overhaul, and flush. Flush-and-refill alone is the distractor.</li>
 </ol></section>
-<footer><span>ASE A2 Study Guide &middot; v1.3 &middot; 2026-10-12</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>ASE A2 Study Guide &middot; v1.4 &middot; 2026-10-12</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>
