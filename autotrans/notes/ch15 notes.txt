@@ -29,3 +29,40 @@ coupling speed is what a couple hundred rpm loss but the closest the speed diffe
 
 tcc solenoid is controlled by pwm and controlled tcc lockup and application.
 its pretty simple but just remember how it applies how it fills the tc from the back or the front etc
+
+on to more ch15 notes.
+
+overfilled vs underfilled symptoms.
+and underfill  can allow air to enter the filter and pump intake which can cause mushy operation, it may go into neutral, may slip, or the tcc may fail to lock and unlock properly.
+overfilling can cause slippage and mushy operation bc of th eair in the foamy fluid. an overfull can bring the fluid to the point where the fluid contacts  the spinning gear sets. this in turn causes the foaming of the fluid and fluid may flow out the vent or filler pipe. our textbook says it could spill out the vent or filler pipe onto the exhaust and smoke ig, but i doubt thats that useful.
+
+if your dealing with a cracked flywheel or cracked transmission case
+your dealing with an alignment problem.
+
+on the above topic,
+the alignment dowels usually come on the engine, so if im replacing the transmission and the old one comes out with the dowel pins i could install the new one and not put the dowel back in and intruduce a engine to trans alignment problem
+
+hydralic system pressure tests,
+Hydraulic System Pressure Tests
+The operation of an automatic transmission is dependent on hydraulic pressure. A technician uses a pressure gauge to check the condition of the hydraulic system. Some hydraulic system problems can be fixed with the transmission still in the vehicle.
+
+a mainline pressure test taps into the pump assy which outputs mainlines pressure.
+this line pressure goes out to the control valves and solenoids downstream.
+if i tap into mainline pressure line, i can tell if i have a leak downstream, or i can tell if i have a leak downstream when i shift into a certain gear range,
+when the valves are closed, and the pump works, my main line pressure should be ok and within spec, if a valve opens and passed pressure down that passage, if all that downstream of the valve is leakfree, the mainline pressure is still in spec.
+but if there is a leak downstream and u open one of these valves, ie u shift into a certain gear range ie apply a certain hylalic circut or piston, then the mainline pressure test fails due to pascals law.
+if all the valves are closed, and the test fails, then its either upstream of the control system, or the pump is bad.
+
+Pressure Gauges
+A common analog hydraulic pressure gauge is normally dampened, so minor pressure fluctuations are lost. The electrical transducer of an electronic gauge can be connected to a scope, which can be used to watch small pressure changes and find an important clue to the cause of a problem. When using a hydraulic pressure gauge, it is recommended that the range of the gauge be 0 to 300 PSI
+ to prevent gauge damage while testing reverse gear pressure.
+
+on these transmissions, we can control duty cycle of the pumps and watch pressure and how it reacts.
+
+Interpreting Pressure Readings
+A technician compares the pressure readings to specifications to determine if the system is operating correctly. The most likely causes for a pressure problem in park or neutral are the pump, intake filter, and pressure regulator because the fluid flow path is usually through the filter, valve body, transmission case, pump assembly, and back through the transmission case to the valve body. These are the circuits that are supplying fluid or are under pressure in that gear range. In park and neutral, the throttle valve, torque converter, and cooler are open to flow but the flow to the rest of the transmission is shut off at the manual valve. High or low pressures in neutral are usually caused by a problem in the throttle valve, torque converter, and cooler circuits. If no specifications are available, the approximate pressures in most transmissions will be as follows:
+
+Neutral, park, and drive at idle: 50 to 60 PSI (350 to 400 kPa)
+M1 and M2: 50 to 60 PSI; in some transmissions: 100 to 125 PSI
+Reverse: 150 to 250 PSI
+these are textbook example numbers

@@ -168,11 +168,45 @@ Causes: the torque converter (stall, no TCC lockup in overdrive), restricted coo
 
 **Cooler flow** is checked by measuring **flow rate** through the cooler, not just seeing fluid come out.
 
+
 ### 5.4 Reading the scan data
 
 - **Engine rpm** = impeller speed. **Input speed sensor** = turbine speed.
 - **TCC slip = engine rpm − turbine rpm.** Near zero with TCC applied; a couple hundred at coupling.
 - A **stall test** result below spec: stator freewheeling (or a weak engine, check that first). Above spec: transmission slipping.
+
+---
+
+### 5.5 Hydraulic pressure tests
+A **pressure gauge** checks the health of the hydraulic system, and some problems can be fixed with the transmission still in the vehicle.
+
+**Mainline (line) pressure test.** The test taps the pump's output, **mainline pressure**, which feeds the control valves and solenoids downstream. Think of it as watching what the circuits do to the pump's pressure:
+
+- **All valves closed (park/neutral) and pressure is in spec:** the pump, filter and regulator are doing their job.
+- **Shift into a range:** a valve opens and sends fluid to a clutch or servo. If everything downstream of that valve is leak-free, mainline pressure **stays in spec**.
+- **A leak downstream of that valve:** opening it makes mainline pressure **drop out of spec** (Pascal's law: the system is one connected circuit, so a leak anywhere in the circuit lowers the pressure everywhere it's connected). The range where it fails tells you **which circuit** leaks.
+- **Fails with all valves closed:** the problem is **upstream** of the control system, so the pump, intake filter or pressure regulator.
+
+| Gauge | Notes |
+|---|---|
+| **Analog** | Normally **dampened**, so minor pressure fluctuations are lost |
+| **Electronic (transducer)** | Connects to a **scope** so you can watch small pressure changes, an important clue to some problems |
+| **Range** | Use **0 to 300 psi** so reverse pressure doesn't damage the gauge |
+
+On transmissions where the TCM controls pump or pressure-solenoid duty cycle, you can **command the duty cycle and watch how pressure reacts**.
+
+**Interpreting readings.** Compare to specifications. In **park and neutral**, the likely causes of a pressure problem are the **pump, intake filter and pressure regulator**, because the fluid path is through the filter, valve body, case, pump and back, and the manual valve shuts off flow to the rest of the transmission. High or low pressure in **neutral** is usually the **throttle valve, torque converter or cooler** circuits (those stay open to flow in P/N).
+
+Textbook example pressures, **only if no specifications are available** (from your notes; use SI first):
+
+| Range | Approximate pressure |
+|---|---|
+| Neutral, park, drive at idle | 50-60 psi (350-400 kPa) |
+| M1 and M2 | 50-60 psi (some transmissions 100-125 psi) |
+| Reverse | **150-250 psi** |
+
+### 5.6 Cracked flywheel or case: alignment
+A cracked flywheel (flexplate) or cracked transmission case points to an **engine-to-transmission alignment problem**. The **alignment dowels** usually stay in the **engine block**. If the old transmission comes out with the dowel pins in it, they must go back into the engine side. **Install the new transmission without them and you create an alignment problem.**
 
 ---
 
@@ -196,7 +230,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 
 **Noise:** does it follow engine rpm or road speed? A whine in P/N that rises with rpm is usually the **pump** (or a clogged filter, or air at the pickup). Vibration in P/N at a fixed rpm points to the flexplate or converter.
 
-### 6.2 Pressure testing (Ch 4 and 15)
+### 6.2 Pressure testing: reading patterns (Ch 4 and 15)
 **Order:** fluid level and condition → **line pressure** → stall test only if SI publishes one. **If line pressure is low, do not stall test.** Needs correct fluid and level, operating temperature, brakes applied, wheels chocked.
 
 | Pressure reading | Most likely area |
@@ -221,6 +255,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 **Sticking vs. wear:** debris and varnish cause **intermittent, cold-worse** wrong-gear, no-shift or TCC problems. Bore wear is **progressive and worse hot** and can set several pressure-control codes at once.
 
 ### 6.4 Converter and TCC diagnosis (Ch 6)
+
 - **Stall test:** high stall = transmission slipping; low stall = weak engine **or** freewheeling stator. Rule out the engine first. A TCC stuck on can stall the engine in gear, so don't stall-test that complaint.
 - **TCC does not apply** when an input prevents it: brake switch reading "applied," a throttle dead spot, a cold-reading temperature sensor, no speed signal. Check inputs and TCC enable data before condemning the solenoid or converter.
 - **Commanded on, slip stays high** = the **apply side** failed. Many "bad converter" cases are leaks **before** the piston: worn TCC regulator or apply valve bores, a worn stator-support bushing, or a damaged turbine-shaft seal. Low pressure while commanded = supply or leak; normal pressure and high slip = the lining.
@@ -229,6 +264,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 - **Bench check:** the stator should turn one way and lock the other. Free both ways or locked both ways: replace the converter.
 
 ### 6.5 Cooling and overheating (Ch 15)
+
 - Overheating with **normal shifting** points to a restricted cooler or lines, or a **thermal bypass valve (TBV)** stuck in bypass. The TBV works like a thermostat: stuck in bypass starves the cooler and overheats the transmission.
 - **Milky ATF:** replace the radiator cooler **and** the damaged parts (seals, frictions, converter), clean and flush. "Drain and refill" or "flush only" is the wrong answer.
 - After a failure, flush the cooler and lines and **flow-test warm using the transmission's own pump**.
@@ -248,5 +284,7 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 - **TCC slip = engine − turbine.** TCC applied → near zero. Released by release passage (stator shaft/turbine shaft); applied by apply passage (hub/stator shaft). **PWM** solenoid. No lockup in overdrive → overheats.
 - **Fluid:** underfilled → air in the pump, mushy, neutral, slip, TCC problems. Overfilled → foam, slip, fluid out the vent. Milkshake = coolant (failed cooler). Overheating = overflowing vent, purple converter, burned clutches.
 - **Command is not pressure.** Scan tool = request; gauge = result.
+- **Mainline pressure test:** taps pump output. Valves closed and fails = upstream (pump, filter, regulator). Fine until a range is selected, then drops = leak in **that** circuit. Use a **0-300 psi** gauge. Textbook examples: P/N/D idle 50-60, reverse 150-250.
+- **Cracked flexplate/case = alignment.** Dowel pins stay in the engine; reinstall them with a new transmission.
 
 *Source note: class notes (hydralics, torque-converters, ch15) and the GM technician transmission guide excerpt pasted in `notes/torque-converters.txt`. Section 6 comes from the ASE A2 guide and research pass (partly verified; see its CONTEXT/verification notes). Items marked "outside" or "typical" are general knowledge, not from the notes. Not ASE content.*
