@@ -176,7 +176,66 @@ Causes: the torque converter (stall, no TCC lockup in overdrive), restricted coo
 
 ---
 
-## 6. One-Page Cram
+## 6. Expanded Theory (from the ASE research)
+
+Your notes set the topics; this section adds depth under them, mostly for Chapters 15, 6 and 4. It comes from the ASE A2 guide and its research pass, so it goes further than your class notes. Specs and examples vary by unit: **SI decides**.
+
+### 6.1 Shift-quality vocabulary (Ch 15)
+Every shift is a **handoff**: the off-going element releases while the on-coming one applies. The terms describe what rpm does.
+
+| Term | What it is | Rpm / feel |
+|---|---|---|
+| **Slip** | Friction element not holding; can occur while cruising | Rpm up, no matching speed gain |
+| **Flare** | Off-going releases **before** the on-coming holds (underlap, low apply pressure) | Rpm rises briefly during the shift |
+| **Tie-up (bind-up)** | Two ratios applied at once (overlap), or an element fails to release | Output feels braked; rpm pulled **down** |
+| **Harsh / bump** | Apply pressure rises too fast | Firm, abrupt shift |
+| **Slide-bump** | Accumulator bottoms out before the shift ends, so pressure spikes | Smooth start, harsh finish |
+| **Delayed engagement** | Lag from P/N into D or R | Low fluid or pump pressure, worn seals, clogged filter; worse cold |
+
+> **Rule:** flare is the **opposite** of tie-up. Released too soon = flare. Applied too soon or released late = tie-up. A faulty accumulator gives harsh shifts for the shift it belongs to (hard N-D points to the N-D accumulator).
+
+**Noise:** does it follow engine rpm or road speed? A whine in P/N that rises with rpm is usually the **pump** (or a clogged filter, or air at the pickup). Vibration in P/N at a fixed rpm points to the flexplate or converter.
+
+### 6.2 Pressure testing (Ch 4 and 15)
+**Order:** fluid level and condition → **line pressure** → stall test only if SI publishes one. **If line pressure is low, do not stall test.** Needs correct fluid and level, operating temperature, brakes applied, wheels chocked.
+
+| Pressure reading | Most likely area |
+|---|---|
+| **Low in all ranges** | Common supply: low fluid, clogged filter or pickup (aeration), worn pump, weak or stuck regulator |
+| **Low in one range only** | Leak in the circuit fed only in that range (piston seal, sealing ring, servo seal) |
+| **High in all ranges** | Stuck regulator; pressure solenoid in failsafe (unplugged, open circuit); TV cable or vacuum modulator fault on older units |
+| **Normal pressure, no engagement** | Routing (manual valve, shift valve, check ball) or a mechanical failure (broken clutch, sprag) |
+
+- **Reverse pressure runs higher than drive**; low pressure in reverse only means a reverse-circuit leak.
+- **Command is not pressure.** On the classic EPC design, **more current = lower pressure**, and no current or an unplugged solenoid gives **maximum** pressure. Rising commanded current with falling pressure is normal there.
+
+### 6.3 Valves in diagnosis (Ch 4)
+| Valve / part | Fault picture |
+|---|---|
+| **Pressure regulator** | Worn bore: low or erratic line pressure, soft shifts, worse hot |
+| **Manual valve** | Misadjusted linkage: creep in neutral, delayed engagement |
+| **Shift valve** | Stuck valve acts like a solenoid stuck on or off. A good solenoid circuit test with a wrong-gear symptom points to the **valve** |
+| **Accumulator** | Broken spring or bad seal: harsh shift in that circuit |
+| **Orifice and check ball** | Missing ball or enlarged orifice: harsh, fast apply; plugged orifice: slow or delayed |
+
+**Sticking vs. wear:** debris and varnish cause **intermittent, cold-worse** wrong-gear, no-shift or TCC problems. Bore wear is **progressive and worse hot** and can set several pressure-control codes at once.
+
+### 6.4 Converter and TCC diagnosis (Ch 6)
+- **Stall test:** high stall = transmission slipping; low stall = weak engine **or** freewheeling stator. Rule out the engine first. A TCC stuck on can stall the engine in gear, so don't stall-test that complaint.
+- **TCC does not apply** when an input prevents it: brake switch reading "applied," a throttle dead spot, a cold-reading temperature sensor, no speed signal. Check inputs and TCC enable data before condemning the solenoid or converter.
+- **Commanded on, slip stays high** = the **apply side** failed. Many "bad converter" cases are leaks **before** the piston: worn TCC regulator or apply valve bores, a worn stator-support bushing, or a damaged turbine-shaft seal. Low pressure while commanded = supply or leak; normal pressure and high slip = the lining.
+- **Slip near zero at a stop** = TCC stuck on (engine stalls or nearly stalls).
+- **Shudder vs. misfire:** true TCC shudder goes away with the TCC **off** and also fully **locked**. A misfire follows firing frequency, shows in misfire data, and is often worse when locked. **Fluid condition** is the first suspect for shudder.
+- **Bench check:** the stator should turn one way and lock the other. Free both ways or locked both ways: replace the converter.
+
+### 6.5 Cooling and overheating (Ch 15)
+- Overheating with **normal shifting** points to a restricted cooler or lines, or a **thermal bypass valve (TBV)** stuck in bypass. The TBV works like a thermostat: stuck in bypass starves the cooler and overheats the transmission.
+- **Milky ATF:** replace the radiator cooler **and** the damaged parts (seals, frictions, converter), clean and flush. "Drain and refill" or "flush only" is the wrong answer.
+- After a failure, flush the cooler and lines and **flow-test warm using the transmission's own pump**.
+
+---
+
+## 7. One-Page Cram
 
 - **Hydraulics:** Pascal's law, pressure = force ÷ area, equal in all directions. **Pump makes flow; resistance makes pressure.** Positive displacement pumps: gear/crescent, gerotor, vane. **Variable displacement = vane housing pivots.**
 - **Valves:** switch (routes), servo (moves a valve), regulator (pressure). Spool valves. **Manual valve = mechanical.** Every unit has a pressure regulator.
@@ -190,4 +249,4 @@ Causes: the torque converter (stall, no TCC lockup in overdrive), restricted coo
 - **Fluid:** underfilled → air in the pump, mushy, neutral, slip, TCC problems. Overfilled → foam, slip, fluid out the vent. Milkshake = coolant (failed cooler). Overheating = overflowing vent, purple converter, burned clutches.
 - **Command is not pressure.** Scan tool = request; gauge = result.
 
-*Source note: class notes (hydralics, torque-converters, ch15) and the GM technician transmission guide excerpt pasted in `notes/torque-converters.txt`. Items marked "outside" or "typical" are general knowledge, not from the notes. Not ASE content.*
+*Source note: class notes (hydralics, torque-converters, ch15) and the GM technician transmission guide excerpt pasted in `notes/torque-converters.txt`. Section 6 comes from the ASE A2 guide and research pass (partly verified; see its CONTEXT/verification notes). Items marked "outside" or "typical" are general knowledge, not from the notes. Not ASE content.*
