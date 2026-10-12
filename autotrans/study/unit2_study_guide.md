@@ -176,26 +176,7 @@ Causes: the torque converter (stall, no TCC lockup in overdrive), restricted coo
 
 ---
 
-## 6. Practice Questions (original, instructor-style)
-
-1. Which part of a torque converter is driven by the **engine**? (a) turbine (b) stator (c) impeller (d) TCC damper
-2. At converter **coupling**, the stator one-way clutch (a) locks (b) overruns (c) torque multiplication peaks (d) vortex flow is strongest
-3. A vehicle launches poorly but runs fine on the highway. The **most likely** cause: (a) stator locked both ways (b) stator freewheeling (c) TCC stuck on (d) overfilled
-4. A vehicle launches well but is sluggish at highway speed and overheats. The **most likely** cause: (a) stator locked both ways (b) stator freewheeling (c) low TFT sensor (d) cut turbine O-ring
-5. A stall test comes in **well above** spec. Tech A says the stator is freewheeling. Tech B says a clutch is slipping in the transmission. Who is right? (a) A only (b) B only (c) both (d) neither
-6. TCC slip speed is: (a) turbine − output shaft (b) engine rpm − turbine rpm (c) impeller − stator (d) output − vehicle speed
-7. What fluid passage releases the TCC? (a) the apply passage between hub and stator shaft (b) the release passage between stator shaft and turbine shaft (c) the manual valve (d) the cooler return
-8. **TV pressure** relates to: (a) vehicle speed (b) fluid temperature (c) throttle position (d) stator speed
-9. Fluid looks like a milkshake. The most likely source: (a) overfill (b) failed transmission cooler in the radiator (c) worn pump (d) bad TFT sensor
-10. A 10 lb force acts on a 1 sq in piston. The pressure is: (a) 1 psi (b) 10 psi (c) 100 psi (d) 0.1 psi. What force does the same pressure make on a 4 sq in piston?
-11. Which is a **symptom of overheating**? (a) purple converter (b) low TCC slip (c) high stall (d) cold-only flare
-12. A vehicle slips and flares in corners **when cold**, fine when warm. First check: (a) TCC solenoid (b) fluid level (c) stator (d) TV cable
-
-**Answers:** 1 c. 2 b. 3 b. 4 a. 5 b (nothing in the converter raises stall). 6 b. 7 b. 8 c. 9 b. 10 b, 40 lb. 11 a. 12 b.
-
----
-
-## 7. One-Page Cram
+## 6. One-Page Cram
 
 - **Hydraulics:** Pascal's law, pressure = force ÷ area, equal in all directions. **Pump makes flow; resistance makes pressure.** Positive displacement pumps: gear/crescent, gerotor, vane. **Variable displacement = vane housing pivots.**
 - **Valves:** switch (routes), servo (moves a valve), regulator (pressure). Spool valves. **Manual valve = mechanical.** Every unit has a pressure regulator.
