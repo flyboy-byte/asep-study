@@ -1,0 +1,155 @@
+pieces:
+impeller, is the driving member and rotates with the engine.
+when the housing is turning the impeller is also turning.
+the impeller is also called a pump, bc of the way it moves the fluid.
+
+the turbine is located on the engine side of the converter.
+could think of this similar to the disc in man transmissions.
+turbine is splined to the input shaft.
+
+stator:
+or reactor
+mounted on a one way clutch. the stator is the reaction member of the torque converter.
+
+stator  at stall multiplies torque by being locked by the one way clutch and directing flow into the turbine.
+stator at stall has vortex flow.
+if the stator is not locked, ie bad one way clutch and freewheels in both directions, the flow is not directed into the turbine, symptom being, poor launch and good highway performance.
+
+stator at coupling. when the speed goes up, the stator being locked isnt needed and must freewheel to prevent blocking flow, this is rotary flow around the circumference.
+if the stator is locked, ie bad one way clutch, locked in both directions, symptoms, poor highway performance and good launch.
+
+when the turbine speed reaches nearly equal speed to the impeller, coupling occurs.
+this would be when the one way clutch is supposed to freewheel.
+when coupling occurs, there is no torque multiplication, the turbine speed is equal to the impeller speed.
+
+Creep
+When the transmission selector is moved from park (P) or neutral (N) into a drive gear, some engine torque is transferred to the input shaft of the transmission or transaxle. The vehicle will move slightly if the brakes are released. This slight movement of the vehicle when the engine is at idle speed and the brakes are released, is called creep. Therefore, a slight movement is normal for a vehicle equipped with an automatic transmission.
+
+In a nonlock-up converter, the turbine almost never turns at the same speed as the engine and impeller, condition commonly referred to as converter slippage.
+
+heat in a automatic transmission comes mostly from a torque converter. especially at stall.
+stall superheats the transmission fluid.
+
+best way to cool a transmission is to set the parking brake and let it idle.
+
+stall speed is a design of the manufacturer.
+
+if my max stall speed cant be achieved, the issue might be a bad one way clutch. ie freewheeling.
+theres nothing in the torque converter that can cause the stall speed to be higher than spec. if that happens its something in the transmission that is slipping.
+
+torque converter clutch applies to make the lockup 100% efficient.
+tcc is controlled by pwm solenoid.
+when clutch applies, tcc slip speed goes from maybe 200 to zero.
+
+an overdrive transmission that wont lock the torque converter will overheat.
+
+TORQUE CONVERTER:
+The torque converter (1) is the primary component for
+transmittal of power between the engine and the
+transmission. It is bolted to the engine flywheel (also known
+as the flexplate) so that it will rotate at engine speed.
+Some of the major functions of the torque converter are:
+• to provide for a smooth conversion of torque from the
+engine to the mechanical components of the transmission.
+• to multiply torque from the engine that enables the
+vehicle to achieve additional performance when required.
+• to mechanically operate the transmission fluid pump
+through the converter hub.
+• to provide a mechanical link, or direct drive, from the
+engine to the transmission through the use of a torque
+converter clutch (TCC).
+
+CONVERTER HOUSING ASSEMBLIES
+The pressure plate is splined to the turbine hub and applies
+(engages) with the converter cover to provide a mechanical
+coupling of the engine to the transmission. When the
+pressure plate assembly is applied, the amount of slippage
+that occurs through a fluid coupling is reduced (but not
+necessarily eliminated), thereby providing a more efficient
+transfer of engine torque to the drive wheels.
+Torque converter failure
+could cause loss of drive
+and or loss of power.
+To reduce torsional shock during the apply of the pressure plate to the
+converter cover, a spring loaded damper assembly (C) is used. The
+pressure plate is attached to the pivoting mechanism of the damper
+assembly which allows the pressure plate to rotate independently of
+the damper assembly up to approximately 45 degrees. During
+engagement, the springs in the damper assembly cushion the pressure
+plate engagement and also reduce irregular torque pulses from the
+engine or road surface.
+
+STATOR ASSEMBLY
+The stator assembly is located between the
+pump assembly and turbine assembly, and is
+mounted on a one-way roller clutch. This oneway roller clutch allows the stator to rotate in
+one direction and prevents (holds) the stator
+from rotating in the other direction. The
+function of the stator is to redirect fluid
+returning from the turbine in order to assist the
+engine in turning the converter pump assembly.
+At low vehicle speeds, when greater torque is
+needed, fluid from the turbine hits the front
+side of the stator blades (the converter is
+multiplying torque). At this time, the one-way
+roller clutch prevents the stator from rotating
+in the same direction as the fluid flow, thereby
+redirecting fluid to assist the engine in turning
+the converter pump. In this mode, fluid leaving
+the converter pump has more force to turn the
+turbine assembly and multiply engine torque.
+As vehicle speed increases and less torque is
+required, centrifugal force acting on the fluid
+changes the direction of the fluid leaving the
+turbine such that it hits the back side of the
+stator blades (converter at coupling speed).
+When this occurs, the roller clutch overruns
+and allows the stator to rotate freely. Fluid is
+no longer being redirected to the converter
+pump and engine torque is not being multiplied.
+
+When the torque converter clutch is released, fluid is
+fed into the torque converter by the pump into the
+release fluid passage. The release fluid passage is
+located between the stator shaft and the turbine shaft
+(56). Fluid travels between the shafts and enters the
+release side of the pressure plate at the end of the
+turbine shaft. The pressure plate is forced away from
+the converter cover and allows the torque converter
+turbine to rotate at speeds other than engine speed.
+
+When the TCM determines that the vehicle is at the
+proper speed for the torque converter clutch to apply,
+it sends a signal to the TCC pressure control (PC)
+solenoid valve. The TCC PC solenoid valve then
+regulates line fluid from the pump into the regulated
+apply passage. The regulated apply fluid then feeds
+the apply fluid passage and applies the torque
+converter. The apply passage is located between the
+converter hub and the stator shaft. The fluid flows
+between the shafts, then passes into the torque
+converter on the apply side of the pressure plate
+assembly. Release fluid is then routed out of the
+torque converter between the turbine shaft and the
+stator shaft.
+
+No TCC apply can be caused by:
+• Electrical connectors, wiring harness or solenoid damaged
+• Torque converter internal damage
+• TCC control valve and spring worn, damaged or sticking
+• Turbine shaft O-ring seal cut or damaged
+• TCC regulator apply valve worn, damaged or sticking
+
+important:
+The apply passage is located between the
+converter hub and the stator shaft. The fluid flows
+between the shafts, then passes into the torque
+converter on the apply side of the pressure plate
+assembly. Release fluid is then routed out of the
+torque converter between the turbine shaft and the
+stator shaft.
+lots of pasting above directly from technitian transmission guide.
+helpful info tho. especially if we have a section on expanded theory in a study guide.
+
+this is a less important note
+stall tests create heat. be mindful of how long u do it for and how many times u do it.
