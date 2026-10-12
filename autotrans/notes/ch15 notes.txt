@@ -1,0 +1,31 @@
+these notes are more of a review of unit 2 honestly.
+unit 2 will be on: tcc and hydralic principles, chapters 4,6,10, 15,
+Chapter 4Automatic Transmission/Transaxle Hydraulic System
+Chapter 6Torque Converters
+Chapter 10Electronic Transmission Controls
+Chapter 15Transmission Condition Diagnosis
+
+the heat from a transmission comes from the torque converter.
+flow rate measure cooloer flow.
+transmission fluid that looks like a milkshake is water in the fluid. could come from outside like into the transmission but could come from a failed transmission cooler.
+
+overheating sysmptoms.
+overflowing vent
+purple torque converter
+burned clutches
+
+tcc slip speed.
+what is it.
+it is the difference in speed between the turbine and the impeller
+
+engine is connected to the impeller
+transmission is connected to the turbine
+shit i got that mixed up that the impeller is connected to the impeller, so ig i got to think of it like a steam generator, where the steam is like the engine driving the generator turbine. ig?
+what data tells me the speed of the impeller
+the engine rpm is the impeller speed.
+turbine is the transmission input speed sensor.
+
+coupling speed is what a couple hundred rpm loss but the closest the speed difference will be without locking with tcc.
+
+tcc solenoid is controlled by pwm and controlled tcc lockup and application.
+its pretty simple but just remember how it applies how it fills the tc from the back or the front etc
