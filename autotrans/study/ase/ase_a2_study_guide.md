@@ -42,24 +42,9 @@ Words matter:
 
 Textbook and service-manual reasoning beats shop habit. If your shop experience suggests a different answer than the by-the-book one, the exam wants the by-the-book one.
 
-### Strategy-based diagnosis (the flowchart)
+### Strategy-based diagnosis
 
-Your class notes say to know this mostly as a **flowchart**, and that strategy-based diagnosis is preferred over symptom-based. Source: GM Service Information, "Strategy Based Diagnosis" (Silverado 1500 manual, Document ID 1957622, printed 2026-10-12, in `note/`). It is GM's process; the order is the part to remember. Not every step is required each time, but the **first step is always understand and verify the concern** and the **last is always repair and verify the fix**.
-
-| Step | Do this | Branch |
-|---|---|---|
-| 1 | Understand and verify the customer's concern (when, where, how long, how often, aftermarket accessories) | |
-| 2 | Is it operating as designed? Compare with an identical vehicle | Yes: explain the operation to the customer (or Field Product Report if still dissatisfied). Stop |
-| 3 | Preliminary checks: visual inspection, service history, noises and odors, gather DTCs | Concern found: go to 5 (as GM prints it) |
-| 4 | Diagnostic System Check: picks the diagnostic category | Concern found: go to 5 (as GM prints it) |
-| 5 | Related bulletins, recalls and preliminary information. **Before replacing a programmable module, reprogram with the latest software and retest** | Concern found: go to 7 |
-| 6 | Follow the path: **6.1** current DTC: DTC diagnostic. **6.2** symptom, no DTC: symptom diagnostic. **6.3** no published diagnostic: analyze, plan from schematics and component locations, or call technical assistance. **6.4** intermittent or history DTC: connectors, wiring, EMI, data capture | |
-| 7 | Isolate the root cause, repair, verify the fix (road test if needed) | |
-| 8 | Re-examine the concern | Not repaired: back to step 1. Repaired: done |
-
-> **ASE trap:** a *current DTC* means follow that DTC's diagnostic; *symptom with no DTC* means symptom diagnostics; a customer concern that is **normal operation** ends at step 2 with an explanation, not a part. Verify the concern before anything else, and do not replace a control module before checking for a software update.
-
-If the scan tool cannot talk to a module, the manual's suggestion is to remove and restore its power (pull its fuse or unplug its connector), then reprogram if software is available. This is consistent with Section 3.2 and 3.8.
+Your class notes say to know it mostly as a **flowchart**, and that it is preferred over symptom-based. It has its own pages: **Section 8** (last section of the guide).
 
 ### Confirmed weak spots, from your graded Unit 1 quiz
 
@@ -926,3 +911,67 @@ Each of these is a case where a study source, a flashcard or shop slang reverses
 12. **Reaction clutch:** the unlined steel plates of a holding clutch are splined to the **transmission case**.
 13. **EPC polarity depends on design.** The classic EPC: more current, less pressure; unplugged = maximum pressure. Read the stem.
 14. **Milky or pink ATF** means coolant contamination from the radiator cooler: replace the radiator or cooler, overhaul, and flush. Flush-and-refill alone is the distractor.
+
+## 8. Strategy-Based Diagnosis
+
+*Source: GM Service Information, "Strategy Based Diagnosis" (Silverado 1500 service manual, Document ID 1957622, printed 2026-10-12; saved in `note/`). Class notes: know it mostly as a flowchart; strategy-based is preferred over symptom-based. It is GM's own process, so the order and the wording of each branch are what to remember. GM states that not every step must be done every time, but the first step is always **understand and verify the customer's concern**, and the last is **repair and verify the fix**.*
+
+### 8.1 The flowchart
+
+| Step | Do this | If the concern is found | If not found |
+|---|---|---|---|
+| **1** | Understand and verify the customer's concern | Go on to 2 | Gather more information |
+| **2** | Is the vehicle **not operating as designed**? | Not as designed: go to 3 | **As designed: stop.** Explain the operation to the customer. Still dissatisfied: submit a Field Product Report |
+| **3** | Preliminary checks: visual inspection and operational check | Go to 5 (as GM prints it) | Go to 4 |
+| **4** | Diagnostic System Check - Vehicle (picks the diagnostic category) | Go to 5 (as GM prints it) | Go to 5 |
+| **5** | Related bulletins, recalls and preliminary information | Go to 7 | Go to 6 |
+| **6** | Follow the diagnostic path (6.1 to 6.4, next table) | Isolate the cause | Re-examine (8) |
+| **7** | Isolate the root cause, then **repair and verify the fix** | Go to 8 | |
+| **8** | Re-examine the concern | Repaired: **9. All OK** | **Not repaired: back to step 1** |
+
+GM's text sends "concern found" at steps 3 and 4 to "step 5". The printed flow is kept here as written, so memorize the order, not the arrows.
+
+### 8.2 What each step means
+
+| Step | Details (GM) |
+|---|---|
+| **1. Understand and verify** | Get as much from the customer as you can: aftermarket accessories? **When** does it occur, **where**, **how long** does it last, **how often**? To verify it you must know the normal operation of the system and use the owner or service manual. |
+| **2. Operating as designed** | The condition may be normal. **Compare with an identical vehicle** under the same conditions. Explain the system to the customer. Dissatisfied: Field Product Report. |
+| **3. Preliminary checks** | Thorough **visual inspection**, review **service history**, listen and smell for unusual **sounds and odors**, gather **DTC information**. |
+| **4. Diagnostic System Check** | Verifies proper system operation, gives an organized approach, and identifies **which category** of diagnostic to perform. |
+| **5. Bulletins and software** | Check bulletins, recalls and preliminary information. **Before replacing a control module, check for software updates.** Reprogram and re-evaluate. Many software faults are fixed without replacing the module. |
+| **6. Diagnostic path** | One of four categories (below). |
+| **7. Isolate and repair** | After isolating the root cause, repair it and validate with the **Diagnostic Repair Verification**. Verifying a DTC or symptom may involve a **road test**. |
+| **8. Re-examine** | If you cannot find or isolate the concern, **re-verify** it. It could be intermittent or normal. |
+
+### 8.3 Step 6: pick the category
+
+| Category | When | Follow |
+|---|---|---|
+| **6.1 Current DTC** | A DTC is set now | The designated **DTC diagnostic** (DTC list) |
+| **6.2 Symptom, no DTC** | Concern with no code | The **symptom diagnostic** (Symptoms list) |
+| **6.3 No published diagnostic** | Neither exists | **Analyze** the concern and **develop a plan**: use schematics (power, ground, input and output circuits; splices where circuits tie together), component locations (exposure to heat, moisture, road salt, battery acid, oil or other fluids), wiring diagrams and the system and circuit descriptions. Or call technical assistance |
+| **6.4 Intermittent / history DTC** | Does not occur continuously, hard to duplicate, happens only under certain conditions | See the toolkit below |
+
+**Intermittent causes (GM):** faulty electrical connections and wiring, malfunctioning components, electromagnetic or radio-frequency interference, driving conditions, aftermarket equipment. **Tools and approaches:** combine your knowledge with service information; evaluate the customer's conditions; use the **Customer Concern Verification Sheet** (the clearer the concern, the more likely it is fixed right the first time); follow the testing for intermittents and poor connections; use a tool that **captures data** (scan tool, DMM, or a vehicle data recorder).
+
+### 8.4 How this applies on the A2 (reasoned, not GM text)
+
+> **Learner:** the A2 questions that ask "what should the technician do first" or "what is the next step" are asking where you are in this chart. Locate the step, and the answer is the next one, not a part.
+
+- **Before any part:** verify the concern (road test, Section 2.2), then fluid level, type and condition (Section 2.1). Your GM training notes say the same: poor engine performance or the wrong fluid can mimic a shift concern.
+- **Step 2 on a transmission:** a normal feature (for example a firm garage shift on a cold morning) is "operating as designed" until proved otherwise. Compare with an identical vehicle before condemning a part.
+- **Step 3:** fluid, leaks, linkage, connectors, then scan for DTCs on all modules (Section 3.6, 3.10).
+- **Step 5:** check for a software update or relearn before replacing a TCM or valve body (Section 3.8).
+- **Step 6.1 vs 6.2:** DTC set = follow that DTC's diagnostic. No DTC = symptom diagnostic and the apply-chart reasoning of Section 1.3.
+- **Step 6.4:** a code that has gone away is a **history/intermittent** code. Think connector, harness and chafing, then capture data under the conditions that set it.
+- **Step 7:** after the repair, **verify the fix**: clear codes, road test, and rescan (Section 3.6).
+- **Step 8:** not fixed means **back to step 1**, not to a different guess.
+
+> **ASE trap:** what sounds right and is wrong:
+>
+> - A *normal-operation* concern ends at step 2 with an explanation, not a part.
+> - A *current DTC* is not the same as a *history DTC*: the first has a published diagnostic to follow, the second goes to the intermittent approach.
+> - Do **not** replace a programmable control module before checking for updated software.
+> - Do **not** skip verification (step 1) or the repair verification (step 7).
+> - If a scan tool cannot talk to a module, GM's manual suggests removing and restoring its power (pull the fuse or unplug the connector), then reprogramming if software is available. Consistent with Sections 3.2 and 3.8.

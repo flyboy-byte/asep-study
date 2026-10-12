@@ -138,12 +138,12 @@ def build(kind):
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>{CSS}</style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.4</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.5</div>
 <h1>{cfg['h1']}</h1><p class="sub">{cfg['sub']}</p>
 <div class="meta-row"><span><b>Prepared</b> October 12, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
 {toc_html}{''.join(html_sections)}
-<footer><span>{cfg['title']} &middot; v1.4 &middot; 2026-10-12</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>{cfg['title']} &middot; v1.5 &middot; 2026-10-12</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>"""
     out = HERE / f"{cfg['out']}.html"
     out.write_text(page)
