@@ -116,10 +116,13 @@ def build(kind):
     cfg = {
         "guide": dict(files=["sec0_front", "sec1_foundations", "sec2_mech_hydraulic", "sec3_electronic",
                              "sec45_area_b_c", "sec67_types_strategy"],
-                      src="ase_a2_study_guide.md", out="ase_a2_study_guide",
+                      src="ase_a2_study_guide.md", out="ase_a2_study_guide", ver="1.6",
                       title="ASE A2 Study Guide", h1="Automatic Transmission / Transaxle",
                       sub="Weighted to the official 2026 A2 task list. Class notes, the Unit 1 quiz misses and the research pass, in one guide."),
-        "cram": dict(files=[], src="ase_a2_cram_sheet.md", out="ase_a2_cram_sheet",
+        "simple": dict(files=[], src="ase_a2_simple_sheet.md", out="ase_a2_simple_sheet", ver="1.0",
+                     title="ASE A2 Simple Sheet", h1="A2 Simple Sheet",
+                     sub="The middle layer: enough reasoning for a Tech A/B or most-likely stem, weighted to the official areas. [G x.x] = study guide section."),
+        "cram": dict(files=[], src="ase_a2_cram_sheet.md", out="ase_a2_cram_sheet", ver="2.0",
                      title="ASE A2 Cram Sheet", h1="A2 Cram Sheet",
                      sub="Compressed from the A2 study guide. Read the guide first; this is for the last pass."),
     }[kind]
@@ -133,17 +136,17 @@ def build(kind):
         html_sections.append(
             f'<section id="{sid}"><div class="sec-head"><span class="sec-num">{int(num):02d}</span>'
             f'<h2>{name}</h2></div>{md_to_html(body)}</section>')
-    toc_html = ('<nav class="toc"><div class="toc-title">Contents</div><ol>' + "".join(toc) + "</ol></nav>") if kind == "guide" else ""
+    toc_html = ('<nav class="toc"><div class="toc-title">Contents</div><ol>' + "".join(toc) + "</ol></nav>") if kind in ("guide", "simple") else ""
     page = f"""<!doctype html><html lang="en"><head><meta charset="utf-8"><title>{cfg['title']}</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
 <style>{CSS}</style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.5</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION {cfg['ver']}</div>
 <h1>{cfg['h1']}</h1><p class="sub">{cfg['sub']}</p>
-<div class="meta-row"><span><b>Prepared</b> October 12, 2026</span><span><b>Exam</b> October 15, 2026</span>
+<div class="meta-row"><span><b>Prepared</b> October 13, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
 {toc_html}{''.join(html_sections)}
-<footer><span>{cfg['title']} &middot; v1.5 &middot; 2026-10-12</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>{cfg['title']} &middot; v{cfg['ver']} &middot; 2026-10-13</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>"""
     out = HERE / f"{cfg['out']}.html"
     out.write_text(page)

@@ -1,0 +1,491 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><title>ASE A2 Simple Sheet</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+:root{--bg:#fff;--surface:#fff;--surface-2:#eef1ee;--ink:#14191b;--muted:#4d5659;--faint:#7c8688;--line:#d2d8d3;--line-hi:#b6bfb9;--accent:#c8481c;--accent-ink:#fff6f1;--accent-2:#2c4a4a;--trap:#9b2c2c}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'IBM Plex Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;font-size:12.5px;line-height:1.55}
+.wrap{max-width:760px;margin:0 auto;padding:0 6px}
+h1,h2,h3,h4{font-family:'Oswald','Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:.02em;color:var(--ink);font-weight:600;text-wrap:balance}
+p{margin:0 0 .7em}
+strong{font-weight:600}
+code,.mono{font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:.92em}
+a{color:inherit}
+.masthead{border:1px solid var(--line-hi);border-radius:3px;padding:1.2rem 1.4rem 1rem;margin-bottom:.9rem;position:relative;overflow:hidden}
+.masthead::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--accent)}
+.eyebrow{font-family:'IBM Plex Mono';font-size:10.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.eyebrow .sep{color:var(--faint)}
+.masthead h1{font-size:30px;line-height:1.1;margin:0 0 .3rem}
+.masthead .sub{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:.8rem}
+.meta-row{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-family:'IBM Plex Mono';font-size:10.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:.6rem}
+.meta-row b{color:var(--ink)}
+.toc{border:1px solid var(--line);border-radius:3px;padding:.9rem 1.2rem;margin-bottom:1.2rem}
+.toc-title{font-family:'IBM Plex Mono';font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);margin-bottom:.5rem}
+.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:.25rem}
+.toc a{display:flex;gap:.6em;text-decoration:none;font-size:13px}
+.toc a .tn{font-family:'IBM Plex Mono';font-size:10.5px;color:var(--accent);flex:none}
+section{margin-bottom:1.4rem}
+.sec-head{display:flex;align-items:baseline;gap:.7rem;border-bottom:2px solid var(--ink);padding-bottom:.3rem;margin:0 0 .8rem;break-after:avoid}
+.sec-num{font-family:'IBM Plex Mono';font-size:12px;font-weight:600;color:var(--accent)}
+h2{font-size:19px;margin:0}
+h3{font-size:14px;margin:1.1rem 0 .4rem;color:var(--accent-2);letter-spacing:.03em;break-after:avoid}
+h3 .n{font-family:'IBM Plex Mono';color:var(--faint);font-weight:500;margin-right:.4em}
+h4{font-size:12px;margin:.8rem 0 .3rem;color:var(--muted);break-after:avoid}
+.tbl-wrap{margin:.6rem 0 .9rem;border:1px solid var(--line);border-radius:3px;overflow:hidden}
+table{width:100%;border-collapse:collapse;font-size:11.5px}
+thead th{text-align:left;font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--faint);padding:.4rem .6rem;border-bottom:1px solid var(--line-hi);background:var(--surface-2)}
+td{padding:.4rem .6rem;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tr{break-inside:avoid}
+td:first-child{font-weight:500}
+ul,ol{padding-left:1.2rem;margin:0 0 .8rem}
+li{margin-bottom:.25rem}
+.note{display:flex;gap:.7rem;border:1px solid var(--line);border-left:3px solid var(--accent);border-radius:2px;padding:.55rem .8rem;margin:.7rem 0;font-size:12px;break-inside:avoid}
+.note .tag{font-family:'IBM Plex Mono';font-size:9.5px;font-weight:600;letter-spacing:.08em;color:var(--accent);text-transform:uppercase;flex:none;padding-top:.1rem;min-width:4.6em}
+.note.rule{border-left-color:var(--accent-2)} .note.rule .tag{color:var(--accent-2)}
+.note.trap{border-left-color:var(--trap)} .note.trap .tag{color:var(--trap)}
+.note .nb p:last-child,.note .nb ul:last-child{margin-bottom:0}
+.note .nb{flex:1}
+.tasks{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin:-.2rem 0 .8rem}
+.figure{border:1px solid var(--line);border-radius:3px;padding:.7rem;margin:.9rem 0;break-inside:avoid}
+.figure img{width:100%;max-width:360px;display:block;margin:0 auto;border:1px solid var(--line)}
+.figure figcaption{font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);margin-top:.5rem;line-height:1.5}
+footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font-family:'IBM Plex Mono';font-size:10px;color:var(--faint);display:flex;justify-content:space-between;gap:.5rem;flex-wrap:wrap}
+@page{size:Letter;margin:.55in}
+@media print{.toc{break-after:auto}}
+</style></head><body><div class="wrap">
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.0</div>
+<h1>A2 Simple Sheet</h1><p class="sub">The middle layer: enough reasoning for a Tech A/B or most-likely stem, weighted to the official areas. [G x.x] = study guide section.</p>
+<div class="meta-row"><span><b>Prepared</b> October 13, 2026</span><span><b>Exam</b> October 15, 2026</span>
+<span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
+<nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#s0"><span class="tn">00</span>How to Use This Sheet</a></li><li><a href="#s1"><span class="tn">01</span>Area A: Diagnosis (58%, 26 questions)</a></li><li><a href="#s2"><span class="tn">02</span>Area B: In-Vehicle Maintenance and Repair (27%, 12 questions)</a></li><li><a href="#s3"><span class="tn">03</span>Area C: Removal, Inspection, Installation (15%, 7 questions)</a></li><li><a href="#s4"><span class="tn">04</span>Your Weak Spots (graded quizzes)</a></li><li><a href="#s5"><span class="tn">05</span>Wrong-Direction Traps</a></li></ol></nav><section id="s0"><div class="sec-head"><span class="sec-num">00</span><h2>How to Use This Sheet</h2></div><p>This is the middle layer between the 34-page study guide and the cram sheet. It has enough explanation to reason through a Tech A/B or "most likely" stem, without the guide's depth. Everything here comes from the study guide; section numbers in brackets (<strong>[G 2.4]</strong>) point to the full explanation.</p>
+<p><strong>The exam:</strong> 55 questions, <strong>45 scored</strong>, 75 minutes, about 80 seconds each. Unscored items aren't marked, so treat every one as scored. No penalty for guessing: never leave one blank.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Area</th>
+<th style="text-align: right;">Scored Qs</th>
+<th style="text-align: right;">Share</th>
+<th style="text-align: right;">Questions per task</th>
+<th>What it rewards</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>A. Diagnosis</strong></td>
+<td style="text-align: right;">26</td>
+<td style="text-align: right;"><strong>58%</strong></td>
+<td style="text-align: right;">~0.9</td>
+<td>Symptom → cause → the check that separates causes</td>
+</tr>
+<tr>
+<td><strong>B. In-vehicle maintenance and repair</strong></td>
+<td style="text-align: right;">12</td>
+<td style="text-align: right;"><strong>27%</strong></td>
+<td style="text-align: right;"><strong>1.0 (best yield)</strong></td>
+<td>Verify the cheap root cause before replacing the expensive part</td>
+</tr>
+<tr>
+<td><strong>C. Removal, inspection, installation</strong></td>
+<td style="text-align: right;">7</td>
+<td style="text-align: right;">15%</td>
+<td style="text-align: right;">~0.3</td>
+<td>Order of steps and classic mistakes, not specs</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Two nights left:</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>When</th>
+<th>Do this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Tonight (Tue)</strong></td>
+<td>Read this sheet start to finish. For anything that doesn't click, open the guide section in brackets. Spend extra time on <strong>A.3 (apply chart + planetary)</strong>, your biggest miss area</td>
+</tr>
+<tr>
+<td><strong>Wed night (after the class final)</strong></td>
+<td>Send me what the final exposed. Then the cram sheet, then the trap list in Section 5 here</td>
+</tr>
+<tr>
+<td><strong>Thu morning</strong></td>
+<td>Cram sheet only. Stop early</td>
+</tr>
+</tbody>
+</table></div>
+<hr /></section><section id="s1"><div class="sec-head"><span class="sec-num">01</span><h2>Area A: Diagnosis (58%, 26 questions)</h2></div><h3>A.1 The method that answers "first" and "next" stems</h3>
+<p><strong>Diagnostic order [G 7.4]:</strong> verify the concern → fluid level, condition and type (the SI way) → SI, bulletins, DTCs (the code is the starting point, not the diagnosis) → rule out engine, inputs, cooler and electrical supply → road test and scan data → <strong>line pressure</strong> → stall test only if the OEM publishes one → repair, clear with the scan tool, relearn, <strong>verify</strong>.</p>
+<p><strong>GM strategy-based diagnosis [G 8]:</strong> 1 verify the concern → 2 is it operating as designed? (if <strong>yes, stop and explain</strong>, compare with an identical vehicle) → 3 preliminary checks (visual, history, sounds and smells, DTCs) → 4 Diagnostic System Check → 5 bulletins, recalls, <strong>software</strong> (check for an update <strong>before</strong> replacing a module) → 6 diagnostic path: <strong>6.1 current DTC</strong>, <strong>6.2 symptom no DTC</strong>, <strong>6.3 no published diagnostic</strong> (build a plan from schematics), <strong>6.4 intermittent/history</strong> → 7 isolate, repair, <strong>verify</strong> → 8 re-examine; not fixed = <strong>back to step 1</strong>. A "what next" stem is asking where you are on this chart.</p>
+<p><strong>Question words:</strong> <em>could cause</em> = one valid mechanism is enough. <em>Most likely</em> = the choice that explains <strong>every</strong> symptom in the stem. <em>First/next</em> = cheapest, least invasive, most informative. <em>EXCEPT</em> = mark each "yes/no"; the single "no" wins. <em>Tech A/B</em> = judge each alone; "both" and "neither" are real answers.</p>
+<p><strong>Book answer beats shop habit.</strong> Clear codes with the scan tool (never a battery pull). Check the level the SI way. Test before replacing. Reset adapts is not a repair.</p>
+<h3>A.2 Classify the symptom first [G 2]</h3>
+<p>Before reading the choices, ask what the symptom <strong>follows</strong>:</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Follows…</th>
+<th>Think first of…</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Engine rpm (also in P/N)</td>
+<td>Pump, converter, flexplate</td>
+</tr>
+<tr>
+<td>Road speed</td>
+<td>Gear train, output, final drive, tires, driveline</td>
+</tr>
+<tr>
+<td>One gear or range only</td>
+<td>The element <strong>unique</strong> to that range (apply chart)</td>
+</tr>
+<tr>
+<td>Every range</td>
+<td>Fluid, pump/pressure, input clutch, manual valve/linkage</td>
+</tr>
+<tr>
+<td>Cold only, clears warm</td>
+<td>Fluid level, thick-fluid or bore-leak effects</td>
+</tr>
+<tr>
+<td>First engagement after sitting</td>
+<td>Converter drain-back</td>
+</tr>
+<tr>
+<td>Engine data or wheel-speed data</td>
+<td><strong>Not the transmission</strong> (misfire, TPS, MAF, ABS, tire size, mounts)</td>
+</tr>
+</tbody>
+</table></div>
+<h3>A.3 Apply chart and planetary: your biggest risk [G 1]</h3>
+<p><strong>The names (Unit 1 misses):</strong> <strong>sun</strong> = small center gear, external teeth. <strong>Carrier holds the planets</strong> (it is not the big outer gear). <strong>Ring = big outer gear with internal teeth = the "internal gear."</strong> The sun is <strong>never</strong> the internal gear.</p>
+<p><strong>The rules:</strong> one member <strong>driven</strong>, one <strong>held</strong>, one <strong>output</strong>. Find the carrier: <strong>output = reduction, input = overdrive, held = reverse.</strong> Any <strong>two</strong> members driven together = <strong>direct 1:1</strong>. Nothing held or a member disconnected = <strong>neutral</strong>.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Input</th>
+<th>Held</th>
+<th>Output</th>
+<th>Result</th>
+<th>30/70 example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sun</td>
+<td>Ring</td>
+<td>Carrier</td>
+<td>Reduction (steepest)</td>
+<td>3.33:1</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>Sun</td>
+<td>Carrier</td>
+<td>Reduction</td>
+<td>1.43:1</td>
+</tr>
+<tr>
+<td>Carrier</td>
+<td>Sun</td>
+<td>Ring</td>
+<td>Overdrive</td>
+<td>0.70:1</td>
+</tr>
+<tr>
+<td>Carrier</td>
+<td>Ring</td>
+<td>Sun</td>
+<td>Overdrive (steepest)</td>
+<td>0.30:1</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Carrier</td>
+<td>Ring</td>
+<td><strong>Reverse</strong>, reduction</td>
+<td>2.33:1</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>Carrier</td>
+<td>Sun</td>
+<td><strong>Reverse</strong>, overdrive</td>
+<td>0.43:1</td>
+</tr>
+<tr>
+<td>Any two driven</td>
+<td>Nothing</td>
+<td>Whole set</td>
+<td>Direct</td>
+<td>1:1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Swap input and output and the ratio flips to its reciprocal. <strong>Ratios in series multiply, never add</strong> (2:1 then 3:1 = 6:1; a big number is not a mistake). <strong>Ravigneaux</strong> = two suns, two planet sets, one carrier, one ring. <strong>LePelletier</strong> = simple planetary + Ravigneaux. <strong>Reaction (holding) clutch:</strong> steel plates splined to the <strong>case</strong>.</p>
+<p><strong>Apply-chart elimination [G 1.3]:</strong></p>
+<ol>
+<li>Sort ranges into <strong>affected</strong> and <strong>working</strong> (include Park, Neutral, manual ranges, engine braking).</li>
+<li>Several failed ranges → the element applied in <strong>all</strong> of them. One failed range → the element used <strong>only</strong> there.</li>
+<li>Anything applied in a <strong>working</strong> range is cleared.</li>
+<li><strong>Slip, flare, no drive</strong> = an element that fails to <strong>hold</strong>. <strong>Tie-up, bind, braked feel</strong> = an element <strong>seized or not releasing</strong>, showing up where the chart says it should be off.</li>
+<li><strong>Slip in D1 but fine in manual 1</strong> = the one-way clutch (manual 1 backs it up with a friction element).</li>
+</ol>
+<p><em>Worked example:</em> no 3rd and no reverse, 1st and 2nd fine. 3rd = forward + direct; reverse = direct + low/reverse. Common to both: <strong>direct</strong>. Forward is cleared because it works in 1st and 2nd.</p>
+<div class="note trap"><div class="tag">ASE trap</div><div class="nb"><p>a first-gear-only one-way clutch can't cause slip in <strong>every</strong> forward gear. Slip in all forward gears with reverse OK = forward/input clutch or its circuit. A seized element binds; it doesn't leave you without a range.</p></div></div>
+<h3>A.4 Line pressure [G 2.4]</h3>
+<p><strong>Order:</strong> fluid → line pressure → stall only if SI has one. <strong>Low line pressure: don't stall test.</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Reading</th>
+<th>Most likely</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Low in all ranges</strong></td>
+<td>Common supply: low fluid, clogged filter or suction air leak, worn pump, weak/stuck regulator, big common leak</td>
+</tr>
+<tr>
+<td><strong>Low in one range</strong></td>
+<td>Leak in the circuit fed only in that range (piston seal, sealing ring, servo seal)</td>
+</tr>
+<tr>
+<td><strong>High in all ranges</strong></td>
+<td>Stuck regulator; <strong>EPC in failsafe</strong> (unplugged/open = <strong>maximum</strong>); TV cable tight or modulator vacuum lost (older units)</td>
+</tr>
+<tr>
+<td><strong>Normal pressure, no engagement</strong></td>
+<td>Routing (manual valve, shift valve, check ball) or mechanical (broken clutch, sprag)</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Reverse reads higher by design.</strong> Low in reverse only = reverse circuit.</li>
+<li><strong>Classic EPC: more current = lower pressure.</strong> The scan tool shows the <strong>command</strong>; only a gauge shows <strong>pressure</strong>.</li>
+<li><strong>Vacuum modulator:</strong> low vacuum (load, leak, disconnected hose) = high pressure, firm late shifts. Ruptured diaphragm = ATF in the vacuum hose, white smoke, fluid loss with no visible leak.</li>
+</ul>
+<h3>A.5 Torque converter, stall and TCC [G 2.6, 3.5]</h3>
+<p><strong>Impeller = engine. Turbine = input shaft.</strong> Engine rpm = impeller; ISS = turbine. <strong>TCC slip = engine rpm − turbine rpm.</strong> Most heat comes from the converter, worst at stall.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th></th>
+<th>Stator <strong>freewheels</strong> (won't hold)</th>
+<th>Stator <strong>seized</strong> (won't release)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Launch</td>
+<td><strong>Poor</strong></td>
+<td>Normal</td>
+</tr>
+<tr>
+<td>Highway</td>
+<td>Normal (above ~35 mph)</td>
+<td><strong>Poor</strong>, overheats</td>
+</tr>
+<tr>
+<td>Stall test</td>
+<td><strong>Low</strong></td>
+<td>Not diagnostic</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>High stall = a transmission element slipping.</strong> Nothing inside the converter raises stall. "200 rpm high = stator" is backwards.</li>
+<li><strong>Low stall</strong> = weak engine (rule out first, incl. restricted exhaust) or freewheeling stator.</li>
+<li><strong>TCC stuck on:</strong> engine stalls or nearly stalls at a stop; slip ~0 at a stop.</li>
+<li><strong>TCC commanded on, slip stays high</strong> = the <strong>apply side</strong> isn't holding. Check apply pressure and leaks before the piston (TCC valve bores, stator-support bushing, turbine-shaft seal) before condemning the converter.</li>
+<li><strong>TCC won't apply</strong> usually means an <strong>input</strong> blocks it: brake switch reads "applied," TP dead spot, cold-reading temp sensor, no speed signal.</li>
+<li><strong>Shudder vs. misfire:</strong> true TCC shudder is gone with the TCC <strong>off</strong> and gone fully <strong>locked</strong>. A misfire follows firing frequency, shows in misfire data, and is often <strong>worse</strong> locked. <strong>Fluid</strong> is the first suspect for shudder.</li>
+</ul>
+<h3>A.6 Shift quality [G 2.2]</h3>
+<p>Every shift is a handoff.</p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Cause</th>
+<th>Rpm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Flare</strong></td>
+<td>Off-going releases <strong>before</strong> on-coming holds</td>
+<td>Rises briefly</td>
+</tr>
+<tr>
+<td><strong>Tie-up = bind-up</strong></td>
+<td>Overlap: two ratios at once, or an element won't release</td>
+<td>Pulled <strong>down</strong>, output braked</td>
+</tr>
+<tr>
+<td><strong>Slide-bump</strong></td>
+<td>Accumulator bottoms out before the shift ends</td>
+<td>Smooth start, harsh finish</td>
+</tr>
+<tr>
+<td><strong>One harsh shift</strong></td>
+<td>That shift's accumulator (spring, piston, seal)</td>
+<td>—</td>
+</tr>
+<tr>
+<td><strong>All shifts harsh</strong></td>
+<td>High line pressure</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Noise:</strong> whine in P/N that rises with rpm = pump (or clogged filter, air at pickup). Clunk only after an auto-restart = stop/start hold system.</p>
+<h3>A.7 Electronic: commanded vs. actual [G 3]</h3>
+<p>Your strongest area. One habit answers most items: <strong>what did the TCM command, and what actually happened?</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>After the command</th>
+<th>Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Current tracks command, pressure/ratio responds</td>
+<td>Output path fine: look at inputs, adapts, intermittents</td>
+</tr>
+<tr>
+<td>Current tracks command, <strong>no</strong> pressure/ratio change</td>
+<td><strong>Hydraulic or mechanical</strong></td>
+</tr>
+<tr>
+<td>Current doesn't track, circuit DTC</td>
+<td><strong>Electrical</strong> (coil, harness, connector, driver)</td>
+</tr>
+<tr>
+<td>No command sent</td>
+<td>Enable conditions or inputs (TFT, OSS, TPS, brake switch, range)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note "><div class="tag">ASE trap (your risk)</div><div class="nb"><p>"circuit tests good, so the solenoid is good." A <strong>performance</strong> DTC (ratio, slip, stuck on/off) with a good circuit = <strong>hydraulic or mechanical</strong>. A solenoid click only proves the coil moved.</p></div></div>
+<ul>
+<li><strong>TFT (NTC thermistor):</strong> <strong>open = reads very cold</strong> (P0713, high signal voltage). <strong>Short to ground = reads very hot</strong> (P0712).</li>
+<li><strong>ISS/OSS:</strong> Hall-effect: <strong>no ohmmeter</strong>; check reference, ground, and scope the square wave. Ratio = ISS ÷ OSS. A bad signal gives ratio DTCs on a healthy unit.</li>
+<li><strong>TR/MLP:</strong> compare range PID with the physical lever. Bad = no-crank in Park, wrong display, default gear.</li>
+<li><strong>Voltage drop under load,</strong> not ohms. <strong>Several U-codes at once</strong> = battery, power, ground or bus first.</li>
+<li><strong>OBD II:</strong> MIL off after 3 clean trips; history erases after 40 warm-ups (OEMs often say 80 for misfire/fuel). <strong>Permanent DTC: not cleared by scan tool or battery pull</strong>; it clears when the monitor passes. <strong>P0700</strong> = go scan the TCM.</li>
+<li><strong>Adapts:</strong> clearing is <strong>not</strong> a repair. <strong>Relearn</strong> after TCM, valve body or transmission replacement; load solenoid characterization data. Programming needs a <strong>battery maintainer, not a charger</strong>.</li>
+</ul>
+<h3>A.8 Not the transmission [G 2.7, 3.10]</h3>
+<p>Misfire mimics TCC shudder. TPS reading closed = early soft shifts; open = late harsh. Wheel-speed/ABS failure = no upshift, dead speedometer, no TCC. Traction control feels like slip but the ratio stays correct. Mismatched tires bind AWD. Rough shifts right after a reflash = zeroed adapts. <strong>The answer must explain every symptom in the stem.</strong></p>
+<h3>A.9 Other types: recognize only [G 6]</h3>
+<p><strong>DCT:</strong> no converter, no stall test, no TCC; odd/even shaft split is its "apply chart"; judder from a stop = launch clutch; dry clutch has <strong>no fluid to change</strong>. <strong>CVT:</strong> pulleys and belt/chain; never generic ATF; one-direction ratio fault = that direction's primary circuit; low clamp = belt slip. <strong>Don't carry one type's logic into another.</strong></p>
+<hr /></section><section id="s2"><div class="sec-head"><span class="sec-num">02</span><h2>Area B: In-Vehicle Maintenance and Repair (27%, 12 questions)</h2></div><p>Best yield on the test: one question per task. The pattern everywhere: <strong>verify the cheap root cause before replacing the expensive part.</strong></p>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Shop shortcut</th>
+<th>ASE wants</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Replace the TR switch</td>
+<td>Check cable/linkage and detent first, then index the switch</td>
+</tr>
+<tr>
+<td>Replace the tailshaft seal</td>
+<td>Check the <strong>bushing</strong> and yoke seal surface too</td>
+</tr>
+<tr>
+<td>Flush milky fluid</td>
+<td>Replace the cooler, rebuild (seals, frictions, converter), then flush</td>
+</tr>
+<tr>
+<td>Replace the TCM with ATF in the connector</td>
+<td>Fix the leaking case pass-through too</td>
+</tr>
+<tr>
+<td>Add fluid because it slips</td>
+<td>Check the level the SI way: overfull slips too</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Fluid level, no dipstick [G 4.8]:</strong> scan-tool fluid temperature <strong>inside the SI window</strong>, <strong>vehicle level</strong>, engine idling, shift through the ranges, open the check plug. <strong>Drip = correct, stream = overfull, nothing = low.</strong> Topped off cold = overfull hot (ATF expands). <strong>Overfull:</strong> foam, slip, heat, fluid out the vent. <strong>Underfull:</strong> pump pulls air, delayed engagement, whine, slip worse cold or in turns. <strong>Pan drop</strong> replaces only part of the fluid.</p>
+<p><strong>Fluid condition [G 2.1]:</strong> dark/burnt = overheated or burned frictions. <strong>Milky pink = coolant from the radiator cooler</strong> (cooling system pressure pushes it through a tiny leak). Even a little damages frictions.</p>
+<p><strong>Pan debris [G 4.3]:</strong> a little gray paste on the magnet = normal. Steel = magnetic (gears, bearings). <strong>Brass and aluminum don't stick to the magnet</strong>: a clean magnet doesn't mean no metal.</p>
+<p><strong>Cooling [G 4.4]:</strong> overheating with <strong>normal shifting</strong> = restricted cooler/lines or <strong>TBV stuck in bypass</strong> (works like a thermostat). After any failure, flush and <strong>flow-test warm with the transmission's own pump</strong>.</p>
+<p><strong>Valve body [G 4.5]:</strong> separator plates and gaskets are application-specific (compare hole for hole). Missing check balls = no shift or no move. Torque <strong>center outward</strong> with an inch-pound wrench. <strong>A new problem right after valve body work = the job itself</strong> (torque, check balls, gasket), not a new failure.</p>
+<p><strong>Linkage and TR switch [G 4.1]:</strong> <strong>linkage → switch → module.</strong> Cranks in N but not P = switch index or cable. Creep in neutral or delayed engagement = manual valve between detents.</p>
+<p><strong>Leaks [G 4.2]:</strong> clean, dye, find the <strong>highest</strong> wet point. Bellhousing = front seal (or engine rear main; identify the fluid). Rear = tailshaft seal <strong>and</strong> bushing/yoke.</p>
+<p><strong>Electrical [G 4.6]:</strong> ATF wicks up the harness from a failed pass-through. Fretting corrosion causes intermittents. Don't spread terminals with meter probes. <strong>Mounts [G 4.7]:</strong> clunk on engagement, vibration; settle the powertrain before torquing.</p>
+<hr /></section><section id="s3"><div class="sec-head"><span class="sec-num">03</span><h2>Area C: Removal, Inspection, Installation (15%, 7 questions)</h2></div><p>Only ~0.3 questions per task. Learn the <strong>order and the classic mistakes</strong>; numbers are SI.</p>
+<ul>
+<li><strong>Converter install [G 5.1]:</strong> turn it while pushing in until it drops through <strong>stages</strong> (input splines, stator splines, pump lugs). Free play to the flexplate before bolting. <strong>Never pull the unit in with the bellhousing bolts.</strong> Dowels present. <strong>Front pump damage right after an R&amp;I = installation first.</strong> Flexplate cracks knock like an engine; don't impact the bolts. Cracked flexplate or case = <strong>alignment</strong> (reinstall the dowels).</li>
+<li><strong>After install [G 5.2]:</strong> flush and flow-check the cooler, load calibration/characterization data, <strong>relearn</strong>, check level at SI temperature.</li>
+<li><strong>Clutch packs [G 5.4]:</strong> soak new frictions. Lip seals face <strong>toward the pressure</strong>. Piston check ball stuck = burned clutch.</li>
+<li><strong>Air test</strong> with low, clean, dry air: <strong>thud = good, hiss = leak.</strong></li>
+<li><strong>One-way clutches can go in backward:</strong> no drive in the range they carry, or a tie-up. Bench-check rotation.</li>
+<li><strong>Thrust washers:</strong> petroleum jelly, <strong>not white grease</strong>. <strong>End play:</strong> dial indicator, correct with selective washers or snap rings. <strong>Pump clearance:</strong> straightedge and feeler gauge.</li>
+<li><strong>Bands:</strong> a worn drum lets the band run out of travel: replace <strong>both</strong>.</li>
+</ul>
+<hr /></section><section id="s4"><div class="sec-head"><span class="sec-num">04</span><h2>Your Weak Spots (graded quizzes)</h2></div><div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Missed</th>
+<th>Correct</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Carrier vs. ring layout (twice)</td>
+<td>Carrier <strong>holds the planets</strong>; ring is the big outer gear</td>
+</tr>
+<tr>
+<td>"Sun gear = internal gear"</td>
+<td><strong>False.</strong> Ring = internal gear</td>
+</tr>
+<tr>
+<td>Ravigneaux</td>
+<td>2 suns, 2 planet sets, 1 carrier, 1 ring</td>
+</tr>
+<tr>
+<td>Total ratio</td>
+<td><strong>Multiply</strong> stages</td>
+</tr>
+<tr>
+<td>Reaction clutch steel plates</td>
+<td>Splined to the <strong>case</strong></td>
+</tr>
+<tr>
+<td>Disconnected member</td>
+<td><strong>Neutral</strong>, no torque flow</td>
+</tr>
+</tbody>
+</table></div>
+<hr /></section><section id="s5"><div class="sec-head"><span class="sec-num">05</span><h2>Wrong-Direction Traps</h2></div><p>Each is a place where a flashcard, website or shop slang has it backwards.</p>
+<ol>
+<li><strong>TFT:</strong> open = reads <strong>cold</strong>; short to ground = reads <strong>hot</strong>.</li>
+<li><strong>Stall:</strong> high = <strong>transmission</strong> slipping; low = engine or freewheeling stator.</li>
+<li><strong>Stator:</strong> freewheeling = poor launch; seized = poor top end + heat.</li>
+<li><strong>Order:</strong> fluid → line pressure → stall. Never stall-test with low line pressure.</li>
+<li><strong>Codes:</strong> clear with the scan tool; a battery pull doesn't clear a permanent DTC.</li>
+<li><strong>Adapts:</strong> reset is verification, not repair.</li>
+<li><strong>EPC:</strong> more current = <strong>less</strong> pressure; unplugged = <strong>maximum</strong> (classic design; read the stem).</li>
+<li><strong>Flare vs. tie-up:</strong> opposites. Flare rpm up; tie-up output braked.</li>
+<li><strong>First-gear one-way clutch</strong> can't cause slip in every forward gear.</li>
+<li><strong>Milky ATF:</strong> replace cooler + rebuild + flush. "Flush and refill" is the distractor.</li>
+<li><strong>Pan drop</strong> changes only part of the fluid.</li>
+<li><strong>Ratios in series multiply.</strong></li>
+<li><strong>Circuit good ≠ solenoid good</strong> when the DTC is a performance code.</li>
+<li><strong>Operating as designed</strong> ends the diagnosis at strategy step 2: explain it, don't replace parts.</li>
+</ol></section>
+<footer><span>ASE A2 Simple Sheet &middot; v1.0 &middot; 2026-10-13</span><span>Private study material. Not ASE content.</span></footer>
+</div></body></html>

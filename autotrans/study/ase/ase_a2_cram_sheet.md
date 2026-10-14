@@ -1,6 +1,24 @@
+## 0. Confirmed weak spots (graded quizzes)
+
+- **Carrier holds the planets.** Ring = big outer gear, internal teeth = **the "internal gear."** Sun = center, never the internal gear.
+- **Ratios in series multiply.** Ravigneaux = 2 suns, 2 planet sets, 1 carrier, 1 ring. LePelletier = simple + Ravigneaux.
+- **Reaction clutch steels splined to the case.** Disconnected member = neutral. **Carrier held = reverse.**
+- **Your risk on electronics:** a **performance** DTC with a good circuit = hydraulic or mechanical, not "solenoid OK, done."
+
+| In | Held | Out | Result (30/70) |
+|---|---|---|---|
+| Sun | Ring | Carrier | Reduction 3.33 |
+| Ring | Sun | Carrier | Reduction 1.43 |
+| Carrier | Sun | Ring | Overdrive 0.70 |
+| Carrier | Ring | Sun | Overdrive 0.30 |
+| Sun | Carrier | Ring | **Reverse** 2.33 |
+| Ring | Carrier | Sun | **Reverse** 0.43 |
+| Any two driven | — | — | Direct 1:1 |
+
 ## 1. Reasoning moves
 
 - **Exam:** 45 scored of 55, 75 min. Area A diagnosis 26 (58%), B in-vehicle 12 (27%), C R&I 7 (15%). Book answer beats shop habit. Tech A/B: judge each alone; "both" and "neither" are valid.
+- **Strategy-based diagnosis (GM):** 1 verify → 2 operating as designed? (yes = stop, explain, compare to an identical vehicle) → 3 preliminary checks → 4 Diagnostic System Check → 5 bulletins, recalls, **software before a module** → 6 path: current DTC / symptom no DTC / no published diag / intermittent-history → 7 isolate, repair, **verify** → 8 re-examine; not fixed = back to 1.
 - **Diagnostic order:** verify concern, fluid (level, type, condition), SI/codes, rule out engine and inputs, road test and scan data, line pressure, stall only if SI has one, repair, clear with scan tool, relearn, verify.
 - **Apply chart:** several failed ranges, find the element in all of them. One failed range, the element unique to it. Anything applied in a working range is cleared. Slip or no drive = fails to hold. Tie-up or braked feel = seized or not releasing.
 - **Planetary:** sun = center, external teeth. **Carrier holds the planets.** **Ring = outer gear with internal teeth = the "internal gear."** One driven, one held, one output. Two driven together = direct. Nothing held = neutral. Carrier held = reverse. Carrier output = reduction, carrier input = overdrive.
@@ -16,6 +34,7 @@
 - **Shift terms:** flare = release before apply, rpm up. Tie-up = bind-up = overlap, output braked. Slide-bump = accumulator bottoms out early. One harsh shift = that shift's accumulator.
 - **Pressure:** low in all ranges = supply (fluid, filter, pump, regulator). Low in one range = that circuit's leak. High in all = regulator or EPC failsafe. Reverse runs higher. Order: fluid, line pressure, then stall. Do not stall-test if line pressure is low.
 - **Stall:** high = transmission element slipping. Low = weak engine (rule out first) or freewheeling stator. **Freewheeling stator:** poor launch, normal at speed, low stall. **Seized stator:** good launch, poor top end, overheating; stall test not diagnostic.
+- **TCC won't apply** = usually an input blocking it (brake switch, TPS, cold temp reading, speed signal).
 - **TCC:** stuck on = stalls at a stop. Commanded on and slip stays high = not holding (check apply pressure, bores, stator-support bushing, turbine seal). Shudder disappears with TCC off or fully locked. Misfire does not.
 - **Valves:** switch routes, servo moves a valve, regulator controls pressure. Ruptured vacuum modulator = ATF in the vacuum hose, white smoke, fluid loss with no leak.
 - **Not the transmission:** misfire, TPS/MAF/MAP, wheel-speed or ABS data, tire size, mounts. Test before replacing.
@@ -35,5 +54,5 @@
 ## 4. Area B and Area C
 
 - **B:** linkage, then TR switch, then module. Worn tailshaft bushing needs more than a new seal. ATF in a TCM connector means fix the pass-through leak too. Valve body: separator plate and gasket must match, check balls in place, torque from the center out, new slip after service = suspect the job. Accumulator is not a backup pressure store. TBV stuck in bypass = no cooler flow = overheats. After failure, flush and flow-check the cooler.
-- **C:** converter must seat in stages, never pull it on with the bellhousing bolts. Missing dowels or an unseated converter ruin the pump. End play with a dial indicator, fix with shims or thrust washers. Soak new frictions. Air test with low, clean, dry air: thud is good, hiss is a leak. One-way clutches can go in backward, bench-check rotation. Thrust washers: petroleum jelly, not white grease. Relearn after install.
+- **C:** cracked flexplate or case = alignment (dowels). Converter must seat in stages, never pull it on with the bellhousing bolts. Missing dowels or an unseated converter ruin the pump. End play with a dial indicator, fix with shims or thrust washers. Soak new frictions. Air test with low, clean, dry air: thud is good, hiss is a leak. One-way clutches can go in backward, bench-check rotation. Thrust washers: petroleum jelly, not white grease. Relearn after install.
 - **Types:** DCT has no converter, no stall test, no apply chart. Odd-even shaft split is its chart. CVT: do not use generic ATF; one-direction ratio fault = that primary circuit; low clamp = belt slip.

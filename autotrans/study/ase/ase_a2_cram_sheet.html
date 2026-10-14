@@ -54,29 +54,90 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 @page{size:Letter;margin:.55in}
 @media print{.toc{break-after:auto}}
 </style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.5</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 2.0</div>
 <h1>A2 Cram Sheet</h1><p class="sub">Compressed from the A2 study guide. Read the guide first; this is for the last pass.</p>
-<div class="meta-row"><span><b>Prepared</b> October 12, 2026</span><span><b>Exam</b> October 15, 2026</span>
+<div class="meta-row"><span><b>Prepared</b> October 13, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
-<section id="s0"><div class="sec-head"><span class="sec-num">01</span><h2>Reasoning moves</h2></div><ul>
+<section id="s0"><div class="sec-head"><span class="sec-num">00</span><h2>Confirmed weak spots (graded quizzes)</h2></div><ul>
+<li><strong>Carrier holds the planets.</strong> Ring = big outer gear, internal teeth = <strong>the "internal gear."</strong> Sun = center, never the internal gear.</li>
+<li><strong>Ratios in series multiply.</strong> Ravigneaux = 2 suns, 2 planet sets, 1 carrier, 1 ring. LePelletier = simple + Ravigneaux.</li>
+<li><strong>Reaction clutch steels splined to the case.</strong> Disconnected member = neutral. <strong>Carrier held = reverse.</strong></li>
+<li><strong>Your risk on electronics:</strong> a <strong>performance</strong> DTC with a good circuit = hydraulic or mechanical, not "solenoid OK, done."</li>
+</ul>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>In</th>
+<th>Held</th>
+<th>Out</th>
+<th>Result (30/70)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sun</td>
+<td>Ring</td>
+<td>Carrier</td>
+<td>Reduction 3.33</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>Sun</td>
+<td>Carrier</td>
+<td>Reduction 1.43</td>
+</tr>
+<tr>
+<td>Carrier</td>
+<td>Sun</td>
+<td>Ring</td>
+<td>Overdrive 0.70</td>
+</tr>
+<tr>
+<td>Carrier</td>
+<td>Ring</td>
+<td>Sun</td>
+<td>Overdrive 0.30</td>
+</tr>
+<tr>
+<td>Sun</td>
+<td>Carrier</td>
+<td>Ring</td>
+<td><strong>Reverse</strong> 2.33</td>
+</tr>
+<tr>
+<td>Ring</td>
+<td>Carrier</td>
+<td>Sun</td>
+<td><strong>Reverse</strong> 0.43</td>
+</tr>
+<tr>
+<td>Any two driven</td>
+<td>—</td>
+<td>—</td>
+<td>Direct 1:1</td>
+</tr>
+</tbody>
+</table></div></section><section id="s1"><div class="sec-head"><span class="sec-num">01</span><h2>Reasoning moves</h2></div><ul>
 <li><strong>Exam:</strong> 45 scored of 55, 75 min. Area A diagnosis 26 (58%), B in-vehicle 12 (27%), C R&amp;I 7 (15%). Book answer beats shop habit. Tech A/B: judge each alone; "both" and "neither" are valid.</li>
+<li><strong>Strategy-based diagnosis (GM):</strong> 1 verify → 2 operating as designed? (yes = stop, explain, compare to an identical vehicle) → 3 preliminary checks → 4 Diagnostic System Check → 5 bulletins, recalls, <strong>software before a module</strong> → 6 path: current DTC / symptom no DTC / no published diag / intermittent-history → 7 isolate, repair, <strong>verify</strong> → 8 re-examine; not fixed = back to 1.</li>
 <li><strong>Diagnostic order:</strong> verify concern, fluid (level, type, condition), SI/codes, rule out engine and inputs, road test and scan data, line pressure, stall only if SI has one, repair, clear with scan tool, relearn, verify.</li>
 <li><strong>Apply chart:</strong> several failed ranges, find the element in all of them. One failed range, the element unique to it. Anything applied in a working range is cleared. Slip or no drive = fails to hold. Tie-up or braked feel = seized or not releasing.</li>
 <li><strong>Planetary:</strong> sun = center, external teeth. <strong>Carrier holds the planets.</strong> <strong>Ring = outer gear with internal teeth = the "internal gear."</strong> One driven, one held, one output. Two driven together = direct. Nothing held = neutral. Carrier held = reverse. Carrier output = reduction, carrier input = overdrive.</li>
 <li><strong>Ratios in series multiply.</strong> 2:1 then 3:1 = 6:1. <strong>Ravigneaux</strong> = 2 suns, 2 planet sets, 1 carrier, 1 ring. <strong>LePelletier</strong> = simple planetary + Ravigneaux.</li>
 <li><strong>Reaction clutch:</strong> steel plates splined to the <strong>case</strong>. One-way clutches: roller, sprag, mechanical diode; hold one way, overrun the other. Synchronous (clutch-to-clutch) shifts need timing, no one-way clutch. Nonsynchronous uses a one-way clutch.</li>
 <li><strong>Low roller clutch</strong> = slip in D1 only, not every forward gear. <strong>Allison 1000 reverse</strong> = C3 + C5.</li>
-</ul></section><section id="s1"><div class="sec-head"><span class="sec-num">02</span><h2>Mechanical and hydraulic</h2></div><ul>
+</ul></section><section id="s2"><div class="sec-head"><span class="sec-num">02</span><h2>Mechanical and hydraulic</h2></div><ul>
 <li><strong>Fluid, no dipstick:</strong> scan-tool temperature inside SI window, level vehicle, engine running, level plug. Drip = right, stream = overfull, none = low. Low or overfull (aeration) both slip. Cold slip or flare when cornering that clears warm = low level.</li>
 <li><strong>Milky pink ATF:</strong> replace radiator/cooler, overhaul (seals, frictions, converter), flush. Flush and refill alone is the distractor. Cooler leak: coolant gets into the ATF (and ATF can reach the coolant).</li>
 <li><strong>Pan drop</strong> replaces only part of the fluid. Pan debris: friction material black, steel magnetic, brass and aluminum not magnetic.</li>
 <li><strong>Shift terms:</strong> flare = release before apply, rpm up. Tie-up = bind-up = overlap, output braked. Slide-bump = accumulator bottoms out early. One harsh shift = that shift's accumulator.</li>
 <li><strong>Pressure:</strong> low in all ranges = supply (fluid, filter, pump, regulator). Low in one range = that circuit's leak. High in all = regulator or EPC failsafe. Reverse runs higher. Order: fluid, line pressure, then stall. Do not stall-test if line pressure is low.</li>
 <li><strong>Stall:</strong> high = transmission element slipping. Low = weak engine (rule out first) or freewheeling stator. <strong>Freewheeling stator:</strong> poor launch, normal at speed, low stall. <strong>Seized stator:</strong> good launch, poor top end, overheating; stall test not diagnostic.</li>
+<li><strong>TCC won't apply</strong> = usually an input blocking it (brake switch, TPS, cold temp reading, speed signal).</li>
 <li><strong>TCC:</strong> stuck on = stalls at a stop. Commanded on and slip stays high = not holding (check apply pressure, bores, stator-support bushing, turbine seal). Shudder disappears with TCC off or fully locked. Misfire does not.</li>
 <li><strong>Valves:</strong> switch routes, servo moves a valve, regulator controls pressure. Ruptured vacuum modulator = ATF in the vacuum hose, white smoke, fluid loss with no leak.</li>
 <li><strong>Not the transmission:</strong> misfire, TPS/MAF/MAP, wheel-speed or ABS data, tire size, mounts. Test before replacing.</li>
-</ul></section><section id="s2"><div class="sec-head"><span class="sec-num">03</span><h2>Electronic</h2></div><ul>
+</ul></section><section id="s3"><div class="sec-head"><span class="sec-num">03</span><h2>Electronic</h2></div><ul>
 <li><strong>Commanded vs. actual.</strong> Current tracks the command but no pressure or ratio change = hydraulic or mechanical. No current tracking = electrical. A solenoid click proves only the coil moved.</li>
 <li><strong>Performance DTC (ratio, slip, stuck) with a good circuit</strong> = hydraulic or mechanical. <strong>Circuit DTC (open, low, high)</strong> = test the circuit.</li>
 <li><strong>TFT (NTC):</strong> open = very cold (high signal voltage, P0713). Short to ground = very hot (P0712).</li>
@@ -86,10 +147,10 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>Voltage drop under load,</strong> not ohms. Several U-codes at once = battery, power, ground or bus first.</li>
 <li><strong>OBD II:</strong> MIL off after 3 clean trips. History erases at 40 warm-ups (many OEMs say 80 for misfire/fuel). <strong>Permanent DTCs</strong> are not cleared by a scan tool or battery pull. Clear with the scan tool, never a battery pull, then verify with monitors.</li>
 <li><strong>Adapts:</strong> clearing is not a repair. Relearn after TCM, valve body or transmission replacement. Load solenoid-body characterization data. Programming needs a battery maintainer, not a charger.</li>
-</ul></section><section id="s3"><div class="sec-head"><span class="sec-num">04</span><h2>Area B and Area C</h2></div><ul>
+</ul></section><section id="s4"><div class="sec-head"><span class="sec-num">04</span><h2>Area B and Area C</h2></div><ul>
 <li><strong>B:</strong> linkage, then TR switch, then module. Worn tailshaft bushing needs more than a new seal. ATF in a TCM connector means fix the pass-through leak too. Valve body: separator plate and gasket must match, check balls in place, torque from the center out, new slip after service = suspect the job. Accumulator is not a backup pressure store. TBV stuck in bypass = no cooler flow = overheats. After failure, flush and flow-check the cooler.</li>
-<li><strong>C:</strong> converter must seat in stages, never pull it on with the bellhousing bolts. Missing dowels or an unseated converter ruin the pump. End play with a dial indicator, fix with shims or thrust washers. Soak new frictions. Air test with low, clean, dry air: thud is good, hiss is a leak. One-way clutches can go in backward, bench-check rotation. Thrust washers: petroleum jelly, not white grease. Relearn after install.</li>
+<li><strong>C:</strong> cracked flexplate or case = alignment (dowels). Converter must seat in stages, never pull it on with the bellhousing bolts. Missing dowels or an unseated converter ruin the pump. End play with a dial indicator, fix with shims or thrust washers. Soak new frictions. Air test with low, clean, dry air: thud is good, hiss is a leak. One-way clutches can go in backward, bench-check rotation. Thrust washers: petroleum jelly, not white grease. Relearn after install.</li>
 <li><strong>Types:</strong> DCT has no converter, no stall test, no apply chart. Odd-even shaft split is its chart. CVT: do not use generic ATF; one-direction ratio fault = that primary circuit; low clamp = belt slip.</li>
 </ul></section>
-<footer><span>ASE A2 Cram Sheet &middot; v1.5 &middot; 2026-10-12</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>ASE A2 Cram Sheet &middot; v2.0 &middot; 2026-10-13</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>

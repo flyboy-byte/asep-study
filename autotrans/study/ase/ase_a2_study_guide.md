@@ -2,7 +2,7 @@
 
 This is the **professional ASE A2 (Automatic Transmission/Transaxle)** guide. It follows the official 2026 task list and weights, uses everything in the autotrans folder (your class notes, the GM training slides, the Unit 1 quiz misses, and the research pass), and treats class examples as illustrations of manufacturer-independent mechanisms. ASE questions are generic unless the stem names an application.
 
-**Source boundary.** Governing blueprint: ASE Automobile Study Guide 2026, A2 pages 10–15. Your notes: `notes/` and `note/`. Everything else comes from the 2026-09-30 research pass, which was **search-snippet level** (full pages were blocked), then cross-checked in `conflict_resolution.md`. Where the guide gives a number it is an example or is SI-dependent; ASE gives the number in the stem. Torque-converter notes were still in progress when this was built.
+**Source boundary.** Governing blueprint: ASE Automobile Study Guide 2026, A2 pages 10–15. Your notes: `notes/` and `note/`. Everything else comes from the 2026-09-30 research pass, which was **search-snippet level** (full pages were blocked), then cross-checked in `conflict_resolution.md`. Where the guide gives a number it is an example or is SI-dependent; ASE gives the number in the stem. Torque-converter notes were confirmed finished on 2026-10-12; their content is in 2.6.
 
 ### Exam map
 
