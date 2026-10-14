@@ -1,20 +1,39 @@
 ## 1. How to Use This (read first)
 
-Built for the **class final on 2026-10-14**, assuming it covers **Unit 1 and Unit 2** (instructor scope: your class notes, not the ASE task list). It is a compression of the Unit 1 guide, the Unit 2 guide and your own quiz misses. Version 1: **no Unit 2 test feedback yet.** Send what you missed and I'll rebuild it as v2.
+Built for the **class final on 2026-10-14**, assuming it covers **Unit 1 and Unit 2** (instructor scope: your class notes, not the ASE task list). It is a compression of the Unit 1 guide, the Unit 2 guide and your own quiz misses. Version 2 adds your **Unit 2 test review**: the stall-speed misses are now Tier A, Section 2.
 
 **Weighting.** Time goes where the points are likely and where you have already missed:
 
 | Tier | What | Why it's weighted this way |
 |---|---|---|
-| **A: lock in** | Planetary parts and rules; reaction clutch; converter and stall logic; line pressure high/low | You missed planetary items on the Unit 1 quiz; Unit 2 is converter/hydraulic heavy |
+| **A: lock in** | **Stall speed high vs. low**; planetary parts and rules; reaction clutch; converter; line pressure high/low | You missed both stall questions on the Unit 2 test and planetary items on the Unit 1 quiz |
 | **B: know cold** | TCC apply/release; pressure test logic; fluid level and condition; sensors and solenoids | Straight recall from your notes |
 | **C: recognize** | 10-speed chart pattern; gear set families; shift types; accumulators | The instructor said recognize, don't memorize |
 
 ---
 
-## 2. Tier A: Planetary Gears (your Unit 1 misses)
+## 2. Tier A: Stall Speed (your Unit 2 misses)
 
-### 2.1 The four names
+### Missed twice: stall speed, in opposite directions
+| Question | You chose | Correct | Why |
+|---|---|---|---|
+| Stall **higher** than spec. A: stator one-way clutch. B: slipping clutch in the transmission | Both | **B only** | Nothing in the converter can raise stall. Higher stall means the turbine is being allowed to turn, so a **transmission** holding element is slipping |
+| Stall **lower** than spec. A: stator one-way clutch. B: engine performance problem | Neither | **Both** | Low stall means the engine can't pull the rpm up: a **weak engine**, or a **stator that won't hold** (no torque multiplication) |
+
+> **Rule:** **HIGH stall = transmission only. LOW stall = engine OR stator.** The converter can only ever make stall **low**, never high. Read every stall stem with this one line.
+
+**Picture it (your Malibu note):** a healthy Malibu stood on hard enough chirps the tires off the line. Run the same car badly and stand on it, and it won't chirp: the engine can't pull the converter up to its normal stall rpm. **Weak engine = low stall.**
+
+### Got right, worth keeping
+- **More mainline pressure** gives **firmer shifts, better shift feel and more holding power** ("all of the above"). Apply force = pressure × piston area, so more pressure clamps the clutch harder. Too much is harsh.
+- **Positive displacement** = **a fixed volume per revolution**. A water pump is not: it moves fluid by whirlpool (centrifugal) action. Because a positive-displacement pump **can't be deadheaded** without breaking something, it needs **pressure regulation and relief**. A vane pump can be **variable** positive displacement.
+- **Converter fluid path:** impeller → turbine → **stator** → back to the impeller. Fluid leaving the turbine **must pass through the stator** before it reaches the impeller. The stator turns that fluid so it pushes the impeller **the way the crankshaft turns**.
+
+---
+
+## 3. Tier A: Planetary Gears (your Unit 1 misses)
+
+### 3.1 The four names
 | Part | Memory hook |
 |---|---|
 | **Sun** | Small gear in the **center**. External teeth |
@@ -24,7 +43,7 @@ Built for the **class final on 2026-10-14**, assuming it covers **Unit 1 and Uni
 
 > **Wrong direction:** "Sun gear is also called the internal gear" is **false**. Internal gear = **ring**. Carrier ≠ ring.
 
-### 2.2 The rules
+### 3.2 The rules
 | Result | Condition |
 |---|---|
 | **Neutral** | No driving member or no reaction (held) member: nothing connects input to output |
@@ -36,13 +55,13 @@ Built for the **class final on 2026-10-14**, assuming it covers **Unit 1 and Uni
 
 One member **driven**, one **held**, one **output**. Extra pinions add strength, not ratio. Planetary ratios from sun/ring: 30-tooth sun, 70-tooth ring, ring held and sun driven = (30+70)/30 = **3.33:1**.
 
-### 2.3 Gear sets
+### 3.3 Gear sets
 - **Simpson:** one sun, two carriers, two rings (4–5 speed).
 - **Ravigneaux:** **two suns, two planet sets, one carrier, one ring.**
 - **LePelletier:** a **simple planetary + a Ravigneaux** (6–8 speed; 6L80E).
 - **Total ratio of stages in series: multiply, don't add.** A big number is not a reason to reject it. (2:1 then 3:1 = 6:1.)
 
-### 2.4 Clutches and holding devices
+### 3.4 Clutches and holding devices
 - **Reaction (holding) multi-disc clutch:** the unlined **steel plates are splined to the transmission case**. Not a drum, not a carrier.
 - **Band** wraps a drum; a **servo** applies it.
 - **One-way clutches:** roller, sprag (hourglass), mechanical diode (strongest, like a ratchet). Holds one way, freewheels the other.
@@ -51,7 +70,7 @@ One member **driven**, one **held**, one **output**. Extra pinions add strength,
 
 ---
 
-## 3. Tier A: Torque Converter (Unit 2)
+## 4. Tier A: Torque Converter (Unit 2)
 
 | Part | Connected to | Rule |
 |---|---|---|
@@ -67,7 +86,8 @@ One member **driven**, one **held**, one **output**. Extra pinions add strength,
 
 - **Stator freewheels both ways:** poor launch, good highway, **low stall**.
 - **Stator locked both ways:** good launch, poor highway, overheating.
-- **High stall = the transmission is slipping.** Nothing inside the converter raises stall.
+- **High stall = transmission only. Low stall = engine OR stator** (Section 2). Nothing inside the converter raises stall.
+- **Fluid path:** impeller → turbine → **stator** → impeller.
 - **Most transmission heat comes from the converter**, especially at stall. Limit stall tests. Cool it with the parking brake and idle.
 - **Creep** with brakes released is normal. A non-lockup converter always slips.
 
@@ -79,9 +99,10 @@ One member **driven**, one **held**, one **output**. Extra pinions add strength,
 
 ---
 
-## 4. Tier A/B: Hydraulics and Pressure
+## 5. Tier A/B: Hydraulics and Pressure
 
 - **Pascal's law:** equal everywhere; **pressure = force ÷ area** (10 lb on 1 sq in = 10 psi; 4 sq in at 10 psi = 40 lb).
+- **Positive displacement** = fixed volume per revolution (a water pump is not); can't be deadheaded, so it needs regulation and relief. **More line pressure** = firmer shifts, better feel, more holding power.
 - **Pump creates flow. Resistance creates pressure.** Internal pump, always. Gear/crescent, gerotor, vane. **Variable displacement: vane housing pivots.**
 - **Valves:** switch (routes), servo (moves a valve), regulator (pressure). **Spool valves.** Manual valve = mechanical. Every unit has a pressure regulator.
 - **TV pressure** = throttle position.
@@ -101,7 +122,7 @@ One member **driven**, one **held**, one **output**. Extra pinions add strength,
 
 ---
 
-## 5. Tier B: Fluid, Heat and Diagnosis (Ch 15)
+## 6. Tier B: Fluid, Heat and Diagnosis (Ch 15)
 
 | Condition | Result |
 |---|---|
@@ -118,7 +139,7 @@ One member **driven**, one **held**, one **output**. Extra pinions add strength,
 
 ---
 
-## 6. Tier B: Electronics
+## 7. Tier B: Electronics
 
 | Item | Remember |
 |---|---|
@@ -138,7 +159,7 @@ One member **driven**, one **held**, one **output**. Extra pinions add strength,
 
 ---
 
-## 7. Tier C: Recognition
+## 8. Tier C: Recognition
 
 - **10-speed pattern:** high reduction (1st ~4.70:1) → direct at **7th (1.000:1)** → overdrive through 10th (~0.64:1). One-way clutch holds 1st–2nd, overruns 3rd–7th, unused 8th–10th. **Neutral has three clutches applied but no output path.**
 - 8/9/10-speed sets combine more than one compound set; check SI for the real design.
@@ -146,9 +167,9 @@ One member **driven**, one **held**, one **output**. Extra pinions add strength,
 
 ---
 
-## 8. Night Before
+## 9. Before the Test
 
-- Say aloud: **engine → impeller, transmission → turbine; carrier holds planets; ring = internal gear; two members driven = direct; carrier held = reverse.**
+- Say aloud: **HIGH stall = transmission only; LOW stall = engine or stator.** Then: **engine → impeller, transmission → turbine; carrier holds planets; ring = internal gear; two members driven = direct; carrier held = reverse.**
 - Redo the tier A tables from memory, then check this sheet.
 - Stop early. You know hydraulics and diagnosis from the shop; the points you lose are the **naming and direction** ones.
 

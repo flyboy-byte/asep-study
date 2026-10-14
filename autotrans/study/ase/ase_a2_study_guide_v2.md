@@ -46,7 +46,7 @@ Textbook and service-manual reasoning beats shop habit. If your shop experience 
 
 Your class notes say to know it mostly as a **flowchart**, and that it is preferred over symptom-based. It has its own pages: **Section 8** (last section of the guide).
 
-### Confirmed weak spots, from your graded Unit 1 quiz
+### Confirmed weak spots, from your graded Unit 1 quiz and Unit 2 test
 
 These are logged in one place because you missed them. Each is also covered in its normal section.
 
@@ -58,6 +58,8 @@ These are logged in one place because you missed them. Each is also covered in i
 | Total ratio of two stages | Multiply, don't add. A large result isn't a reason to reject it. | 1 |
 | Reaction multi-disc clutch: steel plates are splined to what | The transmission case. A reaction clutch anchors a member to the case. | 1 |
 | Torque flow needs a driven, a held, and an output member | A disconnected member gives neutral, not torque flow. Carrier held means reversed rotation. | 1 |
+| **Stall higher than spec (Unit 2 test):** chose "both" (stator + slipping clutch) | **Only the slipping transmission clutch.** Nothing in the converter raises stall | 2.6 |
+| **Stall lower than spec (Unit 2 test):** chose "neither" (stator, engine) | **Both.** Low stall = weak engine **or** a stator that won't hold | 2.6 |
 
 ## 1. Power Flow and Apply-Chart Reasoning
 
@@ -285,6 +287,8 @@ The full elimination method, with a worked example, is in **Section 1.3**. The o
 | **Won't rise with throttle/command** | TV linkage/cable or modulator/boost valve fault; EPC units: command not changing, solenoid not responding, boost/regulator valve stuck |
 | **Normal pressure, no engagement** | Routing (manual valve, shift/clutch-select valve, check ball, separator plate) or a mechanical failure (broken clutch, sprag) |
 
+**More line pressure** means more apply force (pressure × piston area): firmer shifts, firmer feel, more holding power. Too much is harsh. The pump is **positive displacement** (fixed volume per revolution, unlike a centrifugal water pump), so it can't be deadheaded and needs a regulator and relief.
+
 **Reverse pressure runs higher.** Reverse oil acts on the pressure regulator/boost valve and raises line pressure (documented in boost-valve patents). The usual explanation is that the reverse holding members carry the highest reaction torque (INFERRED, low-authority source). Low pressure in R only = a reverse-circuit leak or boost-valve fault. Low everywhere = supply.
 
 **Two-gauge method.** One gauge on line pressure and one on the clutch or servo circuit, read together. A clutch circuit reading well below line pressure means a leak in that circuit (the allowed difference is SI-dependent). Air testing with the valve body off locates the leaking element.
@@ -345,6 +349,8 @@ Valves fall into three jobs: **switch** valves route flow, **servo** valves move
 - **High stall** = something in the **transmission** is slipping (clutch, band, one-way clutch). Compare D and R to find the shared element. Nothing inside the converter makes stall higher than spec.
 - **Low stall** = the engine is not making power (misfire, restricted exhaust) **or** the stator is freewheeling. Rule out the engine first. A slightly low reading points to the engine; a very low reading with a poor launch points to the stator.
 - A TCC stuck on can make a stall test impossible or misleading (the engine may die in gear), so do not stall-test that complaint.
+
+> **Learner (missed both on the Unit 2 test):** **HIGH stall = transmission only. LOW stall = engine OR stator.** The converter can only make stall low, never high. A Tech A/B stem on high stall that offers "stator" and "slipping clutch" is **B only**; on low stall offering "stator" and "engine" it is **both**. Picture a healthy car that chirps the tires off the line vs. the same car running badly that can't: weak engine = low stall.
 
 > **ASE trap (wrong direction):** some flashcards say "stall 200 rpm above spec means the stator is not holding." That is backwards. High stall is a transmission holding element; a stator that is not holding gives LOW stall. Your own note ("nothing in the converter makes stall higher than spec") is correct.
 

@@ -10,12 +10,11 @@ This is the middle layer between the 34-page study guide and the cram sheet. It 
 | **B. In-vehicle maintenance and repair** | 12 | **27%** | **1.0 (best yield)** | Verify the cheap root cause before replacing the expensive part |
 | **C. Removal, inspection, installation** | 7 | 15% | ~0.3 | Order of steps and classic mistakes, not specs |
 
-**Two nights left:**
+**What's left:**
 
 | When | Do this |
 |---|---|
-| **Tonight (Tue)** | Read this sheet start to finish. For anything that doesn't click, open the guide section in brackets. Spend extra time on **A.3 (apply chart + planetary)**, your biggest miss area |
-| **Wed night (after the class final)** | Send me what the final exposed. Then the cram sheet, then the trap list in Section 5 here |
+| **Wed night (after the class final)** | Read this sheet start to finish. Extra time on **A.3 (apply chart + planetary)** and **A.5 (stall)**, your two confirmed miss areas. Open the guide section in brackets for anything that doesn't click. Then the trap list in Section 5 |
 | **Thu morning** | Cram sheet only. Stop early |
 
 ---
@@ -95,6 +94,8 @@ Swap input and output and the ratio flips to its reciprocal. **Ratios in series 
 | Launch | **Poor** | Normal |
 | Highway | Normal (above ~35 mph) | **Poor**, overheats |
 | Stall test | **Low** | Not diagnostic |
+
+> **Learner (missed both on the Unit 2 test):** **HIGH stall = transmission only. LOW stall = engine OR stator.** High stall, "stator" vs. "slipping clutch": **B only**. Low stall, "stator" vs. "engine": **both**.
 
 - **High stall = a transmission element slipping.** Nothing inside the converter raises stall. "200 rpm high = stator" is backwards.
 - **Low stall** = weak engine (rule out first, incl. restricted exhaust) or freewheeling stator.
@@ -187,7 +188,7 @@ Only ~0.3 questions per task. Learn the **order and the classic mistakes**; numb
 
 ---
 
-## 4. Your Weak Spots (graded quizzes)
+## 4. Your Weak Spots (Unit 1 quiz and Unit 2 test)
 
 | Missed | Correct |
 |---|---|
@@ -197,6 +198,8 @@ Only ~0.3 questions per task. Learn the **order and the classic mistakes**; numb
 | Total ratio | **Multiply** stages |
 | Reaction clutch steel plates | Splined to the **case** |
 | Disconnected member | **Neutral**, no torque flow |
+| **Stall HIGH, Tech A stator / Tech B slipping clutch** (Unit 2: chose both) | **B only.** Converter can't raise stall |
+| **Stall LOW, Tech A stator / Tech B engine** (Unit 2: chose neither) | **Both.** Weak engine or stator not holding |
 
 ---
 
@@ -205,7 +208,7 @@ Only ~0.3 questions per task. Learn the **order and the classic mistakes**; numb
 Each is a place where a flashcard, website or shop slang has it backwards.
 
 1. **TFT:** open = reads **cold**; short to ground = reads **hot**.
-2. **Stall:** high = **transmission** slipping; low = engine or freewheeling stator.
+2. **Stall:** high = **transmission only**; low = engine **or** stator (your Unit 2 miss).
 3. **Stator:** freewheeling = poor launch; seized = poor top end + heat.
 4. **Order:** fluid → line pressure → stall. Never stall-test with low line pressure.
 5. **Codes:** clear with the scan tool; a battery pull doesn't clear a permanent DTC.

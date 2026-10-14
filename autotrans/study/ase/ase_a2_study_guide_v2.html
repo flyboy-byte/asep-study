@@ -54,9 +54,9 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 @page{size:Letter;margin:.55in}
 @media print{.toc{break-after:auto}}
 </style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 1.6</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> ASE A2 <span class="sep">/</span> VERSION 2.0</div>
 <h1>Automatic Transmission / Transaxle</h1><p class="sub">Weighted to the official 2026 A2 task list. Class notes, the Unit 1 quiz misses and the research pass, in one guide.</p>
-<div class="meta-row"><span><b>Prepared</b> October 13, 2026</span><span><b>Exam</b> October 15, 2026</span>
+<div class="meta-row"><span><b>Prepared</b> October 14, 2026</span><span><b>Exam</b> October 15, 2026</span>
 <span><b>Scope</b> ASE A2, official 2026 task list (45 scored questions)</span></div></div>
 <nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#s0"><span class="tn">00</span>How to use this guide</a></li><li><a href="#s1"><span class="tn">01</span>Power Flow and Apply-Chart Reasoning</a></li><li><a href="#s2"><span class="tn">02</span>Mechanical and Hydraulic Diagnosis</a></li><li><a href="#s3"><span class="tn">03</span>Electronic and control-system diagnosis</a></li><li><a href="#s4"><span class="tn">04</span>Area B — In-Vehicle Maintenance and Repair (12 questions, 27%)</a></li><li><a href="#s5"><span class="tn">05</span>Area C — Removal, Inspection and Installation (7 questions, 15%)</a></li><li><a href="#s6"><span class="tn">06</span>Other transmission types: identify and diagnose at the recognition level</a></li><li><a href="#s7"><span class="tn">07</span>Exam strategy and the hardest topics</a></li><li><a href="#s8"><span class="tn">08</span>Strategy-Based Diagnosis</a></li></ol></nav><section id="s0"><div class="sec-head"><span class="sec-num">00</span><h2>How to use this guide</h2></div><p>This is the <strong>professional ASE A2 (Automatic Transmission/Transaxle)</strong> guide. It follows the official 2026 task list and weights, uses everything in the autotrans folder (your class notes, the GM training slides, the Unit 1 quiz misses, and the research pass), and treats class examples as illustrations of manufacturer-independent mechanisms. ASE questions are generic unless the stem names an application.</p>
 <p><strong>Source boundary.</strong> Governing blueprint: ASE Automobile Study Guide 2026, A2 pages 10–15. Your notes: <code>notes/</code> and <code>note/</code>. Everything else comes from the 2026-09-30 research pass, which was <strong>search-snippet level</strong> (full pages were blocked), then cross-checked in <code>conflict_resolution.md</code>. Where the guide gives a number it is an example or is SI-dependent; ASE gives the number in the stem. Torque-converter notes were confirmed finished on 2026-10-12; their content is in 2.6.</p>
@@ -124,7 +124,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <p>Textbook and service-manual reasoning beats shop habit. If your shop experience suggests a different answer than the by-the-book one, the exam wants the by-the-book one.</p>
 <h3>Strategy-based diagnosis</h3>
 <p>Your class notes say to know it mostly as a <strong>flowchart</strong>, and that it is preferred over symptom-based. It has its own pages: <strong>Section 8</strong> (last section of the guide).</p>
-<h3>Confirmed weak spots, from your graded Unit 1 quiz</h3>
+<h3>Confirmed weak spots, from your graded Unit 1 quiz and Unit 2 test</h3>
 <p>These are logged in one place because you missed them. Each is also covered in its normal section.</p>
 <div class="tbl-wrap"><table>
 <thead>
@@ -164,6 +164,16 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <td>Torque flow needs a driven, a held, and an output member</td>
 <td>A disconnected member gives neutral, not torque flow. Carrier held means reversed rotation.</td>
 <td>1</td>
+</tr>
+<tr>
+<td><strong>Stall higher than spec (Unit 2 test):</strong> chose "both" (stator + slipping clutch)</td>
+<td><strong>Only the slipping transmission clutch.</strong> Nothing in the converter raises stall</td>
+<td>2.6</td>
+</tr>
+<tr>
+<td><strong>Stall lower than spec (Unit 2 test):</strong> chose "neither" (stator, engine)</td>
+<td><strong>Both.</strong> Low stall = weak engine <strong>or</strong> a stator that won't hold</td>
+<td>2.6</td>
 </tr>
 </tbody>
 </table></div></section><section id="s1"><div class="sec-head"><span class="sec-num">01</span><h2>Power Flow and Apply-Chart Reasoning</h2></div><p class="tasks">Tasks: A.8, A.14, C.13, C.22 (also feeds C.19, C.23). The apply chart is the most reusable skill on the A2: the public sample item that reads one is a no-reverse question, and the answer comes from the chart, not from memory of a specific transmission.</p>
@@ -634,6 +644,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 </tbody>
 </table></div>
+<p><strong>More line pressure</strong> means more apply force (pressure × piston area): firmer shifts, firmer feel, more holding power. Too much is harsh. The pump is <strong>positive displacement</strong> (fixed volume per revolution, unlike a centrifugal water pump), so it can't be deadheaded and needs a regulator and relief.</p>
 <p><strong>Reverse pressure runs higher.</strong> Reverse oil acts on the pressure regulator/boost valve and raises line pressure (documented in boost-valve patents). The usual explanation is that the reverse holding members carry the highest reaction torque (INFERRED, low-authority source). Low pressure in R only = a reverse-circuit leak or boost-valve fault. Low everywhere = supply.</p>
 <p><strong>Two-gauge method.</strong> One gauge on line pressure and one on the clutch or servo circuit, read together. A clutch circuit reading well below line pressure means a leak in that circuit (the allowed difference is SI-dependent). Air testing with the valve body off locates the leaking element.</p>
 <p><strong>Electronic pressure control: command is not pressure.</strong> The scan tool shows a <strong>command</strong>. Only a gauge shows actual pressure. Classic EPC/PCS behavior is <strong>inverse</strong>: more current = <strong>lower</strong> pressure; low or no current (or unplugged) = <strong>maximum</strong> pressure. A GM line PC solenoid is normally high the same way. Unplugging the solenoid or its connector therefore drives pressure to maximum, which can <strong>mask</strong> a subtle circuit leak.
@@ -733,7 +744,8 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 - <strong>High stall</strong> = something in the <strong>transmission</strong> is slipping (clutch, band, one-way clutch). Compare D and R to find the shared element. Nothing inside the converter makes stall higher than spec.
 - <strong>Low stall</strong> = the engine is not making power (misfire, restricted exhaust) <strong>or</strong> the stator is freewheeling. Rule out the engine first. A slightly low reading points to the engine; a very low reading with a poor launch points to the stator.
 - A TCC stuck on can make a stall test impossible or misleading (the engine may die in gear), so do not stall-test that complaint.</p>
-<div class="note "><div class="tag">ASE trap (wrong direction)</div><div class="nb"><p>some flashcards say "stall 200 rpm above spec means the stator is not holding." That is backwards. High stall is a transmission holding element; a stator that is not holding gives LOW stall. Your own note ("nothing in the converter makes stall higher than spec") is correct.</p></div></div>
+<div class="note "><div class="tag">Learner (missed both on the Unit 2 test)</div><div class="nb"><p><strong>HIGH stall = transmission only. LOW stall = engine OR stator.</strong> The converter can only make stall low, never high. A Tech A/B stem on high stall that offers "stator" and "slipping clutch" is <strong>B only</strong>; on low stall offering "stator" and "engine" it is <strong>both</strong>. Picture a healthy car that chirps the tires off the line vs. the same car running badly that can't: weak engine = low stall.</p>
+<p><strong>ASE trap (wrong direction):</strong> some flashcards say "stall 200 rpm above spec means the stator is not holding." That is backwards. High stall is a transmission holding element; a stator that is not holding gives LOW stall. Your own note ("nothing in the converter makes stall higher than spec") is correct.</p></div></div>
 <p><strong>Torque converter clutch (TCC)</strong>
 - The module applies the TCC only when conditions are right: warm fluid/engine, enough speed and gear, steady throttle (not closed or WOT), brake off. It uses brake switch, TPS, ECT/TFT and speed sensors. A bad input usually <strong>prevents</strong> lockup (brake switch stuck "applied," TPS dead spot, cold-reading temperature sensor). Check the inputs and the TCC-enable data before condemning the solenoid or converter.
 - <strong>Flow:</strong> release oil is fed between the cover and the pressure plate to hold it off. To apply, the TCC PC solenoid regulates apply oil to the other side. Apply and release oil are routed through passages between the converter hub, stator shaft and turbine shaft.</p>
@@ -1791,5 +1803,5 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li>Do <strong>not</strong> skip verification (step 1) or the repair verification (step 7).</li>
 <li>If a scan tool cannot talk to a module, GM's manual suggests removing and restoring its power (pull the fuse or unplug the connector), then reprogramming if software is available. Consistent with Sections 3.2 and 3.8.</li>
 </ul></div></div></section>
-<footer><span>ASE A2 Study Guide &middot; v1.6 &middot; 2026-10-13</span><span>Private study material. Not ASE content.</span></footer>
+<footer><span>ASE A2 Study Guide &middot; v2.0 &middot; 2026-10-14</span><span>Private study material. Not ASE content.</span></footer>
 </div></body></html>

@@ -1,3 +1,24 @@
+## 0. Unit 2 Test Review (read first)
+
+From your graded Unit 2 review (`notes/unit2.txt`). The stall-speed logic is the one thing to fix before the final.
+
+### Missed twice: stall speed, in opposite directions
+| Question | You chose | Correct | Why |
+|---|---|---|---|
+| Stall **higher** than spec. A: stator one-way clutch. B: slipping clutch in the transmission | Both | **B only** | Nothing in the converter can raise stall. Higher stall means the turbine is being allowed to turn, so a **transmission** holding element is slipping |
+| Stall **lower** than spec. A: stator one-way clutch. B: engine performance problem | Neither | **Both** | Low stall means the engine can't pull the rpm up: a **weak engine**, or a **stator that won't hold** (no torque multiplication) |
+
+> **Rule:** **HIGH stall = transmission only. LOW stall = engine OR stator.** The converter can only ever make stall **low**, never high. Read every stall stem with this one line.
+
+**Picture it (your Malibu note):** a healthy Malibu stood on hard enough chirps the tires off the line. Run the same car badly and stand on it, and it won't chirp: the engine can't pull the converter up to its normal stall rpm. **Weak engine = low stall.**
+
+### Got right, worth keeping
+- **More mainline pressure** gives **firmer shifts, better shift feel and more holding power** ("all of the above"). Apply force = pressure × piston area, so more pressure clamps the clutch harder. Too much is harsh.
+- **Positive displacement** = **a fixed volume per revolution**. A water pump is not: it moves fluid by whirlpool (centrifugal) action. Because a positive-displacement pump **can't be deadheaded** without breaking something, it needs **pressure regulation and relief**. A vane pump can be **variable** positive displacement.
+- **Converter fluid path:** impeller → turbine → **stator** → back to the impeller. Fluid leaving the turbine **must pass through the stator** before it reaches the impeller. The stator turns that fluid so it pushes the impeller **the way the crankshaft turns**.
+
+---
+
 ## 1. Hydraulic Principles (Chapter 4)
 
 **Instructor scope for Unit 2:** TCC and hydraulic principles, Chapters 4, 6, 10 and 15 (hydraulic system, torque converters, electronic controls, condition diagnosis). Built from your class notes and the textbook text you pasted. Outside additions are labeled.
@@ -23,6 +44,8 @@ Every automatic transmission has an **internal** pump, driven through the conver
 | **Internal–external gear (crescent / gear)** | Gears with a crescent-shaped seal between them |
 | **Gerotor (rotor)** | Inner rotor turns inside an outer rotor that has one more lobe than the inner |
 | **Vane** | Vanes slide in a rotor inside an offset housing |
+
+**Positive displacement** means one revolution moves a **fixed volume**; a water pump (whirlpool/centrifugal flow) does not. Since it can't be deadheaded, it needs pressure **regulation and relief**.
 
 **Variable-displacement pump.** Still positive displacement, but the **vane housing pivots on a hinge** to shrink or grow the pumping chambers, so the volume per revolution changes. It matches output to need instead of wasting engine power moving excess fluid.
 
@@ -74,6 +97,8 @@ The converter is bolted to the **flexplate**, so it spins at **engine speed**. J
 | Flow pattern | **Vortex** flow (in a circle through the vanes) | **Rotary** flow (around the circumference) |
 | Torque multiplication | **Yes** | **None**: turbine speed ≈ impeller speed |
 
+**Fluid path:** impeller → turbine → **stator** → impeller. Fluid leaving the turbine must pass through the stator before it reaches the impeller.
+
 At stall the locked stator turns the fluid so it **assists the impeller**, which multiplies torque. At coupling the stator must freewheel or it would block the flow. Coupling is the closest the speeds come **without** the TCC (a couple hundred rpm of slip).
 
 - **Creep:** shifting from P/N into a drive range at idle sends a little torque to the input shaft, so the vehicle moves slightly with the brakes released. **Normal.**
@@ -89,6 +114,8 @@ At stall the locked stator turns the fluid so it **assists the impeller**, which
 | Memory aid | Lose the **low end** | Lose the **high end** and run hot |
 
 > **Rule:** **Nothing inside the converter makes stall speed HIGHER than spec.** A stall speed above spec means something in the **transmission** is slipping (clutch, band, one-way clutch).
+
+> **Your Unit 2 test:** high stall, Tech A says stator, Tech B says slipping clutch: **B only**. Low stall, Tech A says stator, Tech B says engine: **both**. See Section 0.
 
 ### 2.5 Heat
 **Most heat in an automatic transmission comes from the torque converter**, especially at **stall**. A stall test creates a lot of heat: limit how long and how many times (follow SI; a typical limit is about 5 seconds per test with a cool-down between). **Best way to cool the fluid: apply the parking brake and let the engine idle** in neutral/park.
@@ -297,7 +324,8 @@ Every shift is a **handoff**: the off-going element releases while the on-coming
 - **Converter:** **impeller = engine**, **turbine = input shaft**, **stator = reaction, on a one-way clutch.** Engine rpm = impeller. Input speed sensor = turbine.
 - **Stall:** stator locked, vortex flow, torque multiplied. **Coupling:** stator freewheels, rotary flow, no multiplication.
 - **Stator freewheels (never holds):** poor launch, good highway, low stall. **Stator locked:** good launch, poor highway, heat.
-- **Stall too HIGH = transmission slipping.** Nothing in the converter raises stall.
+- **Stall HIGH = transmission only. Stall LOW = engine OR stator.** (Your Unit 2 misses: high → Tech B only; low → both.) Nothing in the converter raises stall.
+- **Fluid path:** impeller → turbine → stator → impeller. **Positive displacement** = fixed volume per rev; needs regulation and relief. **More line pressure** = firmer shifts, more holding power.
 - **Most heat comes from the converter**, worst at stall. Cool by parking brake + idle.
 - **TCC slip = engine − turbine.** TCC applied → near zero. Released by release passage (stator shaft/turbine shaft); applied by apply passage (hub/stator shaft). **PWM** solenoid. No lockup in overdrive → overheats.
 - **Fluid:** underfilled → air in the pump, mushy, neutral, slip, TCC problems. Overfilled → foam, slip, fluid out the vent. Milkshake = coolant (failed cooler). Overheating = overflowing vent, purple converter, burned clutches.

@@ -1,0 +1,39 @@
+simple question i did get right.
+an increase in mainline pressure is desireable for
+firmer shifts
+improve shift feel
+increase holding power
+all the above. all the above was correct.
+just thot id drop it in here since it is a good question
+
+positive displacement means one revolution will output a certain volume
+as opposed to a waterpump wich fluid flows due to the wirlpool action.
+positive displacement pump needs pressure regulation and relief bc we cannot deadhead the flow without breaking something.
+vane pump would be variable positive displacement
+
+in a torque converter fluid leaving the turbine must pass through the __ before reaching the impeller
+stator
+flex plate
+drive shell
+accumulator
+i got it right as stator, but its a interesting question, especially regaurding fluid flow through a torque converter
+
+theres no failure of the torque converter than creates a higher stall speed.
+the stator works by redirecting fluid in direction that kicks the crankshaft in the way the crankshaft rotates
+a stator that will not hold creates poor off the line performance, but works good on highway.
+
+if u have a stock malibu, if u stood on it hard enuf the tires could chirp as u left the line, imagine the car is running really bad and if u then stand on it, it will not chirp the tires, idk just a way ig to think about how and what stall speed works and means.
+
+a vehicel being tested has a stall speed higher than specs. Tech a says the problem could be the stator one way clutch in the torque converter. tech b says the problem may be a slipping clutch assembly in the automatic transmission. who is right
+a
+b
+both
+neither
+i chose c and b was right.
+
+a vehicle being tested has a stall speed lower than specs. tech a says the problem could be the stator one way clutch in the torque converter. tech b says the problem may be caused by an engine performance issue.
+a
+b
+both
+neither
+i chose d and c was right.

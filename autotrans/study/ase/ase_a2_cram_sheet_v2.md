@@ -1,8 +1,9 @@
-## 0. Confirmed weak spots (graded quizzes)
+## 0. Confirmed weak spots (Unit 1 quiz, Unit 2 test)
 
 - **Carrier holds the planets.** Ring = big outer gear, internal teeth = **the "internal gear."** Sun = center, never the internal gear.
 - **Ratios in series multiply.** Ravigneaux = 2 suns, 2 planet sets, 1 carrier, 1 ring. LePelletier = simple + Ravigneaux.
 - **Reaction clutch steels splined to the case.** Disconnected member = neutral. **Carrier held = reverse.**
+- **Stall (missed both on the Unit 2 test): HIGH = transmission only. LOW = engine OR stator.** Converter can never make stall high.
 - **Your risk on electronics:** a **performance** DTC with a good circuit = hydraulic or mechanical, not "solenoid OK, done."
 
 | In | Held | Out | Result (30/70) |

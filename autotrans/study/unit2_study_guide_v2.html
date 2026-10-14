@@ -53,11 +53,45 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 @page{size:Letter;margin:.55in}
 @media print{.toc{break-after:auto}}
 </style></head><body><div class="wrap">
-<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> A2 <span class="sep">/</span> UNIT 2 <span class="sep">/</span> VERSION 1.0</div>
+<div class="masthead"><div class="eyebrow">GM ASEP <span class="sep">/</span> A2 <span class="sep">/</span> UNIT 2 <span class="sep">/</span> VERSION 2.0</div>
 <h1>Hydraulics, Torque Converters &amp; Condition Diagnosis</h1><p class="sub">Chapters 4, 6, 10 and 15, plus TCC. Built from class notes.</p>
-<div class="meta-row"><span><b>Prepared</b> 2026-10-12</span><span><b>Scope</b> Instructor scope (class notes), not the ASE task list</span></div></div>
-<nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#s1"><span class="tn">01</span>Hydraulic Principles (Chapter 4)</a></li><li><a href="#s2"><span class="tn">02</span>Torque Converters (Chapter 6)</a></li><li><a href="#s3"><span class="tn">03</span>Torque Converter Clutch (TCC)</a></li><li><a href="#s4"><span class="tn">04</span>Electronic Transmission Controls (Chapter 10)</a></li><li><a href="#s5"><span class="tn">05</span>Condition Diagnosis (Chapter 15)</a></li><li><a href="#s6"><span class="tn">06</span>Line Pressure: High or Low</a></li><li><a href="#s7"><span class="tn">07</span>Expanded Theory (from the ASE research)</a></li><li><a href="#s8"><span class="tn">08</span>One-Page Cram</a></li></ol></nav>
-<section id="s1"><div class="sec-head"><span class="sec-num">01</span><h2>Hydraulic Principles (Chapter 4)</h2></div><p><strong>Instructor scope for Unit 2:</strong> TCC and hydraulic principles, Chapters 4, 6, 10 and 15 (hydraulic system, torque converters, electronic controls, condition diagnosis). Built from your class notes and the textbook text you pasted. Outside additions are labeled.</p>
+<div class="meta-row"><span><b>Prepared</b> 2026-10-14</span><span><b>Scope</b> Instructor scope (class notes), not the ASE task list</span></div></div>
+<nav class="toc"><div class="toc-title">Contents</div><ol><li><a href="#s0"><span class="tn">00</span>Unit 2 Test Review (read first)</a></li><li><a href="#s1"><span class="tn">01</span>Hydraulic Principles (Chapter 4)</a></li><li><a href="#s2"><span class="tn">02</span>Torque Converters (Chapter 6)</a></li><li><a href="#s3"><span class="tn">03</span>Torque Converter Clutch (TCC)</a></li><li><a href="#s4"><span class="tn">04</span>Electronic Transmission Controls (Chapter 10)</a></li><li><a href="#s5"><span class="tn">05</span>Condition Diagnosis (Chapter 15)</a></li><li><a href="#s6"><span class="tn">06</span>Line Pressure: High or Low</a></li><li><a href="#s7"><span class="tn">07</span>Expanded Theory (from the ASE research)</a></li><li><a href="#s8"><span class="tn">08</span>One-Page Cram</a></li></ol></nav>
+<section id="s0"><div class="sec-head"><span class="sec-num">00</span><h2>Unit 2 Test Review (read first)</h2></div><p>From your graded Unit 2 review (<code>notes/unit2.txt</code>). The stall-speed logic is the one thing to fix before the final.</p>
+<h3>Missed twice: stall speed, in opposite directions</h3>
+<div class="tbl-wrap"><table>
+<thead>
+<tr>
+<th>Question</th>
+<th>You chose</th>
+<th>Correct</th>
+<th>Why</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Stall <strong>higher</strong> than spec. A: stator one-way clutch. B: slipping clutch in the transmission</td>
+<td>Both</td>
+<td><strong>B only</strong></td>
+<td>Nothing in the converter can raise stall. Higher stall means the turbine is being allowed to turn, so a <strong>transmission</strong> holding element is slipping</td>
+</tr>
+<tr>
+<td>Stall <strong>lower</strong> than spec. A: stator one-way clutch. B: engine performance problem</td>
+<td>Neither</td>
+<td><strong>Both</strong></td>
+<td>Low stall means the engine can't pull the rpm up: a <strong>weak engine</strong>, or a <strong>stator that won't hold</strong> (no torque multiplication)</td>
+</tr>
+</tbody>
+</table></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>HIGH stall = transmission only. LOW stall = engine OR stator.</strong> The converter can only ever make stall <strong>low</strong>, never high. Read every stall stem with this one line.</p></div></div>
+<p><strong>Picture it (your Malibu note):</strong> a healthy Malibu stood on hard enough chirps the tires off the line. Run the same car badly and stand on it, and it won't chirp: the engine can't pull the converter up to its normal stall rpm. <strong>Weak engine = low stall.</strong></p>
+<h3>Got right, worth keeping</h3>
+<ul>
+<li><strong>More mainline pressure</strong> gives <strong>firmer shifts, better shift feel and more holding power</strong> ("all of the above"). Apply force = pressure × piston area, so more pressure clamps the clutch harder. Too much is harsh.</li>
+<li><strong>Positive displacement</strong> = <strong>a fixed volume per revolution</strong>. A water pump is not: it moves fluid by whirlpool (centrifugal) action. Because a positive-displacement pump <strong>can't be deadheaded</strong> without breaking something, it needs <strong>pressure regulation and relief</strong>. A vane pump can be <strong>variable</strong> positive displacement.</li>
+<li><strong>Converter fluid path:</strong> impeller → turbine → <strong>stator</strong> → back to the impeller. Fluid leaving the turbine <strong>must pass through the stator</strong> before it reaches the impeller. The stator turns that fluid so it pushes the impeller <strong>the way the crankshaft turns</strong>.</li>
+</ul>
+<hr /></section><section id="s1"><div class="sec-head"><span class="sec-num">01</span><h2>Hydraulic Principles (Chapter 4)</h2></div><p><strong>Instructor scope for Unit 2:</strong> TCC and hydraulic principles, Chapters 4, 6, 10 and 15 (hydraulic system, torque converters, electronic controls, condition diagnosis). Built from your class notes and the textbook text you pasted. Outside additions are labeled.</p>
 <h3><span class="n">1.1</span>What the hydraulic system does</h3>
 <ul>
 <li><strong>Applies the clutches and bands</strong>, which controls the transmission's power flow.</li>
@@ -92,6 +126,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 </tbody>
 </table></div>
+<p><strong>Positive displacement</strong> means one revolution moves a <strong>fixed volume</strong>; a water pump (whirlpool/centrifugal flow) does not. Since it can't be deadheaded, it needs pressure <strong>regulation and relief</strong>.</p>
 <p><strong>Variable-displacement pump.</strong> Still positive displacement, but the <strong>vane housing pivots on a hinge</strong> to shrink or grow the pumping chambers, so the volume per revolution changes. It matches output to need instead of wasting engine power moving excess fluid.</p>
 <h3><span class="n">1.3</span>Valves</h3>
 <p>Most transmission valves are <strong>spool valves</strong>: a shaped plunger (like a thread spool) that slides in a bore and opens or closes passages. Most are moved by fluid pressure and returned by a spring. The <strong>manual valve</strong> is the main exception: the driver moves it mechanically with the shifter.</p>
@@ -195,6 +230,7 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 </tbody>
 </table></div>
+<p><strong>Fluid path:</strong> impeller → turbine → <strong>stator</strong> → impeller. Fluid leaving the turbine must pass through the stator before it reaches the impeller.</p>
 <p>At stall the locked stator turns the fluid so it <strong>assists the impeller</strong>, which multiplies torque. At coupling the stator must freewheel or it would block the flow. Coupling is the closest the speeds come <strong>without</strong> the TCC (a couple hundred rpm of slip).</p>
 <ul>
 <li><strong>Creep:</strong> shifting from P/N into a drive range at idle sends a little torque to the input shaft, so the vehicle moves slightly with the brakes released. <strong>Normal.</strong></li>
@@ -233,7 +269,8 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 </tr>
 </tbody>
 </table></div>
-<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>Nothing inside the converter makes stall speed HIGHER than spec.</strong> A stall speed above spec means something in the <strong>transmission</strong> is slipping (clutch, band, one-way clutch).</p></div></div>
+<div class="note rule"><div class="tag">Rule</div><div class="nb"><p><strong>Nothing inside the converter makes stall speed HIGHER than spec.</strong> A stall speed above spec means something in the <strong>transmission</strong> is slipping (clutch, band, one-way clutch).</p>
+<p><strong>Your Unit 2 test:</strong> high stall, Tech A says stator, Tech B says slipping clutch: <strong>B only</strong>. Low stall, Tech A says stator, Tech B says engine: <strong>both</strong>. See Section 0.</p></div></div>
 <h3><span class="n">2.5</span>Heat</h3>
 <p><strong>Most heat in an automatic transmission comes from the torque converter</strong>, especially at <strong>stall</strong>. A stall test creates a lot of heat: limit how long and how many times (follow SI; a typical limit is about 5 seconds per test with a cool-down between). <strong>Best way to cool the fluid: apply the parking brake and let the engine idle</strong> in neutral/park.</p>
 <hr /></section><section id="s3"><div class="sec-head"><span class="sec-num">03</span><h2>Torque Converter Clutch (TCC)</h2></div><h3><span class="n">3.1</span>What it is for</h3>
@@ -582,7 +619,8 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>Converter:</strong> <strong>impeller = engine</strong>, <strong>turbine = input shaft</strong>, <strong>stator = reaction, on a one-way clutch.</strong> Engine rpm = impeller. Input speed sensor = turbine.</li>
 <li><strong>Stall:</strong> stator locked, vortex flow, torque multiplied. <strong>Coupling:</strong> stator freewheels, rotary flow, no multiplication.</li>
 <li><strong>Stator freewheels (never holds):</strong> poor launch, good highway, low stall. <strong>Stator locked:</strong> good launch, poor highway, heat.</li>
-<li><strong>Stall too HIGH = transmission slipping.</strong> Nothing in the converter raises stall.</li>
+<li><strong>Stall HIGH = transmission only. Stall LOW = engine OR stator.</strong> (Your Unit 2 misses: high → Tech B only; low → both.) Nothing in the converter raises stall.</li>
+<li><strong>Fluid path:</strong> impeller → turbine → stator → impeller. <strong>Positive displacement</strong> = fixed volume per rev; needs regulation and relief. <strong>More line pressure</strong> = firmer shifts, more holding power.</li>
 <li><strong>Most heat comes from the converter</strong>, worst at stall. Cool by parking brake + idle.</li>
 <li><strong>TCC slip = engine − turbine.</strong> TCC applied → near zero. Released by release passage (stator shaft/turbine shaft); applied by apply passage (hub/stator shaft). <strong>PWM</strong> solenoid. No lockup in overdrive → overheats.</li>
 <li><strong>Fluid:</strong> underfilled → air in the pump, mushy, neutral, slip, TCC problems. Overfilled → foam, slip, fluid out the vent. Milkshake = coolant (failed cooler). Overheating = overflowing vent, purple converter, burned clutches.</li>
@@ -592,5 +630,5 @@ footer{margin-top:1.6rem;padding-top:.7rem;border-top:1px solid var(--line);font
 <li><strong>Cracked flexplate/case = alignment.</strong> Dowel pins stay in the engine; reinstall them with a new transmission.</li>
 </ul>
 <p><em>Source note: class notes (hydralics, torque-converters, ch15) and the GM technician transmission guide excerpt pasted in <code>notes/torque-converters.txt</code>. Section 7 comes from the ASE A2 guide and research pass (partly verified; see its CONTEXT/verification notes). Items marked "outside" or "typical" are general knowledge, not from the notes. Not ASE content.</em></p></section>
-<footer><span>Unit 2 Study Guide &middot; v1.0 &middot; 2026-10-12</span><span>Private study material.</span></footer>
+<footer><span>Unit 2 Study Guide &middot; v2.0 &middot; 2026-10-14</span><span>Private study material.</span></footer>
 </div></body></html>
