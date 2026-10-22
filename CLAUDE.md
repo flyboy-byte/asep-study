@@ -3,18 +3,19 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 This is not a codebase. It is Logan's GM ASEP study workspace, with one folder per course/ASE exam, in one private git repo (`flyboy-byte/asep-study`). See `README.md`.
-There are no build, lint, or test commands. Only `workflow/.gitignore` exists (Python caches, `.env`, `courses/`, `local/`).
+There are no lint or test commands. PDFs for new courses build with `python3 tools/studybuild.py <file.md>` (A2 and A3 keep their own builders). Only `workflow/.gitignore` exists (Python caches, `.env`, `courses/`, `local/`).
 
 ## Layout
 
-| Folder | Exam | State (2026-09-30) |
+| Folder | Exam | State (2026-10-22) |
 | --- | --- | --- |
 | `mantrans/` | A3 Manual Drive Train & Axles | Most complete. Class final taken 2026-09-21. ASE prep (Version 3 guide, simple sheet, cram sheet, PDFs) lives in `study/ase/`, separate from class-unit guides in `study/`. |
-| `autotrans/` | A2 Automatic Transmissions | ASE A2 exam 2026-10-15 (per Logan, 2026-10-09). Note intake active (`note/`, `notes/`). Weighted ASE research done 2026-09-30: task map and index in `research.md`, raw tagged evidence in `research_notes/A2 open gap research/` (snippet-level, verify before use). ASE A2 package v1 built 2026-10-09 in `study/ase/` (exam 2026-10-15). Check its `CONTEXT.md` `Status:` line. |
-| `engine-performance/` | A8 | Framework scaffold only (spring semester). |
-| `l1/` | L1 | Framework scaffold only. |
+| `autotrans/` | A2 Automatic Transmissions | **Passed (reported 2026-10-22).** Closed. Final v2 package (guide, simple sheet, cram) in `study/ase/`, class guides in `study/`. |
+| `engine-performance/` | A8 Engine Performance | Ready for intake (2026-10-22): preferences carried over, no notes or research yet. Spring semester. |
+| `l1/` | L1 Advanced Engine Performance | Ready for intake (2026-10-22): same as A8. Overlaps A8; uses a composite-vehicle reference. |
 | `l2/`, `l3/` | — | Empty placeholders. |
 | `workflow/` | — | Reusable process and `ase-study` skill source (not a course). |
+| `tools/` | — | `studybuild.py`: shared md → claude-paper HTML + letter PDF builder for new courses (2026-10-22). |
 
 Each course folder is self-contained and has its own `CLAUDE.md`/`AGENTS.md`, `CONTEXT.md`, and
 standard subfolders: `notes/` (raw notes and images), `study/` (generated guides, cram sheets,

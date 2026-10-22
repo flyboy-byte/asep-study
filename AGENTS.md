@@ -10,9 +10,10 @@ There are no build, lint, or test commands. Only `workflow/.gitignore` exists (P
 | Folder | Exam | State (2026-09-22) |
 | --- | --- | --- |
 | `mantrans/` | A3 Manual Drive Train & Axles | Active/most complete. Version 2 class-final + ASE packages built 2026-09-18. |
-| `autotrans/` | A2 Automatic Transmissions | ASE A2 about two weeks out (per Logan, 2026-09-30). Note intake active. Weighted ASE research done 2026-09-30 (`research.md` map and index; `research_notes/` raw evidence). No study package yet. |
-| `engine-performance/` | A8 | Framework scaffold only (spring semester). |
-| `l1/` | L1 | Framework scaffold only. |
+| `autotrans/` | A2 Automatic Transmissions | Passed (reported 2026-10-22). Closed. Final v2 package in `study/ase/`. |
+| `engine-performance/` | A8 Engine Performance | Ready for intake (2026-10-22). No notes or research yet. Spring semester. |
+| `l1/` | L1 Advanced Engine Performance | Ready for intake (2026-10-22). Overlaps A8. |
+| `tools/` | — | `studybuild.py`: shared md → HTML + letter PDF builder for new courses. |
 | `l2/`, `l3/` | — | Empty placeholders. |
 
 Each course folder is self-contained and has its own `AGENTS.md`/`AGENTS.md`, `CONTEXT.md`, and
