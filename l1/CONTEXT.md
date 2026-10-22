@@ -1,6 +1,6 @@
 # L1 study context
 
-Status: **Ready for intake (2026-10-22).** Folder set up, preferences carried over from A2. No notes received, no research, no guides yet.
+Status: **Ready for intake (2026-10-22).** Folder set up, preferences carried over from A2. Official ASE reference verified and task map built (2026-10-22). No notes received, no guides yet.
 Created: 2026-09-20. Last updated: 2026-10-22.
 
 ## Intent
@@ -10,12 +10,12 @@ Build understanding from course notes, public teaching material, shop examples a
 ## Current facts
 
 - Exam/subject: L1 Advanced Engine Performance Specialist. The instructor syllabus and current official exam blueprint have not been reviewed.
-- L1 differs from the A-series tests: it uses a composite-vehicle reference booklet, so questions depend on reading that reference. Prep needs the current official composite reference, not only a task list. (Standard ASE format; verify the current edition on the official L1 page.)
-- Relationship to A8: overlaps heavily with A8 Engine Performance (`../engine-performance/`). INFERRED; verify any certification prerequisite on the official page. Reuse A8 research by pointer rather than copying it.
+- L1 differs from the A-series tests: it uses a composite-vehicle reference booklet, so questions depend on reading that reference. Prep needs the current official composite reference, not only a task list. Now DOCUMENTED: guide p. 3; the booklet is saved in `sources/ase/`.
+- Relationship to A8: **passing A8 is required to register for L1** (DOCUMENTED, L1 guide p. 3). The content overlaps heavily with A8 (`../engine-performance/`). Reuse A8 research by pointer rather than copying it.
 - Timing relative to A8: unknown.
 - Class start, class-final date and ASE appointment: unknown. Don't infer them; ask when planning needs them.
 - Textbook/edition, prep books and named lab assemblies: not yet recorded.
-- Current mode: **intake**. Raw notes go in `notes/` (see `notes/README.md`). Research and study packages start only when Logan asks.
+- Current mode: **intake**. Raw notes go in `notes/` (see `notes/README.md`). Official-reference research done 2026-10-22 at Logan's request. Study packages start only when Logan asks.
 
 ## Carried over from A3/A2 (learner preferences, already decided; do not re-ask)
 
@@ -38,4 +38,5 @@ Preserve raw notes and the learner's file arrangement. Class scope comes from th
 
 - 2026-09-20: Empty scaffold created.
 - 2026-10-22: Environment prepped after A2 was passed. Added `notes/README.md` (intake rules), tracked `sources/` and `study/`, and recorded the carried-over preferences above. The shared PDF builder is `tools/studybuild.py` (generalized from the A2 builder; it rendered the A2 cram sheet identically in a test). No technical work done.
-- Next action: intake Logan's first notes when they arrive. When he asks for ASE work, start by locating the official L1 task list and the current composite-vehicle reference (`research.md` > Official reference).
+- 2026-10-22 (later): Official L1 study guide (© ASE 2026) and the Composite Vehicle Type 4 reference booklet downloaded to `sources/ase/`. Weighted task map in `research.md`: 50 scored of 60, 150 min; B computerized controls/OBD II is 32%; the new material is five-gas/I-M analysis and the booklet. **Passing A8 is required to register** (DOCUMENTED). Certification also needs 3 years of documented work experience (OPEN whether ASEP + dealership time covers it).
+- Next action: intake notes when they arrive. Before an L1 guide, walk through the CV4 booklet (body not yet studied, only its contents page). Point to A8 material rather than copying it.

@@ -1,6 +1,6 @@
 # A8 study context
 
-Status: **Ready for intake (2026-10-22).** Folder set up, preferences carried over from A2. No notes received, no research, no guides yet.
+Status: **Ready for intake (2026-10-22).** Folder set up, preferences carried over from A2. Official ASE reference verified and task map built (2026-10-22). No notes received, no guides yet.
 Created: 2026-09-20. Last updated: 2026-10-22.
 
 ## Intent
@@ -11,10 +11,10 @@ Build understanding from course notes, public teaching material, shop examples a
 
 - Exam/subject: A8 Engine Performance. The instructor syllabus and current official exam blueprint have not been reviewed.
 - Timing: spring semester (per the repo `CLAUDE.md` as of 2026-09-30). Exact dates not stated.
-- Relationship to L1: L1 (Advanced Engine Performance Specialist) builds on A8 material. INFERRED; check the official L1 page for any A8 prerequisite before relying on it. If both are being studied, A8 research should be reusable for L1 and kept in this folder.
+- Relationship to L1: **passing A8 is required to register for L1** (DOCUMENTED, L1 guide p. 3). L1 goes deeper into the same material. If both are being studied, A8 research should be reusable for L1 and kept in this folder.
 - Class start, class-final date and ASE appointment: unknown. Don't infer them; ask when planning needs them.
 - Textbook/edition, prep books and named lab assemblies: not yet recorded.
-- Current mode: **intake**. Raw notes go in `notes/` (see `notes/README.md`). Research and study packages start only when Logan asks.
+- Current mode: **intake**. Raw notes go in `notes/` (see `notes/README.md`). Official-reference research done 2026-10-22 at Logan's request. Study packages start only when Logan asks.
 
 ## Carried over from A3/A2 (learner preferences, already decided; do not re-ask)
 
@@ -37,4 +37,5 @@ Preserve raw notes and the learner's file arrangement. Class scope comes from th
 
 - 2026-09-20: Empty scaffold created.
 - 2026-10-22: Environment prepped after A2 was passed. Added `notes/README.md` (intake rules), tracked `sources/` and `study/`, and recorded the carried-over preferences above. The shared PDF builder is `tools/studybuild.py` (generalized from the A2 builder; it rendered the A2 cram sheet identically in a test). No technical work done.
-- Next action: intake Logan's first notes when they arrive. When he asks for ASE work, start by verifying the official A8 task list and weights (`research.md` > Official reference).
+- 2026-10-22 (later): Official A8 reference verified and a weighted task map built in `research.md` (50 scored of 60, 75 min, ~1.25 min per question; E computerized controls 26% and B ignition 16% are the highest yield per task, EVAP is the top emissions topic). The ASE guide already in `../mantrans/sources/ase/` is the current edition (byte-identical download). Ten public sample questions summarized; several hinge on which direction a reading points (Logan's A2 weak spot).
+- Next action: intake Logan's first notes and add a Notes column to the task map in `research.md`. **A8 must be passed before L1 can be booked** (DOCUMENTED, L1 guide p. 3). The A8 diagnostic-direction trap list is optional; Logan hasn't asked for it yet.
