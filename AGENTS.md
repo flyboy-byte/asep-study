@@ -11,8 +11,9 @@ There are no build, lint, or test commands. Only `workflow/.gitignore` exists (P
 | --- | --- | --- |
 | `mantrans/` | A3 Manual Drive Train & Axles | Active/most complete. Version 2 class-final + ASE packages built 2026-09-18. |
 | `autotrans/` | A2 Automatic Transmissions | Passed (reported 2026-10-22). Closed. Final v2 package in `study/ase/`. |
-| `engine-performance/` | A8 Engine Performance | Ready for intake (2026-10-22). No notes or research yet. Spring semester. |
-| `l1/` | L1 Advanced Engine Performance | Ready for intake (2026-10-22). Overlaps A8. |
+| `engine-performance/` | A8 Engine Performance | Ready for intake. Official task map in `research.md` (2026-10-22). No notes or guides yet. Spring semester. |
+| `l1/` | L1 Advanced Engine Performance | Ready for intake. Official guide + CV4 booklet in `sources/ase/`, task map in `research.md` (2026-10-22). A8 pass required. |
+| `bay-gen/` | — | Random GM vehicle + customer-concern generator (tkinter). Not a course. |
 | `tools/` | — | `studybuild.py`: shared md → HTML + letter PDF builder for new courses. |
 | `l2/`, `l3/` | — | Empty placeholders. |
 

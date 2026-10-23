@@ -11,10 +11,11 @@ There are no lint or test commands. PDFs for new courses build with `python3 too
 | --- | --- | --- |
 | `mantrans/` | A3 Manual Drive Train & Axles | Most complete. Class final taken 2026-09-21. ASE prep (Version 3 guide, simple sheet, cram sheet, PDFs) lives in `study/ase/`, separate from class-unit guides in `study/`. |
 | `autotrans/` | A2 Automatic Transmissions | **Passed (reported 2026-10-22).** Closed. Final v2 package (guide, simple sheet, cram) in `study/ase/`, class guides in `study/`. |
-| `engine-performance/` | A8 Engine Performance | Ready for intake (2026-10-22): preferences carried over, no notes or research yet. Spring semester. |
-| `l1/` | L1 Advanced Engine Performance | Ready for intake (2026-10-22): same as A8. Overlaps A8; uses a composite-vehicle reference. |
+| `engine-performance/` | A8 Engine Performance | Ready for intake. Official task list verified and weighted task map in `research.md` (2026-10-22). No notes or guides yet. Spring semester. |
+| `l1/` | L1 Advanced Engine Performance | Ready for intake. Official guide + Composite Vehicle Type 4 booklet in `sources/ase/`, task map in `research.md` (2026-10-22). Passing A8 required to register. |
 | `l2/`, `l3/` | — | Empty placeholders. |
 | `workflow/` | — | Reusable process and `ase-study` skill source (not a course). |
+| `bay-gen/` | — | Random GM vehicle + customer-concern generator (tkinter), for shop practice. Not a course. See its `README.md` (2026-10-22). |
 | `tools/` | — | `studybuild.py`: shared md → claude-paper HTML + letter PDF builder for new courses (2026-10-22). |
 
 Each course folder is self-contained and has its own `CLAUDE.md`/`AGENTS.md`, `CONTEXT.md`, and

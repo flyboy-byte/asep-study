@@ -12,6 +12,7 @@ material, and the reusable workflow that builds it. Last updated 2026-10-22.
 | `engine-performance/` | A8 Engine Performance | Ready for notes (spring semester). Drop them in `notes/`. |
 | `l1/` | L1 Advanced Engine Performance | Ready for notes. Drop them in `notes/`. |
 | `l2/`, `l3/` | — | Empty placeholders. |
+| `bay-gen/` | — | Click-to-generate random GM vehicles with customer concerns, warranty coverage and a week mode. `python3 bay-gen/bay_gen.py` |
 | `tools/` | — | `studybuild.py`: turns a guide `.md` into the printable HTML + PDF. |
 | `workflow/` | — | The reusable process and the `ase-study` skill (merged in 2026-09-24 from the former separate repo, history kept). |
 
