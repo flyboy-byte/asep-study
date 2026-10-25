@@ -2,7 +2,7 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-This is not a codebase. It is Logan's GM ASEP study workspace, with one folder per course/ASE exam, in one private git repo (`flyboy-byte/asep-study`). See `README.md`.
+This is not a codebase. It is Logan's GM ASEP study workspace, with one folder per course/ASE exam, in one public git repo (`flyboy-byte/asep-study`, made public by Logan 2026-10-24). See `README.md`.
 There are no lint or test commands. PDFs for new courses build with `python3 tools/studybuild.py <file.md>` (A2 and A3 keep their own builders). Only `workflow/.gitignore` exists (Python caches, `.env`, `courses/`, `local/`).
 
 ## Layout
@@ -55,7 +55,8 @@ scaffolded folder is a copy of that process. Use it, but don't reorganize existi
 
 ## Repo and new machines
 
-Private repo: it includes instructor exams and a third-party PDF, so never make it public. Session history
+Public repo (Logan's decision, 2026-10-24; don't re-raise). GitHub Pages serves only `bay-gen/web/` at
+https://flyboy-byte.github.io/asep-study/ via `.github/workflows/pages.yml`. Session history
 and memory live in `~/.claude/`, not here; the state docs (`CONTEXT.md`) are how a fresh session resumes.
 PDF rendering: `google-chrome-stable --headless --no-sandbox --print-to-pdf=<out>.pdf --no-pdf-header-footer file://<abs path>.html`
 (each guide's `.html` is hand-mirrored from its `.md`; re-render after editing either). `README.md` has clone/setup steps.

@@ -2,7 +2,7 @@
 
 This file provides guidance to Codex (Codex.ai/code) when working with code in this repository.
 
-This is not a codebase. It is Logan's GM ASEP study workspace, with one folder per course/ASE exam, in one private git repo (`flyboy-byte/asep-study`). See `README.md`.
+This is not a codebase. It is Logan's GM ASEP study workspace, with one folder per course/ASE exam, in one public git repo (`flyboy-byte/asep-study`, made public by Logan 2026-10-24). See `README.md`.
 There are no build, lint, or test commands. Only `workflow/.gitignore` exists (Python caches, `.env`, `courses/`, `local/`).
 
 ## Layout
@@ -29,8 +29,8 @@ source boundaries, and the file inventory. If it conflicts with this file, `CONT
 
 ## Reusable framework
 
-The process is defined in the separate public repo `/home/logan/projects/asep-study-workflow`
-(github.com/flyboy-byte/asep-study-workflow) and the `ase-study` skill. `WORKFLOW.md` in each
+The process is defined in `workflow/` (merged into this repo 2026-09-24 from the former repo
+github.com/flyboy-byte/asep-study-workflow) and the `ase-study` skill. `WORKFLOW.md` in each
 scaffolded folder is a copy of that process. Use it, but don't reorganize existing notes to fit it.
 
 ## Rules that apply across every course

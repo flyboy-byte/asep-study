@@ -1,43 +1,114 @@
-# asep-study
+# asep-study: GM ASEP study guides, ASE prep and a bay generator
 
-Logan's GM ASEP study workspace: one private repo holding every course's notes, generated study
-material, and the reusable workflow that builds it. Last updated 2026-10-22.
+> [!NOTE]
+> This is one GM ASEP student's study workspace, shared with classmates. The guides are built from class notes,
+> official ASE task lists and outside research with help from Claude (Anthropic). They are study aids, not service
+> information. Check specs and procedures in GM SI before using them on a car.
 
-## Layout
+**Try the bay generator: [flyboy-byte.github.io/asep-study](https://flyboy-byte.github.io/asep-study/)**
 
-| Folder | Exam | State |
-| --- | --- | --- |
-| `mantrans/` | A3 Manual Drive Train & Axles | Done for the class final. ASE prep package (full guide, simple sheet, cram sheet, PDFs) in `study/ase/`. |
-| `autotrans/` | A2 Automatic Transmissions | Passed (reported 2026-10-22). Final ASE package (guide, simple sheet, cram sheet) in `study/ase/`. |
-| `engine-performance/` | A8 Engine Performance | Ready for notes (spring semester). Drop them in `notes/`. |
-| `l1/` | L1 Advanced Engine Performance | Ready for notes. Drop them in `notes/`. |
-| `l2/`, `l3/` | — | Empty placeholders. |
-| `bay-gen/` | — | Click-to-generate random GM vehicles with customer concerns, warranty coverage and a week mode. `python3 bay-gen/bay_gen.py` |
-| `tools/` | — | `studybuild.py`: turns a guide `.md` into the printable HTML + PDF. |
-| `workflow/` | — | The reusable process and the `ase-study` skill (merged in 2026-09-24 from the former separate repo, history kept). |
+<p align="center"><img src="bay-gen/docs/screenshot.png" width="75%" alt="Bay Generator: a list of random GM vehicles, each with miles, warranty coverage and the customer's concern"></p>
 
-Each course folder has `notes/` (raw notes, never rewritten), `study/` (generated guides, cram
-sheets, HTML/PDF), `sources/` (outside references), and a `CONTEXT.md` that holds the current state.
-Read a course's `CONTEXT.md` before touching it.
+The bay generator gives you random GM gas vehicles (2013–2026) that could roll into your bay. Each one has an engine,
+mileage, warranty coverage and the customer's concern in their own words. It never gives the cause, because diagnosing
+it is your job. Hit **Week** for a full work week. Use the sliders to move from city to farm country, or to change
+the town's size. Switch between a GM dealer and an independent shop, and the traffic changes the way it would in
+real life. It works on a phone too.
 
-## Setting up on a new machine
+---
+
+## Courses
+
+| | Exam | Folder | What's there |
+|---|---|---|---|
+| ✅ | **A3** Manual Drive Train & Axles | [`mantrans/`](mantrans/) | Class done. ASE guide, simple sheet and cram sheet, plus unit and class-final guides. |
+| ✅ | **A2** Automatic Transmissions | [`autotrans/`](autotrans/) | **Passed.** ASE guide, simple sheet and cram sheet, plus unit and final-prep guides. |
+| 🚧 | **A8** Engine Performance | [`engine-performance/`](engine-performance/) | Official ASE task list mapped and weighted. Waiting on class notes (spring). |
+| 🚧 | **L1** Advanced Engine Performance | [`l1/`](l1/) | Official guide and Composite Vehicle Type 4 booklet saved, task list weighted. Passing A8 comes first. |
+| ⬜ | L2, L3 | `l2/`, `l3/` | Not started. |
+
+### Printable guides (PDF)
+
+| Exam | ASE prep | Class |
+|---|---|---|
+| A3 | [Study guide](mantrans/study/ase/ase_a3_study_guide.pdf) · [Simple sheet](mantrans/study/ase/ase_a3_simple_sheet.pdf) · [Cram sheet](mantrans/study/ase/ase_a3_cram_sheet.pdf) | [Unit 2](mantrans/study/unit2_study_guide.pdf) · [Unit 3](mantrans/study/unit3_study_guide.pdf) · [Class final](mantrans/study/class_final_study_guide.pdf) |
+| A2 | [Study guide](autotrans/study/ase/ase_a2_study_guide_v2.pdf) · [Simple sheet](autotrans/study/ase/ase_a2_simple_sheet_v2.pdf) · [Cram sheet](autotrans/study/ase/ase_a2_cram_sheet_v2.pdf) | [Unit 1](autotrans/study/unit1_study_guide.pdf) · [Unit 2](autotrans/study/unit2_study_guide_v2.pdf) · [Final prep](autotrans/study/final_prep_v2.pdf) |
+
+- The **study guide** is the full read.
+- The **simple sheet** covers the core ideas on a few pages.
+- The **cram sheet** is the last look before the test.
+
+The ASE guides follow the official ASE task list and its weights. The class guides follow what the instructor
+covered. None of them include practice questions, so use your Motor Age or GM training question banks for those.
+
+---
+
+## How it's built
+
+Each course folder is laid out the same way:
+
+| Folder or file | What it holds |
+|---|---|
+| `notes/` | Raw class notes and photos, kept as written |
+| `research.md` (A3: `a3_research_foundation_*.md`) | Official ASE coverage, outside sources and corrections. Each claim is tagged DOCUMENTED, INFERRED or OPEN |
+| `study/` | Generated guides as Markdown, HTML and letter-size PDF |
+| `sources/` | Outside references (ASE guides, manufacturer documents) |
+| `CONTEXT.md` | The folder's current state: dates, what's done, what's next |
+
+The process is written up in [`workflow/`](workflow/) as a reusable skill (`ase-study`), so another student can use
+it with their own notes. [`tools/studybuild.py`](tools/studybuild.py) turns a guide's Markdown into the printable
+HTML and PDF.
+
+<details>
+<summary><b>Bay generator: run it locally or change it</b></summary>
+
+<br>
+
+The Python version is the original and has the same controls in a desktop window:
 
 ```sh
-gh auth login
+python3 bay-gen/bay_gen.py                     # window (tkinter)
+python3 bay-gen/bay_gen.py --cli -n 8          # one batch in the terminal
+python3 bay-gen/bay_gen.py --cli --week --sat  # a work week with a Saturday
+```
+
+The vehicle list, engines, concerns and odds are plain Python in `bay-gen/fleet.py`, `concerns.py` and
+`bay_gen.py`. After editing them, run `python3 bay-gen/export_web.py` to refresh the website's data. A push to
+`main` redeploys the site. [`bay-gen/README.md`](bay-gen/README.md) explains how each row is built and which
+warranty terms are used.
+
+</details>
+
+<details>
+<summary><b>Setting up on a new machine</b></summary>
+
+<br>
+
+```sh
 gh repo clone flyboy-byte/asep-study ~/projects/asep-study
 cd ~/projects/asep-study   # start Claude Code here or in a course folder
 ```
 
-The `ase-study` skill loads automatically from `.claude/skills/ase-study`, a symlink to
-`workflow/skills/ase-study`. Nothing else needs installing. Printable PDFs are already committed.
+The `ase-study` skill loads from `.claude/skills/ase-study`, a link to `workflow/skills/ase-study`. The PDFs are
+already committed. To make new PDFs that match the existing ones, you need Chrome (for headless printing) and the
+claude-paper styling reference (`~/Downloads/whitepaper-formatter.html`, which isn't in the repo).
 
-Not in the repo: Claude session history and memory (`~/.claude/`), your global `~/.claude/CLAUDE.md`,
-and `~/Downloads/whitepaper-formatter.html` (the claude-paper styling reference, needed only to
-make new PDFs match the existing ones).
+</details>
 
-## Notes on the repo
+---
 
-- Private. It includes instructor exams and a third-party PDF (`mantrans/sources/drivetrain/`), so do
-  not make it public.
-- `autotrans/note/` and `autotrans/notes/` both exist; `note/` is the organized intake from
-  2026-09-22.
+## Layout
+
+```
+asep-study/
+├── mantrans/            A3 Manual Drive Train & Axles
+├── autotrans/           A2 Automatic Transmissions
+├── engine-performance/  A8 Engine Performance
+├── l1/                  L1 Advanced Engine Performance
+├── l2/  l3/             placeholders
+├── bay-gen/             bay generator (Python + web/ for the site)
+├── tools/               studybuild.py: Markdown → HTML + PDF
+└── workflow/            the reusable process and ase-study skill
+```
+
+Not affiliated with GM or ASE. Vehicle and engine names belong to their owners.

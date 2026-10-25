@@ -3,6 +3,8 @@
 Random GM vehicles that could roll into your bay, each with the customer's concern in their own words.
 Click **Generate** for one batch, or **Week** for a full work week with a different car count each day.
 
+**Use it in a browser: [flyboy-byte.github.io/asep-study](https://flyboy-byte.github.io/asep-study/)** (works on a phone).
+
 Covers gas vehicles from model years 2013–2026 (no diesel, no EV). Each row has the year, make, model,
 engine, mileage, warranty coverage and the concern. It deliberately gives no causes: diagnosing is the
 tech's job.
@@ -15,6 +17,10 @@ python3 bay-gen/bay_gen.py --cli --farm 80 --pop 15000 --shop indie   # small fa
 ```
 
 Needs only Python 3 and tkinter. Created 2026-10-22.
+
+The website in `web/` is a JavaScript port of `bay_gen.py`. Its data (`web/data.js`) is generated from the
+Python files: after editing `fleet.py`, `concerns.py` or the knobs, run `python3 bay-gen/export_web.py` and push.
+If you change `warranty()` or the generation logic, make the same change in `web/app.js`.
 
 ## Controls
 
