@@ -15,7 +15,7 @@ There are no lint or test commands. PDFs for new courses build with `python3 too
 | `l1/` | L1 Advanced Engine Performance | Ready for intake. Official guide + Composite Vehicle Type 4 booklet in `sources/ase/`, task map in `research.md` (2026-10-22). Passing A8 required to register. |
 | `l2/`, `l3/` | — | Empty placeholders. |
 | `workflow/` | — | Reusable process and `ase-study` skill source (not a course). |
-| `bay-gen/` | — | Random GM vehicle + customer-concern generator (tkinter), for shop practice. Not a course. See its `README.md` (2026-10-22). |
+| `bay-gen/` | — | Random GM vehicle + customer-concern generator for shop practice. Not a course. Python/tkinter original plus `web/` site (Bay Generator Co-op: a week + one Technical report) live on GitHub Pages. Python is the data source; `export_web.py` writes `web/data.js`. See its `README.md` (2026-10-24). |
 | `tools/` | — | `studybuild.py`: shared md → claude-paper HTML + letter PDF builder for new courses (2026-10-22). |
 
 Each course folder is self-contained and has its own `CLAUDE.md`/`AGENTS.md`, `CONTEXT.md`, and
