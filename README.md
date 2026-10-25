@@ -9,11 +9,12 @@
 
 <p align="center"><img src="bay-gen/docs/screenshot.png" width="75%" alt="Bay Generator: a list of random GM vehicles, each with miles, warranty coverage and the customer's concern"></p>
 
-The bay generator gives you random GM gas vehicles (2013–2026) that could roll into your bay. Each one has an engine,
-mileage, warranty coverage and the customer's concern in their own words. It never gives the cause, because diagnosing
-it is your job. Hit **Week** for a full work week. Use the sliders to move from city to farm country, or to change
-the town's size. Switch between a GM dealer and an independent shop, and the traffic changes the way it would in
-real life. It works on a phone too.
+The bay generator gives you a week of random GM gas vehicles (2013–2026) that could roll into your bay, plus one
+harder **diag of the week**, the one you'd tell a friend about. Each car has an engine, mileage, whether warranty
+pays, and the customer's concern in their own words. It never gives the cause, because diagnosing it is your job.
+Regenerate the week, a single day or the diag, sort the list, and copy any car straight into a text. Use Settings
+to move from city to farm country, change the town's size, or switch between a GM dealer and an independent shop,
+and the traffic changes the way it would in real life. It works on a phone too.
 
 ---
 

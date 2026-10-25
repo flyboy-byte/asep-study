@@ -5,6 +5,14 @@ Click **Generate** for one batch, or **Week** for a full work week with a differ
 
 **Use it in a browser: [flyboy-byte.github.io/asep-study](https://flyboy-byte.github.io/asep-study/)** (works on a phone).
 
+The website opens on a full week (5 cars a day on average) plus one **diag of the week**: a harder, intermittent
+or comeback story with extra notes, the one you'd tell a friend about. That car is always one of the week's cars.
+**New week** keeps it and moves it to a random day, **New day** rebuilds only the day you're on, and **New diag**
+swaps it for a fresh one. Each car shows only whether warranty pays for that concern (yes or no), the list sorts by
+any column, and each car's **Copy** button gives `2019 Chevrolet Silverado 1500: concern` for a text message. No
+concern shows up more than 5 times in a week. The diag scenarios are `HARD` in `concerns.py`; the Python window
+doesn't use them yet.
+
 Covers gas vehicles from model years 2013–2026 (no diesel, no EV). Each row has the year, make, model,
 engine, mileage, warranty coverage and the concern. It deliberately gives no causes: diagnosing is the
 tech's job.
@@ -46,7 +54,7 @@ reaches this shop (average year, median miles, share with coverage).
    then adjusted by the area, city-size and year knobs.
 2. **Mileage**: age × about 12.5k a year, with more in farm country and on HD trucks and vans, plus random spread.
 3. **Coverage**: GM factory warranty for that brand and model year (table below). About 8% of
-   out-of-warranty vehicles get a service contract at random.
+   out-of-warranty vehicles under 150k miles get a service contract at random.
 4. **Concern** (`concerns.py`): 89 concerns written the way customers say them, many with 2–3 wordings.
    Wear and age items get more likely as mileage climbs. Some are weighted toward vehicles with a known
    GM pattern, for example:
@@ -93,8 +101,6 @@ They're all plain Python, so edit them freely:
 ## Ideas not built yet
 
 - More than one concern per visit
-- Comebacks
-- "Can't duplicate" intermittents
 - Seasons
 - Farm-truck aftermarket accessories
 - Advisor notes

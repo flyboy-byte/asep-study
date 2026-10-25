@@ -4,66 +4,140 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Bay Generator</title>
-<meta name="description" content="Random GM vehicles and customer concerns that could roll into your bay.">
+<meta name="description" content="A week of random GM vehicles and customer concerns, plus one harder diag of the week.">
 <style>
 :root {
-  --bg: #f6f5f2; --panel: #fff; --ink: #1d1d1b; --muted: #6b6a66; --line: #e2e0da; --accent: #1f5fbf;
-  --b2b: #1e7a3c; --pt: #2a62b8; --sc: #8a5a00; --ow: #8a8986;
+  --bg: #eef1f5; --panel: #fff; --ink: #111418; --muted: #5d6673; --line: #d8dee6;
+  --accent: #0a6ed1; --accent-ink: #fff; --accent-soft: #e6f0fb; --top: #000; --top-ink: #fff;
+  --yes: #137a3a; --yes-bg: #e3f4e9; --no: #6b7380; --no-bg: #eceff3; --diag: #fff6db;
 }
 @media (prefers-color-scheme: dark) {
-  :root { --bg: #161615; --panel: #1f1f1d; --ink: #ecebe7; --muted: #a09f9a; --line: #33322f; --accent: #6ea2ff;
-    --b2b: #5fca85; --pt: #7fa8ee; --sc: #e0b25a; --ow: #8f8e89; }
+  :root { --bg: #0b0d10; --panel: #15191e; --ink: #e8ecf1; --muted: #98a2ae; --line: #29303a;
+    --accent: #3d95f0; --accent-ink: #fff; --accent-soft: #14273d; --top: #000; --top-ink: #fff;
+    --yes: #5fd38a; --yes-bg: #133022; --no: #a3acb8; --no-bg: #222831; --diag: #2b2614; }
 }
 * { box-sizing: border-box; }
-body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
-header { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); background: var(--panel); }
-header h1 { font-size: 18px; margin: 0; }
-header p { margin: 0; color: var(--muted); font-size: 13px; }
-.wrap { display: grid; grid-template-columns: 280px 1fr; gap: 16px; padding: 16px; max-width: 1200px; margin: 0 auto; }
-aside { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 14px; align-self: start; }
-aside h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); margin: 14px 0 4px; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+button { font: inherit; cursor: pointer; }
+.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 12px; padding: 10px 16px;
+  background: var(--top); color: var(--top-ink); border-bottom: 3px solid var(--accent); }
+.top h1 { font-size: 17px; margin: 0; letter-spacing: .02em; }
+.top p { margin: 0; font-size: 12px; color: #aab3bf; }
+.top .sp { flex: 1; }
+#toggle { display: none; background: transparent; color: var(--top-ink); border: 1px solid #444; border-radius: 6px; padding: 6px 12px; }
+.wrap { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 16px; padding: 16px; max-width: 1320px; margin: 0 auto; }
+
+/* settings */
+aside { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 14px; align-self: start; position: sticky; top: 72px; }
+aside h2 { font-size: 11px; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); margin: 14px 0 4px; }
 aside h2:first-child { margin-top: 0; }
 .val { float: right; text-transform: none; letter-spacing: 0; color: var(--ink); font-weight: 600; }
 input[type=range] { width: 100%; accent-color: var(--accent); }
-label { display: block; padding: 2px 0; }
+input[type=checkbox], input[type=radio] { accent-color: var(--accent); }
+aside label { display: block; padding: 2px 0; }
 .row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
 .row label { display: inline-flex; gap: 4px; align-items: center; }
 select, input[type=number] { font: inherit; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--bg); color: var(--ink); }
 input[type=number] { width: 64px; }
-.bar { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
-button { font: inherit; font-weight: 600; padding: 9px 16px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); cursor: pointer; }
-button.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
-#toggle { display: none; }
-#status { color: var(--muted); font-size: 13px; }
-ol { list-style: none; margin: 0; padding: 0; }
-.car { display: flex; gap: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; margin-bottom: 8px; }
-.num { font-weight: 700; color: var(--muted); min-width: 18px; }
-.body { min-width: 0; }
-.eng { color: var(--muted); }
-.meta { font-size: 13px; color: var(--muted); margin-top: 2px; }
-.cov { font-weight: 600; margin-left: 6px; }
-.cov.b2b { color: var(--b2b); } .cov.pt { color: var(--pt); } .cov.sc { color: var(--sc); } .cov.ow { color: var(--ow); }
-.say { margin-top: 4px; font-size: 16px; }
-.day { margin: 16px 0 8px; font-size: 16px; }
-.day:first-child { margin-top: 0; }
-.day span { color: var(--muted); font-weight: 400; font-size: 13px; }
-#mix, footer { color: var(--muted); font-size: 13px; }
-footer { padding: 0 16px 24px; max-width: 1200px; margin: 0 auto; }
-.empty { color: var(--muted); }
-@media (max-width: 760px) {
-  .wrap { grid-template-columns: 1fr; padding: 12px 16px; }
-  aside { display: none; }
-  body.open aside { display: block; }
+.hint { font-size: 12px; color: var(--muted); margin: 12px 0 0; }
+#done { display: none; }
+.link { background: none; border: 0; padding: 0; color: var(--accent); font-size: 12px; text-decoration: underline; }
+#mix { font-size: 12px; color: var(--muted); margin: 6px 0 0; }
+
+/* boxes */
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; margin-bottom: 16px; overflow: hidden; }
+.boxhead { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.boxhead h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em; margin: 0; }
+.boxhead .sp { flex: 1; }
+.btn { padding: 7px 14px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); font-weight: 600; }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.pill { border: 0; border-radius: 999px; padding: 3px 10px; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 12px; }
+
+/* diag */
+#diagBox { border-top: 4px solid var(--accent); }
+#diagBody { padding: 14px; }
+.dhead { display: flex; align-items: flex-start; gap: 10px; }
+.dveh { font-size: 22px; font-weight: 700; line-height: 1.2; flex: 1; }
+.dmeta { display: flex; flex-wrap: wrap; gap: 6px 16px; color: var(--muted); font-size: 13px; margin-top: 4px; }
+blockquote { margin: 12px 0 0; padding: 10px 14px; border-left: 4px solid var(--accent); background: var(--accent-soft); font-size: 17px; border-radius: 0 6px 6px 0; }
+.notes { margin: 10px 0 0; padding-left: 20px; color: var(--muted); }
+.chip { display: inline-block; padding: 1px 8px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+.chip.yes { color: var(--yes); background: var(--yes-bg); } .chip.no { color: var(--no); background: var(--no-bg); }
+.cp { border: 1px solid var(--line); background: var(--panel); color: var(--accent); border-radius: 6px; padding: 3px 10px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+
+/* week */
+.weekgrid { display: grid; grid-template-columns: minmax(0, 1fr) 120px; }
+#days { display: flex; flex-direction: column; gap: 6px; padding: 12px; border-left: 1px solid var(--line); }
+.dayBtn { display: flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
+.dayBtn span { flex: 1; text-align: left; font-weight: 600; }
+.dayBtn b { font-weight: 500; color: var(--muted); font-size: 13px; }
+.dayBtn i { color: var(--accent); font-style: normal; font-size: 10px; }
+.dayBtn[aria-pressed=true] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
+.dayBtn[aria-pressed=true] b, .dayBtn[aria-pressed=true] i { color: var(--accent-ink); }
+.listhead { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; }
+#weekTitle { font-weight: 700; flex: 1; }
+#newDay { padding: 4px 10px; font-size: 13px; }
+.sortbox { display: none; font-size: 13px; color: var(--muted); }
+.tablewrap { padding: 8px 6px 10px; overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); padding: 4px 8px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+th button { all: unset; cursor: pointer; }
+th button:hover, th button:focus-visible { color: var(--accent); }
+td { padding: 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+.c-num { color: var(--muted); width: 1%; }
+.c-veh { font-weight: 600; }
+.c-eng, .c-day { color: var(--muted); white-space: nowrap; }
+.c-mi { white-space: nowrap; text-align: right; }
+.c-mi .u, .c-w .lbl { display: none; }
+.c-w { white-space: nowrap; }
+.c-cp { width: 1%; }
+tr.isDiag td { background: var(--diag); }
+.tag { font-size: 10px; font-weight: 700; color: var(--accent-ink); background: var(--accent); padding: 1px 6px; border-radius: 4px; vertical-align: 2px; }
+.empty { color: var(--muted); padding: 14px; }
+footer { color: var(--muted); font-size: 12px; padding: 0 16px 24px; max-width: 1320px; margin: 0 auto; }
+
+/* phone and narrow tablet */
+@media (max-width: 860px) {
+  .wrap { grid-template-columns: 1fr; padding: 12px; }
   #toggle { display: inline-block; }
+  aside { display: none; position: static; }
+  body.open aside { display: block; }
+  #done { display: inline-block; margin-top: 12px; }
+  .weekgrid { grid-template-columns: 1fr; }
+  #days { order: -1; display: grid; grid-template-columns: repeat(auto-fit, minmax(0, 1fr)); gap: 4px;
+    border-left: 0; border-bottom: 1px solid var(--line); padding: 10px 12px; }
+  .dayBtn { flex-direction: column; gap: 0; padding: 5px 2px; position: relative; }
+  .dayBtn span { text-align: center; }
+  .dayBtn i { position: absolute; top: 2px; right: 4px; }
+  .sortbox { display: block; }
+  .listhead { flex-wrap: wrap; }
+  thead { display: none; }
+  table, tbody, tr, td { display: block; }
+  tr { position: relative; padding: 10px 64px 10px 30px; border-bottom: 1px solid var(--line); }
+  tr:last-child { border-bottom: 0; }
+  td { border: 0; padding: 0; }
+  .c-num { position: absolute; left: 8px; top: 10px; }
+  .c-year, .c-veh, .c-day { display: inline; font-weight: 700; color: var(--ink); }
+  .c-year::after { content: " "; }
+  .c-day::after { content: " ·"; }
+  .c-eng, .c-mi, .c-w { display: inline; font-size: 13px; color: var(--muted); margin-right: 10px; }
+  .c-mi .u, .c-w .lbl { display: inline; }
+  .c-eng::before { content: ""; display: block; }
+  .c-say { margin-top: 4px; font-size: 15px; }
+  .c-cp { position: absolute; right: 8px; top: 8px; width: auto; }
+  .dveh { font-size: 19px; }
 }
 </style>
 </head>
 <body>
-<header>
-  <div><h1>Bay Generator</h1><p>Random GM gas vehicles (2013–2026) and what the customer says is wrong.</p></div>
+<header class="top">
+  <div><h1>BAY GENERATOR</h1><p>Random GM gas vehicles, 2013–2026</p></div>
+  <span class="sp"></span>
+  <button id="toggle" aria-expanded="false" aria-controls="settings">Settings</button>
 </header>
 <div class="wrap">
-  <aside>
+  <aside id="settings">
     <h2>Area <span class="val" id="farmLbl"></span></h2>
     <input type="range" id="farm" min="0" max="100" value="50" aria-label="City to farm country">
     <h2>City size <span class="val" id="popLbl"></span></h2>
@@ -82,26 +156,62 @@ footer { padding: 0 16px 24px; max-width: 1200px; margin: 0 auto; }
     <div id="brands"></div>
     <h2>Concern systems</h2>
     <div id="systems"></div>
-    <h2>Count</h2>
-    <div class="row"><input type="number" id="count" min="1" max="50" value="8" aria-label="Cars"> cars (avg per day for Week)</div>
-    <label><input type="checkbox" id="sat"> Week includes Saturday (half day)</label>
+    <h2>Week</h2>
+    <div class="row"><input type="number" id="count" min="1" max="50" value="5" aria-label="Cars per day"> cars a day (average)</div>
+    <label><input type="checkbox" id="sat"> Saturday half day</label>
+    <p class="hint">Changes apply on the next New week or New diag.</p>
+    <p class="hint"><button class="link" id="mixBtn">Road vs. shop mix for these settings</button></p>
+    <p id="mix"></p>
+    <button class="btn primary" id="done">Done</button>
   </aside>
   <main>
-    <div class="bar">
-      <button class="primary" id="gen">Generate</button>
-      <button id="week">Week</button>
-      <button id="copy">Copy</button>
-      <button id="toggle">Settings</button>
-      <span id="status"></span>
-    </div>
-    <ol id="list"></ol>
-    <p id="mix"></p>
+    <section class="box" id="diagBox" aria-labelledby="diagH">
+      <div class="boxhead">
+        <h2 id="diagH">Diag of the week</h2>
+        <button class="pill" id="diagDay" hidden></button>
+        <span class="sp"></span>
+        <button class="btn" id="newDiag">New diag</button>
+      </div>
+      <div id="diagBody"></div>
+    </section>
+    <section class="box" id="weekBox" aria-labelledby="weekH">
+      <div class="boxhead">
+        <h2 id="weekH">The week</h2>
+        <span class="sp"></span>
+        <button class="btn" id="copy">Copy week</button>
+        <button class="btn primary" id="newWeek">New week</button>
+      </div>
+      <div class="weekgrid">
+        <div>
+          <div class="listhead">
+            <span id="weekTitle"></span>
+            <button class="btn" id="newDay"></button>
+            <label class="sortbox">Sort
+              <select id="sortSel">
+                <option value="order:1">Arrival</option>
+                <option value="year:-1">Newest</option>
+                <option value="year:1">Oldest</option>
+                <option value="miles:-1">Most miles</option>
+                <option value="miles:1">Fewest miles</option>
+                <option value="warranty:1">Warranty first</option>
+                <option value="warranty:-1">No warranty first</option>
+                <option value="make:1">Vehicle A–Z</option>
+                <option value="concern:1">Concern A–Z</option>
+              </select>
+            </label>
+          </div>
+          <div class="tablewrap"><table><thead id="thead"></thead><tbody id="tbody"></tbody></table></div>
+        </div>
+        <nav id="days" aria-label="Day"></nav>
+      </div>
+    </section>
   </main>
 </div>
 <footer>
-  No causes on purpose: diagnosing is your job. Counts, shares and odds are educated guesses, not registration
-  or repair-order data. Warranty is GM factory coverage by brand and model year (no emissions, special coverage or CPO).
-  Not affiliated with GM.
+  The diag of the week is always one of the cars in the week. New week keeps it and moves it to a random day; New day
+  rebuilds just that day (the diag stays if it was there); New diag swaps it for a fresh one. No concern shows up more
+  than 5 times in a week. Warranty means the factory warranty (or a service contract) would pay for that concern.
+  No causes on purpose: diagnosing is your job. Counts and odds are educated guesses. Not affiliated with GM.
 </footer>
 <script src="data.js"></script>
 <script src="app.js"></script>

@@ -89,7 +89,7 @@ def add_miles_and_coverage(v, farm):
         cov, covers = f"B2B {by}yr/{bm // 1000}k", {"b2b", "pt"}
     elif age <= py and miles <= pm:
         cov, covers = f"Powertrain {py}yr/{pm // 1000}k", {"pt"}
-    elif random.random() < SERVICE_CONTRACT:
+    elif miles <= 150_000 and random.random() < SERVICE_CONTRACT:   # contracts rarely run past ~150k
         cov, covers = "Service contract", {"b2b", "pt"}
     else:
         cov, covers = "Out of warranty", set()
