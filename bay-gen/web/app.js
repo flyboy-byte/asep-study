@@ -279,7 +279,7 @@ function render(msg) {
   // Day buttons
   const total = S.days.reduce((a, [, c]) => a + c.length, 0);
   const btn = (key, label, n) => `<button class="dayBtn" data-day="${key}" aria-pressed="${S.day === key}">
-      <span>${label}</span><b>${n}</b>${at && at[0] === key ? '<i title="Diag of the week">●</i>' : ""}</button>`;
+      <span>${label}</span><b>${n}</b>${at && at[0] === key ? '<i title="Technical report">●</i>' : ""}</button>`;
   $("days").innerHTML = S.days.map(([d, c]) => btn(d, d, c.length)).join("") + btn("All", "All", total);
   $("newDay").hidden = S.day === "All";
   $("newDay").textContent = `New ${S.day}`;
@@ -296,7 +296,7 @@ function render(msg) {
   $("tbody").innerHTML = list.length ? list.map(({ d, i, v }, n) => `<tr class="${v.diag ? "isDiag" : ""}">
       <td class="c-num">${i}</td>${all ? `<td class="c-day">${d}</td>` : ""}
       <td class="c-year">${v.year}</td>
-      <td class="c-veh">${esc(v.brand)} ${esc(v.model)}${v.diag ? ' <span class="tag">DIAG</span>' : ""}</td>
+      <td class="c-veh">${esc(v.brand)} ${esc(v.model)}${v.diag ? ' <span class="tag">REPORT</span>' : ""}</td>
       <td class="c-eng">${esc(v.engine)}</td>
       <td class="c-mi">${v.miles.toLocaleString()}<span class="u"> mi</span></td>
       <td class="c-w"><span class="lbl">Warranty </span>${wChip(v.warranty)}</td>
@@ -313,10 +313,10 @@ function setSort(key, dir) {
 function copy() {
   const line = v => `${v.year} ${v.brand} ${v.model} ${v.engine}, ${v.miles.toLocaleString()} mi, warranty ${v.warranty ? "yes" : "no"} - "${v.concern}"`;
   const out = [];
-  if (S.diag) out.push(`DIAG OF THE WEEK: ${line(S.diag)}`, ...S.diag.notes.map(n => `  - ${n}`));
+  if (S.diag) out.push(`TECHNICAL REPORT: ${line(S.diag)}`, ...S.diag.notes.map(n => `  - ${n}`));
   for (const [d, cars] of S.days) {
     out.push(`\n${FULL_DAY[d]}`);
-    cars.forEach((v, i) => out.push(`${i + 1}. ${line(v)}${v.diag ? "  [DIAG]" : ""}`));
+    cars.forEach((v, i) => out.push(`${i + 1}. ${line(v)}${v.diag ? "  [REPORT]" : ""}`));
   }
   copyText(out.join("\n").trim(), $("copy"), "Copy week");
 }

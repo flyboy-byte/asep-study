@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bay Generator</title>
-<meta name="description" content="A week of random GM vehicles and customer concerns, plus one harder diag of the week.">
+<title>Bay Generator Co-op</title>
+<meta name="description" content="A week of random GM vehicles and customer concerns, plus one harder technical report, for GM ASEP students.">
 <style>
 :root {
   --bg: #eef1f5; --panel: #fff; --ink: #111418; --muted: #5d6673; --line: #d8dee6;
@@ -19,12 +19,16 @@
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.45 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
 button { font: inherit; cursor: pointer; }
-.top { position: sticky; top: 0; z-index: 5; display: flex; align-items: center; gap: 12px; padding: 10px 16px;
-  background: var(--top); color: var(--top-ink); border-bottom: 3px solid var(--accent); }
-.top h1 { font-size: 17px; margin: 0; letter-spacing: .02em; }
+.top { position: sticky; top: 0; z-index: 5; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+  gap: 12px; padding: 10px 16px; background: var(--top); color: var(--top-ink); border-bottom: 3px solid var(--accent); }
+.brand { grid-column: 2; display: flex; flex-direction: column; align-items: center; gap: 4px; text-align: center; }
+.mark { display: inline-flex; align-items: stretch; border: 2px solid #fff; border-radius: 4px; overflow: hidden;
+  font-weight: 800; font-size: 13px; letter-spacing: .12em; line-height: 1; }
+.mark b { background: var(--accent); color: #fff; padding: 5px 7px 5px 9px; }
+.mark span { color: #fff; padding: 5px 9px 5px 7px; }
+.top h1 { font-size: 17px; margin: 0; letter-spacing: .06em; }
 .top p { margin: 0; font-size: 12px; color: #aab3bf; }
-.top .sp { flex: 1; }
-#toggle { display: none; background: transparent; color: var(--top-ink); border: 1px solid #444; border-radius: 6px; padding: 6px 12px; }
+#toggle { grid-column: 3; justify-self: end; display: none; background: transparent; color: var(--top-ink); border: 1px solid #444; border-radius: 6px; padding: 6px 12px; }
 .wrap { display: grid; grid-template-columns: 270px minmax(0, 1fr); gap: 16px; padding: 16px; max-width: 1320px; margin: 0 auto; }
 
 /* settings */
@@ -127,13 +131,18 @@ footer { color: var(--muted); font-size: 12px; padding: 0 16px 24px; max-width: 
   .c-say { margin-top: 4px; font-size: 15px; }
   .c-cp { position: absolute; right: 8px; top: 8px; width: auto; }
   .dveh { font-size: 19px; }
+  .top h1 { font-size: 15px; }
+  .top p { display: none; }
 }
 </style>
 </head>
 <body>
 <header class="top">
-  <div><h1>BAY GENERATOR</h1><p>Random GM gas vehicles, 2013–2026</p></div>
-  <span class="sp"></span>
+  <div class="brand">
+    <div class="mark" aria-label="GM ASEP"><b>GM</b><span>ASEP</span></div>
+    <h1>BAY GENERATOR CO-OP</h1>
+    <p>Random GM gas vehicles, 2013–2026</p>
+  </div>
   <button id="toggle" aria-expanded="false" aria-controls="settings">Settings</button>
 </header>
 <div class="wrap">
@@ -167,10 +176,10 @@ footer { color: var(--muted); font-size: 12px; padding: 0 16px 24px; max-width: 
   <main>
     <section class="box" id="diagBox" aria-labelledby="diagH">
       <div class="boxhead">
-        <h2 id="diagH">Diag of the week</h2>
+        <h2 id="diagH">Technical report</h2>
         <button class="pill" id="diagDay" hidden></button>
         <span class="sp"></span>
-        <button class="btn" id="newDiag">New diag</button>
+        <button class="btn" id="newDiag">New report</button>
       </div>
       <div id="diagBody"></div>
     </section>
@@ -208,10 +217,10 @@ footer { color: var(--muted); font-size: 12px; padding: 0 16px 24px; max-width: 
   </main>
 </div>
 <footer>
-  The diag of the week is always one of the cars in the week. New week keeps it and moves it to a random day; New day
-  rebuilds just that day (the diag stays if it was there); New diag swaps it for a fresh one. No concern shows up more
+  The technical report is always one of the cars in the week. New week keeps it and moves it to a random day; New day
+  rebuilds just that day (the report car stays if it was there); New report swaps it for a fresh one. No concern shows up more
   than 5 times in a week. Warranty means the factory warranty (or a service contract) would pay for that concern.
-  No causes on purpose: diagnosing is your job. Counts and odds are educated guesses. Not affiliated with GM.
+  No causes on purpose: diagnosing is your job. Counts and odds are educated guesses. A student-made practice tool; not affiliated with or endorsed by GM.
 </footer>
 <script src="data.js"></script>
 <script src="app.js"></script>

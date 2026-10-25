@@ -5,12 +5,12 @@ Click **Generate** for one batch, or **Week** for a full work week with a differ
 
 **Use it in a browser: [flyboy-byte.github.io/asep-study](https://flyboy-byte.github.io/asep-study/)** (works on a phone).
 
-The website opens on a full week (5 cars a day on average) plus one **diag of the week**: a harder, intermittent
+The website opens on a full week (5 cars a day on average) plus one **technical report**: a harder, intermittent
 or comeback story with extra notes, the one you'd tell a friend about. That car is always one of the week's cars.
-**New week** keeps it and moves it to a random day, **New day** rebuilds only the day you're on, and **New diag**
+**New week** keeps it and moves it to a random day, **New day** rebuilds only the day you're on, and **New report**
 swaps it for a fresh one. Each car shows only whether warranty pays for that concern (yes or no), the list sorts by
 any column, and each car's **Copy** button gives `2019 Chevrolet Silverado 1500: concern` for a text message. No
-concern shows up more than 5 times in a week. The diag scenarios are `HARD` in `concerns.py`; the Python window
+concern shows up more than 5 times in a week. The technical report scenarios are `HARD` in `concerns.py`; the Python window
 doesn't use them yet.
 
 Covers gas vehicles from model years 2013–2026 (no diesel, no EV). Each row has the year, make, model,
