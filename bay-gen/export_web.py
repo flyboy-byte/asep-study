@@ -27,6 +27,7 @@ data = dict(
     days=bg.DAYS, daySpread=bg.DAY_SPREAD,
     yearSd=bg.YEAR_SD, partialLast=bg.PARTIAL_LAST, defaultMean=bg.DEFAULT_MEAN,
     milesPerYear=bg.MILES_PER_YEAR, today=bg.TODAY, serviceContract=bg.SERVICE_CONTRACT,
+    flagHours=bg.FLAG_HOURS, warrantyFlag=bg.WARRANTY_FLAG, reportDiag=bg.REPORT_DIAG,
 )
 out = os.path.join(os.path.dirname(os.path.abspath(__file__)), "web", "data.js")
 with open(out, "w") as f:

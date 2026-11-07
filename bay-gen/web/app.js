@@ -83,12 +83,20 @@ function shopOdds(v, c, shop) {
 
 // warranty = the factory warranty or a service contract would pay for this concern (recalls always).
 // A repeated concern gets a wording not used yet this week when there is one.
-function finish(v, c, used = new Map(), said = new Set()) {
+const flagDraw = ([lo, hi]) => lo + (hi - lo) * Math.random() ** 1.3;
+// Flag hours for one repair order; the technical report adds diag time on top. Keep in step with flag_hours() in bay_gen.py.
+function flagHours(c, warranty, report) {
+  const k = warranty ? D.warrantyFlag : 1, diag = report ? flagDraw(D.reportDiag) : 0;
+  return { hours: Math.round((diag + flagDraw(D.flagHours[c.job || "med"])) * k * 10) / 10, diagHours: Math.round(diag * k * 10) / 10 };
+}
+
+function finish(v, c, used = new Map(), said = new Set(), report = false) {
   const says = Array.isArray(c.say) ? c.say : [c.say], fresh = says.filter(x => !said.has(x));
   const concern = pick(fresh.length ? fresh : says);
   used.set(c, (used.get(c) || 0) + 1);
   said.add(concern);
-  return { ...v, ref: c, concern, system: c.system, notes: c.notes || [], warranty: c.pay === "recall" || v.covers.includes(c.pay) };
+  const warranty = c.pay === "recall" || v.covers.includes(c.pay);
+  return { ...v, ref: c, concern, system: c.system, notes: c.notes || [], warranty, ...flagHours(c, warranty, report) };
 }
 
 // The diag of the week: one vehicle with a harder scenario from D.hard, through the same shop filter.
@@ -98,7 +106,7 @@ function genDiag(s) {
   for (let i = 0; i < 3000; i++) {
     const v = addMilesAndCoverage(choices(rows, w), s.farm);
     const c = pickConcern(v, s.systems, D.hard);
-    if (c && Math.random() < shopOdds(v, c, s.shop)) return { ...finish(v, c), diag: true };
+    if (c && Math.random() < shopOdds(v, c, s.shop)) return { ...finish(v, c, undefined, undefined, true), diag: true };
   }
   return null;
 }
@@ -234,7 +242,7 @@ function newDay() {
 const SORTS = {
   order: null,
   year: v => v.year, make: v => `${v.brand} ${v.model}`, engine: v => v.engine,
-  miles: v => v.miles, warranty: v => (v.warranty ? 0 : 1), concern: v => v.concern,
+  miles: v => v.miles, hours: v => v.hours, warranty: v => (v.warranty ? 0 : 1), concern: v => v.concern,
 };
 
 function rows() {
@@ -256,6 +264,8 @@ function copyText(text, btn, label = "Copy") {
   else prompt("Copy this:", text);
 }
 
+const hrs = n => (Math.round(n * 10) / 10).toFixed(1);
+const sumHrs = cars => cars.reduce((a, v) => a + v.hours, 0);
 const wChip = w => `<span class="chip ${w ? "yes" : "no"}">${w ? "Yes" : "No"}</span>`;
 
 function render(msg) {
@@ -271,25 +281,29 @@ function render(msg) {
     $("diagBody").innerHTML = `
       <div class="dhead"><div class="dveh">${v.year} ${esc(v.brand)} ${esc(v.model)}</div>${copyBtn("diag")}</div>
       <div class="dmeta"><span>${esc(v.engine)}</span><span>${v.miles.toLocaleString()} mi</span>
-        <span>Warranty ${wChip(v.warranty)}</span><span>${esc(v.system)}</span></div>
+        <span>Warranty ${wChip(v.warranty)}</span><span>${hrs(v.hours)} hrs flagged (${hrs(v.diagHours)} diag)</span><span>${esc(v.system)}</span></div>
       <blockquote>“${esc(v.concern)}”</blockquote>
       ${v.notes.length ? `<ul class="notes">${v.notes.map(n => `<li>${esc(n)}</li>`).join("")}</ul>` : ""}`;
   }
 
   // Day buttons
   const total = S.days.reduce((a, [, c]) => a + c.length, 0);
-  const btn = (key, label, n) => `<button class="dayBtn" data-day="${key}" aria-pressed="${S.day === key}">
-      <span>${label}</span><b>${n}</b>${at && at[0] === key ? '<i title="Technical report">●</i>' : ""}</button>`;
-  $("days").innerHTML = S.days.map(([d, c]) => btn(d, d, c.length)).join("") + btn("All", "All", total);
+  const weekHrs = S.days.reduce((a, [, c]) => a + sumHrs(c), 0);
+  const btn = (key, label, n, hours) => `<button class="dayBtn" data-day="${key}" aria-pressed="${S.day === key}">
+      <span>${label}</span><b>${n}</b><small>${hrs(hours)}h</small>${at && at[0] === key ? '<i title="Technical report">●</i>' : ""}</button>`;
+  $("days").innerHTML = S.days.map(([d, c]) => btn(d, d, c.length, sumHrs(c))).join("") + btn("All", "All", total, weekHrs);
   $("newDay").hidden = S.day === "All";
   $("newDay").textContent = `New ${S.day}`;
-  $("weekTitle").textContent = S.day === "All" ? `Whole week, ${total} cars` : `${FULL_DAY[S.day]}, ${S.days.find(([d]) => d === S.day)?.[1].length || 0} cars`;
+  const dayCars = S.days.find(([d]) => d === S.day)?.[1] || [];
+  $("weekTitle").textContent = S.day === "All" ? `Whole week, ${total} cars, ${hrs(weekHrs)} hrs flagged`
+    : `${FULL_DAY[S.day]}, ${dayCars.length} cars, ${hrs(sumHrs(dayCars))} hrs`;
+  $("weekHrs").textContent = S.day === "All" ? "" : `Week total ${hrs(weekHrs)} hrs`;
 
   // Table (cards on a phone)
   const all = S.day === "All", list = rows();
   shown = list.map(r => r.v);
   const cols = [["order", "#"], ...(all ? [["day", "Day"]] : []), ["year", "Year"], ["make", "Vehicle"], ["engine", "Engine"],
-    ["miles", "Miles"], ["warranty", "Warranty"], ["concern", "Concern"], ["copy", ""]];
+    ["miles", "Miles"], ["warranty", "Warranty"], ["hours", "Hrs"], ["concern", "Concern"], ["copy", ""]];
   const arrow = k => S.sort.key === k ? (S.sort.dir > 0 ? " ▲" : " ▼") : "";
   $("thead").innerHTML = "<tr>" + cols.map(([k, t]) =>
     k === "day" || k === "copy" ? `<th>${t}</th>` : `<th><button data-sort="${k}">${t}${arrow(k)}</button></th>`).join("") + "</tr>";
@@ -300,6 +314,7 @@ function render(msg) {
       <td class="c-eng">${esc(v.engine)}</td>
       <td class="c-mi">${v.miles.toLocaleString()}<span class="u"> mi</span></td>
       <td class="c-w"><span class="lbl">Warranty </span>${wChip(v.warranty)}</td>
+      <td class="c-h">${hrs(v.hours)}<span class="u"> hrs</span></td>
       <td class="c-say">“${esc(v.concern)}”</td><td class="c-cp">${copyBtn(n)}</td></tr>`).join("")
     : `<tr><td colspan="${cols.length}" class="empty">${esc(msg || "No cars.")}</td></tr>`;
   $("sortSel").value = `${S.sort.key}:${S.sort.dir}`;
@@ -311,13 +326,14 @@ function setSort(key, dir) {
 }
 
 function copy() {
-  const line = v => `${v.year} ${v.brand} ${v.model} ${v.engine}, ${v.miles.toLocaleString()} mi, warranty ${v.warranty ? "yes" : "no"} - "${v.concern}"`;
+  const line = v => `${v.year} ${v.brand} ${v.model} ${v.engine}, ${v.miles.toLocaleString()} mi, warranty ${v.warranty ? "yes" : "no"}, ${hrs(v.hours)} hrs - "${v.concern}"`;
   const out = [];
   if (S.diag) out.push(`TECHNICAL REPORT: ${line(S.diag)}`, ...S.diag.notes.map(n => `  - ${n}`));
   for (const [d, cars] of S.days) {
-    out.push(`\n${FULL_DAY[d]}`);
+    out.push(`\n${FULL_DAY[d]} (${hrs(sumHrs(cars))} hrs)`);
     cars.forEach((v, i) => out.push(`${i + 1}. ${line(v)}${v.diag ? "  [REPORT]" : ""}`));
   }
+  out.push(`\nWeek total: ${hrs(S.days.reduce((a, [, c]) => a + sumHrs(c), 0))} hrs`);
   copyText(out.join("\n").trim(), $("copy"), "Copy week");
 }
 

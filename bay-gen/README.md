@@ -105,3 +105,12 @@ They're all plain Python, so edit them freely:
 - Farm-truck aftermarket accessories
 - Advisor notes
 - A replay seed and CSV export
+
+## Flag hours (2026-11-07)
+
+Each car shows estimated flag hours, and each day and the week get a total. Every concern in `concerns.py` has a `job`
+size (quick / small / med / big / major) that maps to a range in `FLAG_HOURS` in `bay_gen.py`. Warranty jobs pay 15%
+less. The technical report adds 2.5-4.5 hrs of diag on top, so it can run 3-4+ hours before any repair. Draws lean to
+the low end: a normal day lands around 6 hours (up to 10 on a busy one), and only a major job pushes it much higher.
+These are rough guesses, not labor-guide times. The web version ports `flag_hours()` by hand; the Python window shows
+an `Hrs` column and week totals.

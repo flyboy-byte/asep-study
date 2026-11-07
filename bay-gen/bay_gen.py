@@ -23,6 +23,12 @@ MILES_PER_YEAR = 12_500
 TODAY = 2026.8         # for vehicle age; a model year goes into service around the fall before
 SERVICE_CONTRACT = 0.08  # guess: share of out-of-warranty vehicles with an extended service contract
 
+# Flag hours by job size (concerns.py "job"), low-high. Draws lean toward the low end, so a normal
+# 5-car day flags roughly 6-12 hours and only a "major" job pushes it much past that. Guesses.
+FLAG_HOURS = {"quick": (0.3, 0.6), "small": (0.5, 1.2), "med": (1.0, 2.5), "big": (2.0, 4.0), "major": (3.5, 7.5)}
+WARRANTY_FLAG = 0.85     # warranty labor times pay a little less than customer pay
+REPORT_DIAG = (2.5, 4.5)  # the technical report: diag time alone, before the repair ("med")
+
 # GM factory warranty (years, miles), from in-service date. Checked 2026-10-22 against press coverage:
 # Chevy/GMC powertrain dropped 5/100k -> 5/60k for MY2016; Buick B2B 4/50 -> 3/36 for MY2020
 # (its powertrain 6/70 -> 5/60 the same year is INFERRED); Cadillac 4/50 + 6/70 throughout.
@@ -133,6 +139,17 @@ def shop_odds(v, c, shop):
     return dealer if shop == "dealer" else 1 - dealer
 
 
+def flag_draw(lo, hi):
+    return lo + (hi - lo) * random.random() ** 1.3
+
+
+def flag_hours(c, warranty, report=False):
+    """(total, diag) flag hours for one repair order. diag is 0 except for the technical report."""
+    diag = flag_draw(*REPORT_DIAG) if report else 0.0
+    total = (diag + flag_draw(*FLAG_HOURS[c.get("job", "med")])) * (WARRANTY_FLAG if warranty else 1)
+    return round(total, 1), round(diag * (WARRANTY_FLAG if warranty else 1), 1)
+
+
 def generate(n=8, systems=SYSTEMS, shop="dealer", **kw):
     rows, w = weights(**kw)
     if not rows or not systems:
@@ -148,6 +165,7 @@ def generate(n=8, systems=SYSTEMS, shop="dealer", **kw):
             return out                    # filters too narrow for this shop; return what we have
         v["concern"] = random.choice(c["say"]) if isinstance(c["say"], list) else c["say"]
         v["system"] = c["system"]
+        v["hours"] = flag_hours(c, c["pay"] == "recall" or c["pay"] in v["covers"])[0]
         out.append(v)
     return out
 
@@ -251,14 +269,14 @@ def gui():
     ttk.Spinbox(cnt, from_=1, to=50, textvariable=count, width=5).pack(side="left", padx=6)
     ttk.Checkbutton(ctl, text="Week includes Saturday (half day)", variable=saturday).pack(anchor="w")
 
-    cols = ("Day", "#", "Year", "Make", "Model", "Engine", "Miles", "Coverage", "Concern")
+    cols = ("Day", "#", "Year", "Make", "Model", "Engine", "Miles", "Coverage", "Hrs", "Concern")
     tbl = ttk.Frame(out)
     tbl.pack(fill="both", expand=True)
     tree = ttk.Treeview(tbl, columns=cols, show="headings", height=16)
     sb = ttk.Scrollbar(tbl, orient="vertical", command=tree.yview)
     tree.configure(yscrollcommand=sb.set)
     sb.pack(side="right", fill="y")
-    for c, wdt in zip(cols, (40, 28, 48, 75, 150, 165, 70, 135, 420)):
+    for c, wdt in zip(cols, (40, 28, 48, 75, 150, 165, 70, 135, 40, 420)):
         tree.heading(c, text=c)
         tree.column(c, width=wdt, anchor="w", stretch=c == "Concern")
     tree.pack(side="left", fill="both", expand=True)
@@ -282,11 +300,13 @@ def gui():
         for d, vs in days:
             for i, v in enumerate(vs, 1):
                 tree.insert("", "end", values=(d if i == 1 else "", i, v["year"], v["brand"], v["model"], v["engine"],
-                                               f"{v['miles']:,}", v["coverage"], v["concern"]))
+                                               f"{v['miles']:,}", v["coverage"], v["hours"], v["concern"]))
         if not current:
             detail.set("Nothing fits those filters at this shop. Loosen brands, years or systems.")
         elif days[0][0]:
-            detail.set("Week: " + ", ".join(f"{d} {len(vs)}" for d, vs in days) + f"  (total {len(current)})")
+            hrs = lambda vs: sum(v["hours"] for v in vs)
+            detail.set("Week: " + ", ".join(f"{d} {len(vs)} cars {hrs(vs):.1f} hrs" for d, vs in days)
+                       + f"  (total {len(current)} cars, {sum(hrs(vs) for _, vs in days):.1f} hrs)")
         else:
             detail.set("Click a row to see the full concern.")
         mix.set(mix_summary(**settings()))
@@ -337,9 +357,9 @@ if __name__ == "__main__":
         days = week(a.n, a.sat, **kw) if a.week else [("", generate(a.n, **kw))]
         for d, vs in days:
             if d:
-                print(f"\n{d} ({len(vs)} cars)")
+                print(f"\n{d} ({len(vs)} cars, {sum(v['hours'] for v in vs):.1f} hrs)")
             for i, v in enumerate(vs, 1):
-                print(f"{i:2}. {v['year']} {v['brand']} {v['model']} - {v['engine']}, {v['miles']:,} mi [{v['coverage']}]")
+                print(f"{i:2}. {v['year']} {v['brand']} {v['model']} - {v['engine']}, {v['miles']:,} mi [{v['coverage']}] {v['hours']} hrs")
                 print(f"     \"{v['concern']}\"")
         print(mix_summary(**kw))
     else:

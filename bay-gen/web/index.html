@@ -70,16 +70,18 @@ blockquote { margin: 12px 0 0; padding: 10px 14px; border-left: 4px solid var(--
 .cp { border: 1px solid var(--line); background: var(--panel); color: var(--accent); border-radius: 6px; padding: 3px 10px; font-size: 12px; font-weight: 600; white-space: nowrap; }
 
 /* week */
-.weekgrid { display: grid; grid-template-columns: minmax(0, 1fr) 120px; }
+.weekgrid { display: grid; grid-template-columns: minmax(0, 1fr) 150px; }
 #days { display: flex; flex-direction: column; gap: 6px; padding: 12px; border-left: 1px solid var(--line); }
 .dayBtn { display: flex; align-items: center; gap: 6px; padding: 8px 10px; border-radius: 6px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); }
 .dayBtn span { flex: 1; text-align: left; font-weight: 600; }
-.dayBtn b { font-weight: 500; color: var(--muted); font-size: 13px; }
+.dayBtn b { font-weight: 500; color: var(--muted); font-size: 13px; white-space: nowrap; }
 .dayBtn i { color: var(--accent); font-style: normal; font-size: 10px; }
 .dayBtn[aria-pressed=true] { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); }
 .dayBtn[aria-pressed=true] b, .dayBtn[aria-pressed=true] i { color: var(--accent-ink); }
 .listhead { display: flex; align-items: center; gap: 8px; padding: 10px 14px 0; }
-#weekTitle { font-weight: 700; flex: 1; }
+#weekTitle { font-weight: 700; }
+.listhead { flex-wrap: wrap; }
+#weekHrs { flex: 1; }
 #newDay { padding: 4px 10px; font-size: 13px; }
 .sortbox { display: none; font-size: 13px; color: var(--muted); }
 .tablewrap { padding: 8px 6px 10px; overflow-x: auto; }
@@ -93,7 +95,11 @@ tr:last-child td { border-bottom: 0; }
 .c-veh { font-weight: 600; }
 .c-eng, .c-day { color: var(--muted); white-space: nowrap; }
 .c-mi { white-space: nowrap; text-align: right; }
-.c-mi .u, .c-w .lbl { display: none; }
+.c-mi .u, .c-w .lbl, .c-h .u { display: none; }
+.c-h { white-space: nowrap; text-align: right; }
+.dayBtn small { color: var(--muted); font-size: 12px; white-space: nowrap; min-width: 34px; text-align: right; }
+.dayBtn[aria-pressed=true] small { color: var(--accent-ink); }
+#weekHrs { color: var(--muted); font-size: 13px; }
 .c-w { white-space: nowrap; }
 .c-cp { width: 1%; }
 tr.isDiag td { background: var(--diag); }
@@ -125,8 +131,9 @@ footer { color: var(--muted); font-size: 12px; padding: 0 16px 24px; max-width: 
   .c-year, .c-veh, .c-day { display: inline; font-weight: 700; color: var(--ink); }
   .c-year::after { content: " "; }
   .c-day::after { content: " ·"; }
-  .c-eng, .c-mi, .c-w { display: inline; font-size: 13px; color: var(--muted); margin-right: 10px; }
-  .c-mi .u, .c-w .lbl { display: inline; }
+  .c-eng, .c-mi, .c-w, .c-h { display: inline; font-size: 13px; color: var(--muted); margin-right: 10px; }
+  .c-mi .u, .c-w .lbl, .c-h .u { display: inline; }
+  .dayBtn small { display: none; }
   .c-eng::before { content: ""; display: block; }
   .c-say { margin-top: 4px; font-size: 15px; }
   .c-cp { position: absolute; right: 8px; top: 8px; width: auto; }
@@ -193,7 +200,7 @@ footer { color: var(--muted); font-size: 12px; padding: 0 16px 24px; max-width: 
       <div class="weekgrid">
         <div>
           <div class="listhead">
-            <span id="weekTitle"></span>
+            <span id="weekTitle"></span><span id="weekHrs"></span>
             <button class="btn" id="newDay"></button>
             <label class="sortbox">Sort
               <select id="sortSel">
@@ -202,6 +209,8 @@ footer { color: var(--muted); font-size: 12px; padding: 0 16px 24px; max-width: 
                 <option value="year:1">Oldest</option>
                 <option value="miles:-1">Most miles</option>
                 <option value="miles:1">Fewest miles</option>
+                <option value="hours:-1">Most hours</option>
+                <option value="hours:1">Fewest hours</option>
                 <option value="warranty:1">Warranty first</option>
                 <option value="warranty:-1">No warranty first</option>
                 <option value="make:1">Vehicle A–Z</option>
